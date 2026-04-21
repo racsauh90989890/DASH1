@@ -550,9 +550,9 @@ label.dd-opt{cursor:pointer}
     </div>
   </div>
   <nav class="nav">
-    <button class="ntab on" id="t-dash" onclick="showV('dash')">🏛️ Por Ministerio</button>
-    <button class="ntab" id="t-exec" onclick="showV('exec')">🎯 Dashboard Ejecutivo</button>
+    <button class="ntab on" id="t-exec" onclick="showV('exec')">🎯 Dashboard Ejecutivo</button>
     <button class="ntab" id="t-pres" onclick="showV('pres')">🏛 Dashboard Presidencial</button>
+    <button class="ntab" id="t-dash" onclick="showV('dash')">🏛️ Por Ministerio</button>
     <button class="ntab" id="t-sess" style="display:none" onclick="showV('sess')">📋 Sesión Activa</button>
   </nav>
 </header>
@@ -572,8 +572,8 @@ label.dd-opt{cursor:pointer}
     </div>
   </aside>
   <main class="main">
-    <div id="vdash"></div>
-    <div id="vexec" style="display:none"></div>
+    <div id="vdash" style="display:none"></div>
+    <div id="vexec"></div>
     <div id="vpres" style="display:none"></div>
     <div id="vsess" style="display:none"></div>
   </main>
@@ -2639,6 +2639,7 @@ function buildPres() {
 initST(); prePopulateST(); save();
 buildSb();
 buildDash();
+buildExec();
 var badge = document.getElementById('ind-count-badge');
 if (badge) badge.textContent = IND.length + ' PRIORIDADES';
 </script>
