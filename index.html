@@ -1,10 +1,11 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>IAE – Validación Ministerial | CENGOB Bolivia v26</title>
+<title>IAE – Validación Ministerial | CENGOB Bolivia v30-update</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" defer></script>
@@ -606,451 +607,550 @@ var IND = [
    eje:'Eje 3 – Bolivia 50/50',
    intv:'Co-construcción de la Agenda 50/50',
    min:'Ministerio de la Presidencia',
+   minConc:'Ministerio de Planificación del Desarrollo y Medio Ambiente y Ministerio de Economía y Finanzas Públicas',
    ind:'Índice de Avance del Proceso de Cumplimiento de la Co-Costruccion de Agenda 50/50',
    meta:'Agenda 50/50 en marcha',
    lb:'(N° fases ejecutadas / 4) × 100 → 0%',
    freq:'Mensual',
    fuentes:'Informes tecnicos de avance, instrumentos normativos, actas de reunión , acuerdos intergubernativos y mecanismos de coordinación',
-   desc:'Consiste en la estructuración por fases para realizar acciones especificas para llevar adelante la profundizacion de las autonomias',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4'],
-   etsPer:['','Estado','✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,25,25,25,25]},
-  {id:'i.10',
-   eje:'Eje 1 – Economía para la gente',
-   intv:'Nueva Ley de Inversiones',
-   min:'Ministerio de Economía',
-   ind:'Índice de Avance del Proceso de Aprobación de la Nueva Ley de Inversiones',
-   meta:'Alcanzar el 100% del proceso: Nueva Ley de Inversiones promulgada, reglamentada y en vigencia plena con mecanismos de promoción operativos',
-   lb:'(N° etapas ejecutadas / 5) × 100',
-   freq:'Mensual',
-   fuentes:'Actas de reuniones con Ministerio Responsable, Ministerios Concurrentes y Sector Privado; Gaceta Oficial; informes Asamblea Legislativa',
-   desc:'Se propone una reforma estructural que busca transformar a Bolivia en un destino competitivo para el capital global, un ecosistema de libre mercado fundamentado en la seguridad jurídica internacional, sustituyendo el actual modelo de control estatal centralizado. A través de mecanismos como las Alianzas Público-Privadas, el proyecto pretende captar inversión masiva que genere empleo formal y modernice el aparato productivo bajo un enfoque de eficiencia.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,20,20,20,20,20]},
-  {id:'i.11',
-   eje:'Eje 6 - Bolivia Bienestar para Todos',
-   intv:'Agua potable y saneamiento básico para todos',
-   min:'Ministerio de Desarrollo Productivo Rural y Agua',
-   ind:'Sistemas de Agua potable en áreas urbanas/rurales Sistemas de Alcantarillado Sanitario en áreas urbanas/rurales Sistemas de Gestión Integral de Residuos en municipios',
-   meta:'Alcanzar el 100% del proceso, con sistemas de agua y saneamiento basico en servicio en zonas priorizadas',
-   lb:'N° Familias con acceso a agua potable en zonas rurales/N° Familias en zonas rurales',
-   freq:'Mensual',
-   fuentes:'Informes del VRHRAPySB',
-   desc:'Ejecución de intervenciones para ampliar el acceso al agua potable y saneamiento básico (alcantarillado sanitario y gestión integral de residuos) en comunidades rurales y periurbanas, como base del bienestar, la salud y el desarrollo productivo.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,50,50]},
-  {id:'i.12',
-   eje:'Eje 3 – Bolivia 50/50',
-   intv:'Modificación normativa a la Ley del Sistema Nacional de Seguridad Ciudadana',
-   min:'Ministerio de Gobierno',
-   ind:'Porcentaje de Avance de la modificación a la normativa relacionada con Seguridad Ciudadana',
-   meta:'Alcanzar el 100% del proceso, con Ley promulgada e implementada',
-   lb:'(N° etapas ejecutadas / 7) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Proyecto modificacion presentado; actas ETAs, Policía; Gaceta Oficial; informes Ministerio Gobierno',
-   desc:'Con el objetivo de contar con una Ley del Sistema de Seguridad Ciudadana acorde a las necesidades del contexto actual, se modificara los instrumentos que reglamenten a esta norma, con la participacion activa de las entidades publicas, ETAs, Comisiones y Consejos',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6','Etapa 7'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,14,14,14,14,14,14,14]},
-  {id:'i.13',
-   eje:'Eje 6 - Bolivia Bienestar para Todos',
-   intv:'Nuevo Sistema Nacional de Salud',
-   min:'Ministerio de Salud y Deportes',
-   ind:'Índice de avance del proceso de rediseño del Sistema Nacional de Salud.',
-   meta:'Alcanzar el 100% del proceso, con nuevo sistema en escalonamiento nacional',
-   lb:'Diagnóstico y Determinación de lineamientos 2/6 *100= 33%',
-   freq:'Mensual',
-   fuentes:'Indicadores Epidemiológicos reportados por la Dirección de Epidemiología. Reportes del Sistema Único de Información de Salud.',
-   desc:'Análisis de la situación del sistema de salud actual, en los componentes de estructura sanitaria y programas prioritarios en función de las necesidades de la población. Análisis del modelo de atención, del modelo de gestión y del modelo de financiamiento según competencias nacionales y subnacionales.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,16,16,16,16,16,16]},
-  {id:'i.14',
-   eje:'Eje 6 - Bolivia Bienestar para Todos',
-   intv:'Redes integrales de Servicios en Salud',
-   min:'Ministerio de Salud y Deportes',
-   ind:'Índice de avance del fortalecimiento del funcionamiento de las redes integraleses vinculadas a la gestión de la salud en el marco de la APS.',
-   meta:'Alcanzar el 100% del proceso, con modelo integrales en escalonamiento nacional',
-   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Mapeo de establecimientos de salud de primer, segundo y tercer nivel de atención;Mapeo de redes integrales de servicios de salud; escalonamiento nacional.',
-   desc:'Desarrollo de acciones orientadas a la organización y articulación de los establecimientos de salud en redes integrales de servicios de salud, fortaleciendo la coordinación entre el primer, segundo y tercer nivel de atención (Referencia, transferencia y contrareferencia) para mejorar la continuidad y oportunidad de la atención en salud.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,16,16,16,16,16,16]},
-  {id:'i.15',
-   eje:'Eje 6 - Bolivia Bienestar para Todos',
-   intv:'Políticas De Atención Primaria en Salud',
-   min:'Ministerio de Salud y Deportes',
-   ind:'Número de redes y establecimentos de salud que aplican la APS.',
-   meta:'Alcanzar el 100% del proceso, con establecimientos equipados, RRHH asignado y evaluación de calidad',
-   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Informes Ministerio Salud; registros equipamiento; planillas RRHH; reportes evaluación calidad APS, evaluación de SEDES',
-   desc:'Análisis de la situación actual de la Atención Primaria en Salud a nivel nacional, considerando la capacidad resolutiva.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,20,20,20,20,20]},
-  {id:'i.16',
-   eje:'Eje 2 – Bolivia al Mundo',
-   intv:'HUB Viru Viru – Cielos abiertos',
-   min:'Ministerio de Obras Públicas',
-   ind:'% de Avance del proceso de Implementacion del HUB Viru Viru',
-   meta:'Alcanzar el 100% del proceso, con HUB Viru Viru operativo bajo política de cielos abiertos',
-   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Informes DGAC; convenios con aerolíneas; reportes operativos Viru Viru',
-   desc:'La intervención tiene por objetivo habilitar, implementar y poner en operación el HUB aeroportuario Viru Viru, como centro de conexión de vuelos nacionales, regionales e internacionales de pasajeros y carga, bajo una política sostenible y regulada de cielos abiertos, articulada con el sistema de transporte terrestre y, a mediano plazo, ferroviario. El HUB permitirá proyectar a Bolivia como un país integrado al mundo, fortaleciendo el comercio exterior, la atracción de inversiones, el turismo y la generación de empleo, en coherencia con las políticas de desarrollo económico, integración regional y soberanía logística del Estado. La implementación del HUB Viru Viru responde a la necesidad estratégica del Estado Plurinacional de Bolivia de fortalecer su conectividad aérea, logística y comercial, en un contexto de creciente integración regional y demanda de servicios de transporte eficientes. Bolivia presenta una posición geográfica central en Sudamérica que, debidamente aprovechada mediante infraestructura adecuada, regulación moderna y articulación institucional, puede convertirse en un factor clave para mejorar la competitividad del país. La prioridad de esta intervención radica en transformar al Aeropuerto Internacional Viru Viru en un nodo de conexión aérea que permita incrementar el flujo de pasajeros y carga, reducir costos logísticos, diversificar destinos internacionales y consolidar al país como plataforma de integración económica, turística y productiva.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6','Etapa 7'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,14,14,14,14,14,14,14]},
-  {id:'i.17',
-   eje:'Eje 1 – Economía para la gente',
-   intv:'Reformas e incentivos tributarios',
-   min:'Ministerio de Economía',
-   ind:'Índice de Avance de la Reforma Tributaria',
-   meta:'Alcanzar el 100% del proceso de reforma tributaria, incluyendo implementación operativa en el SIN',
-   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Informes técnicos del Ministerio de Economía; reportes del SIN; Gaceta Oficial',
-   desc:'Flexibilizar el Sistema Tributario Boliviano, a través de una reforma, e implementar incentivos tributarios a fin de incentivar la actividad productiva y la inversión bajo un enfoque de capitalismo inclusivo.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,16,16,16,16,16,16]},
-  {id:'i.18',
-   eje:'Eje 7 – Verde y Sostenible',
-   intv:'PROTECCION CIVIL Y REDUCCION DE RIESGO DE DESASTRES',
-   min:'Ministerio de Defensa',
-   ind:'Índice de Avance del Proceso de fortalecimiento de la UMEE y Gestion de Riesgos',
-   meta:'Alcanzar el 100% del proceso, con la UMEE fortalecida',
-   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Diagnóstico riesgos; reportes equipamiento instalado; registros capacitación; informes simulacros nacionales',
-   desc:'En lo que respecta al fortalecimiento de la UMEE, se trabajara en:Gestión de saneamiento de predios y adecuación de infraestructura; Siguiendo con la dotación de efectivos exclusivos, con equipamiento y capacitación permanente. En lo respecta a la Gestion de Riesgos se trabajara de manera integral en las necesidades que el pais demanda a corto y mediano plazo, en materia de prevencion y reduccion de desastres, priorizando los sistemas de alerta temprana, todo esto articulado con la cooperacion internacional y los distintos actores inlucrados, con el objetivo comun de salvar vidas, posicionando a Bolivia como un actor protagonico en materia de gestion de riesgos',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6','Etapa 7','Etapa 8'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,12,12,12,12,12,12,12,12]},
-  {id:'i.19',
-   eje:'Eje 6 - Bolivia Bienestar para Todos',
-   intv:'Nueva Ley Educativa',
-   min:'Ministerio de Educación',
-   ind:'Porcentaje de avance de ejecución de etapas y sub etapas establecidas.',
-   meta:'Alcanzar el 100% de etapas en la gestión 2026.',
-   lb:'(N° etapas ejecutadas / 4) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Hito técnico documentado: Actas y/o documentos de cumplimiento de las etapas y/o subetapas programadas.',
-   desc:'Elaboración del anteproyecto de una nueva Ley Educativa que sentará las bases normativas de una educación de calidad.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5'],
-   etsPer:['','Estado','✅ Completado','✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,20,20,20,20,20]},
+   desc:'Estructurar por fases la realización de acciones especificas para llevar adelante la profundizacion de las autonomias',
+   ets:['Coordinación Técnica','Priorización Temática y construcciones de alternativas','Co-construcción de la Agenda 50/50','Implementación y seguimiento'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[40.0,20.0,30.0,10.0],
+   etaSubs:[[{n:'Presentación de la "Propuesta técnica de diálogo para un pacto fiscal"',d:true,resp:'Ministerio de la Presidencia / Ministerio de Planificación / Ministerio de Economía y Finanzas Públicas y SEA',desde:'2026-02-27',hasta:'2026-02-27'},{n:'Primera reunión interministerial de coordinación del proceso de co construcción de la Agenda 50/50',d:true,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-03-18',hasta:'2026-03-18'},{n:'Registro de Equipos Técnicos de entidades del nivel central del Estado',d:true,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-03-30',hasta:'2026-03-30'},{n:'Reuniones de coordinación con instituciones del Sistema Asociativo Municipal (FAM, AMB y ACOBOL) y la Coordinadora Nacional de Autonomías Indígena Originario Campesinas (CONAIOC)',d:true,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-03-01',hasta:'2026-03-01'},{n:'Elaboración y remisión del Proyecto de Decreto Supremo "Agenda 50/50 y fortalecimiento de la coordinación intergubernativa"',d:true,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-03-13',hasta:'2026-03-13'},{n:'Registro de diagnósticos sectoriales enviados por las entidades del NCE',d:true,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-04-08',hasta:'2026-04-08'},{n:'Sistematización de diagnósticos sectoriales registrados',d:true,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-04-14',hasta:'2026-04-14'},{n:'Reunión con 286 alcaldes electos y el Presidente del Estado',d:true,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-04-10',hasta:'2026-04-10'},{n:'Reunión de coordinación con Grupo de Socios para el Desarrollo de Bolivia (GruS)',d:true,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-04-15',hasta:'2026-04-15'},{n:'Diagnósticos Territoriales',d:false,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-05-11',hasta:'2026-05-11'},{n:'Balance de las Autonomías',d:false,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-06-19',hasta:'2026-06-19'}],[{n:'Agenda temática priorizada',d:false,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías y Ministerios Sectoriales',desde:'2026-06-30',hasta:'2026-06-30'},{n:'Alternativas de solución',d:false,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías y Ministerios Sectoriales',desde:'2026-07-31',hasta:'2026-07-31'},{n:'Diagnóstico sectorial y territorial articulado',d:false,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-05-29',hasta:'2026-05-29'}],[{n:'9 propuesta departamentales',d:false,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-07-31',hasta:'2026-09-30'},{n:'Acuerdos intergubernativos',d:false,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías y Ministerios Sectoriales',desde:'2026-07-31',hasta:'2026-09-30'},{n:'Mecanismos de coordinación en funcionamiento',d:false,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-08-01',hasta:'2026-09-30'}],[{n:'Agenda 50/50 en marcha',d:false,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías y Ministerios Sectoriales',desde:'2026-07-31',hasta:'2026-09-30'},{n:'Sistema de seguimiento y monitoreo (CEN.GOB)',d:false,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-07-31',hasta:'2026-09-30'},{n:'Proyectos normativos',d:false,resp:'Ministerio de la Presidencia / Servicio Estatal de Autonomías',desde:'2026-07-31',hasta:'2026-09-30'}]],
+   etaDates:[{desde:'2026-02-27',hasta:'2026-02-27',resp:'Ministerio de la Presidencia / SEA'},{desde:'2026-05-29',hasta:'2026-07-31',resp:'Ministerio de la Presidencia / SEA'},{desde:'2026-07-31',hasta:'2026-09-30',resp:'Ministerio de la Presidencia / SEA'},{desde:'2026-10-01',hasta:'2026-09-30',resp:'Ministerio de la Presidencia / SEA'}]},
   {id:'i.2',
-   eje:'Eje 4 y 5 Bolivia Moderna, Eficiente y Transparente',
+   eje:'Eje 4-5 – Modernización y Transparencia',
    intv:'Desregulación y desburocratización de normas y procesos · Programa "Tranca Cero" (PTC)',
    min:'Ministerio de la Presidencia',
+   minConc:'Ministerio de la Presidencia - AGETIC; Ministerio de Relaciones Exteriores; Ministerio de Planificación del Desarrollo y Medio Ambiente; Ministerio de Economía y Finanzas Públicas; Ministerio de Gobierno; Ministerio de Defensa.',
    ind:'Índice de Implementación Metodológica y Sistemica del Programa "Tranca Cero" – Desregulación, simplificación administrativa y optimización normativa.',
    meta:'Alcanzar el 100% del proceso: DS N° 5595 promulgado; Reglamento aprobado y vigente; Catálogo Nacional de Trámites, Sistema "Reporta Tu Tranca", Ranking de Simplificación, Certificación Tranca Cero implementados metodológica y sistematicamente.',
    lb:'(N° etapas ejecutadas / 6) × 100 → 17% (1 de 6 etapas cumplida)',
    freq:'Mensual',
    fuentes:'Gaceta Oficial del Estado Plurinacional (DS N° 5595, 30/03/2026); Reglamento (aprobabo por el Comité); CNT – AGETIC; Sistema "Reporta Tu Tranca"; informes VCME; Ranking RK-SIM semestral; Medición de la percepción de la eficiencia de los trámites Gubernamentales.',
-   desc:'Desarrollo de la política pública nacional de desregulación, simplificación administrativa y optimización normativa denominada Programa "Tranca Cero", destinada a eliminar barreras burocráticas injustificadas, modernizar la actuación del Órgano Ejecutivo y facilitar el acceso de ciudadanos y empresas a derechos, servicios y actividades económicas. Incluye el Comité Interministerial, el Catálogo Nacional de Trámites, el Sistema "Reporta Tu Tranca", el Ranking de Simplificación Regulatoria, la Certificación "Tranca Cero" y la promoción de la digitalización, interoperabilidad y automatización de tramites y procedimientos.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6'],
-   etsPer:['','Estado','✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,16,16,16,16,16,16]},
-  {id:'i.20',
-   eje:'Eje 6 - Bolivia Bienestar para Todos',
-   intv:'Gestión educativa de calidad',
-   min:'Ministerio de Educación',
-   ind:'Porcentaje de avance de etapas establecidas',
-   meta:'Alcanzar el 100% de etapas en la gestión 2026',
-   lb:'(N° etapas ejecutadas / 4) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Hito técnico documentado: Actas y/o documentos de cumplimiento de las etapas y/o subetapas programadas',
-   desc:'Desburocratizar la gestión administrativa para fortalecer los procesos pedagógicos en las unidades educativas',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4'],
-   etsPer:['','Estado','✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,25,25,25,25]},
-  {id:'i.21',
-   eje:'Eje 6 - Bolivia Bienestar para Todos',
-   intv:'Maestros competentes y comprometidos',
-   min:'Ministerio de Educación',
-   ind:'Porcentaje de avance de etapas establecidas.',
-   meta:'Alcanzar el 100% de etapas en la gestión 2026.',
-   lb:'(N° etapas ejecutadas / 4) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Hito técnico documentado: Actas y/o documentos de cumplimiento de las etapas y/o subetapas programadas.',
-   desc:'Desarrollo de un proceso transparente y meritocrático de admisión de postulantes a las Escuelas Superiores de Formación de Maestros',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3'],
-   etsPer:['','Estado','✅ Completado','✅ Completado','✅ Completado'],
-   etsPond:[0,0,33,33,33]},
-  {id:'i.22',
-   eje:'Eje 6 - Bolivia Bienestar para Todos',
-   intv:'Transformación digital educativa',
-   min:'Ministerio de Educación',
-   ind:'Porcentaje de avance de etapas establecidas',
-   meta:'Alcanzar el 100% de etapas en la gestión 2026',
-   lb:'(N° etapas ejecutadas / 4) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Hito técnico documentado: Actas y/o documentos de cumplimiento de las etapas y/o subetapas programadas',
-   desc:'Dotar antenas Starlink a 4.500 unidades educativas para iniciar la transformación digital y mejorar el proceso de enseñanza aprendizaje.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4'],
-   etsPer:['','Estado','✅ Completado','✅ Completado','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,25,25,25,25]},
-  {id:'i.23',
-   eje:'Eje 1 – Economía para la gente',
-   intv:'Identificación y gestión de mecanismos de financiamiento para el fomento de la inversión en el sector turismo, cultura y gastronomía.',
-   min:'Ministerio de Turismo Sostenible, Culturas, Folklore y Gastronomía',
-   ind:'Índice de avance de acciones implementadas para identificación y gestión de fuentes de financiamiento',
-   meta:'Alcanzar el 100% del proceso, incluyendo primeros desembolsos efectivos',
-   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Actas; resoluciones ministeriales; informes técnicos y convenios suscritos',
-   desc:'La intervención consiste en la identificación y gestión de fuentes de financiamiento orientadas a promover al sector turismo, cultura y gastronomía, mediante la articulación con entidades del sistema financiero, organismos internacionales y potenciales inversionistas. Comprende el análisis de alternativas de financiamiento, la generación de vínculos institucionales y la facilitación de condiciones para el acceso a recursos destinados a proyectos turísticos e infraestructura asociada. Al concluir las etapas, se espera contar con fuentes de financiamiento identificadas, acuerdos de articulación establecidos y mecanismos que permitan canalizar recursos hacia iniciativas de inversión en el sector.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,25,25,25,25]},
-  {id:'i.24',
-   eje:'Eje 2 – Bolivia al Mundo',
-   intv:'Posicionamiento internacional de Bolivia mediante la articulación de Marca País y servicios turísticos para el destino Uyuni–Lagunas.',
-   min:'Ministerio de Turismo Sostenible, Culturas, Folklore y Gastronomía',
-   ind:'Índice de avance de la implementación de acciones para el posicionamiento Internacional',
-   meta:'Alcanzar el 100% del proceso',
-   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Informes Ministerio de Turismo; actas, contratos, registros oficiales',
-   desc:'La intervención consiste en la implementación de acciones integradas orientadas al posicionamiento de Bolivia a nivel internacional, mediante la implementación de la Marca País, el desarrollo de actividades de promoción turística y el fortalecimiento de servicios de capacitación y certificación para el destino Uyuni–Lagunas . Incluye la gestión de condiciones habilitantes para el turismo, la mejora de accesos y la articulación con infraestructura y servicios básicos, en coordinación con entidades competentes.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,20,20,20,20,20]},
-  {id:'i.25',
-   eje:'Eje 2 – Bolivia al Mundo',
-   intv:'Definición de mecanismo institucional para la promoción de inversiones extranjeras',
-   min:'Ministerio de Relaciones Exteriores',
-   ind:'Índice de Avance del Mecanismo para promoción de inversiones extranjeras',
-   meta:'Alcanzar el 100% del proceso,con mecanismo diseñado y aprobado',
-   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Mecanismo definido y aprobado para la promoción de inversiones extranjeras Actas de reuniones, informes técnicos',
-   desc:'Se ha previsto desarrollar una propuesta orientada a identificar y estructurar un mecanismo que permita articular, dinamizar, gestionar y promover las inversiones extranjeras en el país, tomando en cuenta los diferentes escenarios óptimos tales como capacidades existentes, creación de nueva instancia descentralizada, mixta entre otros con la participación del sector público -privado y con enfoque de sostenibilidad,',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5'],
-   etsPer:['','Estado','✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,20,20,20,20,20]},
-  {id:'i.26',
-   eje:'Eje 2 – Bolivia al Mundo',
-   intv:'Plataforma digital de multiservicios automatizada de los trámites y servicios consulares priorizados',
-   min:'Ministerio de Relaciones Exteriores',
-   ind:'Índice de Avance del Proceso de optimización en la gestión de trámites y servicios consulares priorizados del Servicio Exterior',
-   meta:'Alcanzar el 100% de la Plataforma digital de multiservicios automatizada de los trámites y servicios consulares priorizados',
-   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Plataforma digital de multiservicios automatizada de los trámites y servicios consulares priorizados Manual de procesos y procedimientos, actas de reuniones y otros documentos técnicos generados',
-   desc:'Se tiene previsto mejorar los servicios prestados en los Consulados, para una gestión más ágil , accesible y de calidad para los ciudadanos bolivianos en el exterior.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3'],
-   etsPer:['','Estado','✅ Completado','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,33,33,33]},
-  {id:'i.27',
-   eje:'Eje 1 – Economía para la gente',
-   intv:'Ley de Hidrocarburos',
-   min:'Ministerio de Hidrocarburos y Energías',
-   ind:'Índice de Avance del Proceso Legislativo de la Ley de Hidrocarburos',
-   meta:'Alcanzar el 100% del proceso legislativo para la promulgación y reglamentación de la nueva Ley de Hidrocarburos',
-   lb:'=2/6',
-   freq:'Mensual',
-   fuentes:'Actas del Ministerio de Hidrocarburos; Gaceta Oficial; informes Asamblea Legislativa',
-   desc:'Este anteproyecto busca equilibrar soberanía estatal con apertura a la inversión privada, asegurando seguridad jurídica, competitividad fiscal y sostenibilidad. Es una propuesta integral para garantizar el futuro energético del país y posicionar a Bolivia como un actor confiable y atractivo en el mercado regional.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6'],
-   etsPer:['','Estado','✅ Completado','✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,16,16,16,16,16,16]},
-  {id:'i.28',
-   eje:'Eje 7 – Verde y Sostenible',
-   intv:'Ley de Fomento a las Energias Verdes',
-   min:'Ministerio de Hidrocarburos y Energías',
-   ind:'Índice de Avance del Anteproyecto de Ley de Fomento de Energias Verdes',
-   meta:'Alcanzar el 100% del proceso, con normas de energía, forestal y agua publicadas e implementadas',
-   lb:'=1/5',
-   freq:'Mensual',
-   fuentes:'Diagnóstico marcos normativos; normas publicadas en Gaceta; reportes implementación regulatoria sectorial',
-   desc:'La intervención consiste en la elaboración del Anteproyecto de Ley de Fomento de las Energias Verdes mediante el análisis técnico-legal del sector energético y la formulación de lineamientos para el desarrollo de energías verdes. Como resultado, se espera contar con un instrumento técnico-jurídico que establezca el marco normativo para promover la ejecución de proyectos de Energias Verdes.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,20,20,20,20,20]},
-  {id:'i.29',
-   eje:'Eje 1 – Economía para la gente',
-   intv:'Ley Marco de Transición Energética y Soberanía No Hidrocarburífera en Bolivia',
-   min:'Ministerio de Hidrocarburos y Energías',
-   ind:'Índice de Avance del Proceso de Elaboración y Aprobación de la Ley Marco de Transición Energética y Soberanía No Hidrocarburífera',
-   meta:'Alcanzar el 100% del proceso: Ley Marco de Transición Energética promulgada, reglamentada y operativa, con marco regulatorio de energías renovables vigente y autoridad regulatoria sectorialmente funcional para 2027.',
-   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Gaceta Oficial del Estado Plurinacional; ENDE Corporación; AETN (Autoridad de Fiscalización de Electricidad y Tecnología Nuclear); informes del Ministerio de Hidrocarburos y Energías; CNDC; estadísticas de generación eléctrica INE; reportes de renovables y BESS.',
-   desc:'Proceso de reforma legislativa estructural del sector energético boliviano que establece el marco jurídico para la generación, transmisión y distribución de energías renovables no convencionales (NCRE), contratos PPA a largo plazo, modernización de redes inteligentes (Smart Grids), almacenamiento con litio (BESS) y eficiencia energética; desplazando la dependencia hidrocarbúrífera del Sistema Interconectado Nacional (SIN).',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,16,16,16,16,16,16]},
+   desc:'Desarrollar la política pública nacional de desregulación, simplificación administrativa y optimización normativa denominada Programa "Tranca Cero", destinada a eliminar barreras burocráticas injustificadas, modernizar la actuación del Órgano Ejecutivo y facilitar el acceso de ciudadanos y empresas a derechos, servicios y actividades económicas. Incluye el Comité Interministerial, el Catálogo Nacional de Trámites, el Sistema "Reporta Tu Tranca", el Ranking de Simplificación Regulatoria, la Certificación "Tranca Cero" y la promoción de la digitalización, interoperabilidad y automatización de tramites y procedimientos.',
+   ets:['Promulgación del DS N° 5595 – Programa "Tranca Cero"','Aprobación de los Reglamentos del Programa "Tranca Cero" y el Comité Interministerial del Programa Tranca Cero','Implementación Metodológica y Sistemica del Catálogo Nacional de Trámites (CNT) del Órgano Ejecutivo','Implementación Metodológica y Sistémica del Sistema Digital "Reporta Tu Tranca" (RTT) y gestión operativa de reportes ciudadanos','Implementación Metodológica y Sistémica del Ranking de Simplificación Regulatoria del Estado (RK-SIM)','Implementación Metodológica y Sistémica de la Certificación "Tranca Cero" (CTC)'],
+   etsPer:['✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[15.4,17.9,17.9,20.5,15.4,12.8],
+   etaSubs:[[{n:'Elaboración del anteproyecto y revisión técnico-jurídica interministerial',d:true,resp:'Ministerio de la Presidencia',desde:'2026-03-03',hasta:'2026-03-24'},{n:'Aprobación en Gabinete Ministerial',d:true,resp:'Ministerio de la Presidencia',desde:'2026-03-30',hasta:'2026-03-30'},{n:'Publicación en Gaceta Oficial del Estado Plurinacional',d:true,resp:'Ministerio de la Presidencia',desde:'2026-03-30',hasta:'2026-03-30'}],[{n:'Elaboración de los Proyectos de Reglamentos por el VCME',d:false,resp:'Ministerio de la Presidencia - VCME',desde:'2026-04-06',hasta:'2026-04-20'},{n:'Revisión Jurídica por la DGAJ del Ministerio de la Presidencia y emisión de los Informes Legales.',d:false,resp:'Ministerio de la Presidencia - DGAJ',desde:'2026-04-20',hasta:'2026-04-23'},{n:'Aprobación formal del Reglamento del Comité Interministerial del PTC y publicación de la Resolución Ministerial.',d:false,resp:'Ministerio de la Presidencia; Ministerio de Relaciones Exteriores; Ministerio de Planificación del Desarrollo y Medio Ambiente; Ministerio de Economía y Finanzas Públicas; Ministerio de Gobierno; Ministerio de Defensa;',desde:'2026-04-27',hasta:'2026-04-27'},{n:'Aprobación formal del Reglamento del Prorama Tranca Cero (DS 5595) y publicación de la Resolución Ministerial.',d:false,resp:'Ministerio de la Presidencia; Ministerio de Relaciones Exteriores; Ministerio de Planificación del Desarrollo y Medio Ambiente; Ministerio de Economía y Finanzas Públicas; Ministerio de Gobierno; Ministerio de Defensa;',desde:'2026-04-27',hasta:'2026-04-27'}],[{n:'Elaboración de las Guías Técnicas y Metodológicas provisionales del CNT',d:false,resp:'Ministerio de la Presidencia - VCME',desde:'2026-04-28',hasta:'2026-06-05'},{n:'Aprobación de las Guías Técnicas y Metodológicas provisionales del CNT (plazo: 45 días calendario desde vigencia del Reglamento)',d:false,resp:'Ministerio de la Presidencia; Ministerio de Relaciones Exteriores; Ministerio de Planificación del Desarrollo y Medio Ambiente; Ministerio de Economía y Finanzas Públicas; Ministerio de Gobierno; Ministerio de Defensa;',desde:'2026-06-08',hasta:'2026-06-08'},{n:'Diseño y Desarrollo del SCNT provisional (plazo: 45 días calendario desde vigencia del Reglamento)',d:false,resp:'Ministerio de la Presidencia - VCME - AGETIC',desde:'2026-04-28',hasta:'2026-05-29'},{n:'Producción y pruebas del SCNT provisional (plazo: 90 días calendario desde vigencia del Reglamento)',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-06-01',hasta:'2026-06-11'},{n:'Habilitación del SCNT para el registro provisional de trámites por las entidades públicas',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-06-12',hasta:'2026-06-12'},{n:'Primera Etapa de la validación técnica de trámites registrados en el SCNT provisional',d:false,resp:'Ministerio de la Presidencia - VCME',desde:'2026-06-15',hasta:'2026-07-31'},{n:'Elaboración de las Guías Técnicas y Metodológicas definitivas del CNT',d:false,resp:'Ministerio de la Presidencia - VCME',desde:'2026-06-06',hasta:'2026-07-17'},{n:'Aprobación de las Guías Técnicas y Metodológicas definitivas del CNT (plazo: 90 días calendario desde vigencia del Reglamento)',d:false,resp:'Ministerio de la Presidencia; Ministerio de Relaciones Exteriores; Ministerio de Planificación del Desarrollo y Medio Ambiente; Ministerio de Economía y Finanzas Públicas; Ministerio de Gobierno; Ministerio de Defensa;',desde:'2026-07-20',hasta:'2026-07-20'},{n:'Diseño y Desarrollo del SCNT definitivas (plazo: 90 días calendario desde vigencia del Reglamento)',d:false,resp:'Ministerio de la Presidencia - VCME - AGETIC',desde:'2026-06-15',hasta:'2026-07-15'},{n:'Producción y pruebas del SCNT definitivas (plazo: 90 días calendario desde vigencia del Reglamento)',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-07-16',hasta:'2026-07-30'},{n:'Habilitación plena del registro interoperable de los Trámites en el SCNT definitiva.',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-07-31',hasta:'2026-07-31'},{n:'Articular la interoperabilidad de los sistemas y fuentes de información de las Entidades Públicas con el SCNT',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-08-03',hasta:'2026-09-14'}],[{n:'Elaboración de las Guías Técnicas y Metodológicas del RTT',d:false,resp:'Ministerio de la Presidencia - VCME',desde:'2026-04-28',hasta:'2026-05-29'},{n:'Aprobación de las Guías Técnicas y Metodológicas definitivas del RTT (plazo: 45 días calendario desde vigencia del Reglamento)',d:false,resp:'Ministerio de la Presidencia; Ministerio de Relaciones Exteriores; Ministerio de Planificación del Desarrollo y Medio Ambiente; Ministerio de Economía y Finanzas Públicas; Ministerio de Gobierno; Ministerio de Defensa;',desde:'2026-06-01',hasta:'2026-06-01'},{n:'Diseño y Desarrollo del RTT (plazo: 90 días calendario desde vigencia del Reglamento)',d:false,resp:'Ministerio de la Presidencia - VCME - AGETIC',desde:'2026-04-28',hasta:'2026-05-28'},{n:'Producción y pruebas del RTT (plazo: 90 días calendario desde vigencia del Reglamento)',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-05-29',hasta:'2026-06-26'},{n:'Habilitación interoperable del RTT',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-06-29',hasta:'2026-06-29'},{n:'Registro de correos institucionales de entidades; atención de primeros reportes ciudadanos; emisión de Dictámenes y Recomendaciones "Tranca Cero"',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-06-30',hasta:'2026-07-14'},{n:'Articular la interoperabilidad de los sistemas entre entidades del Órgano Ejecutivo y el sistema "Reporta Tu Tranca" (plazo: 120 días desde implementación)',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-06-30',hasta:'2026-10-27'}],[{n:'Elaboración de las Guías Técnicas y Metodológicas del RK-SIM',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-04-28',hasta:'2026-06-19'},{n:'Aprobación de las Guías Técnicas y Metodológicas del RK-SIM (plazo: 45 días calendario desde vigencia del Reglamento)',d:false,resp:'Ministerio de la Presidencia; Ministerio de Relaciones Exteriores; Ministerio de Planificación del Desarrollo y Medio Ambiente; Ministerio de Economía y Finanzas Públicas; Ministerio de Gobierno; Ministerio de Defensa;',desde:'2026-06-22',hasta:'2026-06-22'},{n:'Diseño y Desarrollo del RK-SIM',d:false,resp:'Ministerio de la Presidencia - VCME - AGETIC',desde:'2026-04-28',hasta:'2026-05-25'},{n:'Producción y pruebas del RK-SIM',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-05-26',hasta:'2026-06-25'},{n:'Habilitación Sistema de gestión del RK-SIM',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-06-26',hasta:'2026-06-26'},{n:'Evaluación de medición conforme a categorias',d:false,resp:'Ministerio de la Presidencia - VCME',desde:'2026-06-29',hasta:'2026-12-04'},{n:'Aprobación del Rankin por el Comité Interministerial',d:false,resp:'Ministerio de la Presidencia; Ministerio de Relaciones Exteriores; Ministerio de Planificación del Desarrollo y Medio Ambiente; Ministerio de Economía y Finanzas Públicas; Ministerio de Gobierno; Ministerio de Defensa;',desde:'2026-12-07',hasta:'2026-12-07'},{n:'Primera publicación semestral del Ranking de Simplificación Regulatoria del Estado (RK-SIM) con evaluación de desempeño interinstitucional',d:false,resp:'Ministerio de la Presidencia - VCME',desde:'2026-12-11',hasta:'2026-12-11'}],[{n:'Elaboración de las Guías Técnicas y Metodológicas del CTC',d:false,resp:'Ministerio de la Presidencia - VCME',desde:'2026-04-28',hasta:'2026-08-21'},{n:'Aprobación de las Guías Técnicas y Metodológicas definitivas del CTC',d:false,resp:'Ministerio de la Presidencia; Ministerio de Relaciones Exteriores; Ministerio de Planificación del Desarrollo y Medio Ambiente; Ministerio de Economía y Finanzas Públicas; Ministerio de Gobierno; Ministerio de Defensa;',desde:'2026-08-24',hasta:'2026-08-24'},{n:'Diseño y Desarrollo del CTC (plazo: 120 días calendario desde vigencia del Reglamento))',d:false,resp:'Ministerio de la Presidencia - VCME - AGETIC',desde:'2026-04-28',hasta:'2026-06-26'},{n:'Producción y pruebas del CTC (plazo: 120 días calendario desde vigencia del Reglamento)',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-06-29',hasta:'2026-08-25'},{n:'Habilitación del CTC (plazo: 120 días calendario desde vigencia del Reglamento)',d:false,resp:'Ministerio de la Presidencia - AGETIC',desde:'2026-08-26',hasta:'2026-08-26'},{n:'Recepción de Solicitudes',d:false,resp:'Ministerio de la Presidencia - VCME',desde:'2026-08-27',hasta:'2026-08-27'},{n:'Evaluación Técnica para otorgación de Certificaciones',d:false,resp:'Ministerio de la Presidencia - VCME',desde:'2026-08-28',hasta:'2026-09-16'},{n:'Aprobación de la emisión de Certificaciones por el Comité Interministerial',d:false,resp:'Ministerio de la Presidencia; Ministerio de Relaciones Exteriores; Ministerio de Planificación del Desarrollo y Medio Ambiente; Ministerio de Economía y Finanzas Públicas; Ministerio de Gobierno; Ministerio de Defensa;',desde:'2026-09-21',hasta:'2026-09-21'},{n:'Otorgación de primeras Certificaciones "Tranca Cero" a entidades voluntarias (ETA, universidades, órganos de control) con impacto comprobado',d:false,resp:'Ministerio de la Presidencia - VCME',desde:'2026-09-25',hasta:'2026-09-25'}]],
+   etaDates:[{desde:'2026-03-03',hasta:'2026-03-30',resp:'Ministerio de la Presidencia'},{desde:'2026-04-01',hasta:'2026-04-27',resp:'Ministerio de la Presidencia'},{desde:'2026-04-28',hasta:'2026-09-14',resp:'Ministerio de la Presidencia'},{desde:'2026-04-28',hasta:'2026-10-27',resp:'Ministerio de la Presidencia'},{desde:'2026-04-28',hasta:'2026-12-11',resp:'Ministerio de la Presidencia'},{desde:'2026-04-28',hasta:'2026-09-25',resp:'Ministerio de la Presidencia'}]},
   {id:'i.3',
-   eje:'Eje 4 y 5 Bolivia Moderna, Eficiente y Transparente',
+   eje:'Eje 4-5 – Modernización y Transparencia',
    intv:'Integración Ciudadanía Digital',
    min:'Ministerio de la Presidencia',
+   minConc:'sin ministerios concurrentes',
    ind:'Índice de Avance del Proceso de Integración Digital Ciudadana',
    meta:'Alcanzar el 100% del proceso, con plataforma lanzada y niveles medibles de adopción',
    lb:'(N° etapas ejecutadas /6) × 100 → 0%',
    freq:'Mensual',
    fuentes:'Informes técnicos; estadísticas de registro de Ciudadania Digital; informes de integracion de ciudadania digital en entidades publicas; otros según corresponda.',
    desc:'Promover e implementar procesos optimizados de integración de ciudadanía digital en Entidades Públicas.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6','Etapa 7','Etapa 8'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,12,12,12,12,12,12,12,12]},
+   ets:['Diagnóstico de integracion de Ciudadanía Digital ene Entidades Públicas','Unificación y/o adaptación normativa que facilite el Registro y la Integración de Ciudadanía Digital','Mejora y optimización de procesos y procedimientos de Ciudadanía Digital','Integracion tecnologica de Ciudadania Digital en Entidades Publicas.','Capacitación y Gestión del cambio para la integración de Ciudadanía digital en Entidades Públicas','Pruebas piloto, control de calidad y despliegue de Ciudadania Digital en Entidades Públicas.','Coordinación y seguimiento a Entidades publicas que aplican los mecanismos de Ciudadanía Digital en sus servicios al ciudadano.','Evaluación y retroalimentación para la mejora de mecanismos y servicios publicos a traves de la plataforma de Ciudadanía Digital.'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[8.9,14.3,12.5,16.1,14.3,12.5,10.7,10.7],
+   etaSubs:[[],[],[{n:'Mejoras y/o optimización de procesos de pre-registro y registro de Ciudadanía Digital',d:false,resp:'Ministerio de la Presidencia',desde:'2026-12-01',hasta:'2026-12-15'},{n:'Mejoras y/o optimización de procesos de autenticación y QR redirección',d:false,resp:'Ministerio de la Presidencia',desde:'2026-12-16',hasta:'2026-12-31'}],[{n:'Desarrollar interfases / asegurar la compatibilidad de los sistemas',d:false,resp:'Ministerio de la Presidencia',desde:'2026-12-01',hasta:'2026-12-15'},{n:'Implementación de los mecanismos de autenticación y servicios web de la plataforma de Ciudadanía Digital en los sistemas de la entidad.',d:false,resp:'Ministerio de la Presidencia',desde:'2026-12-16',hasta:'2026-12-31'}],[],[],[],[]],
+   etaDates:[{desde:'2026-06-01',hasta:'2026-06-30',resp:'Ministerio de la Presidencia'},{desde:'2026-09-01',hasta:'2026-09-30',resp:'Ministerio de la Presidencia'},{desde:'2026-12-01',hasta:'2026-12-31',resp:'Ministerio de la Presidencia'},{desde:'2026-12-01',hasta:'2026-12-31',resp:'Ministerio de la Presidencia'},{desde:'2027-03-01',hasta:'2027-03-31',resp:'Ministerio de la Presidencia'},{desde:'2027-06-01',hasta:'2027-06-30',resp:'Ministerio de la Presidencia'},{desde:'2027-09-01',hasta:'2027-09-30',resp:'Ministerio de la Presidencia'},{desde:'2027-12-01',hasta:'2027-12-31',resp:'Ministerio de la Presidencia'}]},
+  {id:'i.4',
+   eje:'Eje 7 – Verde y Sostenible',
+   intv:'Adecuación y actualización del marco normativo en materia de transparencia, seguridad jurídica y derechos fundamentales en el marco de la reorganización institucional',
+   min:'Ministerio de la Presidencia',
+   minConc:'Asamblea Legislativa Plurinacional, Cámara de Diputados, Cámara de Senadores',
+   ind:'Índice de avance en la elaboración y adecuación de instrumentos normativos en materia de transparencia, seguridad jurídica, derechos humanos y lucha contra la corrupción',
+   meta:'Alcanzar el 100%',
+   lb:'(Número de etapas completadas / Número total de etapas) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Informes técnicos de diagnóstico; Documentos de análisis normativo Propuestas normativas elaboradas; Proyectos normativos remitidos; Normativa aprobada; Documentos de difusión',
+   desc:'Desarrollar los procesos técnicos para la revisión, adecuación y formulación de instrumentos normativos en materia de transparencia, seguridad jurídica, derechos humanos y lucha contra la corrupción, en el marco de la reorganización institucional. Incluye diagnóstico normativo, identificación de vacíos, elaboración de propuestas normativas, validación interinstitucional y gestión para su aprobación.',
+   ets:['Diagnóstico del marco normativo vigente','Identificación de vacíos y duplicidades normativas','Elaboración de propuestas de instrumentos normativos','Validación técnica e interinstitucional','Gestión para aprobación normativa','Registro y difusión de normativa aprobada'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[20.8,20.8,20.8,10.4,16.7,10.4],
+   etaSubs:[[],[],[],[],[],[]],
+   etaDates:[{desde:'2026-08-01',hasta:'2026-08-31',resp:'Ministerio de la Presidencia'},{desde:'2026-10-01',hasta:'2026-10-31',resp:'Ministerio de la Presidencia'},{desde:'2026-12-01',hasta:'2026-12-31',resp:'Ministerio de la Presidencia'},{desde:'2027-03-01',hasta:'2027-03-31',resp:'Ministerio de la Presidencia'},{desde:'2027-05-01',hasta:'2027-05-31',resp:'Ministerio de la Presidencia'},{desde:'2027-07-01',hasta:'2027-07-31',resp:'Ministerio de la Presidencia'}]},
+  {id:'i.5',
+   eje:'Eje 7 – Verde y Sostenible',
+   intv:'Proceso saneamiento de tierras (+ modif. Ley INRA)',
+   min:'Ministerio de Planificación del Desarrollo y Medio Ambiente',
+   minConc:'Ministerio de la Presidencia',
+   ind:'Índice de Avance del Proceso de Saneamiento y Titulación de Tierras',
+   meta:'Alcanzar el 100% del proceso, con títulos entregados masivamente y registros actualizados en DD.RR.',
+   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Registros INRA; resoluciones aprobadas; estadísticas titulación masiva; inscripciones DD.RR.',
+   desc:'Desarrollar el Proceso de saneamiento de tierras (+ modif. Ley INRA)',
+   ets:['Diagnóstico tierras pendientes','Diseño proceso acelerado','Aprobación resolución INRA','Campaña territorial','Titulación masiva','Registro en DD.RR.'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[11.8,11.8,17.6,23.5,17.6,17.6],
+   etaSubs:[[],[],[],[],[],[]],
+   etaDates:[{desde:'2026-07-01',hasta:'2026-07-31',resp:'Ministerio de Planificación del Desarrollo'},{desde:'2026-08-01',hasta:'2026-08-30',resp:'Ministerio de Planificación del Desarrollo'},{desde:'2026-09-01',hasta:'2026-09-30',resp:'Ministerio de Planificación del Desarrollo'},{desde:'2026-10-01',hasta:'2026-10-30',resp:'Ministerio de Planificación del Desarrollo'},{desde:'2026-11-01',hasta:'2026-11-30',resp:'Ministerio de Planificación del Desarrollo'},{desde:'2026-12-01',hasta:'2026-12-30',resp:'Ministerio de Planificación del Desarrollo'}]},
+  {id:'i.6',
+   eje:'Eje 7 – Verde y Sostenible',
+   intv:'Seguimiento y evaluación a la implementación del nuevo modelo de desarrollo económico, social y ambiental del Plan de Desarrollo Económico, Social y Medio Ambiental',
+   min:'Ministerio de Planificación del Desarrollo y Medio Ambiente',
+   minConc:'[ Sin ministerios concurrentes – completar si aplica ]',
+   ind:'Porcentaje de avance en la evaluación de los indicadores del PDESA',
+   meta:'100% de indicadores del PDESA monitoreados y evaluados, según su temporalidad.',
+   lb:'(N° etapas ejecutadas / 4) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Reportes de seguimiento y evaluación VPEE.',
+   desc:'Actualizar y Moderninzar los sistemas de gestión establecidos por la Ley N° 1178, con énfasis en los sistemas no financieros, orientada a mejorar la eficiencia, articulación institucional y calidad de la gestión pública.',
+   ets:['Articulación de los planes de mediano plazo al PDESA','Desarrollo e implementación del Sistema de Seguimiento y Evaluación del PDESA','Evaluación de medio término PDESA'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[30.0,30.0,40.0],
+   etaSubs:[[{n:'Socialización del PDESA y capacitación en las guías metodológicas para la formulación de planes de mediano plazo.',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-05-01',hasta:'2026-06-30'},{n:'Recepción de planes articulados al PDESA.',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-06-01',hasta:'2026-08-31'}],[{n:'Desarrollo del sistema',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-04-01',hasta:'2026-07-31'},{n:'Implementación del sistema',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-07-01',hasta:'2026-12-31'}],[{n:'Período de preparación de la evaluación',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2028-09-01',hasta:'2028-12-31'},{n:'Evaluación de medio término PDESA',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2029-01-01',hasta:'2029-04-30'},{n:'Recomendación de acciones correctivas',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2029-04-01',hasta:'2029-06-30'}]],
+   etaDates:[{desde:'2026-05-01',hasta:'2026-08-31',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'},{desde:'2026-04-01',hasta:'2026-12-31',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'},{desde:'2028-09-01',hasta:'2029-06-30',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'}]},
+  {id:'i.7',
+   eje:'Eje 4-5 – Modernización y Transparencia',
+   intv:'Propuesta de modernización de la Ley SAFCO 1178 y sus sistemas/reglamentos no financieros',
+   min:'Ministerio de Planificación del Desarrollo y Medio Ambiente',
+   minConc:'Ministerio de Economía y Finanzas Públicas; Ministerio de Economía y Finanzas Públicas; Cotraloría General del Estado.',
+   ind:'Índice de presentación de propuestas de normas que modernicen los sistemas de gestión SAFCO para su implementación por los Órganos Rectores.',
+   meta:'Alcanzar el 100% del proceso, con una nuevo modelo de organización del Órgano Ejecutivo para consideración de Gabinete Presidencial.',
+   lb:'(N° etapas ejecutadas / 3) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Actas de reunines; propuestas de reglamentos; reglamentos o guias metodológicas ajustadas',
+   desc:'Actualizar y Moderninzar los sistemas de gestión establecidos por la Ley N° 1178, con énfasis en los sistemas no financieros, orientada a mejorar la eficiencia, articulación institucional y calidad de la gestión pública.',
+   ets:['Evaluación del Modelo de Gestión que sustenta la Ley 1178, particularmente de sistemas no financieros.','Propuesta de modificaciones a reglamentos no financieros.','Seguimiento a implementación de recomendaciones a sistemas y reglamentaciones','Propuesta de proyecto de ley de modernización de la Ley 1178'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[25.0,41.7,16.7,16.7],
+   etaSubs:[[{n:'Revisión y sistematización de información secundaria (diagnósticos realizados, propuestas, consultorías, etc)',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente / Ministerio de Economía y Finanzas Públicas',desde:'2026-05-01',hasta:'2026-07-31'},{n:'Talleres de evaluación del Modelo 1178 y propuestas de ajuste estructural y reglamentos.',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente / Ministerio de Economía y Finanzas Públicas',desde:'2026-05-01',hasta:'2026-07-31'},{n:'Informe final de evaluación del Modelo de Gestión de la Ley 1178 y evaluación general de sus sistemas y reglamentos',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente / Ministerio de Economía y Finanzas Públicas',desde:'2026-08-01',hasta:'2026-09-30'}],[{n:'Evaluación de Reglamentos no financieros priorizados con el MEFP primera etapa: Programación Operativa SPO ; SABS',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente / Ministerio de Economía y Finanzas Públicas',desde:'2026-09-01',hasta:'2026-10-31'},{n:'Evaluación de Reglamentos no financieros priorizados con el MEFP segunda etapa:SOA, SAP y SC.',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente / Contraloría General del Estado',desde:'2026-09-01',hasta:'2026-10-31'},{n:'Propuesta de modificaciones a reglamentos del sistema de organización administrativa y administración de personal',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente / Ministerio de Economía y Finanzas Públicas/ Contraloría General del Estado',desde:'2026-10-01',hasta:'2026-12-31'}],[{n:'Reuniones de coordinación',d:false,resp:'Ministerio de Planificación del Desarrollo / Ministerio de Economía y Finanzas Públicas/ Contraloría General del Estado',desde:'2027-01-01',hasta:'2027-02-28'},{n:'Reportes de seguimiento y avances del proceso',d:false,resp:'Ministerio de Planificación del Desarrollo / Ministerio de Economía y Finanzas Públicas/ Contraloría General del Estado',desde:'2027-02-01',hasta:'2027-03-31'}],[{n:'Redacción de propuesta de proyecto de ley de modernización de la Ley 1178',d:false,resp:'Ministerio de Planificación del Desarrollo / Ministerio de Economía y Finanzas Públicas/ Contraloría General del Estado',desde:'2027-04-01',hasta:'2027-06-30'},{n:'Presentacion y gestion para aprobacion ante la instancia competente',d:false,resp:'Ministerio de Planificación del Desarrollo / Ministerio de Economía y Finanzas Públicas/ Contraloría General del Estado',desde:'2027-06-01',hasta:'2027-07-31'}]],
+   etaDates:[{desde:'2026-05-01',hasta:'2026-09-30',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'},{desde:'2026-09-01',hasta:'2026-12-31',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'},{desde:'2027-01-01',hasta:'2027-03-31',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'},{desde:'2027-04-01',hasta:'2027-07-31',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'}]},
+  {id:'i.8',
+   eje:'Eje 7 – Verde y Sostenible',
+   intv:'Financiamiento climático (bonos de carbono, fondos fiduciarios, otros)',
+   min:'Ministerio de Planificación del Desarrollo y Medio Ambiente',
+   minConc:'Ministerio de Energia e Hidrocarburos; Ministerio de Mineria, Ministerio de Desarrollo Productivo Rural y Agua; Ministerio de Economia y Finanzas',
+   ind:'Propuesta de norma presentada a la Asamblea Legislativa',
+   meta:'UNA LEY MARCO PARA EL FINANCIAMIENTO CLIMÁTICO PRESENTADA Y GESTIONADA EN ASAMBLEA LEGISLATIVA',
+   lb:'(N° etapas ejecutadas / 5) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Actas de reuniones; propuestas normativas',
+   desc:'Elaborar y viabilizar la aprobación de una Ley Marco de Financiamiento Climático orientada a establecer mecanismos, fuentes e instrumentos para la movilización, gestión y asignación de recursos destinados a la mitigación y adaptación al cambio climático, fortaleciendo la coordinación institucional y el acceso a financiamiento nacional e internacional.',
+   ets:['Conformación de equipo técnico lider','Diagnostico de normativa vigente, realizado.','Propuesta de Ley Marco','Factibilidad para la implementación de propuesta','Gestion para aprobacion modificado/actualizado'],
+   etsPer:['✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[10.0,30.0,20.0,30.0,10.0],
+   etaSubs:[[{n:'Identificacion de puntos focales de ministerios concurrentes y Asamblea Legislativa',d:true,resp:'Ministerio de Energia e Hidrocarburos; Ministerio de Mineria, Ministerio de Desarrollo Productivo Rural y Agua; Ministerio de Economia y Finanzas',desde:'2026-02-01',hasta:'2026-03-31'},{n:'Equipos conformados',d:true,resp:'Ministerio de Energia e Hidrocarburos; Ministerio de Mineria, Ministerio de Desarrollo Productivo Rural y Agua; Ministerio de Economia y Finanzas',desde:'2026-02-01',hasta:'2026-03-31'}],[{n:'Reuniones preparatorias con personas clave para elaborar metodologias de consulta y logistica',d:false,resp:'Ministerio de Energia e Hidrocarburos; Ministerio de Mineria, Ministerio de Desarrollo Productivo Rural y Agua; Ministerio de Economia y Finanzas',desde:'2026-02-01',hasta:'2026-04-30'},{n:'Talleres de analisis del Proyecto con actores representativos',d:false,resp:'Ministerio de Energia e Hidrocarburos; Ministerio de Mineria, Ministerio de Desarrollo Productivo Rural y Agua; Ministerio de Economia y Finanzas',desde:'2026-03-01',hasta:'2026-04-30'}],[{n:'Organización y sistematizacion de la informacion resultante de los talleres de análisis',d:false,resp:'Ministerio de Energia e Hidrocarburos; Ministerio de Mineria, Ministerio de Desarrollo Productivo Rural y Agua; Ministerio de Economia y Finanzas',desde:'2026-03-01',hasta:'2026-05-31'},{n:'Elaboracion de la propuesta',d:false,resp:'Ministerio de Energia e Hidrocarburos; Ministerio de Mineria, Ministerio de Desarrollo Productivo Rural y Agua; Ministerio de Economia y Finanzas',desde:'2026-03-01',hasta:'2026-06-30'}],[{n:'Evaluacion juridica de la propuesta respecto a las categorias normativas (Ley , DS)',d:false,resp:'Ministerio de Energia e Hidrocarburos; Ministerio de Mineria, Ministerio de Desarrollo Productivo Rural y Agua; Ministerio de Economia y Finanzas',desde:'2026-04-01',hasta:'2026-05-31'},{n:'Analisis técnico, social, ambiental economico de la factibilidad/viabiliad de implementar los cambios propuestos',d:false,resp:'Ministerio de Energia e Hidrocarburos; Ministerio de Mineria, Ministerio de Desarrollo Productivo Rural y Agua; Ministerio de Economia y Finanzas',desde:'2026-05-01',hasta:'2026-06-30'},{n:'Socializacion de la Norma, con las modificacion incluidas .',d:false,resp:'Ministerio de Energia e Hidrocarburos; Ministerio de Mineria, Ministerio de Desarrollo Productivo Rural y Agua; Ministerio de Economia y Finanzas',desde:'2026-06-01',hasta:'2026-07-31'}],[{n:'Presentacion y gestion para aprobacion ante la instancia competente',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-05-01',hasta:'2026-06-30'},{n:'Seguimiento, ajustes, enmiendas al proceso de aprobacion del reglamento actualizado',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-06-01',hasta:'2026-12-31'}]],
+   etaDates:[{desde:'2026-02-01',hasta:'2026-04-30',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'},{desde:'2026-02-01',hasta:'2026-04-30',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'},{desde:'2026-03-01',hasta:'2026-06-30',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'},{desde:'2026-05-01',hasta:'2026-06-30',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'},{desde:'2026-07-01',hasta:'2026-12-31',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'}]},
+  {id:'i.9',
+   eje:'Eje 4-5 – Modernización y Transparencia',
+   intv:'Modernización de la estructura organizacional del Órgano Ejecutivo',
+   min:'Ministerio de Planificación del Desarrollo y Medio Ambiente',
+   minConc:'Ministerio de la Presidencia/Ministerio de Economía y Finanzas Públicas/Ministerio de RREE/ Ministerios Sectoriales (Educación, Salud, otros).',
+   ind:'Índice de Avance en el diagnóstico y propuesta de estructura organizacional del OE',
+   meta:'Alcanzar el 100% del proceso, con una nuevo modelo de organización del Órgano Ejecutivo para consideración de Gabinete Presidencial.',
+   lb:'(N° etapas ejecutadas / 3) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Actas consulta CGE; reglamentos en Gaceta Oficial; registros capacitación; reportes impl. SAFCO/SIGMA',
+   desc:'Proponer un nuevo modelo de organización que sea coherente con el proceso de descentralización y las políticas de cambios estructurales del gobierno.',
+   ets:['Conformación de equipo técnico interministerial','Diagnóstico estructuras organizacionales de Ministerios y EBT del Órgano Ejecutivo','Presentación de propuestas de ajuste integral y nuevo modelo de organización del Órgano Ejecutivo.'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[10.0,30.0,60.0],
+   etaSubs:[[{n:'Designación de miembros de Ministeios para conformar Equipo Técnico',d:false,resp:'Asesoría de Presidencia - MAEs de Ministerios',desde:'2026-04-01',hasta:'2026-05-31'},{n:'Elaboración de plan de trabajo y formación de equipos técnicos',d:false,resp:'Equipo Técnco Interministerial',desde:'2026-05-31',hasta:'2026-06-30'}],[{n:'Recopilación y análisis de información técnica y normativa',d:false,resp:'Equipo Técnco Interministerial',desde:'2026-06-01',hasta:'2026-07-01'},{n:'Presentación de informe de resultados a las MAE - Asesoría',d:false,resp:'Equipo Técnco Interministerial',desde:'2026-07-01',hasta:'2026-09-01'}],[{n:'Presentación de propuesta a instancias correspondientes',d:false,resp:'Equipo Técnco Interministerial',desde:'2026-11-01',hasta:'2026-12-31'},{n:'Adecuación de propuestas, formulación de Proyecto de Decreto',d:false,resp:'Equipo Técnco Interministerial',desde:'2026-12-01',hasta:'2026-12-31'}]],
+   etaDates:[{desde:'2026-04-01',hasta:'2026-06-30',resp:'Ministerio de la Presidencia - MAEs de Ministerios'},{desde:'2026-06-01',hasta:'2026-09-30',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'},{desde:'2026-11-01',hasta:'2026-12-31',resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente'}]},
+  {id:'i.10',
+   eje:'Eje 1 – Bolivia economía para la gente',
+   intv:'Nueva Ley de Inversiones',
+   min:'Ministerio de Economía',
+   minConc:'Ministerio de Economía y Finanzas Públicas; Ministerio de Relaciones Exteriores, Ministerio de Desarrollo Productivo Rural y Agua, Ministerio de la Presidencia.',
+   ind:'Índice de Avance del Proceso de Aprobación de la Nueva Ley de Inversiones',
+   meta:'Alcanzar el 100% del proceso: Nueva Ley de Inversiones promulgada, reglamentada y en vigencia plena con mecanismos de promoción operativos',
+   lb:'(N° etapas ejecutadas / 5) × 100',
+   freq:'Mensual',
+   fuentes:'Actas de reuniones con Ministerio Responsable, Ministerios Concurrentes y Sector Privado; Gaceta Oficial; informes Asamblea Legislativa',
+   desc:'Desarrollar una reforma estructural que busca transformar a Bolivia en un destino competitivo para el capital global, un ecosistema de libre mercado fundamentado en la seguridad jurídica internacional, sustituyendo el actual modelo de control estatal centralizado. A través de mecanismos como las Alianzas Público-Privadas, el proyecto pretende captar inversión masiva que genere empleo formal y modernice el aparato productivo bajo un enfoque de eficiencia.',
+   ets:['Diagnóstico y anteproyecto de ley','Consulta previa y revisión interministerial','Remisión y tratamiento en la Asamblea Legislativa','Promulgación y publicación en Gaceta Oficial','Reglamentación y normativa secundaria'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[23.1,25.6,23.1,5.1,23.1],
+   etaSubs:[[{n:'Revisión de marcos normativos vigentes (Ley 516, DS reglamentarios, normativa sectorial)',d:false,resp:'Ministerio Responsable/Ministerios Concurrentes',desde:'2026-04-20',hasta:'2026-05-03'},{n:'Consulta con cámaras empresariales, Organismos Internacionales y Ministerios Concurrentes',d:false,resp:'Ministerio Responsable/Ministerios Concurrentes',desde:'2026-05-04',hasta:'2026-05-16'},{n:'Redacción del documento base del anteproyecto de Ley',d:false,resp:'Ministerio de Planificación del Desarrollo',desde:'2026-05-17',hasta:'2026-05-31'}],[{n:'Mesa interministerial de revisión técnico-jurídica (constitucional) del anteproyecto',d:false,resp:'Ministerio Responsable/Ministerios Concurrentes',desde:'2026-06-01',hasta:'2026-06-10'},{n:'Proceso de consulta previa con cámaras empresariales y Ministerios Concurrentes',d:false,resp:'Ministerio Responsable/Ministerios Concurrentes',desde:'2026-06-11',hasta:'2026-06-19'},{n:'Incorporación de observaciones y emisión de informe de viabilidad constitucional',d:false,resp:'Ministerio Responsable/Ministerios Concurrentes',desde:'2026-06-20',hasta:'2026-06-30'}],[{n:'Presentación formal del proyecto de ley ante la Asamblea Legislativa Plurinacional',d:false,resp:'Ministerio de la Presidencia',desde:'2026-07-01',hasta:'2026-07-10'},{n:'Tratamiento en comisiones de la Cámara de Diputados y Senado',d:false,resp:'Ministerio de la Presidencia',desde:'2026-07-11',hasta:'2026-07-20'},{n:'Aprobación en grande y en detalle por ambas cámaras',d:false,resp:'Ministerio de la Presidencia',desde:'2026-07-21',hasta:'2026-07-31'}],[],[{n:'Elaboración y aprobación del Decreto Supremo Reglamentario',d:false,resp:'Ministerio Responsable/Ministerios Concurrentes',desde:'2026-08-01',hasta:'2026-08-10'},{n:'Emisión de resoluciones ministeriales y normas técnicas complementarias',d:false,resp:'Ministerio Responsable/Ministerios Concurrentes',desde:'2026-08-11',hasta:'2026-08-20'},{n:'Socialización de la nueva Ley',d:false,resp:'Ministerio de Planificación del Desarrollo',desde:'2026-08-21',hasta:'2026-08-31'}]],
+   etaDates:[{desde:'2026-04-20',hasta:'2026-05-31',resp:'Ministerio de Planificación del Desarrollo'},{desde:'2026-06-01',hasta:'2026-06-30',resp:'Ministerio de Planificación del Desarrollo'},{desde:'2026-07-01',hasta:'2026-07-31',resp:'Ministerio de la Presidencia'},{desde:'2026-08-01',hasta:'2026-08-31',resp:'Ministerio de la Presidencia'},{desde:'2026-08-01',hasta:'2026-08-31',resp:'Ministerio de Planificación del Desarrollo'}]},
+  {id:'i.11',
+   eje:'Eje 7 – Verde y Sostenible',
+   intv:'Agua potable y saneamiento básico para todos',
+   min:'Ministerio de Desarrollo Productivo Rural y Agua',
+   minConc:'Ministerio de Desarrollo Productivo Rural y Agua: Gestión de financiamiento. Ministerio de Economía y Finanzas Públicas: Gestión de financiamiento. Ministerio de Obras Públicas, Servicios y Vivienda: Identificar territorios estratégicos para dotar agua potable y saneamento básico Ministerio de Turismo Sostenible, Culturas, Folklore y Gastronomía: Articular las áreas potenciales de turismo para dotación de agua potable y saneamiento básico. Ministerio de Hidrocarburos y Energías: Apoyar políticas de generación y distribución de energía alternativa limpia.',
+   ind:'Sistemas de Agua potable en áreas urbanas/rurales Sistemas de Alcantarillado Sanitario en áreas urbanas/rurales Sistemas de Gestión Integral de Residuos en municipios',
+   meta:'Alcanzar el 100% del proceso, con sistemas de agua y saneamiento basico en servicio en zonas priorizadas',
+   lb:'N° Familias con acceso a agua potable en zonas rurales/N° Familias en zonas rurales',
+   freq:'Mensual',
+   fuentes:'Informes del VRHRAPySB',
+   desc:'Ejecutar intervenciones para ampliar el acceso al agua potable y saneamiento básico (alcantarillado sanitario y gestión integral de residuos) en comunidades rurales y periurbanas, como base del bienestar, la salud y el desarrollo productivo.',
+   ets:['Diagnóstico cobertura','Implementación de soluciones estructurales de agua potable y saneamiento'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[50.0,50.0],
+   etaSubs:[[{n:'Verificación del estado actual de la Cartera de Estudios. Se tiene 154 EDTPs dentro del Viceministerio -100 EDTPs en evaluación y/o aprobación. -33 EDTPs en licitación. -11 EDTPs en ejecución. -10 EDTPs concluidos.',d:true,resp:'MEFP/MPDyMA',desde:'2026-07-01',hasta:'2026-07-31'},{n:'Identificación de los Proyectos críticos y actores involucrados en la ejecución de los proyectos.',d:false,resp:'MOP, MINISTERIO DE TURISMO, MINISTERIO DE HIDROCARBUROS Y ENERGIA',desde:'2026-07-01',hasta:'2026-07-31'},{n:'Revisión de los informes de supervisión y fiscalización y emisión de criterio técnico',d:false,resp:'MOP, MINISTERIO DE TURISMO, MINISTERIO DE HIDROCARBUROS Y ENERGIA',desde:'2026-07-01',hasta:'2026-07-31'},{n:'Gestión al cumplimiento de compromisos institucionales para la operación de los proyectos',d:false,resp:'MOP, MINISTERIO DE TURISMO, MINISTERIO DE HIDROCARBUROS Y ENERGIA',desde:'2026-07-01',hasta:'2026-07-31'}],[{n:'Pre Inversión  Verificación de las acciones implementadas de las soluciones estructurales',d:false,resp:'MEFP/MPDyMA',desde:'2026-12-01',hasta:'2026-12-31'},{n:'Inversión (Ejecución de Obras). Coordinación con los actores involucrados para la solución de conflictos sociales, técnicos, ambientales o económicos.',d:false,resp:'MEFP/MPDyMA',desde:'2026-12-01',hasta:'2026-12-31'},{n:'Puesta en Marcha (Operación Inicial). Seguimiento al cumplimiento de compromisos institucionales.',d:false,resp:'MEFP/MPDyMA',desde:'2026-12-01',hasta:'2026-12-31'},{n:'Operación y Sostenibilidad Seguimiento al cumplimiento de compromisos institucionales.',d:false,resp:'Ministerio de Desarrollo Productivo Rural y Agua',desde:'2026-12-01',hasta:'2026-12-31'}]],
+   etaDates:[{desde:'2026-07-01',hasta:'2026-07-31',resp:'Ministerio de Desarrollo Productivo Rural y Agua'},{desde:'2026-12-01',hasta:'2026-12-31',resp:'Ministerio de Desarrollo Productivo Rural y Agua'}]},
+  {id:'i.12',
+   eje:'Eje 3 – Bolivia 50/50',
+   intv:'Modificación normativa a la Ley del Sistema Nacional de Seguridad Ciudadana',
+   min:'Ministerio de Gobierno',
+   minConc:'Ministerio de Presidencia; Ministerio de Planificacion del Desarrollo y Medio Ambiente',
+   ind:'Porcentaje de Avance de la modificación a la normativa relacionada con Seguridad Ciudadana',
+   meta:'Alcanzar el 100% del proceso, con Ley promulgada e implementada',
+   lb:'(N° etapas ejecutadas / 7) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Proyecto modificacion presentado; actas ETAs, Policía; Gaceta Oficial; informes Ministerio Gobierno',
+   desc:'Modificar la Ley del Sistema de Seguridad Ciudadana acorde a las necesidades del contexto actual, se modificara los instrumentos que reglamenten a esta norma, con la participacion activa de las entidades publicas, ETAs, Comisiones y Consejos',
+   ets:['Diagnóstico inicial','Elaboración de propuesta','Coordinacion con actores','Revision por el Ministerio de la Presidencia','Remisión a Planificación y evaluación en CONAPES.','Consideración y aprobación en Consejo de Ministros.','Aprobacion, firma y publicacion'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[29.2,29.2,33.3,2.1,2.1,2.1,2.1],
+   etaSubs:[[{n:'Identificacion de necesidades de modificacion a la Ley N° 264 e instrumentos reglamentarios.',d:false,resp:'Ministerio de Gobierno',desde:'',hasta:''},{n:'Elaboracion del diagnostico sobre la implentacion de la Ley y los instrumentos que la reglamentan.',d:false,resp:'Ministerio de Gobierno',desde:'',hasta:''}],[{n:'Analisis del instrumento normativo vigente (Deceto Supremo u otro)',d:false,resp:'Ministerio de Gobierno',desde:'',hasta:''},{n:'Redaccion del proyecto de modificacion',d:false,resp:'Ministerio de Gobierno',desde:'',hasta:''}],[{n:'Socializar el anteproyecto con Policía Boliviana, gobiernos departamentales, municipales y otros',d:false,resp:'Ministerio de Gobierno Ministerio de la Presidencia',desde:'',hasta:''},{n:'Relevar las observaciones y consensuar ajustes.',d:false,resp:'Ministerio de Gobierno',desde:'',hasta:''},{n:'Revision Interna institucional',d:false,resp:'Ministerio de Gobierno',desde:'',hasta:''},{n:'Consolidacion y elaboracion de la proyecto final',d:false,resp:'Ministerio de Gobierno',desde:'',hasta:''}],[{n:'Analisis del proyecto de modificacion.',d:false,resp:'Ministerio de la Presidencia',desde:'',hasta:''}],[{n:'Presentación al Consejo de Política Económica y Social (CONAPES), para analisis de su viabilidad.',d:false,resp:'Ministerio de Planificacion del Desarrollo y Medio Ambiente',desde:'',hasta:''},{n:'Revisión final e incorporación a agenda de Consejo de Ministros.',d:false,resp:'Ministerio de Planificacion del Desarrollo y Medio Ambiente',desde:'',hasta:''}],[{n:'Consideración política y gubernamental previa a su aprobación definitiva',d:false,resp:'Presidencia',desde:'',hasta:''},{n:'Analisis juridico del proyecto de modificacion.',d:false,resp:'Ministerio de la Presidencia',desde:'',hasta:''}],[{n:'Aprobado el proyecto, el Decreto Supremo es suscrito por la Presidenta o Presidente y por las ministras(os) correspondientes',d:false,resp:'Presidencia',desde:'',hasta:''},{n:'Publicacion el instrumento legal en la Gaceta Oficial de Bolivia',d:false,resp:'Ministerio de la Presidencia',desde:'',hasta:''}]],
+   etaDates:[{desde:'2026-05-01',hasta:'2026-05-31',resp:'Ministerio de Gobierno'},{desde:'2026-06-01',hasta:'2026-06-30',resp:'Ministerio de Gobierno'},{desde:'2026-07-01',hasta:'2026-07-31',resp:'Ministerio de Gobierno'},{desde:'2026-08-01',hasta:'2026-08-31',resp:'Ministerio de la Presidencia'},{desde:'2026-08-01',hasta:'2026-08-31',resp:'Ministerio de Planificacion del Desarrollo y Medio Ambiente'},{desde:'2026-08-01',hasta:'2026-08-31',resp:'Presidencia'},{desde:'2026-08-01',hasta:'2026-08-31',resp:'Presidencia'}]},
+  {id:'i.13',
+   eje:'Eje 6 – Bienestar para Todos',
+   intv:'Nuevo Sistema Nacional de Salud',
+   min:'Ministerio de Salud y Deportes',
+   minConc:'Gobiernos Subnacionales (Servicios Departamentales de Salud), Municipios. Ministerio de Economía y Finanzas Publicas. Ministerio de Planificación del Desarrollo y del Medio Ambiente. Ministerio de Presidencia - Servicio Estatal de Autonomías',
+   ind:'Índice de avance del proceso de rediseño del Sistema Nacional de Salud.',
+   meta:'Alcanzar el 100% del proceso, con nuevo sistema en escalonamiento nacional',
+   lb:'Diagnóstico y Determinación de lineamientos 2/6 *100= 33%',
+   freq:'Mensual',
+   fuentes:'Indicadores Epidemiológicos reportados por la Dirección de Epidemiología. Reportes del Sistema Único de Información de Salud.',
+   desc:'Plantear un nuevo modelo de Salud con base en el Análisis de la situación del sistema de salud actual, en los componentes de estructura sanitaria y programas prioritarios en función de las necesidades de la población. Análisis del modelo de atención, del modelo de gestión y del modelo de financiamiento según competencias nacionales y subnacionales.',
+   ets:['Análisis de la situación del Sistema De Salud','Diseño del nuevo modelo','Socialización del Nuevo Sistema de Salud','Proceso Administrativo Legal','Aplicación de la Norma','Evaluación del Sistema Nacional de Salud'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[30.0,20.0,20.0,10.0,10.0,10.0],
+   etaSubs:[[{n:'Análisis Epidemiológico.',d:false,resp:'Ministerio de Planificación del Desarrollo',desde:'',hasta:''},{n:'Análisis de la Estructura Sanitaria y del Seguro Público De Salud.',d:false,resp:'Ministerio de Economía y Finanzas Públicas',desde:'',hasta:''},{n:'Análisis de la Seguridad Social A corto Plazo',d:false,resp:'Ministerio de Economía y Finanzas Públicas',desde:'',hasta:''}],[{n:'Análisis y consenso con los actores clave.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''},{n:'Análisis y consenso con los niveles subnacionales.',d:false,resp:'Ministerio de la Presidencia Servicio Estatal de Autonomías / Ministerio de Salud SEDES',desde:'',hasta:''},{n:'Validación del documento preliminar del nuevo Sistema Nacional de Salud.',d:false,resp:'Ministerio de Planificación del Desarrollo',desde:'',hasta:''}],[{n:'Socialización con actores clave y sociedad civil.',d:false,resp:'Ministerio de la Presidencia',desde:'',hasta:''},{n:'Socialización del modelo a nivel central.',d:false,resp:'Ministerio de Planificación del Desarrollo',desde:'',hasta:''},{n:'Socialización a nivel departamental y subnacional.',d:false,resp:'Ministerio de la Presidencia Servicio Estatal de Autonomías / Ministerio de Salud SEDES',desde:'',hasta:''}],[{n:'Elaboración de la propuesta normativa del nuevo Sistema Nacional de Salud.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''},{n:'Revisión técnica y jurídica de la propuesta normativa.',d:false,resp:'Ministerio de Planificación del Desarrollo',desde:'',hasta:''},{n:'Aprobación de la normativa correspondiente.',d:false,resp:'Ministerio de Economía y Finanzas Públicas',desde:'',hasta:''}],[{n:'Difusión de la normativa del nuevo Sistema Nacional de Salud.',d:false,resp:'Ministerio de la Presidencia',desde:'',hasta:''},{n:'Coordinación con gobiernos subnacionales para su implementación.',d:false,resp:'Ministerio de la Presidencia Servicio Estatal de Autonomías / Ministerio de Salud SEDES',desde:'',hasta:''},{n:'Implementación progresiva del nuevo Sistema Nacional de Salud.',d:false,resp:'Ministerio de Economía y Finanzas Públicas',desde:'',hasta:''}],[{n:'Seguimiento a la implementación del nuevo Sistema Nacional de Salud.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''},{n:'Evaluación de los resultados del proceso de implementación.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''},{n:'Ajustes y mejora del modelo del Sistema Nacional de Salud.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''}]],
+   etaDates:[{desde:'2026-04-01',hasta:'2026-06-30',resp:'Ministerio de Salud y Deportes'},{desde:'2026-08-01',hasta:'2026-11-30',resp:'Ministerio de Salud y Deportes'},{desde:'2026-12-01',hasta:'2027-03-31',resp:'Ministerio de Salud y Deportes'},{desde:'2027-01-01',hasta:'2027-11-30',resp:'Ministerio de Salud y Deportes'},{desde:'2028-01-01',hasta:'2028-10-31',resp:'Ministerio de Salud y Deportes'},{desde:'2028-11-01',hasta:'2028-12-31',resp:'Ministerio de Salud y Deportes'}]},
+  {id:'i.14',
+   eje:'Eje 6 – Bienestar para Todos',
+   intv:'Redes integrales de Servicios en Salud',
+   min:'Ministerio de Salud y Deportes',
+   minConc:'Ministerio de Educación Ministerio de desarrollo productivo, rural y agua Ministerio de Planificación del Desarrollo y Medio ambiente Ministerio de la presidencia',
+   ind:'Índice de avance del fortalecimiento del funcionamiento de las redes integraleses vinculadas a la gestión de la salud en el marco de la APS.',
+   meta:'Alcanzar el 100% del proceso, con modelo integrales en escalonamiento nacional',
+   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Mapeo de establecimientos de salud de primer, segundo y tercer nivel de atención;Mapeo de redes integrales de servicios de salud; escalonamiento nacional.',
+   desc:'Desarrollar acciones orientadas a la organización y articulación de los establecimientos de salud en redes integrales de servicios de salud, fortaleciendo la coordinación entre el primer, segundo y tercer nivel de atención (Referencia, transferencia y contrareferencia) para mejorar la continuidad y oportunidad de la atención en salud.',
+   ets:['Diagnóstico de redes de servicios','Evaluación de redes según FESP','Plan de fortalecimiento de redes','Desarrollo de redes de servicios','Implementación del modelo RISS','Evaluación y mejora continua'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[27.3,18.2,18.2,18.2,9.1,9.1],
+   etaSubs:[[{n:'Identificación de redes de servicios existentes.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''},{n:'Caracterización de actores institucionales y mecanismos de coordinación.',d:false,resp:'Ministerio de Salud y Deportes / SEDES/ REDES',desde:'',hasta:''},{n:'Actualizaciòn del registro unico de establecimientos de salud (RUES).',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''}],[{n:'Evaluación del desempeño de las Funciones Esenciales de Salud Pública según SEDES.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''},{n:'Identificación de brechas en la articulación de servicios.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''}],[{n:'Definición de lineamientos para la organización de RISS.',d:false,resp:'Ministerio de Salud y Deportes / SEDES',desde:'',hasta:''},{n:'Definición de prioridades de fortalecimiento de las redes.',d:false,resp:'Ministerio de Salud y Deportes / SEDES',desde:'',hasta:''},{n:'Elaboración del plan de fortalecimiento de redes.',d:false,resp:'Ministerio de Salud y Deportes / SEDES',desde:'',hasta:''}],[{n:'Definición de roles entre niveles de atención.',d:false,resp:'Ministerio de Salud y Deportes / SEDES',desde:'',hasta:''},{n:'Fortalecimiento de mecanismos de referencia y contrarreferencia.',d:false,resp:'Ministerio de Salud y Deportes / SEDES',desde:'',hasta:''},{n:'Articulación entre establecimientos de salud.',d:false,resp:'Ministerio de Salud y Deportes / SEDES',desde:'',hasta:''}],[{n:'Transferencia de capacidades a los SEDES y REDES en la implementación en los planes de salud locales',d:false,resp:'Ministerio de Salud y Deportes / SEDES Ministerio de Educación Ministerio de Desarrollo Productivo Rural y Tierras Gobiernos Autónomos Municipales',desde:'',hasta:''},{n:'Sistemas de información y digitalización',d:false,resp:'Ministerio de Salud y Deportes Ministerio de Educación Ministerio de Medio Ambiente y Agua',desde:'',hasta:''},{n:'Seguimiento a la implementación.',d:false,resp:'Ministerio de Salud y Deportes Gobiernos Autónomos Departamentales Gobiernos Autónomos Municipales Ministerio de la Presidencia',desde:'',hasta:''}],[{n:'Evaluación del funcionamiento de redes.',d:false,resp:'Ministerio de Salud y Deportes Ministerio de Planificación del Desarrollo Ministerio de la Presidencia',desde:'',hasta:''},{n:'Identificación de mejoras en la continuidad de la atención.',d:false,resp:'Ministerio de Salud y Deportes Ministerio de Educación Ministerio de Desarrollo Productivo Rural y Tierras',desde:'',hasta:''},{n:'Ajustes al modelo de redes integrales.',d:false,resp:'Ministerio de Salud y Deportes Ministerio de Planificación del Desarrollo Ministerio de la Presidencia',desde:'',hasta:''}]],
+   etaDates:[{desde:'2026-04-01',hasta:'2026-06-30',resp:'Ministerio de Salud y Deportes Ministerio de Educación Ministerio de Planificación del Desarrollo'},{desde:'2026-05-01',hasta:'2026-08-31',resp:'Ministerio de Salud y Deportes Ministerio de Educación Ministerio de Desarrollo Productivo Rural y Tierras'},{desde:'2026-09-01',hasta:'2026-10-31',resp:'Ministerio de Salud y Deportes Ministerio de Planificación del Desarrollo Ministerio de la Presidencia'},{desde:'2026-11-01',hasta:'2026-11-01',resp:'Ministerio de Salud y Deportes Ministerio de Educación Ministerio de Desarrollo Productivo Rural y Tierras'},{desde:'2027-01-01',hasta:'2027-11-30',resp:'Ministerio de Salud y Deportes'},{desde:'2027-12-01',hasta:'2027-12-01',resp:'Ministerio de Salud y Deportes'}]},
+  {id:'i.15',
+   eje:'Eje 6 – Bienestar para Todos',
+   intv:'Políticas De Atención Primaria en Salud',
+   min:'Ministerio de Salud y Deportes',
+   minConc:'Ministerio de Educación Ministerio de Economía y Finanzas Públicas SEDES Departamentales',
+   ind:'Número de redes y establecimentos de salud que aplican la APS.',
+   meta:'Alcanzar el 100% del proceso, con establecimientos equipados, RRHH asignado y evaluación de calidad',
+   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Informes Ministerio Salud; registros equipamiento; planillas RRHH; reportes evaluación calidad APS, evaluación de SEDES',
+   desc:'Analizar y Plantear de la situación actual de la Atención Primaria en Salud a nivel nacional, considerando la capacidad resolutiva.',
+   ets:['Diagnóstico de la capacidad Instalada','Diseño del plan de fortalecimiento','Financiamiento','Equipamiento y RRHH','Implementación'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[30.0,20.0,20.0,20.0,10.0],
+   etaSubs:[[{n:'Análisis de la disponibilidad de medicamentos e insumos esenciales en establecimientos del primer nivel de atención.',d:false,resp:'Ministerio de la etapa / SEDES',desde:'',hasta:''},{n:'Análisis de la capacidad instalada del primer y segundo nivel.',d:false,resp:'Ministerio de la etapa / SEDES',desde:'',hasta:''}],[{n:'Elaboración del documento técnico del plan de fortalecimiento de la Atención Primaria en Salud.',d:false,resp:'Ministerio de la etapa / SEDES',desde:'',hasta:''},{n:'Validación técnica del plan con instancias del Ministerio de Salud y SEDES.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''},{n:'Implementación de Salud Digital y Plataformas de Gestión de Atención',d:false,resp:'Ministerio de la etapa / SEDES',desde:'',hasta:''}],[{n:'Identificación de fuentes de financiamiento para la implementación del plan de fortalecimiento de la APS.',d:false,resp:'Ministerio de Salud y Deportes / Ministerio de Economía',desde:'',hasta:''},{n:'Gestión de recursos financieros para el fortalecimiento del primer nivel.',d:false,resp:'Ministerio de Salud y Deportes / Ministerio de Economía',desde:'',hasta:''}],[{n:'Dotación de equipamiento médico básico y tecnología sanitaria en establecimientos del primer nivel de atención.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''},{n:'Fortalecimiento y asignación de recursos humanos en salud en establecimientos de Atención Primaria.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''},{n:'Actualización del personal de salud en protocolos de atención integral y fortalecimiento de la capacidad resolutiva.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''}],[{n:'Implementación del plan de fortalecimiento de la capacidad resolutiva en establecimientos del primer nivel de atención.',d:false,resp:'Ministerio de Salud y Deportes',desde:'',hasta:''},{n:'Articulación con redes de servicios de salud y gobiernos subnacionales para la aplicación del plan.',d:false,resp:'Ministerio de la etapa / SEDES',desde:'',hasta:''}]],
+   etaDates:[{desde:'2026-04-01',hasta:'2026-07-01',resp:'Ministerio de Salud y Deportes'},{desde:'2026-05-01',hasta:'2026-06-01',resp:'Ministerio de Salud y Deportes'},{desde:'2026-05-01',hasta:'2026-07-01',resp:'Ministerio de Salud y Deportes'},{desde:'2027-08-01',hasta:'2027-10-01',resp:'Ministerio de Salud y Deportes'},{desde:'2026-11-01',hasta:'2026-12-01',resp:'Ministerio de Salud y Deportes'}]},
+  {id:'i.16',
+   eje:'Eje 2 – Bolivia al Mundo y el mundo a Bolivia',
+   intv:'HUB Viru Viru – Cielos abiertos',
+   min:'Ministerio de Obras Públicas',
+   minConc:'Ministerio de Relaciones Exteriores; Aduana Nacional; Policia Boliviana',
+   ind:'% de Avance del proceso de Implementacion del HUB Viru Viru',
+   meta:'Alcanzar el 100% del proceso, con HUB Viru Viru operativo bajo política de cielos abiertos',
+   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Informes DGAC; convenios con aerolíneas; reportes operativos Viru Viru',
+   desc:'Habilitar, implementar y poner en operación el HUB aeroportuario Viru Viru, como centro de conexión de vuelos nacionales, regionales e internacionales de pasajeros y carga, bajo una política sostenible y regulada de cielos abiertos, articulada con el sistema de transporte terrestre y, a mediano plazo, ferroviario. El HUB permitirá proyectar a Bolivia como un país integrado al mundo, fortaleciendo el comercio exterior, la atracción de inversiones, el turismo y la generación de empleo, en coherencia con las políticas de desarrollo económico, integración regional y soberanía logística del Estado. La implementación del HUB Viru Viru responde a la necesidad estratégica del Estado Plurinacional de Bolivia de fortalecer su conectividad aérea, logística y comercial, en un contexto de creciente integración regional y demanda de servicios de transporte eficientes. Bolivia presenta una posición geográfica central en Sudamérica que, debidamente aprovechada mediante infraestructura adecuada, regulación moderna y articulación institucional, puede convertirse en un factor clave para mejorar la competitividad del país. La prioridad de esta intervención radica en transformar al Aeropuerto Internacional Viru Viru en un nodo de conexión aérea que permita incrementar el flujo de pasajeros y carga, reducir costos logísticos, diversificar destinos internacionales y consolidar al país como plataforma de integración económica, turística y productiva',
+   ets:['Planificación estratégica e inicio de gestión de financiamiento del HUB (2026)','Estudio a Diseño Final (2026 - 2027)','Desarrollo de infraestructura y conectividad (2027–2029)','Gobernanza, alianzas operativas y modelo de negocio (2026–2030)','Operación, tecnología y sostenibilidad (2028–2029)','Certificación operacional y regulatoria (2029)','Puesta en marcha y operación plena del HUB (2030)'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[5.0,25.0,35.0,15.0,10.0,5.0,5.0],
+   etaSubs:[[{n:'Diagnóstico integral de infraestructura y capacidad operativa',d:true,resp:'VMT; DGAC; NAABOL',desde:'2026-05-26',hasta:'2027-03-01'},{n:'Inicio de gestión de financiamiento del Hub en base al RBP vigente',d:false,resp:'VMT; DGAC; NAABOL',desde:'2027-03-27',hasta:'2027-07-01'}],[{n:'Análisis de mercado, rutas y carga',d:false,resp:'VMT; DGAC; NAABOL',desde:'2027-07-27',hasta:'2027-12-01'},{n:'Elaboración del Estudio a Diseño Final y el Plan Maestro del HUB Viru Viru',d:false,resp:'VMT; NAABOL',desde:'2027-12-27',hasta:'2028-05-01'}],[{n:'Infraestructura aeroportuaria aérea y accesos terrestres',d:false,resp:'VMT; NAABOL ABC: UTF:',desde:'2028-05-28',hasta:'2030-11-01'},{n:'Centro de carga aérea y logística',d:false,resp:'VMT;NAABOL; Aduana Nacional; Policia Boliviana',desde:'2028-05-28',hasta:'2030-05-01'},{n:'Conectividad intermodal',d:false,resp:'VMT; UTF: ABC:',desde:'2028-05-28',hasta:'2030-05-01'}],[{n:'Incorporación progresiva de aerolíneas de pasajeros y carga',d:false,resp:'VMT;DGAC;NAABOL',desde:'2030-05-30',hasta:'2030-11-01'},{n:'Convenios operativos y de cooperación institucional',d:false,resp:'MOPSV;VMT; Cancilleria',desde:'2027-07-27',hasta:'2028-07-28'},{n:'Incentivos operativos y aplicación gradual de cielos abiertos',d:false,resp:'VMT; DGAC',desde:'2026-06-26',hasta:'2029-06-29'}],[{n:'Sistemas tecnológicos y automatización operativa',d:false,resp:'VMT; DGAC; NAABOL',desde:'2030-05-30',hasta:'2030-11-30'},{n:'Gestión de flujos de pasajeros y servicios',d:false,resp:'VMT; NAABOL',desde:'2030-05-30',hasta:'2030-11-30'},{n:'Gestión ambiental y sostenibilidad',d:false,resp:'VMT - Organismo Sectorial Copmpetente;NAABOL',desde:'2030-05-30',hasta:'2030-11-30'}],[{n:'Certificaciones aeronáuticas y de seguridad',d:false,resp:'VMT; DGAC; NAABOL',desde:'2030-05-30',hasta:'2030-11-30'},{n:'Certificaciones logísticas y de carga',d:false,resp:'VMT; DGAC; NAABOL; Aduana Nacional; Policia Boliviana',desde:'2030-05-30',hasta:'2030-11-30'}],[{n:'Operaciones de prueba (marcha blanca)',d:false,resp:'VMT; DGAC; NAABOL',desde:'2030-11-01',hasta:'2031-02-28'},{n:'Inicio de operación regular del HUB Viru Viru',d:false,resp:'VMT; DGAC; NAABOL',desde:'2031-02-01',hasta:'2031-03-31'}]],
+   etaDates:[{desde:'2026-05-26',hasta:'2027-07-01',resp:'Ministerio de Obras Públicas'},{desde:'2027-07-27',hasta:'2028-05-01',resp:'Ministerio de Obras Públicas'},{desde:'2028-05-28',hasta:'2030-11-01',resp:'Ministerio de Obras Públicas'},{desde:'2030-05-30',hasta:'2030-11-01',resp:'Ministerio de Obras Públicas'},{desde:'2030-05-30',hasta:'2030-11-30',resp:'Ministerio de Obras Públicas'},{desde:'2030-05-30',hasta:'2030-11-30',resp:'Ministerio de Obras Públicas'},{desde:'2030-11-30',hasta:'2031-03-31',resp:'Ministerio de Obras Públicas'}]},
+  {id:'i.17',
+   eje:'Eje 1 – Bolivia economía para la gente',
+   intv:'Reformas e incentivos tributarios',
+   min:'Ministerio de Economía',
+   minConc:'[ Sin ministerios concurrentes – completar si aplica ]',
+   ind:'Índice de Avance de la Reforma Tributaria',
+   meta:'Alcanzar el 100% del proceso de reforma tributaria, incluyendo implementación operativa en el SIN',
+   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Informes técnicos del Ministerio de Economía; reportes del SIN; Gaceta Oficial',
+   desc:'Flexibilizar el Sistema Tributario Boliviano, a través de una reforma, e implementar incentivos tributarios a fin de incentivar la actividad productiva y la inversión bajo un enfoque de capitalismo inclusivo.',
+   ets:['Diagnóstico fiscal','Propuesta Preliminar de Incentivos Tributarios','Sustento Técnico y Legal','Aprobación normativa','Publicación','Implementación SIN'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[10.0,40.0,40.0,5.0,5.0,1.0],
+   etaSubs:[[{n:'Acuerdos y/o convenios con sectores',d:false,resp:'Viceministerio de Política Tributaria',desde:'',hasta:''}],[{n:'Propuesta borrador',d:false,resp:'Viceministerio de Política Tributaria',desde:'',hasta:''}],[{n:'Informe Técnico',d:false,resp:'Viceministerio de Política Tributaria',desde:'',hasta:''},{n:'Informe Legal',d:false,resp:'Dirección General de Asuntos Jurídicos',desde:'',hasta:''}],[{n:'Normativa de aprobación (Ley, Decreto u otro)',d:false,resp:'Asamblea Legislativa Plurinacional u otra instancia (dependiendo de la normativa)',desde:'',hasta:''}],[{n:'Sitio Web de la Gaceta',d:false,resp:'Gaceta Oficial de Bolivia u otra instancia',desde:'',hasta:''}],[]],
+   etaDates:[{desde:'2025-11-09',hasta:'2026-12-31',resp:'Ministerio de Economía'},{desde:'2025-11-09',hasta:'2026-12-31',resp:'Ministerio de Economía'},{desde:'2025-11-09',hasta:'2026-12-31',resp:'Ministerio de Economía'},{desde:'2025-11-09',hasta:'2026-12-31',resp:'Asamblea Legislativa Plurinacional u otra instancia (dependiendo de la normativa)'},{desde:'2025-11-09',hasta:'2026-12-31',resp:'Gaceta Oficial de Bolivia u otra instancia'},{desde:'2027-01-01',hasta:'2027-01-30',resp:'Ministerio de Economía'}]},
+  {id:'i.18',
+   eje:'Eje 7 – Verde y Sostenible',
+   intv:'Protección Civil y Reducción de Riesgos de Desastre',
+   min:'Ministerio de Defensa',
+   minConc:'',
+   ind:'Índice de Avance del Proceso de fortalecimiento de la UMEE y Gestion de Riesgos',
+   meta:'Alcanzar el 100% del proceso, con la UMEE fortalecida',
+   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Diagnóstico riesgos; reportes equipamiento instalado; registros capacitación; informes simulacros nacionales',
+   desc:'Desarrollar la Gestión de saneamiento de predios y adecuación de infraestructura; Siguiendo con la dotación de efectivos exclusivos, con equipamiento y capacitación permanente. En lo respecta a la Gestion de Riesgos se trabajara de manera integral en las necesidades que el pais demanda a corto y mediano plazo, en materia de prevencion y reduccion de desastres, priorizando los sistemas de alerta temprana, todo esto articulado con la cooperacion internacional y los distintos actores inlucrados, con el objetivo comun de salvar vidas, posicionando a Bolivia como un actor protagonico en materia de gestion de riesgos',
+   ets:['Saneamiento de Predios','Adecuacion de la Infraestructura','Dotación de efectivos','Equipamiento','Capacitacion','Alerta Temprana (SAT)','Articulacion de actores y/o involucrados en la Gestion de Riesgos','Desarrollo de la Plataforma Pais'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[10.0,10.0,15.0,15.0,10.0,15.0,15.0,10.0],
+   etaSubs:[[{n:'Revision y analisis tecnico legal',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Gestion de la inscripcion de dominio y derecho propietario',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Emision del Titulo de propiedad a favor de la UMEE',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''}],[{n:'Elaboracion del proyecto',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Inscripcion del proyecto y gestion de recursos',d:false,resp:'Ministerio de Planificacion del Desarrollo',desde:'',hasta:''},{n:'Ejecucion del proyecto',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''}],[{n:'Relevamiento de necesidades y organización de la estructura operativa',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Gestiones tecnico, legales, administrativas',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Asignacion y designacion del personal',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''}],[{n:'Relevamiento de necesidades operativas',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Gestiones logisticas de adquisicion de equipos (TGN)',d:false,resp:'Minsiterio de Economia y Finanzas Publicas',desde:'',hasta:''},{n:'Gestiones logisticas de dotacion de equipos (Cooperacion Internacional)',d:false,resp:'Minsiterio de Relaciones Exteriores',desde:'',hasta:''}],[{n:'Deteccion de Necesidades de Capacitacion',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Formulacion del plan de capacitacion',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Gestion de recursos humanos y financieros',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Ejecucion del Plan de Capacitacion',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''}],[{n:'Conocimiento de Riesgos',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Monitoreo territorial',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Difusion de alertas (Broadcast)',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Capacidad de Respuesta en coordinacion con GAD y GAM',d:false,resp:'Ministerio de la Presidencia',desde:'',hasta:''}],[{n:'Articulacion con Ministerios Involucrados',d:false,resp:'Ministerio de la Presidencia',desde:'',hasta:''},{n:'Articulacion con GAD y GAM',d:false,resp:'Ministerio de la Presidencia',desde:'',hasta:''},{n:'Articulacion con Cooperacion Internacional y ONGs',d:false,resp:'Minsiterio de Relaciones Exteriores',desde:'',hasta:''},{n:'Articulacion con Sector Empresarial',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''}],[{n:'Diseño de la Plataforma',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Ensayo de la Plataforma',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''},{n:'Ejecucion de Programa de Gestion de Riesgos',d:false,resp:'Ministerio de Defensa',desde:'',hasta:''}]],
+   etaDates:[{desde:'2026-01-01',hasta:'2026-06-01',resp:'Ministerio de Defensa'},{desde:'2026-05-01',hasta:'2026-08-01',resp:'Ministerio de Defensa'},{desde:'2026-05-01',hasta:'2026-07-31',resp:'Ministerio de Defensa'},{desde:'2026-06-01',hasta:'2026-09-01',resp:'Ministerio de Defensa'},{desde:'2026-03-01',hasta:'2026-10-01',resp:'Ministerio de Defensa'},{desde:'2026-06-01',hasta:'2026-10-01',resp:'Ministerio de Defensa'},{desde:'2026-06-01',hasta:'2026-12-01',resp:'Ministerio de Defensa'},{desde:'2026-06-01',hasta:'2026-12-01',resp:'Ministerio de Defensa'}]},
+  {id:'i.19',
+   eje:'Eje 6 – Bienestar para Todos',
+   intv:'Nueva Ley Educativa',
+   min:'Ministerio de Educación',
+   minConc:'Ninguno',
+   ind:'Porcentaje de avance de ejecución de etapas y sub etapas establecidas.',
+   meta:'Alcanzar el 100% de etapas en la gestión 2026.',
+   lb:'(N° etapas ejecutadas / 4) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Hito técnico documentado: Actas y/o documentos de cumplimiento de las etapas y/o subetapas programadas.',
+   desc:'Elaborar el anteproyecto de una nueva Ley Educativa que sentará las bases normativas de una educación de calidad.',
+   ets:['Lanzamiento/Presentación del proceso de construción de la nueva Ley Educativa.','Recopilación y sistematización de propuestas.','Encuentro por la Educación.','Mesas de trabajo.','Elaboración del anteproyecto de la Nueva Ley Educativa.'],
+   etsPer:['✅ Completado','✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[10.0,10.0,10.0,30.0,40.0],
+   etaSubs:[[],[],[],[{n:'Desarrollo de mesas temáticas (nacional).',d:false,resp:'Ministerio de Educación',desde:'2026-06-24',hasta:'2026-06-24'},{n:'Procesamiento y sistematización de los resultados.',d:false,resp:'Ministerio de Educación',desde:'2026-06-25',hasta:'2026-07-15'},{n:'Desarrollo de mesas de trabajo departamentales.',d:false,resp:'Ministerio de Educación',desde:'2026-08-28',hasta:'2026-08-28'},{n:'Procesamiento y sistematización de los resultados.',d:false,resp:'Ministerio de Educación',desde:'2026-08-31',hasta:'2026-09-10'}],[{n:'Elaboración del anteproyecto de la Nueva Ley Educativa.',d:false,resp:'Ministerio de Educación',desde:'2026-09-14',hasta:'2026-10-09'},{n:'Revisión ministerial de la Nueva Ley de Educación.',d:false,resp:'Ministerio de Educación',desde:'2026-10-12',hasta:'2026-10-21'},{n:'Elaboración del anteproyecto de la Nueva Ley Educativa (versión final).',d:false,resp:'Ministerio de Educación',desde:'2026-10-22',hasta:'2026-10-28'},{n:'Remisión del anteproyecto de la nueva Ley de Educación a la Asamblea Legislativa Plurinacional.',d:false,resp:'Ministerio de Educación',desde:'2026-10-29',hasta:'2026-11-06'}]],
+   etaDates:[{desde:'2026-02-26',hasta:'2026-02-26',resp:'Ministerio de Educación'},{desde:'2026-03-02',hasta:'2026-04-15',resp:'Ministerio de Educación'},{desde:'2026-04-22',hasta:'2026-04-22',resp:'Ministerio de Educación'},{desde:'2026-06-24',hasta:'2026-10-09',resp:'Ministerio de Educación'},{desde:'2026-09-14',hasta:'2026-11-06',resp:'Ministerio de Educación'}]},
+  {id:'i.20',
+   eje:'Eje 6 – Bienestar para Todos',
+   intv:'Gestión educativa de calidad',
+   min:'Ministerio de Educación',
+   minConc:'Ninguno',
+   ind:'Porcentaje de avance de etapas establecidas',
+   meta:'Alcanzar el 100% de etapas en la gestión 2026',
+   lb:'(N° etapas ejecutadas / 4) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Hito técnico documentado: Actas y/o documentos de cumplimiento de las etapas y/o subetapas programadas',
+   desc:'Desburocratizar la gestión administrativa para fortalecer los procesos pedagógicos en las unidades educativas',
+   ets:['Reducción de la carga administrativa de maestros y directores','Asegurar el cumplimiento de 200 días de gestión escolar.','Elaborar el Reglamento de Evaluación Curricular','Elaborar Hojas de Trabajo para el mejoramiento de la comprensión lectora y el razonamiento lógico matemático'],
+   etsPer:['✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[40.0,20.0,20.0,20.0],
+   etaSubs:[[],[],[],[]],
+   etaDates:[{desde:'2025-01-12',hasta:'2026-01-01',resp:'Ministerio de Educación'},{desde:'2026-02-02',hasta:'2026-11-12',resp:'Ministerio de Educación'},{desde:'2026-01-04',hasta:'12/31/2026',resp:'Ministerio de Educación'},{desde:'2026-01-04',hasta:'10/30/2026',resp:'Ministerio de Educación'}]},
+  {id:'i.21',
+   eje:'Eje 6 – Bienestar para Todos',
+   intv:'Maestros competentes y comprometidos',
+   min:'Ministerio de Educación',
+   minConc:'Ninguno',
+   ind:'Porcentaje de avance de etapas establecidas.',
+   meta:'Alcanzar el 100% de etapas en la gestión 2026.',
+   lb:'(N° etapas ejecutadas / 4) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Hito técnico documentado: Actas y/o documentos de cumplimiento de las etapas y/o subetapas programadas.',
+   desc:'Desarrollar un proceso transparente y meritocrático de admisión de postulantes a las Escuelas Superiores de Formación de Maestros',
+   ets:['Diseño de nueva Convocatoria y Reglamento con criterios de transparencia y meritocracia.','Construcción y publicación del banco de preguntas.','Digitalización del proceso de toma de pruebas.'],
+   etsPer:['✅ Completado','✅ Completado','✅ Completado'],
+   etsPond:[30.0,30.0,40.0],
+   etaSubs:[[],[],[]],
+   etaDates:[{desde:'2025-12-19',hasta:'2025-12-19',resp:'Ministerio de Educación'},{desde:'2025-12-01',hasta:'2025-12-26',resp:'Ministerio de Educación'},{desde:'2026-01-19',hasta:'2026-01-30',resp:'Ministerio de Educación'}]},
+  {id:'i.22',
+   eje:'Eje 6 – Bienestar para Todos',
+   intv:'Transformación digital educativa',
+   min:'Ministerio de Educación',
+   minConc:'Ministerio de Obras Públicas, Servicios y Vivienda Ministerio de la Presidencia (Viceministerio de Autonomías)',
+   ind:'Porcentaje de avance de etapas establecidas',
+   meta:'Alcanzar el 100% de etapas en la gestión 2026',
+   lb:'(N° etapas ejecutadas / 4) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Hito técnico documentado: Actas y/o documentos de cumplimiento de las etapas y/o subetapas programadas',
+   desc:'Dotar antenas Starlink a 4.500 unidades educativas para iniciar la transformación digital y mejorar el proceso de enseñanza aprendizaje.',
+   ets:['Gestión de la donación de las antenas Starlik','Firma de Convenio MINEDU-ENTEL','Firma de convenios ENTEL - GAMs','Dotación e instalación de Antenas Starlink'],
+   etsPer:['✅ Completado','✅ Completado','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[20.0,20.0,20.0,40.0],
+   etaSubs:[[],[],[],[]],
+   etaDates:[{desde:'2026-01-05',hasta:'2026-02-27',resp:'Ministerio de Educación'},{desde:'2026-04-15',hasta:'2026-04-15',resp:'Ministerio de Educación'},{desde:'2026-05-18',hasta:'2026-05-29',resp:'Ministerio de Obras Públicas, Servicios y Vivienda Ministerio de la Presidencia (Viceministerio de Autonomías)'},{desde:'2026-05-19',hasta:'2026-12-29',resp:'Ministerio de Obras Públicas, Servicios y Vivienda Ministerio de la Presidencia (Viceministerio de Autonomías)'}]},
+  {id:'i.23',
+   eje:'Eje 1 – Bolivia economía para la gente',
+   intv:'Identificación y gestión de mecanismos de financiamiento para el fomento de la inversión en el sector turismo, cultura y gastronomía.',
+   min:'Ministerio de Turismo Sostenible, Culturas, Folklore y Gastronomía',
+   minConc:'Ministerio de Economía y Finanzas Públicas Ministerio de Planificación del Desarrollo y Medio Ambiente Ministerio de Desarrollo Productivo, Rural y Agua Ministerio de Trabajo, Empleo y Previsión Social Ministerio de Relaciones Exteriores',
+   ind:'Índice de avance de acciones implementadas para identificación y gestión de fuentes de financiamiento',
+   meta:'Alcanzar el 100% del proceso, incluyendo primeros desembolsos efectivos',
+   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Actas; resoluciones ministeriales; informes técnicos y convenios suscritos',
+   desc:'Identificar y Promover fuentes de financiamiento orientadas a promover al sector turismo, cultura y gastronomía, mediante la articulación con entidades del sistema financiero, organismos internacionales y potenciales inversionistas. Comprende el análisis de alternativas de financiamiento, la generación de vínculos institucionales y la facilitación de condiciones para el acceso a recursos destinados a proyectos turísticos e infraestructura asociada. Al concluir las etapas, se espera contar con fuentes de financiamiento identificadas, acuerdos de articulación establecidos y mecanismos que permitan canalizar recursos hacia iniciativas de inversión en el sector.',
+   ets:['Identificación de fuentes de financiamiento','Priorización y Análisis de viabilidad','Elaboración de la Guía de Inversiones','Gestión y Articulación Interinstitucional'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[10.0,20.0,40.0,30.0],
+   etaSubs:[[{n:'Mapeo de Fuentes de Financiamiento',d:false,resp:'Ministerio de Economía y Finanzas Públicas Ministerio de Planificación del Desarrollo y Medio Ambiente Ministerio de Desarrollo Productivo, Rural y Agua',desde:'2026-05-01',hasta:'2026-05-31'},{n:'Revisión y Consulta Normativa',d:false,resp:'Ministerio de Economía y Finanzas Públicas Ministerio de Planificación del Desarrollo y Medio Ambiente Ministerio de Desarrollo Productivo, Rural y Agua',desde:'2026-06-01',hasta:'2026-06-30'}],[{n:'Evaluación Técnica y Legal de Fuentes',d:false,resp:'Ministerio de Economía y Finanzas Públicas Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-07-01',hasta:'2026-07-15'},{n:'Identificación de Barreras de Acceso',d:false,resp:'Ministerio de Economía y Finanzas Públicas Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-07-15',hasta:'2026-07-31'},{n:'Selección de Fuentes Prioritarias',d:false,resp:'Ministerio de Economía y Finanzas Públicas Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-08-01',hasta:'2026-08-15'}],[{n:'Diseño y Validación de la Guía de Inversiones',d:false,resp:'Ministerio de Economía y Finanzas Públicas Ministerio de Planificación del Desarrollo y Medio Ambiente Ministerio de Desarrollo Productivo, Rural y Agua Ministerio de Trabajo, Empleo y Previsión Social Ministerio de Relaciones Exteriores',desde:'2026-04-06',hasta:'2026-05-15'},{n:'Implementación de Medidas para la Atracción de Inversiones',d:false,resp:'Ministerio de Economía y Finanzas Públicas Ministerio de Planificación del Desarrollo y Medio Ambiente Ministerio de Desarrollo Productivo, Rural y Agua Ministerio de Trabajo, Empleo y Previsión Social Ministerio de Relaciones Exteriores',desde:'2026-05-15',hasta:'2026-08-31'},{n:'Lanzamiento Oficial de la Guía de Inversiones',d:false,resp:'Ministerio de Economía y Finanzas Públicas Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-09-01',hasta:'2026-09-30'}],[{n:'Coordinación con Entidades relacionadas',d:false,resp:'Ministerio de Economía y Finanzas Públicas Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-09-01',hasta:'2026-09-30'},{n:'Gestión de Acuerdos y Mecanismos de Financiamiento',d:false,resp:'Ministerio de Economía y Finanzas Públicas Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-10-01',hasta:'2026-10-31'},{n:'Difusión de oportunidades de financiamiento',d:false,resp:'Ministerio de Economía y Finanzas Públicas Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-11-01',hasta:'2026-11-30'}]],
+   etaDates:[{desde:'2026-05-01',hasta:'2026-06-30',resp:'Ministerio de Turismo Sostenible'},{desde:'2026-07-01',hasta:'2026-08-15',resp:'Ministerio de Turismo Sostenible'},{desde:'2026-04-06',hasta:'2026-09-30',resp:'Ministerio de Turismo Sostenible'},{desde:'2026-09-01',hasta:'2026-11-30',resp:'Ministerio de Turismo Sostenible'}]},
+  {id:'i.24',
+   eje:'Eje 2 – Bolivia al Mundo y el mundo a Bolivia',
+   intv:'Posicionamiento internacional de Bolivia mediante la articulación de Marca País y servicios turísticos para el destino Uyuni–Lagunas.',
+   min:'Ministerio de Turismo Sostenible, Culturas, Folklore y Gastronomía',
+   minConc:'Ministerio de Obras Públicas Ministerio de Desarrollo Productivo, Rural y Agua Ministerio de Planificación del Desarrollo y Medio Ambiente',
+   ind:'Índice de avance de la implementación de acciones para el posicionamiento Internacional',
+   meta:'Alcanzar el 100% del proceso',
+   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Informes Ministerio de Turismo; actas, contratos, registros oficiales',
+   desc:'Implementar acciones integradas orientadas al posicionamiento de Bolivia a nivel internacional, mediante la implementación de la Marca País, el desarrollo de actividades de promoción turística y el fortalecimiento de servicios de capacitación y certificación para el destino Uyuni–Lagunas . Incluye la gestión de condiciones habilitantes para el turismo, la mejora de accesos y la articulación con infraestructura y servicios básicos, en coordinación con entidades competentes.',
+   ets:['Implementación de la Marca País','Diagnóstico y Diseño del Plan Estratégico de Desarrollo del destino Uyuni-Lagunas','Ejecución de Infraestructura Turística del Destino Uyuni-Lagunas','Capacitación y Fortalecimiento de Servicios Turísticos','Mejoras en las Condiciones Habilitantes para Uyuni–Lagunas.'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[40.0,10.0,30.0,15.0,5.0],
+   etaSubs:[[{n:'Licitación del Proceso de Diseño de la Marca País',d:false,resp:'Ministerio de Turismo Sostenible',desde:'2026-04-06',hasta:'2026-05-15'},{n:'Entrega de la metodología Cualitativa y Cuantitativa para el Diseño de Marca País',d:false,resp:'Ministerio de Turismo Sostenible',desde:'2026-05-01',hasta:'2026-05-31'},{n:'Diseño de la Identidad Visual de la Marca País',d:false,resp:'Ministerio de Turismo Sostenible',desde:'2026-05-31',hasta:'2026-09-30'},{n:'Lanzamiento oficial de la Marca País',d:false,resp:'Ministerio de Turismo Sostenible',desde:'2026-08-01',hasta:'2026-08-30'},{n:'Estrategia de Promoción e Internacionalización de la Marca País',d:false,resp:'Ministerio de Turismo Sostenible',desde:'2026-09-01',hasta:'2027-02-01'}],[{n:'Especificaciones Técnicas y Firma de Cooperación Técnica para el Plan Estratégico de Desarrollo - BID',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-04-01',hasta:'2026-04-30'},{n:'Documento técnico del Diagnóstico (identificación de brechas) - BID',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-06-01',hasta:'2026-06-30'},{n:'Documento técnico del Plan Estratégico de Desarrollo - BID',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-07-01',hasta:'2026-08-31'}],[{n:'Entrega de infraestructura (Restaurante en Villazón y San Pablo de Lipez)',d:false,resp:'Ministerio de Turismo Sostenible',desde:'2026-04-01',hasta:'2026-04-30'},{n:'Adjudicación y Contratación para la construcción de la Infraestructura (Hotel Colcha K)',d:false,resp:'Ministerio de Turismo Sostenible',desde:'2026-05-01',hasta:'2026-06-30'},{n:'Construcción y Entrega de infraestructura (Hotel Tahua)',d:false,resp:'Ministerio de Turismo Sostenible',desde:'2026-04-01',hasta:'2027-02-01'},{n:'Firma Cooperación técnica - CAF (Modelo de Gestión Operativa de Hoteles y Restaurantes)',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-04-01',hasta:'2026-04-30'},{n:'Licitación y Adjudicación de la Gestión Operativa de los Restaurantes de Villazón y San Pablo de Lipez',d:false,resp:'Ministerio de Turismo Sostenible',desde:'2026-06-01',hasta:'2026-07-30'}],[{n:'Capacitación y Certificación Gastronómica',d:false,resp:'Ministerio de Turismo Sostenible',desde:'2026-05-01',hasta:'2026-11-30'},{n:'Capacitación y Certificación de Hostelería',d:false,resp:'Ministerio de Turismo Sostenible',desde:'2026-06-01',hasta:'2026-11-30'}],[{n:'Plan de Desarrollo de Nuevas Infraestructuras Turística - BID',d:false,resp:'Ministerio de Turismo Sostenible',desde:'2026-07-01',hasta:'31/9/2026'},{n:'Gestión de Financiamiento para la Implementación de las Nuevas Infraestructuras Turística',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-10-01',hasta:'2026-12-31'},{n:'Gestión para la Inclusión de Proyectos y Mejoras en Carreteras',d:false,resp:'Ministerio de Obras Públicas',desde:'2026-06-01',hasta:'2026-12-31'},{n:'Gestión para la Inclusión de Proyectos y Mejoras en Servicios Básicos',d:false,resp:'Ministerio de Desarrollo Productivo, Rural y Aguas',desde:'2026-06-01',hasta:'2026-12-31'}]],
+   etaDates:[{desde:'2026-04-06',hasta:'2027-02-01',resp:'Ministerio de Turismo Sostenible'},{desde:'2026-04-01',hasta:'2026-08-31',resp:'Ministerio de Turismo Sostenible'},{desde:'2026-04-01',hasta:'2027-02-01',resp:'Ministerio de Turismo Sostenible'},{desde:'2026-05-01',hasta:'2026-11-30',resp:'Ministerio de Turismo Sostenible'},{desde:'2026-07-01',hasta:'2026-12-31',resp:'Ministerio de Turismo Sostenible'}]},
+  {id:'i.25',
+   eje:'Eje 2 – Bolivia al Mundo y el mundo a Bolivia',
+   intv:'Definición de mecanismo institucional para la promoción de inversiones extranjeras',
+   min:'Ministerio de Relaciones Exteriores',
+   minConc:'Ministerio de Turismo Ministerios de Hidricarburos y Energía Ministeriod e Minería Ministerio de Desarrollo Productivo Ministerio de Planificación del Desarrollo Ministerio de Economía y Finanzas',
+   ind:'Índice de Avance del Mecanismo para promoción de inversiones extranjeras',
+   meta:'Alcanzar el 100% del proceso,con mecanismo diseñado y aprobado',
+   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Mecanismo definido y aprobado para la promoción de inversiones extranjeras Actas de reuniones, informes técnicos',
+   desc:'Desarrollar una propuesta orientada a identificar y estructurar un mecanismo que permita articular, dinamizar, gestionar y promover las inversiones extranjeras en el país, tomando en cuenta los diferentes escenarios óptimos tales como capacidades existentes, creación de nueva instancia descentralizada, mixta entre otros con la participación del sector público -privado y con enfoque de sostenibilidad,',
+   ets:['Estructura orgánica del MRE ajustada según nuevo enfoque de Gobierno tomando coo eje principal las inversiones','Diagnóstico de las demandas de inversión en Bolivia y el comportamiento de las mismas a nivel internacional','Evaluación de alternativas institucionales','Diseño del mecanismo institucional','Desarrollo del instrumento de aprobación del mecanismo'],
+   etsPer:['✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[20.0,20.0,20.0,30.0,10.0],
+   etaSubs:[[{n:'Análisis de la DOE y LOE para identificar las atribuciones contempladas para el MRE y los vacíos existentes en el marco de la nueva visión de Gobierno',d:true,resp:'Ministerio de Relaciones Exteriores',desde:'2025-12-01',hasta:'2025-12-31'},{n:'Elaboración de propuesta de estructura organizacional del MRE considerando la temática de inversión extranjera entre otros',d:true,resp:'Ministerio de Relaciones Exteriores',desde:'2026-01-01',hasta:'2026-02-28'},{n:'Gestión de aprobación del DS con la nueva estructura',d:true,resp:'Ministerio de Relaciones Exteriores',desde:'2026-03-01',hasta:'2026-03-31'}],[{n:'Análisis de la situación actual',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'',hasta:''},{n:'Identificación de restricciones estructurales',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'',hasta:''},{n:'Identificación de experiencias exitosas en otros países',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'',hasta:''}],[{n:'Identificación de posibles escenarios para la instauración del mecanismo',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'',hasta:''},{n:'Estructura, funciones y mecanismo de financiamiento para su funcionamiento de cada escenario',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'',hasta:''},{n:'Evaluación de la viabilidad institucional legal y financiera de cada escenario considerando su sostenibilidad',d:false,resp:'Ministerio de la Presidencia',desde:'',hasta:''}],[{n:'Socialización de los diferentes escenarios con los actores involucrados (sector público, privado, cooperación internacional)',d:false,resp:'Ministerio de Turismo Ministerios de Hidricarburos y Energía Ministeriod e Minería Ministerio de Desarrollo Productivo Ministerio de Planificación del Desarrollo Ministerio de Economía y Finanzas',desde:'',hasta:''},{n:'Presentación de la propuesta a la MAE del MRE para definición del mecanismo',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'',hasta:''},{n:'Desarrollo de la propuesta del mecanismo definido considerando su sostenibilidad',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'',hasta:''}],[{n:'Elaboración del informe técnico y legal',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'',hasta:''},{n:'Gestión para aprobación',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'',hasta:''}]],
+   etaDates:[{desde:'2025-12-01',hasta:'2026-03-31',resp:'Ministerio de Relaciones Exteriores'},{desde:'2026-03-01',hasta:'2026-06-30',resp:'Ministerio de Relaciones Exteriores'},{desde:'2026-06-01',hasta:'2026-08-30',resp:'Ministerio de Relaciones Exteriores'},{desde:'2026-06-01',hasta:'2026-11-30',resp:'Ministerio de Relaciones Exteriores'},{desde:'2026-11-01',hasta:'2026-12-30',resp:'Ministerio de Relaciones Exteriores'}]},
+  {id:'i.26',
+   eje:'Eje 2 – Bolivia al Mundo y el mundo a Bolivia',
+   intv:'Plataforma digital de multiservicios automatizada de los trámites y servicios consulares priorizados',
+   min:'Ministerio de Relaciones Exteriores',
+   minConc:'Ministerio de la Presidencia Órgano judicial Órgano electoral Dirnoplu SERECI',
+   ind:'Índice de Avance del Proceso de optimización en la gestión de trámites y servicios consulares priorizados del Servicio Exterior',
+   meta:'Alcanzar el 100% de la Plataforma digital de multiservicios automatizada de los trámites y servicios consulares priorizados',
+   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Plataforma digital de multiservicios automatizada de los trámites y servicios consulares priorizados Manual de procesos y procedimientos, actas de reuniones y otros documentos técnicos generados',
+   desc:'Mejorar los servicios prestados en los Consulados, para una gestión más ágil , accesible y de calidad para los ciudadanos bolivianos en el exterior.',
+   ets:['Análisis de los actuales servicios consulares','Selección de procesos a ser priorizados','Puesta en marcha de los procesos optimizados'],
+   etsPer:['✅ Completado','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[23.1,53.8,23.1],
+   etaSubs:[[{n:'Identificación y levantamiento de servicios y trámites vigentes',d:true,resp:'Ministerio de Relaciones Exteriores',desde:'2025-01-12',hasta:'2026-03-31'},{n:'Análisis de los procesos identificados',d:true,resp:'Ministerio de Relaciones Exteriores',desde:'2025-01-12',hasta:'2026-03-31'},{n:'Identificación de los trámites y servicios priorizados que serán optimizados (Iniciando con (Salvo conductos y emisión de visas)',d:true,resp:'Ministerio de Relaciones Exteriores',desde:'2025-01-12',hasta:'2026-03-31'}],[{n:'Definición de criterios de mejora de procesos de atención al público',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'2026-01-04',hasta:'2026-06-30'},{n:'Selección de áreas específicas de mejora de proceso de acuerdo a los criterios establecidos',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'2026-01-04',hasta:'2026-06-30'},{n:'Acuerdo con entidades involucradas',d:false,resp:'Ministerio de la Presidencia Órgano judicial Órgano electoral Dirnoplu SERECI',desde:'2026-01-04',hasta:'2026-06-30'}],[{n:'Rediseño de procesos',d:false,resp:'Ministerio de Economía y Finanzas',desde:'2026-01-07',hasta:'2026-12-28'},{n:'Prueba piloto que incluye estándares de calidad',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'2026-01-07',hasta:'2026-12-29'},{n:'Aprobación del flujo de proceso optimizado',d:false,resp:'Ministerio de Relaciones Exteriores',desde:'2026-01-07',hasta:'2026-12-30'}]],
+   etaDates:[{desde:'2025-01-12',hasta:'2026-03-31',resp:'Ministerio de Relaciones Exteriores'},{desde:'2026-01-04',hasta:'2026-06-30',resp:'Ministerio de Relaciones Exteriores'},{desde:'2026-01-07',hasta:'2026-12-30',resp:'Ministerio de Relaciones Exteriores'}]},
+  {id:'i.27',
+   eje:'Eje 1 – Bolivia economía para la gente',
+   intv:'Ley de Hidrocarburos',
+   min:'Ministerio de Hidrocarburos y Energías',
+   minConc:'Ministerio de la Presidencia Ministerio de Economia y Finanzas Públicas',
+   ind:'Índice de Avance del Proceso Legislativo de la Ley de Hidrocarburos',
+   meta:'Alcanzar el 100% del proceso legislativo para la promulgación y reglamentación de la nueva Ley de Hidrocarburos',
+   lb:'0.3333333333333333',
+   freq:'Mensual',
+   fuentes:'Actas del Ministerio de Hidrocarburos; Gaceta Oficial; informes Asamblea Legislativa',
+   desc:'Equilibrar la soberanía estatal con apertura a la inversión privada, asegurando seguridad jurídica, competitividad fiscal y sostenibilidad. Es una propuesta integral para garantizar el futuro energético del país y posicionar a Bolivia como un actor confiable y atractivo en el mercado regional.',
+   ets:['Diagnóstico normativo','Elaboración anteproyecto','Consulta intersectorial','Aprobación Asamblea Legislativa','Promulgación','Reglamentación'],
+   etsPer:['✅ Completado','✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[10.4,20.8,6.2,20.8,20.8,20.8],
+   etaSubs:[[{n:'Recolección de la información',d:true,resp:'Ministerio de Hidrocarburos y Energías',desde:'2026-02-02',hasta:'2026-02-10'},{n:'Análisis de situación',d:true,resp:'Ministerio de Hidrocarburos y Energías',desde:'2026-02-11',hasta:'2026-02-18'},{n:'Propuesta de redacción',d:true,resp:'Ministerio de Hidrocarburos y Energías',desde:'2026-02-19',hasta:'2026-02-28'}],[{n:'Presentación el Propuesta (19-03-2026)',d:true,resp:'MInisterio de Hidrocarburos y Energías',desde:'2026-03-02',hasta:'2026-03-10'},{n:'Presentación de ajuste a la Propuesta (24-03-2026)',d:true,resp:'MInnisterio de Hidrocarburos y Energías',desde:'2026-03-11',hasta:'2026-03-20'},{n:'Presentación al Presidente (25-03-2026)',d:true,resp:'MInisterio de Hidrocarburos y Energías',desde:'2026-03-21',hasta:'2026-03-30'}],[{n:'Coordinación con el Ministerio de Economía y Finanzas Públicas',d:true,resp:'Ministerio de Economía',desde:'2026-04-06',hasta:'2026-04-13'},{n:'Socialización Previa en la Asamblea Legislativa Plurinacional',d:false,resp:'Ministerio de Presidencia',desde:'2026-04-14',hasta:'2026-04-21'},{n:'Socialización con la Cámara Bolivia de Hidrocarburos',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'2026-04-22',hasta:'2026-04-30'}],[{n:'Comité y Comisión Cámara de Diputados',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-05-04',hasta:'2026-05-12'},{n:'Comité y Comisión Cámara de Senadores',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-05-13',hasta:'2026-05-21'},{n:'Plenarios Cámara de Diputados y Senadores',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-05-22',hasta:'2026-05-31'}],[],[{n:'Elaboración de Reglamento sobre Regalías y Participaciones',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-07-01',hasta:'2026-07-10'},{n:'Elaboración de Reglamento Bloque Mayoristas de Comercialización',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-07-11',hasta:'2026-07-20'},{n:'Elaboración de Reglamento Consulta Pública',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-07-21',hasta:'2026-07-31'}]],
+   etaDates:[{desde:'2026-02-02',hasta:'2026-02-28',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-03-02',hasta:'2026-03-30',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-04-06',hasta:'2026-04-30',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-05-04',hasta:'2026-05-31',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-06-30',hasta:'2026-06-30',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-07-01',hasta:'2026-07-31',resp:'Ministerio de Hidrocarburos y Energías'}]},
+  {id:'i.28',
+   eje:'Eje 7 – Verde y Sostenible',
+   intv:'Ley de Fomento a las Energias Verdes',
+   min:'Ministerio de Hidrocarburos y Energías',
+   minConc:'Ministerio de Planificación del Desarrollo y Medio Ambiente Ministerio de Economia y Finanzas Publicas',
+   ind:'Índice de Avance del Anteproyecto de Ley de Fomento de Energias Verdes',
+   meta:'Alcanzar el 100% del proceso, con normas de energía, forestal y agua publicadas e implementadas',
+   lb:'',
+   freq:'Mensual',
+   fuentes:'Diagnóstico marcos normativos; normas publicadas en Gaceta; reportes implementación regulatoria sectorial',
+   desc:'Elaborar el Anteproyecto de Ley de Fomento de las Energias Verdes mediante el análisis técnico-legal del sector energético y la formulación de lineamientos para el desarrollo de energías verdes. Como resultado, se espera contar con un instrumento técnico-jurídico que establezca el marco normativo para promover la ejecución de proyectos de Energias Verdes.',
+   ets:['Diagnóstico marcos normativos','Elaboración del borrador de Anteproyecto de Ley','Socialización Interna del Proyecto de Ley','Socilización del Proyecto de Ley con diferentes actores externos al MHE','Presentación del Anteproyecto de Ley al Ministerio de la Presidencia con los informes tecnicos y legales /Por definirse'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[15.2,24.2,12.1,21.2,27.3],
+   etaSubs:[[{n:'Evaluación del marco normativo aplicabable para articulación del proyecto de ley con las disposciones normativas vigentes',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-04-01',hasta:'2026-04-20'}],[{n:'Elaboración de dispociones generales para la Taxonomia Sectorial Energetica dentro del Proyecto de Ley',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-06-01',hasta:'2026-06-20'},{n:'Elaborar una estructura de la Ley conforme la tecnica normativa',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-06-21',hasta:'2026-07-10'}],[{n:'Presentación de Propuesta al Ministro de Hidrocarburos y Energias',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-08-01',hasta:'2026-08-20'},{n:'Socialización con los Viceministerio del MHE sujetos a la aplicación de la norma',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-08-21',hasta:'2026-09-09'}],[{n:'Socialización externa del Proyecto de Ley con los diferentes Ministerios',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-10-01',hasta:'2026-10-20'},{n:'Socialización con actores privados externos',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'2026-10-21',hasta:'2026-11-09'}],[]],
+   etaDates:[{desde:'2026-04-01',hasta:'2026-05-31',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-06-01',hasta:'2026-07-31',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-08-01',hasta:'2026-09-30',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-10-01',hasta:'2026-11-30',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-12-01',hasta:'2027-01-31',resp:'Ministerio de Hidrocarburos y Energías'}]},
+  {id:'i.29',
+   eje:'Eje 1 – Bolivia economía para la gente',
+   intv:'Ley Marco de Transición Energética y Soberanía No Hidrocarburífera en Bolivia',
+   min:'Ministerio de Hidrocarburos y Energías',
+   minConc:'Ministerio de Planificación del Desarrollo; Ministerio de Medio Ambiente y Agua; Ministerio de Economía y Finanzas Públicas; ENDE Corporación; Ministerio de Justicia y Transparencia Institucional; Ministerio de la Presidencia',
+   ind:'Índice de Avance del Proceso de Elaboración y Aprobación de la Ley Marco de Transición Energética y Soberanía No Hidrocarburífera',
+   meta:'Alcanzar el 100% del proceso: Ley Marco de Transición Energética promulgada, reglamentada y operativa, con marco regulatorio de energías renovables vigente y autoridad regulatoria sectorialmente funcional para 2027.',
+   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
+   freq:'Mensual',
+   fuentes:'Gaceta Oficial del Estado Plurinacional; ENDE Corporación; AETN (Autoridad de Fiscalización de Electricidad y Tecnología Nuclear); informes del Ministerio de Hidrocarburos y Energías; CNDC; estadísticas de generación eléctrica INE; reportes de renovables y BESS.',
+   desc:'Desarrollar la reforma legislativa estructural del sector energético boliviano que establece el marco jurídico para la generación, transmisión y distribución de energías renovables no convencionales (NCRE), contratos PPA a largo plazo, modernización de redes inteligentes (Smart Grids), almacenamiento con litio (BESS) y eficiencia energética; desplazando la dependencia hidrocarbúrífera del Sistema Interconectado Nacional (SIN).',
+   ets:['Diagnóstico del sector energético y elaboración del primer avance','Formulación del proyecto de ley','Socialización y consulta pública','Negociación y aprobación en la Asamblea Legislativa Plurinacional','Reglamentación técnica y normativa secundaria','Implementación institucional y monitoreo regulatorio'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[16.7,16.7,16.7,16.7,16.7,16.7],
+   etaSubs:[[{n:'Diagnóstico de la crisis termo-dependiente: análisis del SIN, dependencia de gas y costos de generación (Primer Avance: Propuesta de Ley Marco v2 – CENGOB, abril 2026)',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''},{n:'Auditoría del marco regulatorio vigente: brechas de la Ley 1604, ausencia de incentivos NCRE y barreras a inversión privada',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''},{n:'Mapeo de potencial renovable nacional: radiación solar Altiplano, eólico Santa Cruz–Cochabamba y reservas de litio para BESS',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''}],[{n:'Redacción del articulado: contratos PPA 15–20 años, régimen de Generación Distribuida, Smart Grids y marco de eficiencia energética',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''},{n:'Incorporación del capítulo de "Emergencia en Transición": proyectos solares inmediatos para el invierno 2027',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''},{n:'Revisión jurídica y constitucional del proyecto de ley por el Ministerio de Justicia y Transparencia Institucional',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''}],[{n:'Talleres de socialización con ENDE Corporación, distribuidoras, cooperativas eléctricas y sector industrial',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''},{n:'Proceso de consulta previa en territorios con proyectos de generación renovable (solar y eólica) con comunidades indígenas',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''},{n:'Mesa técnica intersectorial con Ministerio de Medio Ambiente, Ministerio de Economía y organismos de financiamiento multilateral',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''}],[{n:'Presentación formal del proyecto de ley ante la Asamblea Legislativa Plurinacional y tratamiento en comisiones de Recursos Naturales y Economía',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''},{n:'Negociación con bancadas legislativas: cláusulas de soberanía estatal, inversión privada en renovables y período de adecuación para concesionarias',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''},{n:'Aprobación en grande y en detalle en ambas cámaras legislativas y sanción presidencial',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''}],[{n:'Aprobación del Decreto Supremo Reglamentario del sector eléctrico y renovable (régimen PPA, Generación Distribuida, tarifas)',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''},{n:'Emisión del Reglamento específico de NCRE: solar, eólica, geotérmica y sistemas de almacenamiento BESS con litio nacional',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''},{n:'Actualización del Reglamento Tarifario, marco de subsidios cruzados y digitalización de trámites sectoriales en plataforma AGETIC',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''}],[{n:'Restructuración o creación de la AETN con mandato ampliado para regulación de NCRE, BESS y Smart Grids conforme a la nueva ley',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''},{n:'Puesta en marcha del Plan Nacional de Energías Renovables: primeras licitaciones de proyectos solares y eólicos bajo los nuevos PPA',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''},{n:'Primera medición de indicadores de impacto: % renovables en matriz, Factor de Sustitución de Gas (MMpcd), reducción tCO2e y cobertura eléctrica',d:false,resp:'Ministerio de Hidrocarburos y Energías',desde:'',hasta:''}]],
+   etaDates:[{desde:'2026-07-01',hasta:'2026-07-31',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-08-01',hasta:'2026-08-30',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-09-01',hasta:'2026-09-30',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-10-01',hasta:'2026-10-30',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-11-01',hasta:'2026-11-30',resp:'Ministerio de Hidrocarburos y Energías'},{desde:'2026-12-01',hasta:'2026-12-31',resp:'Ministerio de Hidrocarburos y Energías'}]},
   {id:'i.30',
-   eje:'Eje 1 – Economía para la gente',
+   eje:'Eje 1 – Bolivia economía para la gente',
    intv:'Adecuación de las autorizaciones transitorias especiales (ATE´s) a Contratos Mineros (CAM) mediante procedimiento simplificado a cargo de la AJAM',
    min:'Ministerio de Minería y Metalurgia',
+   minConc:'Ministerio de Planificación del Desarrollo y Medio Ambiente (Unidad de Análisis de Políticas Sociales y Económicas UDAPE)',
    ind:'Incremento de la formalización y continuidad de operaciones mineras mediante la adecuación de ATE´s a Contratos Administrativos Mineros.',
    meta:'Resolución Ministerial de reglamentación para la adecuación de ATE´s a Contratos Administrativos Mineros aprobado, promulgado y publicado.',
    lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
    freq:'Mensual',
    fuentes:'Registros AJAM; informes jurídicos; resoluciones del Ministerio de Minería',
-   desc:'Este mecanismo permitirá concluir de manera ordenada el proceso iniciado hace más de una década, dando certeza a los 3.982 derechos mineros preconstituidos y permitiendo al Estado ejercer un control efectivo; respetándose lo establecido en la Disposición Transitoria Octava de la CPE, garantizado la continuidad de los derechos bajo el nuevo régimen contractual. En en el marco de la normativa vigente, se instruirá a todos los actores del sector minero que, dentro de los sesenta (60) días calendario de la entrada en vigencia de eta norma, presenten su solicitud para la adecuación de sus Autorizaciones Transitorias Especiales (ATE´s) a Contratos Administrativos Mineros (CAM), conforme lo establece la Resolución Ministerial N. 282 de 31 de octubre de 2025, actualmente en vigor. A tal efecto, el Ministerio de Minería y Metalurgia (MMM) emitirá una nueva Resolución Ministerial que, sin modificar los articulos pertinentes de la Ley N. 535 encomendará a la Autoridad Jurisdiccional Administrativa Minera (AJAM) la elaboración en un procedimiento administrativo simplificado. Dicho procedimiento será íntegramente reglamentado y ejecutado por la AJAM en el ámbito de sus competencias.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6'],
-   etsPer:['','Estado','✅ Completado','✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,16,16,16,16,16,16]},
+   desc:'Desarrollar de manera ordenada el proceso iniciado hace más de una década, dando certeza a los 3.982 derechos mineros preconstituidos y permitiendo al Estado ejercer un control efectivo; respetándose lo establecido en la Disposición Transitoria Octava de la CPE, garantizado la continuidad de los derechos bajo el nuevo régimen contractual. En en el marco de la normativa vigente, se instruirá a todos los actores del sector minero que, dentro de los sesenta (60) días calendario de la entrada en vigencia de eta norma, presenten su solicitud para la adecuación de sus Autorizaciones Transitorias Especiales (ATE´s) a Contratos Administrativos Mineros (CAM), conforme lo establece la Resolución Ministerial N. 282 de 31 de octubre de 2025, actualmente en vigor. A tal efecto, el Ministerio de Minería y Metalurgia (MMM) emitirá una nueva Resolución Ministerial que, sin modificar los articulos pertinentes de la Ley N. 535 encomendará a la Autoridad Jurisdiccional Administrativa Minera (AJAM) la elaboración en un procedimiento administrativo simplificado. Dicho procedimiento será íntegramente reglamentado y ejecutado por la AJAM en el ámbito de sus competencias.',
+   ets:['Diagnóstico CAM pendientes','Diseño procedimiento transitorio','Validación jurídica','Aprobación resolución','Implementación AJAM','Evaluación resultados'],
+   etsPer:['✅ Completado','✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[20.7,17.2,27.6,27.6,3.4,3.4],
+   etaSubs:[[],[{n:'Borrador de RM',d:true,resp:'Ministerio de Minería y Metalurgia',desde:'2026-02-20',hasta:'2026-03-16'},{n:'Aprobación',d:true,resp:'Ministerio de Minería y Metalurgia',desde:'2026-03-25',hasta:'2026-03-27'},{n:'Envio a UDAPE',d:false,resp:'Ministerio de Planificación del Desarrollo y Medio Ambiente',desde:'2026-04-17',hasta:'2026-04-30'}],[{n:'Aprobación de la RM',d:false,resp:'Ministerio de Minería y Metalurgia',desde:'2026-05-04',hasta:'2026-05-04'}],[],[],[]],
+   etaDates:[{desde:'2025-12-01',hasta:'2025-12-19',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-02-09',hasta:'2026-02-20',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-05-04',hasta:'2026-05-08',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-05-11',hasta:'2026-05-29',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-06-01',hasta:'2026-06-30',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-09-30',hasta:'2026-10-06',resp:'Ministerio de Minería y Metalurgia'}]},
   {id:'i.31',
-   eje:'Eje 2 – Bolivia al Mundo',
+   eje:'Eje 2 – Bolivia al Mundo y el mundo a Bolivia',
    intv:'Reposicionamiento de Bolivia en el mapa minero global - PDAC 2026',
    min:'Ministerio de Minería y Metalurgia',
+   minConc:'[ Sin ministerios concurrentes – completar si aplica ]',
    ind:'Índice de Avance del Proceso de Posicionamiento Minero Internacional',
    meta:'Alcanzar el 100% del proceso, con compromisos de inversión formalizados post-PDAC 2026',
    lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
    freq:'Mensual',
    fuentes:'Acreditación PDAC 2026; empresas extranjeras interesadas en realizar inversión en Bolivia; cartas de intención; compromisos formalizados',
-   desc:'La participación del nuevo Gobierno del Estado Plurinacional de Bolivia, desde el Ministerio de Minería y Metalurgia, en el PDAC (Prospectors & Developers Association of Canada) reviste una relevancia estratégica de alto nivel, al constituirse en una señal política internacional clara, inequívoca y contundente hacia la comunidad minera y financiera global. Luego de varios años de ausencia o de participación limitada del Estado boliviano, el retorno oficial de Bolivia al PDAC como Estado implica un cambio sustantivo en la política minera internacional del país. En Bolivia hay un cambio de modelo de la economía estatista hacia un modelo donde la participacion del sector privado retoma importancia, por ello, la presencia activa de Bolivia en el PDAC constituye un acto estratégico de reposicionamiento del Estado, orientado a restablecer credibilidad, generar confianza y proyectar una nueva visión de minería responsable, moderna y abierta a la inversión, con reglas claras, seguridad jurídica y compromiso con el desarrollo sostenible.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6'],
-   etsPer:['','Estado','✅ Completado','✅ Completado','✅ Completado','✅ Completado','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,16,16,16,16,16,16]},
+   desc:'Lograr La participación del nuevo Gobierno del Estado Plurinacional de Bolivia, desde el Ministerio de Minería y Metalurgia, en el PDAC (Prospectors & Developers Association of Canada) reviste una relevancia estratégica de alto nivel, al constituirse en una señal política internacional clara, inequívoca y contundente hacia la comunidad minera y financiera global. Luego de varios años de ausencia o de participación limitada del Estado boliviano, el retorno oficial de Bolivia al PDAC como Estado implica un cambio sustantivo en la política minera internacional del país. En Bolivia hay un cambio de modelo de la economía estatista hacia un modelo donde la participacion del sector privado retoma importancia, por ello, la presencia activa de Bolivia en el PDAC constituye un acto estratégico de reposicionamiento del Estado, orientado a restablecer credibilidad, generar confianza y proyectar una nueva visión de minería responsable, moderna y abierta a la inversión, con reglas claras, seguridad jurídica y compromiso con el desarrollo sostenible.',
+   ets:['Diagnóstico oferta minera','Preparación Proyectos Bolivia','Agenda posicionamiento Bolivia PDAC 2026 Toronto','Seguimiento contactos','Compromisos formalizados'],
+   etsPer:['✅ Completado','✅ Completado','✅ Completado','✅ Completado','⬜ Pendiente'],
+   etsPond:[20.0,20.0,20.0,20.0,20.0],
+   etaSubs:[[],[],[],[],[]],
+   etaDates:[{desde:'2025-12-08',hasta:'2025-12-26',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-02-02',hasta:'2026-02-20',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-02-02',hasta:'2026-02-20',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-03-09',hasta:'2026-03-31',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-04-01',hasta:'2026-05-31',resp:'Ministerio de Minería y Metalurgia'}]},
   {id:'i.32',
-   eje:'Eje 1 – Economía para la gente',
-   intv:'NUEVA LEY DE MINERÍA',
+   eje:'Eje 1 – Bolivia economía para la gente',
+   intv:'Nueva Ley de Minería',
    min:'Ministerio de Minería y Metalurgia',
+   minConc:'Ministerio de Presidencia',
    ind:'Mayor número de operaciones mineras en ejercicio. Mayor numero de empresas privadas o del exterior operando en Bolivia. Incremento en el monto de atracción de inversión. Reducción en uso de mercurio. Increménto en recaudaciónes de aportes en regalías.',
    meta:'Nueva Ley Minera',
    lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
    freq:'Mensual',
    fuentes:'Ley N. 535 de Minería y Metalurgia',
-   desc:'Las prohibiciones actuales han sido y siguen siendo un obstáculo para el desarrollo tecnológico y finanaciero del sector cooperativo. La posibilidad de asociarse con la empresa privada (nacional o extranjera) bajo modalidades contractuales claras (como contratos de servicios, de riesgo compartido o de transferencia tecnológica) permitirá a las cooperativas acceder a capital para modernizar sus operaciones, adoptar tecnologías limpias para erradicar el uso de mercurio, mejorar sus índices de seguridad y productividad y formalizar las relaciones laborales. Esta propueta, lejos de neutralizar el cooperativismo, lo fortalece al permitirle competir en igualdad de condiciones, maximizando el valor del oro y otros minerales que producen, en beneficio de sus asociados y del mismo Estado. Se aclara que esta asociación no implica la pérdida de la titularidad del derercho minero por parte de la cooperativa que debe ser normado claramente. Modificación artículos 151 y 152 de la Ley N. 535 de Minería y Metalurgia',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,16,16,16,16,16,16]},
+   desc:'Elaborar, la nueva ley Minera a partir de un diagnósitoc sobre las prohibiciones actuales han sido y siguen siendo un obstáculo para el desarrollo tecnológico y finanaciero del sector cooperativo. La posibilidad de asociarse con la empresa privada (nacional o extranjera) bajo modalidades contractuales claras (como contratos de servicios, de riesgo compartido o de transferencia tecnológica) permitirá a las cooperativas acceder a capital para modernizar sus operaciones, adoptar tecnologías limpias para erradicar el uso de mercurio, mejorar sus índices de seguridad y productividad y formalizar las relaciones laborales. Esta propueta, lejos de neutralizar el cooperativismo, lo fortalece al permitirle competir en igualdad de condiciones, maximizando el valor del oro y otros minerales que producen, en beneficio de sus asociados y del mismo Estado. Se aclara que esta asociación no implica la pérdida de la titularidad del derercho minero por parte de la cooperativa que debe ser normado claramente. Modificación artículos 151 y 152 de la Ley N. 535 de Minería y Metalurgia',
+   ets:['Diagnóstico normativo','Elaboración anteproyecto','Consulta intersectorial','Aprobación Asamblea Legislativa','Promulgación','Reglamentación'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[10.4,20.8,6.2,20.8,20.8,20.8],
+   etaSubs:[[{n:'Recolección de la información',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'',hasta:''},{n:'Análisis de situación',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'',hasta:''},{n:'Propuesta de redacción',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'',hasta:''}],[],[{n:'Coordinación con el Ministerio de Minería y Metalurgia',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'',hasta:''},{n:'Socialización Previa en la Asamblea Legislativa Plurinacional',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'',hasta:''},{n:'Socialización con AJAM y otras entidades pertinentes',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'',hasta:''}],[{n:'Comité y Comisión Cámara de Diputados',d:false,resp:'Ministerio de la Presidencia',desde:'',hasta:''},{n:'Comité y Comisión Cámara de Senadores',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'',hasta:''},{n:'Plenarios Cámara de Diputados y Senadores',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'',hasta:''}],[],[{n:'Elaboración de Reglamento sobre Regalías y Participaciones',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'',hasta:''},{n:'Elaboración de Reglamento',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'',hasta:''},{n:'Elaboración de Reglamento Consulta Pública',d:false,resp:'[ Ministerio de la etapa / concurrente ]',desde:'',hasta:''}]],
+   etaDates:[{desde:'2026-04-25',hasta:'2026-04-30',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-04-30',hasta:'2026-05-30',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-06-01',hasta:'2026-06-30',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-07-01',hasta:'2026-07-15',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-07-30',hasta:'2026-07-31',resp:'Ministerio de Minería y Metalurgia'},{desde:'2026-08-01',hasta:'2026-08-30',resp:'Ministerio de Minería y Metalurgia'}]},
   {id:'i.33',
-   eje:'Eje 1 – Economía para la gente',
+   eje:'Eje 1 – Bolivia economía para la gente',
    intv:'Jóvenes de Excelencia en la Gestión Pública',
    min:'Ministerio de Trabajo',
+   minConc:'MINISTERIO ECONOMÍA Y FINAN ZAS PÚBLICAS MINISTERIO DE PLANIFICACIÓN DEL DESARROLLO Y MEDIO AMBIENTE (OPCE) MINISTERIO DE EDUCACION (EGPP) MINISTERIO DE LA PRESIDENCIA (AGETIC)',
    ind:'Porcentaje de avance del Programa',
    meta:'16.000 Jóvenes titulados de universidades públicas y privadas con notas de excelencia en la gestión 2025, son contratados en entidades públicas del nivel central, departamental y municipal. (Tomando en cuenta a 320.000 funcionarios estatales, sin contar salud educación y otros)',
    lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
-   freq:'Anual',
+   freq:'Mensual',
    fuentes:'Reportes Ministerio Trabajo; Convenio con la CUB y la ANUP, AGETIC, OPCE .',
-   desc:'El programa “Jóvenes de Excelencia en la Gestión Pública” constituye una política innovadora orientada a transformar la administración pública boliviana mediante la incorporación anual de titulados universitarios con excelencia académica. Su propósito es institucionalizar la meritocracia como estándar de ingreso al Estado, reduciendo el desempleo juvenil y elevando la calidad de los servicios públicos. La administración pública boliviana ha estado marcada por prácticas de libre nombramiento y afinidad política, lo que ha debilitado la carrera administrativa y generado una desconexión entre el talento académico y el servicio estatal. Paralelamente, el mercado laboral juvenil enfrenta una brecha crítica: de más de 41,000 nuevos profesionales cada año, apenas un 24% logra insertarse en empleos formales. El programa surge como respuesta a esta problemática, vinculando directamente el mérito académico con la responsabilidad pública.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,20,20,20,20,20]},
+   desc:'Poner en marchar el El programa “Jóvenes de Excelencia en la Gestión Pública” constituye una política innovadora orientada a transformar la administración pública boliviana mediante la incorporación anual de titulados universitarios con excelencia académica. Su propósito es institucionalizar la meritocracia como estándar de ingreso al Estado, reduciendo el desempleo juvenil y elevando la calidad de los servicios públicos. La administración pública boliviana ha estado marcada por prácticas de libre nombramiento y afinidad política, lo que ha debilitado la carrera administrativa y generado una desconexión entre el talento académico y el servicio estatal. Paralelamente, el mercado laboral juvenil enfrenta una brecha crítica: de más de 41,000 nuevos profesionales cada año, apenas un 24% logra insertarse en empleos formales. El programa surge como respuesta a esta problemática, vinculando directamente el mérito académico con la responsabilidad pública.',
+   ets:['Normativa y Diseño de plataformas','Convocatoria Nacional','Evaluación de Filtro (Exámenes Ciegos)','Asignación Selectiva y Entrevista de Habilidades Blandas','Inducción, Monitoreo y Salida hacia la Carrera Administrativa'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[18.2,22.7,18.2,22.7,18.2],
+   etaSubs:[[{n:'Redacción de un Decreto Supremo de “Jóvenes de excelencia en la función pública”',d:false,resp:'MTEPS',desde:'2026-04-01',hasta:'2026-04-30'},{n:'Mesas técnicas con el Comité Ejecutivo de Universidades Bolivianas - CEUB y la Asociación Nacional de Universidades Privadas de Bolivia – ANUP, para la integración de las bases de datos de promedios de jóvenes titulados con excelencia académica a nivel nacional, a través de Convenios.',d:false,resp:'MTEPS',desde:'2026-04-01',hasta:'2026-04-30'},{n:'Alianzas para el Diseño y la construcción de la Plataforma Digital de Postulación Única y la Plataforma Digital de Excelencia, con la AGETIC u otra Cooperación identificada. Diseño de las pruebas para los examenes ciegos.',d:false,resp:'Ministerio Presidencia (AGETIC) Ministerio de Planificación del Desarrollo y Media Ambiente (OPCE)',desde:'2026-04-01',hasta:'2026-04-30'}],[{n:'Invitación a Universidaes Públicas y Privadas, CEUB, ANUB y grupos de jóvenes para la Promulgación de DS "Jóvenes de excelencia en la función pública" por el Sr. Presidente Rodrigo Paz en Palacio de Gobierno.',d:false,resp:'MTEPS',desde:'2025-05-01',hasta:'2026-05-30'},{n:'Convocatoria nacional masiva, a través de la Plataforma Digital de Postulación Única. Reporte del total de inscritos en la Plataforma',d:false,resp:'MTEPS',desde:'2025-05-01',hasta:'2026-05-30'},{n:'Reporte de items y áreas para ocupar cargos por entidad pública.',d:false,resp:'MTEPS Entidades públicas del nivel central, dptal y municipal',desde:'2025-05-01',hasta:'2026-05-30'}],[{n:'Preparación de exámenes digitales, sorteo de preguntas aleatorias a través de la Plataforma Digital de Excelencia.',d:false,resp:'MTEPS MPDyMA - OPCE',desde:'2026-05-01',hasta:'2026-05-30'},{n:'Toma de examenes digitales',d:false,resp:'MTEPS MPDyMA - OPCE',desde:'2026-05-01',hasta:'2026-05-30'},{n:'Publicaciones de puntajes de los postulantes',d:false,resp:'MTEPS',desde:'2026-05-01',hasta:'2026-05-30'}],[{n:'La Terna de Excelencia: Envío de los tres mejores puntajes a las diferentes entidades gubernamentales de acuerdo a espacios.',d:false,resp:'MTEPS',desde:'2026-05-01',hasta:'2026-05-30'},{n:'Entrevista Laboral con Veeduría, enfocada en inteligencia emocional y habilidades blandas, acompañado por un veedor de transparencia o representante académico.',d:false,resp:'MTEPS',desde:'2026-05-01',hasta:'2026-05-30'},{n:'Conferencia de Prensa: Reporte del total de jóvenes que forman parte de la Función Pública. (Cargos, sueldos, entidad pública)',d:false,resp:'MTEPS Presidencia',desde:'2026-05-01',hasta:'2026-05-30'}],[{n:'Capacitación de Inducción (formación intensiva en gestión pública, presupuesto y ética funcionaria) por el lapso de una semana.',d:false,resp:'MTEPS Ministerio de Educación - EGPP',desde:'2026-06-01',hasta:'2026-06-30'},{n:'Evaluación Semestral: Monitoreo del desempeño para identificar fortalezas y áreas de mejora.',d:false,resp:'MTEPS',desde:'2026-02-01',hasta:'2026-12-30'},{n:'Puente a la Estabilidad: A los 12 meses, los jóvenes con evaluaciones sobresalientes quedan habilitados para postular a la Carrera Administrativa en otros cargos de la entidad (20%).',d:false,resp:'MTEPS',desde:'2027-06-01',hasta:'2027-06-30'}]],
+   etaDates:[{desde:'2026-04-01',hasta:'2026-04-30',resp:'Ministerio de Trabajo'},{desde:'2025-05-01',hasta:'2026-05-30',resp:'Ministerio de Trabajo'},{desde:'2026-05-01',hasta:'2026-05-30',resp:'Ministerio de Trabajo'},{desde:'2026-05-01',hasta:'2026-05-30',resp:'Ministerio de Trabajo'},{desde:'2026-06-01',hasta:'2026-06-30',resp:'Ministerio de Trabajo'}]},
   {id:'i.34',
    eje:'Eje 3 – Bolivia 50/50',
    intv:'Participación laboral de mujeres (cuidados)',
    min:'Ministerio de Trabajo',
+   minConc:'Ministerio de Presidencia - Viceministerio de Igualdad de Oportunidades Ministerio de Educación',
    ind:'Porcentaje de avance del Programa',
    meta:'Alcanzar el 100% del proceso con el programa concluido y aprobado para la búqueda de financiamiento.',
    lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
    freq:'Mensual',
    fuentes:'Informes Ministerio Trabajo; actas de reuniones con la cooperación y otras intituciones públicas involucradas .',
    desc:'Desarrollar un programa para aumentar la productividad de las mujeres a través de la implementación de Centros de Cuidad Infantiles',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6'],
-   etsPer:['','Estado','✅ Completado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,16,16,16,16,16,16]},
-  {id:'i.4',
-   eje:'Eje 4 y 5 Bolivia Moderna, Eficiente y Transparente',
-   intv:'Adecuación y actualización del marco normativo en materia de transparencia, seguridad jurídica y derechos fundamentales en el marco de la reorganización institucional',
-   min:'Ministerio de la Presidencia',
-   ind:'Índice de avance en la elaboración y adecuación de instrumentos normativos en materia de transparencia, seguridad jurídica, derechos humanos y lucha contra la corrupción',
-   meta:'Alcanzar el 100%',
-   lb:'(Número de etapas completadas / Número total de etapas) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Informes técnicos de diagnóstico; Documentos de análisis normativo Propuestas normativas elaboradas; Proyectos normativos remitidos; Normativa aprobada; Documentos de difusión',
-   desc:'La intervención comprende el desarrollo de procesos técnicos para la revisión, adecuación y formulación de instrumentos normativos en materia de transparencia, seguridad jurídica, derechos humanos y lucha contra la corrupción, en el marco de la reorganización institucional. Incluye diagnóstico normativo, identificación de vacíos, elaboración de propuestas normativas, validación interinstitucional y gestión para su aprobación. Reforma Judicial, Gestión Pública Digitalizada y Transparente; Seguridad y Defensa Integral con Soberanía Nacional.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,16,16,16,16,16,16]},
-  {id:'i.5',
-   eje:'Eje 7 – Verde y Sostenible',
-   intv:'Proceso saneamiento de tierras (+ modif. Ley INRA)',
-   min:'Ministerio de Planificación del Desarrollo y Medio Ambiente',
-   ind:'Índice de Avance del Proceso de Saneamiento y Titulación de Tierras',
-   meta:'Alcanzar el 100% del proceso, con títulos entregados masivamente y registros actualizados en DD.RR.',
-   lb:'(N° etapas ejecutadas / 6) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Registros INRA; resoluciones aprobadas; estadísticas titulación masiva; inscripciones DD.RR.',
-   desc:'Proceso saneamiento de tierras (+ modif. Ley INRA)',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5','Etapa 6'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,16,16,16,16,16,16]},
-  {id:'i.6',
-   eje:'Eje 6 - Bolivia Bienestar para Todos',
-   intv:'Seguimiento y evaluación a la implementación del nuevo modelo de desarrollo económico, social y ambiental del Plan de Desarrollo Económico, Social y Medio Ambiental',
-   min:'Ministerio de Planificación del Desarrollo y Medio Ambiente',
-   ind:'Porcentaje de avance en la evaluación de los indicadores del PDESA',
-   meta:'100% de indicadores del PDESA monitoreados y evaluados, según su temporalidad.',
-   lb:'(N° etapas ejecutadas / 4) × 100 → 0%',
-   freq:'Variable',
-   fuentes:'Reportes de seguimiento y evaluación VPEE.',
-   desc:'Evaluación de los indicadores relacionados con el Plan de Desarrollo Económico, Social y Medio Ambiental que permita monitorear avances, medir resultados y apoyar su cumplimiento, en coordinación con las entidades sectoriales y territoriales.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,33,33,33]},
-  {id:'i.7',
-   eje:'Eje 4 y 5 Bolivia Moderna, Eficiente y Transparente',
-   intv:'Propuesta de modernización de la Ley SAFCO 1178 y sus sistemas/reglamentos no financieros',
-   min:'Ministerio de Planificación del Desarrollo y Medio Ambiente',
-   ind:'Índice de presentación de propuestas de normas que modernicen los sistemas de gestión SAFCO para su implementación por los Órganos Rectores.',
-   meta:'Alcanzar el 100% del proceso, con una nuevo modelo de organización del Órgano Ejecutivo para consideración de Gabinete Presidencial.',
-   lb:'(N° etapas ejecutadas / 3) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Actas de reunines; propuestas de reglamentos; reglamentos o guias metodológicas ajustadas',
-   desc:'Actualización y modernización de los sistemas de gestión establecidos por la Ley N° 1178, con énfasis en los sistemas no financieros, orientada a mejorar la eficiencia, articulación institucional y calidad de la gestión pública.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,25,25,25,25]},
-  {id:'i.8',
-   eje:'Eje 7 – Verde y Sostenible',
-   intv:'Financiamiento climático (bonos de carbono, fondos fiduciarios, otros)',
-   min:'Ministerio de Planificación del Desarrollo y Medio Ambiente',
-   ind:'Propuesta de norma presentada a la Asamblea Legislativa',
-   meta:'UNA LEY MARCO PARA EL FINANCIAMIENTO CLIMÁTICO PRESENTADA Y GESTIONADA EN ASAMBLEA LEGISLATIVA',
-   lb:'(N° etapas ejecutadas / 5) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Actas de reuniones; propuestas normativas',
-   desc:'Elaboración y aprobación de una Ley Marco de Financiamiento Climático orientada a establecer mecanismos, fuentes e instrumentos para la movilización, gestión y asignación de recursos destinados a la mitigación y adaptación al cambio climático, fortaleciendo la coordinación institucional y el acceso a financiamiento nacional e internacional.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3','Etapa 4','Etapa 5'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,20,20,20,20,20]},
-  {id:'i.9',
-   eje:'Eje 4 y 5 Bolivia Moderna, Eficiente y Transparente',
-   intv:'Modernización de la estructura organizacional del Órgano Ejecutivo',
-   min:'Ministerio de Planificación del Desarrollo y Medio Ambiente',
-   ind:'Índice de Avance en el diagnóstico y propuesta de estructura organizacional del OE',
-   meta:'Alcanzar el 100% del proceso, con una nuevo modelo de organización del Órgano Ejecutivo para consideración de Gabinete Presidencial.',
-   lb:'(N° etapas ejecutadas / 3) × 100 → 0%',
-   freq:'Mensual',
-   fuentes:'Actas consulta CGE; reglamentos en Gaceta Oficial; registros capacitación; reportes impl. SAFCO/SIGMA',
-   desc:'Se realizará una evaluación particular (por Ministerio) e integral (entre Ministerios) de las estructuras y atribuciones de cada entidad y sus EBT, con el fin de proponer un nuevo modelo de organización que sea coherente con el proceso de descentralización ylas políticas de cambios estructurales del gobierno.',
-   ets:['⚠ SUBETAPAS:','Etapa','Etapa 1','Etapa 2','Etapa 3'],
-   etsPer:['','Estado','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
-   etsPond:[0,0,33,33,33]}
-]
+   ets:['Gestión con la cooperación','Diseño del programa','Coordinacion interinstitucional','Presentación del programa'],
+   etsPer:['⬜ Pendiente','⬜ Pendiente','⬜ Pendiente','⬜ Pendiente'],
+   etsPond:[17.6,26.5,29.4,26.5],
+   etaSubs:[[{n:'Reuniones de coordiación para definir el alcance del programa.',d:true,resp:'MTEPS Ministerio Presidencia - Viceministerio de Igualdad de Oportunidades Ministerio de Educación',desde:'2026-04-01',hasta:'2026-04-30'},{n:'Elaboración de TDRs para una consultoría para la elaboración del programa.',d:false,resp:'MTEPS',desde:'2026-03-01',hasta:'2026-03-31'},{n:'Contraación de la consultoría',d:false,resp:'MTEPS - OIT',desde:'2026-04-01',hasta:'2026-04-30'}],[{n:'Diagnóstico',d:false,resp:'MTEPS',desde:'2026-05-01',hasta:'2026-05-30'},{n:'Mapeo de actores',d:false,resp:'MTEPS',desde:'2026-05-01',hasta:'2026-05-30'},{n:'Diseño de los compenentes',d:false,resp:'MTEPS',desde:'2026-05-01',hasta:'2026-05-30'}],[{n:'Reuniones con ministerios intervientes',d:false,resp:'MTEPS Ministerio Presidencia - Viceministerio de Igualdad de Oportunidades Ministerio de Educación',desde:'2026-04-01',hasta:'2026-04-30'},{n:'Reuniones con las ETAs involucradas',d:false,resp:'MTEPS',desde:'2026-06-01',hasta:'2026-06-30'},{n:'Reuniones con entidades privadas involucradas (ONGs) y otras.',d:false,resp:'MTEPS',desde:'2026-06-01',hasta:'2026-06-30'}],[{n:'Elaboración del Informe Técnico de Condiciones Previas - TTCP para consideración del Ministro.',d:false,resp:'MTEPS',desde:'2026-07-01',hasta:'2026-07-31'},{n:'Busqueda de Financiamiento',d:false,resp:'Ministerio de Trabajo',desde:'2026-08-01',hasta:'2026-08-31'},{n:'Implementación Programa',d:false,resp:'Ministerio de Trabajo',desde:'2026-10-01',hasta:'2026-10-31'}]],
+   etaDates:[{desde:'2026-03-01',hasta:'2026-03-31',resp:'Ministerio de Trabajo'},{desde:'2026-05-01',hasta:'2026-05-30',resp:'Ministerio de Trabajo'},{desde:'2026-04-01',hasta:'2026-04-30',resp:'Ministerio de Trabajo'},{desde:'2026-07-01',hasta:'2026-07-31',resp:'Ministerio de Trabajo'}]}
+];
 
 var MORD = ['Ministerio de la Presidencia','Ministerio de Economía','Ministerio de Desarrollo Productivo Rural y Agua','Ministerio de Gobierno','Ministerio de Salud y Deportes','Ministerio de Obras Públicas','Ministerio de Defensa','Ministerio de Educación','Ministerio de Turismo Sostenible, Culturas, Folklore y Gastronomía','Ministerio de Relaciones Exteriores','Ministerio de Hidrocarburos y Energías','Ministerio de Minería y Metalurgia','Ministerio de Trabajo','Ministerio de Planificación del Desarrollo y Medio Ambiente'];
 
-// ══════════════════════
-// STATE
-// ══════════════════════
 var ST = {}, CUR = null;
 
 function normM(m) {
@@ -1069,7 +1169,13 @@ function indsByMin(m) {
   return IND.filter(function(x){ return x.min.split(';').map(normM).indexOf(m) >= 0; });
 }
 function initST() {
-  try { var r = localStorage.getItem('cg7'); if (r) ST = JSON.parse(r); } catch(e){}
+  var DATA_VER = '2026-05-02b';
+  try {
+    var r = localStorage.getItem('cg7');
+    var ver = localStorage.getItem('cg7_ver');
+    if (r && ver === DATA_VER) { ST = JSON.parse(r); }
+    else { ST = {}; localStorage.removeItem('cg7'); localStorage.setItem('cg7_ver', DATA_VER); }
+  } catch(e){}
   IND.forEach(function(x){
     if (!ST[x.id]) ST[x.id] = {ets: x.ets.map(function(n,i){ return {n:n,d:false,s:[],pond:(x.etsPond&&x.etsPond[i])||16,per:(x.etsPer&&x.etsPer[i])||''}; }), meta:x.meta, src:x.fuentes, focal:'', fecha:'', obs:'', val:false, hist:[], prio:'M', indName:x.ind, ejeEdit:x.eje, intvEdit:x.intv||'', intvDesc:x.desc||'', minEdit:'', prioDesc:''};
     else {
@@ -1089,16 +1195,18 @@ var UNDO = [];   // array of JSON snapshots
 var MAX_UNDO = 30;
 
 function prePopulateST() {
-// Pre-populate completed stages from fichas 2026-04-15
-  if(ST['i.1']) { [0, 1].forEach(function(i){ if(ST['i.1'].ets[i]) ST['i.1'].ets[i].d=true; }); }
-  if(ST['i.2']) { [0, 1].forEach(function(i){ if(ST['i.2'].ets[i]) ST['i.2'].ets[i].d=true; }); }
-  if(ST['i.5']) { [0].forEach(function(i){ if(ST['i.5'].ets[i]) ST['i.5'].ets[i].d=true; }); }
-  if(ST['i.7']) { [0].forEach(function(i){ if(ST['i.7'].ets[i]) ST['i.7'].ets[i].d=true; }); }
-  if(ST['i.13']) { [0].forEach(function(i){ if(ST['i.13'].ets[i]) ST['i.13'].ets[i].d=true; }); }
-  if(ST['i.14']) { [0, 1, 2].forEach(function(i){ if(ST['i.14'].ets[i]) ST['i.14'].ets[i].d=true; }); }
-  if(ST['i.15']) { [0].forEach(function(i){ if(ST['i.15'].ets[i]) ST['i.15'].ets[i].d=true; }); }
-  if(ST['i.29']) { [0].forEach(function(i){ if(ST['i.29'].ets[i]) ST['i.29'].ets[i].d=true; }); }
-  if(ST['i.16']) { if(ST['i.16'].ets[0]) ST['i.16'].ets[0].d=true; }
+// Auto-generado desde fichas 2026-05-02 (sin headers)
+  if(ST['i.2']) { [0].forEach(function(i){ if(ST['i.2'].ets[i]) ST['i.2'].ets[i].d=true; }); }
+  if(ST['i.8']) { [0].forEach(function(i){ if(ST['i.8'].ets[i]) ST['i.8'].ets[i].d=true; }); }
+  if(ST['i.19']) { [0, 1].forEach(function(i){ if(ST['i.19'].ets[i]) ST['i.19'].ets[i].d=true; }); }
+  if(ST['i.20']) { [0].forEach(function(i){ if(ST['i.20'].ets[i]) ST['i.20'].ets[i].d=true; }); }
+  if(ST['i.21']) { [0, 1, 2].forEach(function(i){ if(ST['i.21'].ets[i]) ST['i.21'].ets[i].d=true; }); }
+  if(ST['i.22']) { [0, 1].forEach(function(i){ if(ST['i.22'].ets[i]) ST['i.22'].ets[i].d=true; }); }
+  if(ST['i.25']) { [0].forEach(function(i){ if(ST['i.25'].ets[i]) ST['i.25'].ets[i].d=true; }); }
+  if(ST['i.26']) { [0].forEach(function(i){ if(ST['i.26'].ets[i]) ST['i.26'].ets[i].d=true; }); }
+  if(ST['i.27']) { [0, 1].forEach(function(i){ if(ST['i.27'].ets[i]) ST['i.27'].ets[i].d=true; }); }
+  if(ST['i.30']) { [0, 1].forEach(function(i){ if(ST['i.30'].ets[i]) ST['i.30'].ets[i].d=true; }); }
+  if(ST['i.31']) { [0, 1, 2, 3].forEach(function(i){ if(ST['i.31'].ets[i]) ST['i.31'].ets[i].d=true; }); }
 }
 
 function snapshot() {
@@ -1244,10 +1352,19 @@ function filtSb(q) {
 // DASHBOARD
 // ══════════════════════
 function buildDash() {
-  var nv=0,na=0,nr=0;
-  IND.forEach(function(x){ var c=sclass(calcP(x.id).p); if(c==='v')nv++;else if(c==='a')na++;else nr++; });
+  var nv=0,na=0,nproc=0,nsi=0;
+  IND.forEach(function(x){
+    var r=calcP(x.id), c=sclass(r.p);
+    if(c==='v'){ nv++; }
+    else if(c==='a'){ na++; }
+    else {
+      // Sin inicio: IAE=0 Y ningún checkbox marcado
+      var anyDone = ST[x.id] && ST[x.id].ets.some(function(e){ return e.d; });
+      if(r.p===0 && !anyDone) nsi++; else nproc++;
+    }
+  });
   var h = '<div style="margin-bottom:16px"><h2 style="font-family:Barlow Condensed,sans-serif;font-weight:900;font-size:1.55rem;color:var(--vd)">Validación por Ministerio</h2><p style="font-size:.77rem;color:#5a7060;margin-top:3px">Selecciona un ministerio para iniciar la sesión de conciliación y validación de fichas técnicas.</p></div>';
-  h += '<div class="stats"><div class="scard sc0"><div class="snum">33</div><div class="slbl">Prioridades totales</div></div><div class="scard sc1"><div class="snum">'+nv+'</div><div class="slbl">🟢 En tiempo</div></div><div class="scard sc2"><div class="snum">'+na+'</div><div class="slbl">🟡 En riesgo</div></div><div class="scard sc3"><div class="snum">'+nr+'</div><div class="slbl">🔴 Sin inicio / Rezagado</div></div></div>';
+  h += '<div class="stats" style="grid-template-columns:repeat(5,1fr)"><div class="scard sc0"><div class="snum">34</div><div class="slbl">Prioridades totales</div></div><div class="scard sc1"><div class="snum">'+nv+'</div><div class="slbl">🟢 En tiempo</div></div><div class="scard sc2"><div class="snum">'+na+'</div><div class="slbl">🟡 En riesgo</div></div><div class="scard"><div class="snum" style="color:#E57373">'+nproc+'</div><div class="slbl">🔴 En proceso</div></div><div class="scard"><div class="snum" style="color:#9E9E9E">'+nsi+'</div><div class="slbl">⬜ Sin inicio</div></div></div>';
   getMins().forEach(function(m){
     var inds = indsByMin(m); if(!inds.length) return;
     var sess = ST._s[m]||{}, vld = sess.v, icon = ini(m), mj = escJ(m);
@@ -1260,6 +1377,11 @@ function buildDash() {
     h += '</div></div></div>';
   });
   document.getElementById('vdash').innerHTML = h;
+}
+function togEtSubs(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = el.style.display === 'none' ? '' : 'none';
 }
 function togMblk(el) {
   el.classList.toggle('cl');
@@ -1341,6 +1463,9 @@ function buildFL(x) {
       '<div class="frow"><span class="fl">Intervención</span><input class="fld-edit" value="'+esc(s.intvEdit||x.intv)+'" placeholder="Nombre de la intervención..." onchange="updIntvEdit(\''+x.id+'\',this.value)"></div>'+
       '<div class="frow"><span class="fl">Descripción</span><textarea class="fld-edit fta" rows="3" placeholder="Describa objetivamente la intervención..." onchange="updF(\''+x.id+'\',\'intvDesc\',this.value)">'+esc(s.intvDesc||x.desc||'')+'</textarea></div>'+
       '<div class="frow"><span class="fl">Ministerio(s)</span><input class="fld-edit" value="'+esc(s.minEdit||x.min)+'" onchange="updF(\''+x.id+'\',\'minEdit\',this.value)"></div>'+
+      '<div class="frow"><span class="fl">Concurrentes</span>'+
+        (x.minConc?'<span class="fv" style="font-size:.72rem;color:#5a7060">'+esc(x.minConc)+'</span>':'<span class="fv" style="color:#bbb;font-size:.72rem">—</span>')+
+      '</div>'+
       '<div class="frow"><span class="fl">Indicador</span><textarea class="fv fta" rows="2" onchange="updIndName(\''+x.id+'\',this.value)">'+esc(s.indName||x.ind)+'</textarea></div>'+
     '</div>'+
     '<div class="sec"><div class="stitle">2. Definición</div>'+
@@ -1363,31 +1488,117 @@ function buildFL(x) {
 }
 
 function buildFR(x) {
-  var s=ST[x.id], r=calcP(x.id), col=scol(r.p), cls=sclass(r.p);
-  return '<div>'+
-    '<div class="sec" style="text-align:center;padding:13px 6px">'+
-      '<div class="ring" id="ring-'+x.id+'" style="border-color:'+col+';color:'+col+'">'+
-        '<span class="rpct" id="rpct-'+x.id+'">'+r.p+'%</span>'+
-        '<span class="rsub" id="rsub-'+x.id+'">'+r.label+'</span>'+
-      '</div>'+
-      '<div class="spill sp-'+cls+'" id="spill-'+x.id+'">'+stxt(r.p)+'</div>'+
-      '<div class="rfml" id="rfml-'+x.id+'">('+r.label+') → '+r.p+'%</div>'+
-    '</div>'+
-    '<div class="sec"><div class="stitle">5. Semáforo</div>'+
-      '<table class="stbl"><tr class="rv"><td>🟢 VERDE – En tiempo</td><td>≥ 67%</td></tr><tr class="ra"><td>🟡 AMARILLO – En riesgo</td><td>34%–66%</td></tr><tr class="rr"><td>🔴 ROJO – Rezagado</td><td>&lt;34%</td></tr></table>'+
-    '</div>'+
-    '<div class="sec" style="margin-top:8px"><div class="stitle">📅 Cronograma de etapas</div><div id="cron-'+x.id+'">'+
-    (function(){ var h=''; ST[x.id].ets.forEach(function(et,i){ var done=et.s&&et.s.length>0?et.s.every(function(sb){return sb.d;}):et.d; h+='<div style="display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid #eef0ee"><span style="font-family:Barlow Condensed,sans-serif;font-size:.62rem;font-weight:700;min-width:16px;color:'+(done?'var(--sv)':'#aaa')+'">'+(done?'✓':(i+1)+'.')+'</span><span style="font-size:.7rem;flex:1;line-height:1.3;color:'+(done?'var(--sv)':'var(--tx)')+'">'+(et.n||'')+'</span>'+(et.per?'<span style="font-family:Barlow Condensed,sans-serif;font-size:.6rem;white-space:nowrap;background:#f4f7f4;border:1px solid #d0d8d0;border-radius:3px;padding:1px 5px;color:#5a7060">'+et.per+'</span>':'')+'</div>'; }); return h; }())+
-    '</div></div>'+
-    '<div class="sec" style="margin-top:11px"><div class="stitle">6. Validación Ministerial</div>'+
-      '<div class="vi"><label>Punto focal (nombre y cargo)</label><input class="vinp" id="vf-'+x.id+'" value="'+esc(s.focal||'')+'" placeholder="Ej. Lic. Juan Pérez – Director" onchange="updV(\''+x.id+'\',\'focal\',this.value)"></div>'+
-      '<div class="vi"><label>Observaciones / Ajustes solicitados</label><textarea class="vta" id="vo-'+x.id+'" placeholder="Notas de la reunión..." onchange="updV(\''+x.id+'\',\'obs\',this.value)">'+esc(s.obs||'')+'</textarea></div>'+
-      '<div class="brow">'+
-        '<button class="b-or" id="vbtn-'+x.id+'" onclick="valF(\''+x.id+'\')">'+(s.val?'✓ Ficha validada':'✓ Validar ficha')+'</button>'+
-        '<button class="b-dk" onclick="save();toast(\'Guardado ✓\')">💾 Guardar</button>'+
-      '</div>'+
-    '</div>'+
-  '</div>';
+  var s=ST[x.id], r=calcP(x.id), col=scol(r.p);
+  var pct = Math.min(100, r.p);
+  var sc  = sclass(pct);
+
+  /* ── Etapas table ── */
+  var etH = '<div class="sec"><div class="stitle">3. Etapas</div>';
+  var etDates  = x.etaDates  || [];
+  var etSubsX  = x.etaSubs   || [];
+
+  etH += '<table class="stbl" style="width:100%">';
+  etH += '<thead><tr>'
+       + '<th style="width:26px;text-align:center">#</th>'
+       + '<th>Etapa</th>'
+       + '<th style="width:52px;text-align:center">Pond.</th>'
+       + '<th style="width:68px;text-align:center">Estado</th>'
+       + '<th style="width:76px;text-align:right">Desde</th>'
+       + '<th style="width:76px;text-align:right">Hasta</th>'
+       + '</tr></thead><tbody>';
+
+  s.ets.forEach(function(et, etsIdx) {
+    // No hay header rows — ets solo contiene etapas reales
+    var etaIdx  = etsIdx;             // 0-based etapa index
+    var w       = getPond(et);
+    var doneCls = et.d ? 'rv' : '';
+    var etInfo  = etDates[etaIdx]  || {};
+    var etSubList = etSubsX[etaIdx] || [];
+    var nSubs   = etSubList.length;
+    var nDone   = etSubList.filter(function(sb){ return sb.d; }).length;
+    var subProg = nSubs > 0
+      ? ' <span style="font-size:.6rem;color:#7a9070">('+nDone+'/'+nSubs+' subs)</span>'
+      : '';
+    var etName = et.n || ('Etapa ' + (etaIdx + 1));
+    if (etName === '⚠ SUBETAPAS:' || etName === 'Etapa') etName = 'Etapa ' + (etaIdx + 1);
+    var subRowId = 'etsub-' + x.id + '-' + etaIdx;
+    var respShort = (etInfo.resp || '').replace(/Ministerio de /g, 'Min. ').replace(/Ministerio del /g, 'Min. del ');
+
+    etH += '<tr class="' + doneCls + '" style="cursor:pointer" onclick="togEtSubs(\'' + subRowId + '\')">';
+    etH += '<td style="text-align:center;font-family:Barlow Condensed,sans-serif;font-weight:700;color:var(--vd)">' + (etaIdx + 1) + '</td>';
+    etH += '<td><span style="font-size:.74rem;font-weight:600">' + esc(etName) + '</span>' + subProg;
+    if (respShort) etH += '<br><span style="font-size:.59rem;color:#7a9070">' + esc(respShort) + '</span>';
+    etH += '</td>';
+    etH += '<td style="text-align:center;font-family:Barlow Condensed,sans-serif;font-weight:700">' + w + '%</td>';
+    etH += '<td style="text-align:center"><input type="checkbox"' + (et.d ? ' checked' : '') +
+           ' onclick="event.stopPropagation();snapshot();toggleEt(\'' + x.id + '\',' + etsIdx + ')"' +
+           ' style="width:16px;height:16px;cursor:pointer" title="Marcar completado"></td>';
+    etH += '<td style="text-align:right;font-size:.67rem;color:#5a7060">' + (etInfo.desde || '—') + '</td>';
+    etH += '<td style="text-align:right;font-size:.67rem;color:#5a7060">' + (etInfo.hasta || '—') + '</td>';
+    etH += '</tr>';
+
+    if (nSubs > 0) {
+      etH += '<tr id="' + subRowId + '" style="display:none"><td colspan="6" style="padding:0 0 6px 20px;background:#f8fcf8">';
+      etH += '<table style="width:100%;font-size:.67rem;border-collapse:collapse">';
+      etH += '<thead><tr>'
+           + '<th style="width:22px;text-align:center;padding:3px 4px;color:#7a9070;font-weight:600">Sub</th>'
+           + '<th style="padding:3px 4px;color:#7a9070;font-weight:600">Nombre</th>'
+           + '<th style="width:78px;text-align:right;padding:3px 4px;color:#7a9070;font-weight:600">Desde</th>'
+           + '<th style="width:78px;text-align:right;padding:3px 4px;color:#7a9070;font-weight:600">Hasta</th>'
+           + '<th style="width:42px;text-align:center;padding:3px 4px;color:#7a9070;font-weight:600">Est.</th>'
+           + '</tr></thead><tbody>';
+      etSubList.forEach(function(sb, si) {
+        var sbBg = sb.d ? 'background:#f0fff4;' : '';
+        etH += '<tr style="border-top:1px solid #eef0ee;' + sbBg + '">';
+        etH += '<td style="text-align:center;padding:2px 4px;color:#aaa">' + (si + 1) + '</td>';
+        etH += '<td style="padding:2px 4px;line-height:1.3">' + esc(sb.n || '') + '</td>';
+        etH += '<td style="text-align:right;padding:2px 4px;color:#5a7060">' + (sb.desde || '—') + '</td>';
+        etH += '<td style="text-align:right;padding:2px 4px;color:#5a7060">' + (sb.hasta || '—') + '</td>';
+        etH += '<td style="text-align:center;padding:2px 4px">' + (sb.d ? '✅' : '⬜') + '</td>';
+        etH += '</tr>';
+      });
+      etH += '</tbody></table></td></tr>';
+    }
+  });
+
+  etH += '</tbody></table>';
+  var ptW   = s.ets.reduce(function(a, et){ return a + getPond(et); }, 0);
+  var ptCls = Math.abs(ptW - 100) < 1 ? 'pond-ok' : (ptW > 100 ? 'pond-err' : 'pond-warn');
+  etH += '<div class="' + ptCls + ' pond-total">\u03a3 ponderaciones: ' + Math.round(ptW) + '%</div>';
+  etH += '</div>';
+
+  /* ── IAE ring ── */
+  var ringCol = scol(pct);
+  var iaeH = '<div class="sec" style="text-align:center">'
+    + '<div class="ring" style="border-color:' + ringCol + '">'
+      + '<span class="rpct" style="color:' + ringCol + '">' + pct + '%</span>'
+      + '<span class="rsub">IAE</span>'
+    + '</div>'
+    + '<div class="spill sp-' + sc + '">' + stxt(pct) + '</div>'
+    + '<div class="rfml">' + r.label + '</div>'
+  + '</div>';
+
+  /* ── Validation ── */
+  var valH = '<div class="sec"><div class="stitle">Validaci\u00f3n</div>'
+    + '<div class="vi"><label>Punto focal</label>'
+    +   '<input class="vinp" value="' + esc(s.focal || '') + '" placeholder="Nombre y cargo..." onchange="updF(\'' + x.id + '\',\'focal\',this.value)"></div>'
+    + '<div class="vi"><label>Fecha de validaci\u00f3n</label>'
+    +   '<input type="date" class="vinp" value="' + esc(s.fecha || '') + '" onchange="updF(\'' + x.id + '\',\'fecha\',this.value)"></div>'
+    + '<div class="vi"><label>Observaciones</label>'
+    +   '<textarea class="vta" rows="3" placeholder="Notas de la sesi\u00f3n..." onchange="updF(\'' + x.id + '\',\'obs\',this.value)">' + esc(s.obs || '') + '</textarea></div>'
+    + '<div class="brow">'
+    +   '<button class="b-or" onclick="snapshot();markVal(\'' + x.id + '\')">' + (s.val ? '\u2713 Validado' : 'Marcar validado') + '</button>'
+    +   '<button class="b-dk" onclick="save();toast(\'Guardado \u2713\')">&#128190; Guardar</button>'
+    + '</div></div>';
+
+  /* ── Historial ── */
+  var histH = '<div class="sec"><div class="stitle">Historial</div>';
+  (s.hist || []).forEach(function(h) {
+    histH += '<div class="histitem"><div class="histdt">' + esc(h.d) + '</div>' + esc(h.t) + '</div>';
+  });
+  histH += '</div>';
+
+  return '<div style="display:flex;flex-direction:column;gap:10px">' + iaeH + etH + valH + histH + '</div>';
 }
 
 function buildEts(id) {
@@ -2195,7 +2406,7 @@ function buildPres() {
     // Card header
     h += '<div class="pres-card-hdr" style="border-bottom-color:'+meta.color+'">';
     h += '<div class="pres-card-icon" style="background:'+meta.bg+';font-size:1.3rem">'+meta.icon+'</div>';
-    h += '<div><div class="pres-card-ttl">'+esc(meta.label)+'<span style="margin-left:6px;font-size:.65rem;background:var(--vd);color:#fff;padding:1px 5px;border-radius:3px;vertical-align:middle">'+x.id+'</span></div>';
+    h += '<div><div class="pres-card-ttl"><span style="font-family:Barlow Condensed,sans-serif;font-weight:900;font-size:.85rem;background:var(--vd);color:#fff;padding:2px 8px;border-radius:4px;vertical-align:middle;margin-right:7px">'+x.id+'</span>'+esc(x.intv)+'</div>';
     h += '<div class="pres-card-sub">'+esc(meta.min)+'</div></div>';
     h += '</div>';
 
