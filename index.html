@@ -514,6 +514,39 @@ label.dd-opt{cursor:pointer}
 .al-icon{font-size:1rem;flex-shrink:0;margin-top:1px}
 .al-title{font-size:.76rem;font-weight:600;color:var(--tx)}
 .al-sub{font-size:.65rem;color:#5a7060;margin-top:2px}
+
+/* === Resumen de Prioridades tab === */
+.rp-header{padding:18px 0 10px;}
+.rp-title{color:var(--vd);font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:.5px;margin:0 0 2px;}
+.rp-subtitle{color:#6a8068;font-size:.78rem;margin:0 0 14px;}
+.rp-accordion{display:flex;flex-direction:column;gap:6px;}
+.rp-accordion-item{background:var(--wh);border:1px solid var(--bd);border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.rp-accordion-btn{width:100%;display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--gr);border:none;cursor:pointer;text-align:left;transition:background .15s;}
+.rp-accordion-btn:hover{background:#e4ede4;}
+.rp-min-name{flex:1;color:var(--vd);font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:700;letter-spacing:.3px;}
+.rp-count{color:var(--vd);font-size:.68rem;font-weight:700;background:rgba(201,167,81,.18);border:1px solid rgba(201,167,81,.4);border-radius:10px;padding:2px 9px;white-space:nowrap;}
+.rp-chevron{color:#9aaa9a;font-size:.7rem;transition:transform .2s;}
+.rp-accordion-btn.open .rp-chevron{transform:rotate(180deg);}
+.rp-accordion-body{padding:0 16px 14px;background:var(--wh);}
+.rp-table{width:100%;border-collapse:collapse;font-size:.77rem;}
+.rp-table thead tr{border-bottom:2px solid var(--bd);}
+.rp-table th{color:var(--vd);font-family:'Barlow Condensed',sans-serif;font-weight:700;padding:6px 8px;text-align:left;letter-spacing:.5px;font-size:.68rem;text-transform:uppercase;}
+.rp-table tbody tr{border-bottom:1px solid var(--bd);}
+.rp-table tbody tr:last-child{border-bottom:none;}
+.rp-table tbody tr:hover td{background:#f4f7f4;}
+.rp-table td{padding:8px 8px;vertical-align:top;color:var(--tx);}
+.rp-id{color:var(--vd);font-family:'Barlow Condensed',sans-serif;font-weight:700;width:50px;font-size:.72rem;white-space:nowrap;}
+.rp-prio{font-weight:600;color:var(--tx);}
+.rp-intv{color:#3a5a40;font-size:.74rem;}
+.rp-eje{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;color:#7a9070;font-weight:600;white-space:nowrap;}
+.rp-eje-badge{display:inline-block;background:var(--gr);border:1px solid var(--bd);border-radius:4px;padding:1px 6px;font-size:.63rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--vd);}
+.rp-btn-ficha{background:none;border:1px solid var(--bd);border-radius:5px;cursor:pointer;color:var(--vd);font-size:.85rem;font-weight:700;padding:2px 7px;transition:background .15s,color .15s;}
+.rp-btn-ficha:hover{background:var(--vd);color:#fff;border-color:var(--vd);}
+.sub-badge{display:inline-block;font-size:.6rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;padding:1px 6px;border-radius:8px;cursor:pointer;margin-left:5px;vertical-align:middle;letter-spacing:.3px;transition:opacity .15s;user-select:none}
+.sub-badge:hover{opacity:.75}
+.sub-badge-done{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+.sub-badge-part{background:#fff8e1;color:#8a6200;border:1px solid #ffe082}
+.sub-badge-pend{background:#f3f3f3;color:#7a9070;border:1px solid #dde8dd}
 </style>
 </head>
 <body>
@@ -554,6 +587,7 @@ label.dd-opt{cursor:pointer}
     <button class="ntab on" id="t-dash" onclick="showV('dash')">🏛️ Por Ministerio</button>
     <button class="ntab" id="t-exec" onclick="showV('exec')">🎯 Dashboard Ejecutivo</button>
     <button class="ntab" id="t-pres" onclick="showV('pres')">🏛 Dashboard Presidencial</button>
+    <button class="ntab" id="t-resumen" onclick="showV('resumen')">📋 Resumen de Prioridades</button>
     <button class="ntab" id="t-sess" style="display:none" onclick="showV('sess')">📋 Sesión Activa</button>
   </nav>
 </header>
@@ -577,6 +611,7 @@ label.dd-opt{cursor:pointer}
     <div id="vexec" style="display:none"></div>
     <div id="vpres" style="display:none"></div>
     <div id="vsess" style="display:none"></div>
+    <div id="vresumen" style="display:none"></div>
   </main>
 </div>
 <div class="toast" id="toast"></div>
@@ -1450,7 +1485,7 @@ function buildFicha(x) {
       '<span class="farr">▶</span>'+
     '</div>'+
     '<div class="fbody" id="fb-'+x.id+'">'+
-      '<div class="fcols">'+buildFL(x)+buildFR(x)+'</div>'+
+      buildFL(x)+buildFR(x)+
     '</div>'+
   '</div>';
 }
@@ -1516,8 +1551,8 @@ function buildFR(x) {
     var etSubList = etSubsX[etaIdx] || [];
     var nSubs   = etSubList.length;
     var nDone   = etSubList.filter(function(sb){ return sb.d; }).length;
-    var subProg = nSubs > 0
-      ? ' <span style="font-size:.6rem;color:#7a9070">('+nDone+'/'+nSubs+' subs)</span>'
+    var subBadge = nSubs > 0
+      ? ' <span class="sub-badge '+(nDone===nSubs?'sub-badge-done':nDone>0?'sub-badge-part':'sub-badge-pend')+'" onclick="event.stopPropagation();togEtSubs(\''+subRowId+'\')" title="Ver/ocultar subetapas">'+nDone+'/'+nSubs+' subs</span>'
       : '';
     var etName = et.n || ('Etapa ' + (etaIdx + 1));
     if (etName === '⚠ SUBETAPAS:' || etName === 'Etapa') etName = 'Etapa ' + (etaIdx + 1);
@@ -1526,7 +1561,7 @@ function buildFR(x) {
 
     etH += '<tr class="' + doneCls + '" style="cursor:pointer" onclick="togEtSubs(\'' + subRowId + '\')">';
     etH += '<td style="text-align:center;font-family:Barlow Condensed,sans-serif;font-weight:700;color:var(--vd)">' + (etaIdx + 1) + '</td>';
-    etH += '<td><span style="font-size:.74rem;font-weight:600">' + esc(etName) + '</span>' + subProg;
+    etH += '<td><span style="font-size:.74rem;font-weight:600">' + esc(etName) + '</span>' + subBadge;
     if (respShort) etH += '<br><span style="font-size:.59rem;color:#7a9070">' + esc(respShort) + '</span>';
     etH += '</td>';
     etH += '<td style="text-align:center;font-family:Barlow Condensed,sans-serif;font-weight:700">' + w + '%</td>';
@@ -2006,11 +2041,14 @@ function showV(v) {
   document.getElementById('vexec').style.display=v==='exec'?'':'none';
   document.getElementById('vpres').style.display=v==='pres'?'':'none';
   document.getElementById('vsess').style.display=v==='sess'?'':'none';
+  document.getElementById('vresumen').style.display=v==='resumen'?'':'none';
   document.getElementById('t-dash').classList.toggle('on',v==='dash');
   document.getElementById('t-exec').classList.toggle('on',v==='exec');
   document.getElementById('t-pres').classList.toggle('on',v==='pres');
   if(v==='pres') buildPres();
   document.getElementById('t-sess').classList.toggle('on',v==='sess');
+  document.getElementById('t-resumen').classList.toggle('on',v==='resumen');
+  if(v==='resumen') buildResumen();
   if(v==='exec') buildExec();
 }
 function goBack() {
@@ -2855,6 +2893,59 @@ function buildPres() {
   }, 100);
 }
 
+
+// ══════════════════════
+// RESUMEN DE PRIORIDADES
+// ══════════════════════
+var EJE_MAP={'i.1':'Eje 3 – Bolivia 50/50','i.2':'Eje 4-5 – Modernización y Transparencia','i.3':'Eje 4-5 – Modernización y Transparencia','i.4':'Eje 7 – Verde y Sostenible','i.5':'Eje 7 – Verde y Sostenible','i.6':'Eje 6 – Bienestar para Todos','i.7':'Eje 4-5 – Modernización y Transparencia','i.8':'Eje 7 – Verde y Sostenible','i.9':'Eje 4-5 – Modernización y Transparencia','i.10':'Eje 1 – Bolivia economía para la gente','i.11':'Eje 7 – Verde y Sostenible','i.12':'Eje 3 – Bolivia 50/50','i.13':'Eje 6 – Bienestar para Todos','i.14':'Eje 6 – Bienestar para Todos','i.15':'Eje 6 – Bienestar para Todos','i.16':'Eje 2 – Bolivia al Mundo y el mundo a Bolivia','i.17':'Eje 1 – Bolivia economía para la gente','i.18':'Eje 7 – Verde y Sostenible','i.19':'Eje 6 – Bienestar para Todos','i.20':'Eje 6 – Bienestar para Todos','i.21':'Eje 6 – Bienestar para Todos','i.22':'Eje 6 – Bienestar para Todos','i.23':'Eje 1 – Bolivia economía para la gente','i.24':'Eje 2 – Bolivia al Mundo y el mundo a Bolivia','i.25':'Eje 2 – Bolivia al Mundo y el mundo a Bolivia','i.26':'Eje 2 – Bolivia al Mundo y el mundo a Bolivia','i.27':'Eje 1 – Bolivia economía para la gente','i.28':'Eje 7 – Verde y Sostenible','i.29':'Eje 1 – Bolivia economía para la gente','i.30':'Eje 1 – Bolivia economía para la gente','i.31':'Eje 2 – Bolivia al Mundo y el mundo a Bolivia','i.32':'Eje 1 – Bolivia economía para la gente','i.33':'Eje 1 – Bolivia economía para la gente','i.34':'Eje 3 – Bolivia 50/50'};
+
+function buildResumen() {
+  var mins = getMins();
+  var totalPrios = IND.length;
+  var h = '<div class="rp-header">';
+  h += '<h4 class="rp-title">Resumen de Prioridades</h4>';
+  h += '<p class="rp-subtitle">'+mins.length+' ministerios responsables &middot; '+totalPrios+' intervenciones</p>';
+  h += '</div>';
+  h += '<div class="rp-accordion">';
+
+  mins.forEach(function(m, idx) {
+    var inds = indsByMin(m);
+    if (!inds.length) return;
+    var cnt = inds.length;
+    var lbl = cnt + ' prioridad' + (cnt > 1 ? 'es' : '');
+    h += '<div class="rp-accordion-item">';
+    h += '<button class="rp-accordion-btn" data-target="rp-acc-'+idx+'" onclick="toggleRpAccordion(this)">';
+    h += '<span class="rp-min-name">'+esc(m)+'</span>';
+    h += '<span class="rp-count">'+lbl+'</span>';
+    h += '<span class="rp-chevron">&#9660;</span>';
+    h += '</button>';
+    h += '<div class="rp-accordion-body" id="rp-acc-'+idx+'" style="display:none;">';
+    h += '<table class="rp-table"><thead><tr>';
+    h += '<th style="width:55px">Cód.</th>';
+    h += '<th>Prioridad</th>';
+    h += '<th>Intervención</th>';
+    h += '<th style="width:160px">Eje estratégico</th>';
+    h += '<th style="width:38px"></th>';
+    h += '</tr></thead><tbody>';
+    inds.forEach(function(x) {
+      var ejeVal = EJE_MAP[x.id] || '';
+      var minKey = x.min;
+      h += '<tr>';
+      h += '<td class="rp-id">'+esc(x.id)+'</td>';
+      h += '<td class="rp-prio">'+esc(x.intv)+'</td>';
+      h += '<td class="rp-intv">'+esc(x.intv)+'</td>';
+      h += '<td class="rp-eje"><span class="rp-eje-badge">'+esc(ejeVal)+'</span></td>';
+      h += '<td style="text-align:center;padding:4px 6px"><button class="rp-btn-ficha" onclick="openSess(\''+minKey.replace(/'/g,"\\'")+'\',' +'\''+x.id+'\')" title="Ver ficha completa">→</button></td>';
+      h += '</tr>';
+    });
+    h += '</tbody></table>';
+    h += '</div></div>';
+  });
+
+  h += '</div>';
+  document.getElementById('vresumen').innerHTML = h;
+}
+
 // ══════════════════════
 // INIT
 // ══════════════════════
@@ -2863,6 +2954,14 @@ buildSb();
 buildDash();
 var badge = document.getElementById('ind-count-badge');
 if (badge) badge.textContent = IND.length + ' PRIORIDADES';
+
+function toggleRpAccordion(btn) {
+  var targetId = btn.getAttribute('data-target');
+  var body = document.getElementById(targetId);
+  var isOpen = body.style.display !== 'none';
+  body.style.display = isOpen ? 'none' : '';
+  btn.classList.toggle('open', !isOpen);
+}
 </script>
 </body>
 </html>
