@@ -110,7 +110,7 @@ label.dd-opt{cursor:pointer}
 .scard{background:var(--wh);border-radius:9px;padding:14px 16px;border:1px solid var(--bd);box-shadow:0 2px 6px rgba(0,0,0,.04)}
 .snum{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:900;line-height:1}
 .slbl{font-size:.66rem;color:#6a8068;margin-top:2px;font-weight:500;text-transform:uppercase;letter-spacing:.4px}
-.sc0 .snum{color:var(--vd)}.sc1 .snum{color:var(--sv)}.sc2 .snum{color:var(--sa)}.sc3 .snum{color:var(--sr)}
+.sc0 .snum{color:var(--vd)}.sc1 .snum{color:var(--sv)}.sc2 .snum{color:#000}.sc3 .snum{color:var(--sr)}
 
 /* ── MIN BLOCK ── */
 .mblk{background:var(--wh);border-radius:11px;border:1px solid var(--bd);margin-bottom:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04)}
@@ -2220,7 +2220,7 @@ function buildExec() {
   h+='<div class="scard sc0"><div class="snum">34</div><div class="slbl">PRIORIDADES TOTALES</div></div>';
   h+='<div class="scard sc0"><div class="snum">24</div><div class="slbl">🟢 EN TIEMPO</div></div>';
   h+='<div class="scard sc3"><div class="snum">12</div><div class="slbl">🟡 EN PROCESO</div></div>';
-  h+='<div class="scard sc3"><div class="snum">22</div><div class="slbl">🔴 SIN INICIO</div></div>';
+  h+='<div class="scard sc3"><div class="snum" style="color:#000">23</div><div class="slbl">⬜ SIN INICIO</div></div>';
   h+='</div>';
 
   // Charts row
@@ -2288,7 +2288,7 @@ function buildExec() {
   var alerts=[];
   IND.forEach(function(x){
     var r=calcP(x.id), p=ST[x.id].prio||'M';
-    if(r.p===0&&p==='A') alerts.push({type:'red',icon:'🔴',title:'Sin inicio – Prioridad ALTA',name:x.intv,sub:x.min.split(';')[0].trim()});
+    if(r.p===0&&p==='A') alerts.push({type:'red',icon:'⬜',title:'Sin inicio – Prioridad ALTA',name:x.intv,sub:x.min.split(';')[0].trim()});
     else if(r.p>0&&r.p<34&&p==='A') alerts.push({type:'red',icon:'🟠',title:'Rezagado – Alta ('+r.p+'%)',name:x.intv,sub:x.min.split(';')[0].trim()});
     else if(r.p===0&&p==='M') alerts.push({type:'yellow',icon:'🟡',title:'Sin inicio – Prioridad MEDIA',name:x.intv,sub:x.min.split(';')[0].trim()});
   });
