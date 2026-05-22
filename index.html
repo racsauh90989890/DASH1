@@ -1399,7 +1399,7 @@ function buildDash() {
     }
   });
   var h = '<div style="margin-bottom:16px"><h2 style="font-family:Barlow Condensed,sans-serif;font-weight:900;font-size:1.55rem;color:var(--vd)">Validación por Ministerio</h2><p style="font-size:.77rem;color:#5a7060;margin-top:3px">Selecciona un ministerio para iniciar la sesión de conciliación y validación de fichas técnicas.</p></div>';
-  h += '<div class="stats" style="grid-template-columns:repeat(5,1fr)"><div class="scard sc0"><div class="snum">34</div><div class="slbl">Prioridades totales</div></div><div class="scard sc1"><div class="snum">'+nv+'</div><div class="slbl">🟢 En tiempo</div></div><div class="scard sc2"><div class="snum">'+na+'</div><div class="slbl">🟡 En riesgo</div></div><div class="scard"><div class="snum" style="color:#E57373">'+nproc+'</div><div class="slbl">🔴 En proceso</div></div><div class="scard"><div class="snum" style="color:#9E9E9E">'+nsi+'</div><div class="slbl">⬜ Sin inicio</div></div></div>';
+  h += '<div class="stats" style="grid-template-columns:repeat(5,1fr)"><div class="scard sc0"><div class="snum">34</div><div class="slbl">Prioridades totales</div></div><div class="scard sc1"><div class="snum">'+nv+'</div><div class="slbl">🟢 En tiempo</div></div><div class="scard sc2"><div class="snum">'+na+'</div><div class="slbl">🟡 En riesgo</div></div><div class="scard"><div class="snum" style="color:#E57373">'+nproc+'</div><div class="slbl">🔴 En proceso</div></div><div class="scard"><div class="snum" style="color:#000">'+nsi+'</div><div class="slbl">⬜ Sin inicio</div></div></div>';
   getMins().forEach(function(m){
     var inds = indsByMin(m); if(!inds.length) return;
     var sess = ST._s[m]||{}, vld = sess.v, icon = ini(m), mj = escJ(m);
@@ -2235,7 +2235,7 @@ function buildExec() {
   // Flow table
   h+='<div class="exec-box" style="margin-bottom:14px"><div class="exec-box-title">Tabla de flujo — intervenciones <span>'+IND.length+' items</span></div>';
   h+='<div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:8px">';
-  [{col:'#1B5E20',lbl:'Completado'},{col:'#27AE60',lbl:'En tiempo'},{col:'#F0A500',lbl:'En riesgo'},{col:'#D93025',lbl:'Rezagado'},{col:'#9e9e9e',lbl:'Sin inicio'}].forEach(function(it){
+  [{col:'#1B5E20',lbl:'Completado'},{col:'#27AE60',lbl:'En tiempo'},{col:'#F0A500',lbl:'En riesgo'},{col:'#D93025',lbl:'Rezagado'},{col:'#000',lbl:'Sin inicio'}].forEach(function(it){
     h+='<span style="display:inline-flex;align-items:center;gap:3px;font-size:.6rem;color:#5a7070"><span style="width:8px;height:8px;border-radius:2px;background:'+it.col+';display:inline-block"></span>'+it.lbl+'</span>';
   });
   h+='</div>';
