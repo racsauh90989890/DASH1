@@ -4,10 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polla Mundialista · Fase Eliminatoria · CENGOB</title>
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<title>Dashboard · Polla Eliminatoria · Amigos CENGOB 2026</title>
 <style>
-/* ── Reset & Base ──────────────────────────────────────────── */
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --verde:#0A3D2B;--verde2:#1E8449;--verde3:#d4edda;
@@ -19,43 +17,36 @@
   --radio:10px;--sombra:0 2px 12px rgba(0,0,0,.08);
 }
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f2f5;color:var(--texto);min-height:100vh}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1rem 4rem}
 
-/* ── Layout ────────────────────────────────────────────────── */
-.wrap{max-width:980px;margin:0 auto;padding:0 1rem 4rem}
-
-/* ── Header ────────────────────────────────────────────────── */
-header{background:var(--verde);color:#fff;padding:0}
-.header-inner{max-width:980px;margin:0 auto;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem}
+/* Header */
+header{background:var(--verde);color:#fff}
+.header-inner{max-width:1100px;margin:0 auto;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
 .header-ball{font-size:2.8rem;line-height:1;flex-shrink:0}
-.header-text h1{font-size:1.35rem;font-weight:700;letter-spacing:-.3px}
+.header-text h1{font-size:1.3rem;font-weight:700}
 .header-text p{font-size:.82rem;opacity:.78;margin-top:2px}
-.header-badge{margin-left:auto;background:var(--oro);color:#3d2200;font-size:.78rem;font-weight:700;padding:5px 14px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.header-right{margin-left:auto;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.header-badge{background:var(--oro);color:#3d2200;font-size:.78rem;font-weight:700;padding:5px 14px;border-radius:20px;white-space:nowrap}
+.last-update{font-size:.75rem;opacity:.7;white-space:nowrap}
 
-/* ── Nav tabs ──────────────────────────────────────────────── */
+/* Tabs */
 .tabs{background:#fff;border-bottom:1px solid var(--gris3);position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.tabs-inner{max-width:980px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
+.tabs-inner{max-width:1100px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
 .tabs-inner::-webkit-scrollbar{display:none}
 .tab-btn{padding:.75rem 1.1rem;font-size:.82rem;font-weight:600;white-space:nowrap;border:none;background:none;cursor:pointer;color:var(--texto2);border-bottom:3px solid transparent;transition:all .18s}
 .tab-btn:hover{color:var(--verde)}
 .tab-btn.active{color:var(--verde);border-bottom-color:var(--oro)}
 
-/* ── Section pages ─────────────────────────────────────────── */
+/* Pages */
 .page{display:none;animation:fadeUp .22s ease}
 .page.active{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-/* ── Cards ─────────────────────────────────────────────────── */
+/* Cards */
 .card{background:#fff;border-radius:var(--radio);box-shadow:var(--sombra);padding:1.4rem;margin-top:1.2rem;border:1px solid var(--gris3)}
 .card-title{font-size:1rem;font-weight:700;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;color:var(--gris)}
-.card-title span.ico{font-size:1.3rem}
 
-/* ── Forms ─────────────────────────────────────────────────── */
-.field{margin-bottom:.9rem}
-.field label{display:block;font-size:.8rem;font-weight:600;color:var(--texto2);margin-bottom:.35rem}
-.field input,.field select{width:100%;padding:.6rem .85rem;border:1.5px solid var(--gris3);border-radius:8px;font-size:.9rem;background:#fff;color:var(--texto);transition:border .15s}
-.field input:focus,.field select:focus{outline:none;border-color:var(--verde)}
-
-/* ── Buttons ───────────────────────────────────────────────── */
+/* Buttons */
 .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.65rem 1.4rem;border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;border:1.5px solid transparent;transition:all .15s}
 .btn:active{transform:scale(.97)}
 .btn-primary{background:var(--verde);color:#fff;border-color:var(--verde)}
@@ -64,127 +55,162 @@ header{background:var(--verde);color:#fff;padding:0}
 .btn-oro:hover{background:#b8903f}
 .btn-outline{background:#fff;color:var(--gris);border-color:var(--gris3)}
 .btn-outline:hover{background:var(--gris2)}
-.btn-danger{background:var(--rojo2);color:var(--rojo);border-color:#f5c6c2}
-.btn-danger:hover{background:#fbddda}
-.btn-row{display:flex;gap:.7rem;justify-content:flex-end;margin-top:1rem;flex-wrap:wrap}
+.btn-rojo{background:var(--rojo2);color:var(--rojo);border-color:#f5c6c2}
+.btn-row{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1rem}
 
-/* ── Progress ──────────────────────────────────────────────── */
-.prog-wrap{background:var(--gris3);border-radius:20px;height:8px;overflow:hidden;margin:.5rem 0}
-.prog-bar{background:var(--verde2);height:8px;border-radius:20px;transition:width .35s}
-.prog-label{font-size:.8rem;color:var(--texto2)}
+/* ── RANKING ─────────────────────────────────────── */
+.ranking-table{width:100%;border-collapse:collapse;margin-top:.5rem}
+.ranking-table th{background:var(--verde);color:#fff;padding:.7rem .85rem;font-size:.8rem;text-align:left;white-space:nowrap}
+.ranking-table td{padding:.7rem .85rem;font-size:.85rem;border-bottom:1px solid var(--gris3);vertical-align:middle}
+.ranking-table tr:last-child td{border-bottom:none}
+.ranking-table tr:nth-child(even) td{background:var(--gris2)}
+.ranking-table tr:hover td{background:#e8f5e9}
+.pos-medal{font-size:1.2rem}
+.nick-cell{font-weight:700;color:var(--verde)}
+.nombre-sub{font-size:.73rem;color:var(--texto2);font-weight:400;display:block}
+.pts-total{font-size:1.1rem;font-weight:800;color:var(--verde)}
+.pts-sub{font-size:.75rem;color:var(--texto2)}
+.bar-wrap{background:var(--gris3);border-radius:10px;height:6px;width:100px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:.4rem}
+.bar-fill{background:var(--verde2);height:6px;border-radius:10px}
+.pts-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.75rem;font-weight:700}
+.pts-16{background:#d4edda;color:#155724}
+.pts-fin{background:var(--azul2);color:var(--azul)}
 
-/* ── Partidos grid ─────────────────────────────────────────── */
-.partidos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-top:1rem}
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:.75rem;margin-top:1rem}
+.stat-card{background:var(--gris2);border-radius:8px;padding:.85rem;text-align:center;border:1px solid var(--gris3)}
+.stat-num{font-size:1.5rem;font-weight:700;color:var(--verde)}
+.stat-lbl{font-size:.73rem;color:var(--texto2);margin-top:2px}
 
-.partido-card{border-radius:var(--radio);overflow:hidden;border:1px solid var(--gris3);background:#fff;transition:box-shadow .15s}
-.partido-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.12)}
-.partido-head{padding:.5rem .9rem;color:#fff;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:space-between}
-.partido-num{background:rgba(255,255,255,.22);border-radius:12px;padding:2px 9px;font-size:.7rem}
-.partido-fecha{opacity:.85;font-size:.7rem}
-.partido-body{padding:.9rem 1rem}
+/* ── FIXTURE ─────────────────────────────────────── */
+.fixture-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1rem;margin-top:1rem}
+.fixture-card{border-radius:var(--radio);overflow:hidden;border:1px solid var(--gris3);background:#fff;transition:box-shadow .15s}
+.fixture-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.fix-head{padding:.5rem .9rem;color:#fff;font-size:.75rem;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.fix-status{padding:2px 10px;border-radius:12px;font-size:.7rem;font-weight:700}
+.s-pending{background:rgba(255,255,255,.2);color:#fff}
+.s-live{background:#ff4444;color:#fff;animation:pulse 1s infinite}
+.s-done{background:rgba(255,255,255,.9);color:#1a1a2e}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+.fix-body{padding:.9rem 1rem}
+.fix-versus{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem}
+.fix-team{flex:1;text-align:center}
+.fix-flag{font-size:1.4rem;display:block;margin-bottom:2px}
+.fix-name{font-size:.8rem;font-weight:700;line-height:1.2}
+.fix-score-center{display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0}
+.fix-score{font-size:1.5rem;font-weight:800;color:var(--texto);line-height:1;padding:0 6px}
+.fix-score.pending{color:var(--gris3);font-size:1.1rem}
+.fix-vs{font-size:.8rem;font-weight:700;color:var(--gris3)}
+.fix-meta{font-size:.7rem;color:var(--texto2);text-align:center;margin-top:.4rem}
+.fix-popularidad{margin-top:.5rem;border-top:1px solid var(--gris3);padding-top:.5rem}
+.fix-pop-title{font-size:.68rem;color:var(--texto2);margin-bottom:.3rem;font-weight:600}
+.fix-pop-row{display:flex;gap:4px;align-items:center;margin-bottom:2px}
+.fix-pop-lbl{font-size:.68rem;width:60px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--texto)}
+.fix-pop-bar-wrap{flex:1;background:var(--gris3);border-radius:6px;height:5px;overflow:hidden}
+.fix-pop-bar{height:5px;border-radius:6px}
+.fix-pop-pct{font-size:.65rem;color:var(--texto2);width:28px;text-align:right}
 
-/* Versus row */
-.versus-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem}
-.equipo-bloque{flex:1;text-align:center}
-.equipo-nombre{font-size:.82rem;font-weight:700;color:var(--texto);line-height:1.2;margin-bottom:.3rem}
-.equipo-flag{font-size:1.4rem;display:block;margin-bottom:2px}
-.vs-sep{font-size:.9rem;font-weight:800;color:var(--gris3);flex-shrink:0;padding:0 4px}
+/* ── MI APUESTA ───────────────────────────────────── */
+.search-box{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+.search-box select{flex:1;min-width:200px;padding:.65rem .85rem;border:1.5px solid var(--gris3);border-radius:8px;font-size:.9rem;background:#fff;color:var(--texto)}
+.search-box select:focus{outline:none;border-color:var(--verde)}
 
-/* Score inputs */
-.score-row{display:flex;align-items:center;justify-content:center;gap:.5rem}
-.score-input{width:52px;height:44px;border:2px solid var(--gris3);border-radius:8px;font-size:1.3rem;font-weight:700;text-align:center;color:var(--texto);background:#fff;transition:border .15s;-moz-appearance:textfield}
-.score-input::-webkit-inner-spin-button,.score-input::-webkit-outer-spin-button{-webkit-appearance:none}
-.score-input:focus{outline:none;border-color:var(--verde);background:#f0faf3}
-.score-input.filled{border-color:var(--verde2);background:#f0faf3}
-.score-dash{font-size:1.3rem;font-weight:800;color:var(--gris3)}
+.mi-apuesta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.75rem;margin-top:.75rem}
+.ma-card{border-radius:8px;overflow:hidden;border:1px solid var(--gris3)}
+.ma-head{padding:.4rem .75rem;font-size:.72rem;font-weight:700;color:#fff;display:flex;justify-content:space-between}
+.ma-body{padding:.75rem}
+.ma-match{font-size:.78rem;font-weight:700;color:var(--texto);margin-bottom:.3rem}
+.ma-scores{display:flex;gap:.5rem;align-items:center;margin-bottom:.3rem;flex-wrap:wrap}
+.ma-score-block{font-size:.82rem}
+.ma-score-label{font-size:.68rem;color:var(--texto2)}
+.ma-pts{font-size:.85rem;font-weight:800}
 
-/* Estadio label */
-.estadio-lbl{font-size:.7rem;color:var(--texto2);text-align:center;margin-top:.5rem;opacity:.8}
+/* Semáforo */
+.sem-exacto{background:#d4edda;border-color:#a3d9b1 !important}
+.sem-exacto .ma-head{background:#1E8449}
+.sem-ganador{background:#fff3cd;border-color:#ffd97e !important}
+.sem-ganador .ma-head{background:#856404}
+.sem-fallo{background:#fdecea;border-color:#f5c6c2 !important}
+.sem-fallo .ma-head{background:#922B21}
+.sem-pending{background:#f8f9fa;border-color:var(--gris3) !important}
+.sem-pending .ma-head{background:#6c757d}
 
-/* ── Finalistas ────────────────────────────────────────────── */
-.finalistas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.9rem;margin-top:1rem}
-.finalista-card{border-radius:var(--radio);border:1.5px solid var(--gris3);padding:1rem;background:#fff;text-align:center}
-.finalista-pos{font-size:1.6rem;display:block;margin-bottom:.3rem}
-.finalista-lbl{font-size:.75rem;font-weight:700;color:var(--texto2);margin-bottom:.6rem}
-.finalista-card select{width:100%;padding:.55rem .7rem;border:1.5px solid var(--gris3);border-radius:7px;font-size:.85rem;background:#fff;color:var(--texto);text-align:center}
-.finalista-card select:focus{outline:none;border-color:var(--verde)}
-.finalista-card select.filled{border-color:var(--verde2);background:#f0faf3}
-.finalista-card.f1{border-color:#C8A050;background:#fffdf5}
-.finalista-card.f2{border-color:#b0bec5;background:#f9fafb}
-.finalista-card.f3{border-color:#cd7f32;background:#fdf6f0}
-.finalista-card.f4{border-color:#90a4ae;background:#f5f7f8}
+.fin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.6rem;margin-top:.75rem}
+.fin-card{border-radius:8px;padding:.75rem;border:1.5px solid var(--gris3);text-align:center}
+.fin-ico{font-size:1.5rem;display:block;margin-bottom:.25rem}
+.fin-pos{font-size:.72rem;color:var(--texto2);font-weight:600}
+.fin-equipo{font-size:.9rem;font-weight:700;color:var(--texto);margin:.2rem 0}
+.fin-pts{font-size:.8rem;font-weight:800}
+.fin-ok{border-color:#a3d9b1;background:#d4edda}
+.fin-parcial{border-color:#ffd97e;background:#fff3cd}
+.fin-mal{border-color:#f5c6c2;background:#fdecea}
+.fin-pend{border-color:var(--gris3);background:#f8f9fa}
 
-/* ── Revisión ──────────────────────────────────────────────── */
-.rev-partidos{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.6rem;margin-top:.75rem}
-.rev-partido{background:var(--gris2);border-radius:8px;padding:.65rem .85rem;border:1px solid var(--gris3);font-size:.82rem}
-.rev-partido .rev-match{font-weight:700;color:var(--texto);margin-bottom:2px}
-.rev-partido .rev-score{color:var(--verde2);font-weight:800;font-size:.95rem}
-.rev-partido .rev-num{font-size:.7rem;color:var(--texto2)}
+/* resumen puntos */
+.resumen-pts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem;margin-bottom:1rem}
+.res-box{border-radius:8px;padding:.85rem;border:1px solid;text-align:center}
+.res-num{font-size:1.6rem;font-weight:800}
+.res-lbl{font-size:.75rem;font-weight:700;margin-top:2px}
 
-.rev-finalistas{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
-.fin-chip{display:inline-flex;align-items:center;gap:.4rem;background:var(--oro2);border:1px solid #f0d48a;border-radius:20px;padding:5px 14px;font-size:.82rem;font-weight:700;color:#3d2200}
+/* ── ESTADÍSTICAS ─────────────────────────────────── */
+.est-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.est-card{border-radius:var(--radio);border:1px solid var(--gris3);padding:1rem;background:#fff}
+.est-title{font-size:.8rem;font-weight:700;color:var(--texto2);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.5px}
+.est-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem}
+.est-flag{font-size:1.1rem;flex-shrink:0}
+.est-nombre{font-size:.82rem;flex:1}
+.est-bar-w{flex:2;background:var(--gris3);border-radius:6px;height:7px;overflow:hidden}
+.est-bar{height:7px;border-radius:6px;background:var(--verde2)}
+.est-cnt{font-size:.78rem;font-weight:700;color:var(--texto2);min-width:28px;text-align:right}
 
-/* ── Participantes ─────────────────────────────────────────── */
-.part-list{border:1px solid var(--gris3);border-radius:var(--radio);overflow:hidden;margin-top:.75rem}
-.part-item{display:flex;align-items:center;gap:.85rem;padding:.8rem 1rem;border-bottom:1px solid var(--gris3)}
-.part-item:last-child{border-bottom:none}
-.part-item:nth-child(even){background:var(--gris2)}
-.avatar{width:36px;height:36px;border-radius:50%;background:var(--azul2);color:var(--azul);font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.part-info{flex:1;min-width:0}
-.part-name{font-size:.9rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.part-meta{font-size:.76rem;color:var(--texto2);margin-top:1px}
-.status-badge{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:12px;white-space:nowrap}
-.s-ok{background:#d4edda;color:#155724}
-.s-pend{background:#fff3cd;color:#856404}
-.btn-del{background:none;border:none;cursor:pointer;color:#aaa;font-size:1.1rem;padding:.2rem;line-height:1;border-radius:4px}
-.btn-del:hover{color:var(--rojo);background:var(--rojo2)}
+/* ── ADMIN ──────────────────────────────────────────── */
+.admin-partidos{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:.85rem;margin-top:.75rem}
+.adm-card{border-radius:var(--radio);border:1px solid var(--gris3);overflow:hidden;background:#fff}
+.adm-head{padding:.5rem .9rem;color:#fff;font-size:.75rem;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.adm-body{padding:.85rem 1rem}
+.adm-match{font-size:.85rem;font-weight:700;margin-bottom:.6rem;color:var(--texto)}
+.adm-inputs{display:flex;align-items:center;gap:.5rem}
+.adm-input{width:56px;height:42px;border:2px solid var(--gris3);border-radius:8px;font-size:1.2rem;font-weight:700;text-align:center;color:var(--texto);background:#fff;-moz-appearance:textfield}
+.adm-input::-webkit-inner-spin-button,.adm-input::-webkit-outer-spin-button{-webkit-appearance:none}
+.adm-input:focus{outline:none;border-color:var(--verde);background:#f0faf3}
+.adm-input.has-val{border-color:var(--verde2);background:#f0faf3}
+.adm-dash{font-size:1.2rem;font-weight:800;color:var(--gris3)}
+.adm-status{font-size:.72rem;padding:2px 10px;border-radius:10px;margin-left:.5rem;font-weight:700}
+.adm-done{background:#d4edda;color:#155724}
+.adm-pend{background:#fff3cd;color:#856404}
 
-/* ── Stats strip ───────────────────────────────────────────── */
-.stats-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.75rem;margin-top:1rem}
-.stat-card{background:var(--gris2);border-radius:8px;padding:.9rem;text-align:center;border:1px solid var(--gris3)}
-.stat-num{font-size:1.6rem;font-weight:700;color:var(--verde)}
-.stat-lbl{font-size:.75rem;color:var(--texto2);margin-top:3px}
+.fin-admin{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.75rem;margin-top:.75rem}
+.fin-adm-card{border-radius:8px;border:1.5px solid var(--gris3);padding:.85rem;text-align:center;background:#fff}
+.fin-adm-ico{font-size:1.5rem;display:block;margin-bottom:.25rem}
+.fin-adm-lbl{font-size:.75rem;color:var(--texto2);font-weight:600;margin-bottom:.4rem}
+.fin-adm-sel{width:100%;padding:.5rem .6rem;border:1.5px solid var(--gris3);border-radius:7px;font-size:.82rem;background:#fff;color:var(--texto)}
+.fin-adm-sel:focus{outline:none;border-color:var(--verde)}
+.fin-adm-sel.has-val{border-color:var(--verde2);background:#f0faf3}
 
-/* ── Alerts ────────────────────────────────────────────────── */
-.alert{padding:.75rem 1rem;border-radius:8px;font-size:.85rem;margin-top:.75rem;display:flex;gap:.5rem;align-items:flex-start}
-.alert-warn{background:#fff3cd;color:#664d03;border:1px solid #ffd97e}
+/* Alert */
+.alert{padding:.75rem 1rem;border-radius:8px;font-size:.85rem;margin:.6rem 0;display:flex;gap:.5rem;align-items:flex-start}
 .alert-ok{background:#d4edda;color:#155724;border:1px solid #a3d9b1}
+.alert-warn{background:#fff3cd;color:#664d03;border:1px solid #ffd97e}
 .alert-info{background:var(--azul2);color:var(--azul);border:1px solid #bee3f8}
+.alert-rojo{background:var(--rojo2);color:var(--rojo);border:1px solid #f5c6c2}
 
-/* ── Download ──────────────────────────────────────────────── */
-.dl-center{text-align:center;padding:2rem 1rem}
-.dl-trophy{font-size:4rem;margin-bottom:.75rem}
-.dl-title{font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
-.dl-sub{font-size:.88rem;color:var(--texto2);margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto}
-
-/* ── Puntuación info ───────────────────────────────────────── */
-.pts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.75rem}
-.pts-box{border-radius:8px;padding:.85rem;border:1px solid}
-.pts-box .pts-val{font-size:1.5rem;font-weight:800;margin-bottom:3px}
-.pts-box .pts-lbl{font-size:.78rem;font-weight:700;margin-bottom:3px}
-.pts-box .pts-desc{font-size:.78rem;opacity:.85}
-
-/* ── Toast ─────────────────────────────────────────────────── */
+/* Toast */
 .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--gris);color:#fff;padding:.75rem 1.25rem;border-radius:10px;font-size:.88rem;font-weight:600;z-index:999;transform:translateY(80px);opacity:0;transition:all .3s;pointer-events:none;max-width:320px}
 .toast.show{transform:translateY(0);opacity:1}
 .toast.green{background:var(--verde2)}
 .toast.red{background:var(--rojo)}
+.toast.blue{background:var(--azul)}
 
-/* ── Octavos placeholder ───────────────────────────────────── */
-.coming-soon{text-align:center;padding:3rem 1rem;color:var(--texto2)}
-.coming-soon .cs-ico{font-size:3.5rem;margin-bottom:.75rem}
-.coming-soon h3{font-size:1.1rem;font-weight:700;color:var(--gris);margin-bottom:.4rem}
-.coming-soon p{font-size:.88rem;max-width:380px;margin:0 auto}
+/* Spinner */
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:4px}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* ── Responsive ────────────────────────────────────────────── */
 @media(max-width:600px){
-  .header-ball{font-size:2rem}
-  .header-text h1{font-size:1.1rem}
-  .partidos-grid{grid-template-columns:1fr}
-  .finalistas-grid{grid-template-columns:repeat(2,1fr)}
-  .btn-row{justify-content:stretch}
-  .btn-row .btn{flex:1;justify-content:center}
-  .rev-partidos{grid-template-columns:1fr}
+  .header-text h1{font-size:1rem}
+  .fixture-grid,.mi-apuesta-grid,.admin-partidos{grid-template-columns:1fr}
+  .ranking-table{font-size:.78rem}
+  .ranking-table th,.ranking-table td{padding:.5rem .5rem}
+  .bar-wrap{display:none}
 }
 </style>
 </head>
@@ -192,166 +218,146 @@ header{background:var(--verde);color:#fff;padding:0}
 
 <header>
   <div class="header-inner">
-    <div class="header-ball">&#9917;</div>
+    <div class="header-ball">⚽</div>
     <div class="header-text">
-      <h1>Polla Mundialista &middot; Fase Eliminatoria 2026</h1>
-      <p>Amigos CENGOB</p>
+      <h1>Polla Mundialista · Fase Eliminatoria 2026</h1>
+      <p>Amigos CENGOB &nbsp;·&nbsp; Dashboard en vivo</p>
     </div>
-    <div class="header-badge">M&aacute;x. 64 pts</div>
+    <div class="header-right">
+      <span class="last-update" id="last-update-lbl">Sin actualizar</span>
+      <span class="header-badge">Máx. 64 pts</span>
+    </div>
   </div>
 </header>
 
 <div class="tabs">
   <div class="tabs-inner">
-    <button class="tab-btn active" onclick="showTab('reg')">&#128100; Registro</button>
-    <button class="tab-btn" onclick="showTab('dieciseis')">&#9917; 16avos</button>
-    <button class="tab-btn" onclick="showTab('octavos')">&#128282; Octavos</button>
-    <button class="tab-btn" onclick="showTab('finalistas')">&#127942; Finalistas</button>
-    <button class="tab-btn" onclick="showTab('revision')">&#128203; Revisi&oacute;n</button>
-    <button class="tab-btn" onclick="showTab('lista')">&#128101; Participantes</button>
-    <button class="tab-btn" onclick="showTab('descarga')">&#11015;&#65039; Excel</button>
+    <button class="tab-btn active" onclick="showTab('ranking')">🏆 Tabla de Puntos</button>
+    <button class="tab-btn" onclick="showTab('fixture')">⚽ Fixture</button>
+    <button class="tab-btn" onclick="showTab('miapuesta')">🔍 Mi Apuesta</button>
+    <button class="tab-btn" onclick="showTab('stats')">📊 Estadísticas</button>
+    <button class="tab-btn" onclick="showTab('admin')">⚙️ Admin</button>
   </div>
 </div>
 
 <div class="wrap">
 
-<!-- ══ REGISTRO ══════════════════════════════════════════════ -->
-<div id="tab-reg" class="page active">
+<!-- ══ RANKING ══════════════════════════════════════════════ -->
+<div id="tab-ranking" class="page active">
   <div class="card">
-    <div class="card-title"><span class="ico">&#128100;</span> Ingresa tus datos</div>
-    <div class="field"><label>Nombre completo *</label>
-      <input type="text" id="inp-nombre" placeholder="Ej: José Gonzales" autocomplete="off"></div>
-    <div class="field"><label>Apodo / Nickname (opcional)</label>
-      <input type="text" id="inp-unidad" placeholder="Ej: Tonchy Boy, Excelsiur..."></div>
-    <div id="alerta-reg"></div>
+    <div class="card-title">🏆 Tabla de Puntos en Vivo</div>
+    <div class="stats-strip" id="ranking-stats"></div>
+  </div>
+  <div class="card" style="padding:0;overflow:hidden">
+    <table class="ranking-table" id="ranking-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Jugador</th>
+          <th>Pts Total</th>
+          <th>16avos</th>
+          <th>Finalistas</th>
+          <th>✅ Exactos</th>
+          <th>⚡ Ganador</th>
+          <th>❌ Fallos</th>
+        </tr>
+      </thead>
+      <tbody id="ranking-body"></tbody>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-title">🎯 Pronóstico de Finalistas por jugador</div>
+    <div style="overflow-x:auto">
+      <table class="ranking-table" id="fin-table">
+        <thead>
+          <tr>
+            <th>Jugador</th>
+            <th>🥇 Campeón</th>
+            <th>🥈 Subcampeón</th>
+            <th>🥉 3er lugar</th>
+            <th>🏅 4to lugar</th>
+            <th>Pts Fin.</th>
+          </tr>
+        </thead>
+        <tbody id="fin-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FIXTURE ════════════════════════════════════════════ -->
+<div id="tab-fixture" class="page">
+  <div class="card">
+    <div class="card-title">⚽ Fixture 16avos de Final · Mundial 2026</div>
     <div class="btn-row">
-      <button class="btn btn-primary" onclick="registrar()">Ir a pron&oacute;sticos &rarr;</button>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-title"><span class="ico">&#127381;</span> Sistema de puntuaci&oacute;n &ndash; Fase Eliminatoria</div>
-    <div class="pts-grid">
-      <div class="pts-box" style="background:#fdecea;border-color:#f5c6c2">
-        <div class="pts-val" style="color:var(--rojo)">0</div>
-        <div class="pts-lbl" style="color:var(--rojo)">&#10060; Sin acierto</div>
-        <div class="pts-desc" style="color:#7b1d1d">No acertaste el resultado ni el ganador</div>
-      </div>
-      <div class="pts-box" style="background:#fff3cd;border-color:#ffd97e">
-        <div class="pts-val" style="color:#856404">1</div>
-        <div class="pts-lbl" style="color:#856404">&#128260; Ganador / Empate</div>
-        <div class="pts-desc" style="color:#664d03">Acertaste qui&eacute;n gana (o empate) pero no el marcador</div>
-      </div>
-      <div class="pts-box" style="background:#d4edda;border-color:#a3d9b1">
-        <div class="pts-val" style="color:#155724">3</div>
-        <div class="pts-lbl" style="color:#155724">&#9989; Marcador exacto</div>
-        <div class="pts-desc" style="color:#155724">Acertaste el resultado exacto del partido (ej. 2&ndash;1)</div>
-      </div>
-      <div class="pts-box" style="background:var(--azul2);border-color:#bee3f8">
-        <div class="pts-val" style="color:var(--azul)">4 / 2</div>
-        <div class="pts-lbl" style="color:var(--azul)">&#127942; Finalistas</div>
-        <div class="pts-desc" style="color:var(--azul)">4 pts si acert&aacute;s equipo y posici&oacute;n exacta &bull; 2 pts si acert&aacute;s el equipo en otra posici&oacute;n</div>
-      </div>
-    </div>
-    <div style="margin-top:.85rem;background:var(--oro2);border-radius:8px;padding:.8rem 1rem;border:1px solid #f0d48a;font-size:.85rem;font-weight:700;color:#3d2200">
-      &#127942; M&aacute;ximo: 48 pts (16avos) + 16 pts (Finalistas 1°/2°/3°/4°) = <span style="font-size:1rem">64 puntos</span>
-    </div>
-  </div>
-</div>
-
-<!-- ══ 16AVOS DE FINAL ════════════════════════════════════════ -->
-<div id="tab-dieciseis" class="page">
-  <div class="card">
-    <div class="card-title"><span class="ico">&#9917;</span> Pron&oacute;sticos &ndash; 16avos de Final (Ronda de 32)</div>
-    <div class="alert alert-info" style="margin-bottom:.85rem">Ingresa el <b>marcador exacto</b> que crees que tendr&aacute; cada partido al final del tiempo reglamentario (90 min). En caso de empate se define por tiempo suplementario o penales, pero el pron&oacute;stico es solo para los 90 min.</div>
-    <div class="prog-wrap"><div class="prog-bar" id="prog-16" style="width:0%"></div></div>
-    <div class="prog-label" id="prog-16-lbl">0 de 16 partidos completados</div>
-  </div>
-  <div class="partidos-grid" id="partidos-16-grid"></div>
-  <div class="btn-row" style="margin-top:1rem">
-    <button class="btn btn-outline" onclick="showTab('reg')">&larr; Volver</button>
-    <button class="btn btn-primary" onclick="irFinalistas()">Siguiente: Finalistas &rarr;</button>
-  </div>
-</div>
-
-<!-- ══ OCTAVOS (placeholder) ══════════════════════════════════ -->
-<div id="tab-octavos" class="page">
-  <div class="card">
-    <div class="coming-soon">
-      <div class="cs-ico">&#128282;</div>
-      <h3>Octavos de Final &ndash; Pr&oacute;ximamente</h3>
-      <p>Los pronósticos de Octavos de Final se habilitarán una vez que finalice la Ronda de 16avos (3 de julio). Los cruces se definirán automáticamente según los clasificados.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ══ FINALISTAS ═════════════════════════════════════════════ -->
-<div id="tab-finalistas" class="page">
-  <div class="card">
-    <div class="card-title"><span class="ico">&#127942;</span> Pron&oacute;stico de Finalistas</div>
-    <div class="alert alert-info" style="margin-bottom:.85rem">Elige qui&eacute;n crees que terminar&aacute; en cada posici&oacute;n al final del torneo. <b>4 pts</b> si acert&aacute;s equipo y posici&oacute;n exacta &bull; <b>2 pts</b> si acert&aacute;s el equipo pero en otra posici&oacute;n entre los 4 finalistas.</div>
-    <div class="finalistas-grid" id="finalistas-grid"></div>
-  </div>
-  <div class="btn-row">
-    <button class="btn btn-outline" onclick="showTab('dieciseis')">&larr; 16avos</button>
-    <button class="btn btn-primary" onclick="irRevision()">Revisar apuesta &rarr;</button>
-  </div>
-</div>
-
-<!-- ══ REVISIÓN ══════════════════════════════════════════════ -->
-<div id="tab-revision" class="page">
-  <div class="card">
-    <div class="card-title"><span class="ico">&#128203;</span> Revisi&oacute;n de tu apuesta</div>
-    <div id="rev-nombre" style="font-size:.95rem;font-weight:700;margin-bottom:.75rem;color:var(--verde)"></div>
-    <div style="font-size:.85rem;font-weight:700;color:var(--texto2);margin-bottom:.5rem">&#9917; Pron&oacute;sticos 16avos de Final:</div>
-    <div class="rev-partidos" id="rev-partidos16"></div>
-    <div style="font-size:.85rem;font-weight:700;color:var(--texto2);margin:1rem 0 .5rem">&#127942; Finalistas pronosticados:</div>
-    <div class="rev-finalistas" id="rev-finalistas"></div>
-  </div>
-  <div id="alerta-rev"></div>
-  <div class="btn-row">
-    <button class="btn btn-outline" onclick="showTab('finalistas')">&larr; Corregir</button>
-    <button class="btn btn-primary" onclick="confirmarApuesta()">&#10003; Confirmar apuesta</button>
-  </div>
-</div>
-
-<!-- ══ LISTA PARTICIPANTES ════════════════════════════════════ -->
-<div id="tab-lista" class="page">
-  <div class="card">
-    <div class="card-title"><span class="ico">&#128101;</span> Participantes registrados</div>
-    <div class="stats-strip" id="stats-strip"></div>
-    <div id="part-list-wrap" style="margin-top:1rem"></div>
-  </div>
-  <div class="btn-row">
-    <button class="btn btn-outline" onclick="showTab('reg')">+ Nuevo participante</button>
-    <button class="btn btn-oro" onclick="showTab('descarga')">&#11015;&#65039; Descargar Excel</button>
-  </div>
-</div>
-
-<!-- ══ DESCARGA ═══════════════════════════════════════════════ -->
-<div id="tab-descarga" class="page">
-  <div class="card">
-    <div class="dl-center">
-      <div class="dl-trophy">&#127942;</div>
-      <div class="dl-title">Exportar pron&oacute;sticos a Excel</div>
-      <div class="dl-sub">Descarga el archivo con todos los pronósticos de la fase eliminatoria. Cuando terminen los partidos, ingresa los resultados reales en las hojas correspondientes y el ranking se calcula automáticamente.</div>
-      <div id="alerta-dl"></div>
-      <button class="btn btn-primary" style="font-size:.95rem;padding:.85rem 2rem" onclick="descargarExcel()">
-        &#128196; Descargar Excel con todos los pron&oacute;sticos
+      <button class="btn btn-primary" id="btn-fetch-fixture" onclick="fetchResultados()">
+        🔄 Actualizar resultados desde ESPN
       </button>
+      <span id="fetch-status" style="font-size:.82rem;color:var(--texto2);align-self:center"></span>
     </div>
   </div>
+  <div class="fixture-grid" id="fixture-grid"></div>
+</div>
+
+<!-- ══ MI APUESTA ══════════════════════════════════════════ -->
+<div id="tab-miapuesta" class="page">
   <div class="card">
-    <div class="card-title"><span class="ico">&#128196;</span> Instrucciones de uso</div>
-    <ol style="font-size:.88rem;line-height:1.85;padding-left:1.2rem;color:var(--texto2)">
-      <li>Cada participante abre la app en su navegador y registra sus pron&oacute;sticos.</li>
-      <li>Al finalizar los partidos de 16avos (3 julio), el organizador descarga el Excel.</li>
-      <li>Ingresa los resultados reales en la hoja <b>Resultados Reales 16avos</b>.</li>
-      <li>La hoja <b>Tabla de Puntos</b> calcula autom&aacute;ticamente el ranking.</li>
-    </ol>
-    <div class="alert alert-info" style="margin-top:.75rem">
-      <b>Nota:</b> Los datos se guardan en el navegador (<code>localStorage</code>). Si varias personas usan la misma computadora, todos los datos quedan en un solo Excel. Si cada uno usa su propia computadora, el organizador recolecta los Excel individuales.
+    <div class="card-title">🔍 Ver mi apuesta</div>
+    <div class="search-box">
+      <select id="sel-jugador" onchange="renderMiApuesta()">
+        <option value="">-- Selecciona tu nombre --</option>
+      </select>
     </div>
+  </div>
+  <div id="mi-apuesta-content"></div>
+</div>
+
+<!-- ══ ESTADÍSTICAS ════════════════════════════════════════ -->
+<div id="tab-stats" class="page">
+  <div class="card">
+    <div class="card-title">📊 Estadísticas de la Polla</div>
+    <div class="est-grid" id="stats-content"></div>
+  </div>
+</div>
+
+<!-- ══ ADMIN ═══════════════════════════════════════════════ -->
+<div id="tab-admin" class="page">
+  <div class="card">
+    <div class="card-title">&#9881;&#65039; Panel de Administrador &middot; Resultados Reales</div>
+    <div class="alert alert-info">Ingresa los resultados reales al finalizar cada partido. Los puntos se recalculan autom&#225;ticamente para todos los jugadores en tiempo real.</div>
+    <div class="btn-row">
+      <button class="btn btn-oro" onclick="guardarResultados()">&#128190; Guardar todos los cambios</button>
+      <button class="btn btn-rojo" onclick="limpiarResultados()">&#128465;&#65039; Limpiar todos</button>
+    </div>
+    <div id="admin-alert"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">&#128260; Actualizar Fixture desde ESPN</div>
+    <div class="alert alert-info" style="margin-bottom:.85rem">
+      Presiona el bot&#243;n para consultar los resultados oficiales del Mundial 2026 en tiempo real desde ESPN. Los marcadores se actualizan autom&#225;ticamente en el fixture y en la tabla de puntos.
+    </div>
+    <div class="btn-row" style="margin-bottom:.75rem">
+      <button class="btn btn-primary" id="btn-fetch-admin" onclick="fetchFixtureESPN()">
+        &#128260; Actualizar Fixture desde ESPN
+      </button>
+      <span id="espn-last-fetch" style="font-size:.78rem;color:var(--texto2);align-self:center"></span>
+    </div>
+    <div id="espn-log" style="display:none;margin-top:.75rem">
+      <div style="font-size:.8rem;font-weight:700;color:var(--texto2);margin-bottom:.5rem">&#128203; Detalle de la consulta:</div>
+      <div id="espn-log-content" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.5rem"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⚽ Resultados 16avos de Final</div>
+    <div class="admin-partidos" id="admin-partidos"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🏆 Finalistas Reales</div>
+    <div class="alert alert-warn">Completar cuando finalice el torneo.</div>
+    <div class="fin-admin" id="admin-finalistas"></div>
   </div>
 </div>
 
@@ -359,440 +365,719 @@ header{background:var(--verde);color:#fff;padding:0}
 <div class="toast" id="toast"></div>
 
 <script>
-// ══ DATOS: 16AVOS DE FINAL ══════════════════════════════════════
-const PARTIDOS_16 = [
-  {id:"p01", num:1,  local:"Sudáfrica",    visita:"Canadá",       fecha:"Dom 28/jun", estadio:"SoFi Stadium · Los Ángeles",       color:"#1A5276"},
-  {id:"p02", num:2,  local:"Alemania",     visita:"Paraguay",     fecha:"Lun 29/jun", estadio:"Gillette Stadium · Boston",         color:"#2E4057"},
-  {id:"p03", num:3,  local:"Países Bajos", visita:"Marruecos",    fecha:"Lun 29/jun", estadio:"Estadio BBVA · Monterrey",          color:"#C0392B"},
-  {id:"p04", num:4,  local:"Brasil",       visita:"Japón",        fecha:"Lun 29/jun", estadio:"NRG Stadium · Houston",             color:"#1E8449"},
-  {id:"p05", num:5,  local:"Francia",      visita:"Suecia",       fecha:"Mar 30/jun", estadio:"MetLife Stadium · Nueva Jersey",    color:"#1A3A5C"},
-  {id:"p06", num:6,  local:"Costa de Marfil", visita:"Noruega",   fecha:"Mar 30/jun", estadio:"AT&T Stadium · Dallas",            color:"#6C3483"},
-  {id:"p07", num:7,  local:"México",       visita:"Ecuador",      fecha:"Mar 30/jun", estadio:"Estadio Azteca · Ciudad de México", color:"#006847"},
-  {id:"p08", num:8,  local:"Inglaterra",   visita:"DR Congo",     fecha:"Mié 1/jul",  estadio:"Mercedes Benz Stadium · Atlanta",  color:"#922B21"},
-  {id:"p09", num:9,  local:"Estados Unidos", visita:"Bosnia y Herz.", fecha:"Mié 1/jul", estadio:"Levi's Stadium · San Francisco", color:"#1A3A6C"},
-  {id:"p10", num:10, local:"Bélgica",      visita:"Senegal",      fecha:"Mié 1/jul",  estadio:"Lumen Field · Seattle",            color:"#C0392B"},
-  {id:"p11", num:11, local:"Portugal",     visita:"Croacia",      fecha:"Jue 2/jul",  estadio:"BMO Field · Toronto",              color:"#922B21"},
-  {id:"p12", num:12, local:"España",       visita:"Austria",      fecha:"Jue 2/jul",  estadio:"SoFi Stadium · Los Ángeles",       color:"#C0392B"},
-  {id:"p13", num:13, local:"Suiza",        visita:"Argelia",      fecha:"Jue 2/jul",  estadio:"BC Place · Vancouver",             color:"#CB4335"},
-  {id:"p14", num:14, local:"Argentina",    visita:"Cabo Verde",   fecha:"Vie 3/jul",  estadio:"Hard Rock Stadium · Miami",        color:"#1A5276"},
-  {id:"p15", num:15, local:"Colombia",     visita:"Ghana",        fecha:"Vie 3/jul",  estadio:"Arrowhead Stadium · Kansas City",  color:"#F39C12"},
-  {id:"p16", num:16, local:"Australia",    visita:"Egipto",       fecha:"Vie 3/jul",  estadio:"AT&T Stadium · Dallas",            color:"#239B56"},
+// ══ DATOS BASE ════════════════════════════════════════════════════
+const PARTIDOS = [
+  {id:"p01",num:1,local:"Sudáfrica",visita:"Canadá",fecha:"Dom 28/jun",estadio:"SoFi Stadium · Los Ángeles",color:"#1A5276"},
+  {id:"p02",num:2,local:"Alemania",visita:"Paraguay",fecha:"Lun 29/jun",estadio:"Gillette Stadium · Boston",color:"#2E4057"},
+  {id:"p03",num:3,local:"Países Bajos",visita:"Marruecos",fecha:"Lun 29/jun",estadio:"Estadio BBVA · Monterrey",color:"#C0392B"},
+  {id:"p04",num:4,local:"Brasil",visita:"Japón",fecha:"Lun 29/jun",estadio:"NRG Stadium · Houston",color:"#1E8449"},
+  {id:"p05",num:5,local:"Francia",visita:"Suecia",fecha:"Mar 30/jun",estadio:"MetLife Stadium · Nueva Jersey",color:"#1A3A5C"},
+  {id:"p06",num:6,local:"Costa de Marfil",visita:"Noruega",fecha:"Mar 30/jun",estadio:"AT&T Stadium · Dallas",color:"#6C3483"},
+  {id:"p07",num:7,local:"México",visita:"Ecuador",fecha:"Mar 30/jun",estadio:"Estadio Azteca · Ciudad de México",color:"#006847"},
+  {id:"p08",num:8,local:"Inglaterra",visita:"DR Congo",fecha:"Mié 1/jul",estadio:"Mercedes Benz Stadium · Atlanta",color:"#922B21"},
+  {id:"p09",num:9,local:"Estados Unidos",visita:"Bosnia y Herz.",fecha:"Mié 1/jul",estadio:"Levi's Stadium · San Francisco",color:"#1A3A6C"},
+  {id:"p10",num:10,local:"Bélgica",visita:"Senegal",fecha:"Mié 1/jul",estadio:"Lumen Field · Seattle",color:"#C0392B"},
+  {id:"p11",num:11,local:"Portugal",visita:"Croacia",fecha:"Jue 2/jul",estadio:"BMO Field · Toronto",color:"#922B21"},
+  {id:"p12",num:12,local:"España",visita:"Austria",fecha:"Jue 2/jul",estadio:"SoFi Stadium · Los Ángeles",color:"#C0392B"},
+  {id:"p13",num:13,local:"Suiza",visita:"Argelia",fecha:"Jue 2/jul",estadio:"BC Place · Vancouver",color:"#CB4335"},
+  {id:"p14",num:14,local:"Argentina",visita:"Cabo Verde",fecha:"Vie 3/jul",estadio:"Hard Rock Stadium · Miami",color:"#1A5276"},
+  {id:"p15",num:15,local:"Colombia",visita:"Ghana",fecha:"Vie 3/jul",estadio:"Arrowhead Stadium · Kansas City",color:"#F39C12"},
+  {id:"p16",num:16,local:"Australia",visita:"Egipto",fecha:"Vie 3/jul",estadio:"AT&T Stadium · Dallas",color:"#239B56"},
 ];
-
-// Todos los equipos para selector de finalistas
-const EQUIPOS_32 = [
-  "Argentina","Australia","Alemania","Austria","Bélgica","Bosnia y Herz.","Brasil",
-  "Cabo Verde","Canadá","Colombia","Costa de Marfil","Croacia","DR Congo","Ecuador",
-  "Egipto","España","Estados Unidos","Francia","Ghana","Inglaterra","Japón",
-  "Marruecos","México","Noruega","Países Bajos","Paraguay","Portugal","Senegal",
-  "Sudáfrica","Suecia","Suiza","Argelia"
-].sort();
 
 const FIN_PUESTOS = [
-  {key:"f1", cls:"f1", ico:"🥇", lbl:"Campeón del Mundo"},
-  {key:"f2", cls:"f2", ico:"🥈", lbl:"Subcampeón (2.° lugar)"},
-  {key:"f3", cls:"f3", ico:"🥉", lbl:"Tercer lugar"},
-  {key:"f4", cls:"f4", ico:"🏅", lbl:"Cuarto lugar"},
+  {key:"f1",ico:"🥇",lbl:"Campeón"},
+  {key:"f2",ico:"🥈",lbl:"Subcampeón"},
+  {key:"f3",ico:"🥉",lbl:"3er lugar"},
+  {key:"f4",ico:"🏅",lbl:"4to lugar"},
 ];
 
-// ── Estado ──────────────────────────────────────────────────────
-let usuario = {nombre:"", unidad:""};
-let pronPartidos = {};     // {p01:{gl:"",gv:""}, ...}
-let pronFinalistas = {f1:"",f2:"",f3:"",f4:""};
-let participantes = JSON.parse(localStorage.getItem("polla_elim_2026_v1")||"[]");
+const EQUIPOS = ["Argentina","Australia","Alemania","Austria","Bélgica","Bosnia y Herz.","Brasil","Cabo Verde","Canadá","Colombia","Costa de Marfil","Croacia","DR Congo","Ecuador","Egipto","España","Estados Unidos","Francia","Ghana","Inglaterra","Japón","Marruecos","México","Noruega","Países Bajos","Paraguay","Portugal","Senegal","Sudáfrica","Suecia","Suiza","Argelia"].sort();
 
-// ── NAV ─────────────────────────────────────────────────────────
-const TAB_IDX = {reg:0, dieciseis:1, octavos:2, finalistas:3, revision:4, lista:5, descarga:6};
+// Pronósticos de todos los participantes (incrustados desde Excel)
+const PARTICIPANTES = [{"nombre":"José Antonio Gonzales López","nick":"José","fecha":"28/6/2026, 3:11:36 p. m.","partidos":{"p01":{"gl":"0","gv":"2"},"p02":{"gl":"2","gv":"0"},"p03":{"gl":"1","gv":"1"},"p04":{"gl":"2","gv":"1"},"p05":{"gl":"3","gv":"0"},"p06":{"gl":"2","gv":"2"},"p07":{"gl":"2","gv":"1"},"p08":{"gl":"3","gv":"1"},"p09":{"gl":"2","gv":"0"},"p10":{"gl":"2","gv":"0"},"p11":{"gl":"1","gv":"2"},"p12":{"gl":"2","gv":"0"},"p13":{"gl":"2","gv":"0"},"p14":{"gl":"3","gv":"0"},"p15":{"gl":"2","gv":"0"},"p16":{"gl":"1","gv":"2"}},"finalistas":{"f1":"Francia","f2":"Inglaterra","f3":"España","f4":"Argentina"}},{"nombre":"Julio Linares","nick":"Julio","fecha":"28/6/2026, 2:48:19 p. m.","partidos":{"p01":{"gl":"1","gv":"2"},"p02":{"gl":"2","gv":"0"},"p03":{"gl":"2","gv":"2"},"p04":{"gl":"3","gv":"2"},"p05":{"gl":"3","gv":"0"},"p06":{"gl":"1","gv":"2"},"p07":{"gl":"2","gv":"2"},"p08":{"gl":"3","gv":"0"},"p09":{"gl":"2","gv":"0"},"p10":{"gl":"2","gv":"1"},"p11":{"gl":"1","gv":"1"},"p12":{"gl":"3","gv":"0"},"p13":{"gl":"1","gv":"1"},"p14":{"gl":"3","gv":"0"},"p15":{"gl":"2","gv":"1"},"p16":{"gl":"1","gv":"1"}},"finalistas":{"f1":"España","f2":"Países Bajos","f3":"Argentina","f4":"Francia"}},{"nombre":"Gustavo Bonifaz","nick":"Gustavo","fecha":"28/6/2026, 1:31:55 p. m.","partidos":{"p01":{"gl":"1","gv":"3"},"p02":{"gl":"2","gv":"0"},"p03":{"gl":"2","gv":"2"},"p04":{"gl":"3","gv":"1"},"p05":{"gl":"3","gv":"1"},"p06":{"gl":"1","gv":"3"},"p07":{"gl":"1","gv":"0"},"p08":{"gl":"2","gv":"0"},"p09":{"gl":"3","gv":"0"},"p10":{"gl":"2","gv":"2"},"p11":{"gl":"2","gv":"2"},"p12":{"gl":"3","gv":"1"},"p13":{"gl":"2","gv":"1"},"p14":{"gl":"1","gv":"0"},"p15":{"gl":"2","gv":"2"},"p16":{"gl":"1","gv":"2"}},"finalistas":{"f1":"España","f2":"Argentina","f3":"Brasil","f4":"Países Bajos"}},{"nombre":"Jorge Rubin de Celis","nick":"Jorge","fecha":"28/6/2026, 1:54:37 p. m.","partidos":{"p01":{"gl":"1","gv":"2"},"p02":{"gl":"0","gv":"2"},"p03":{"gl":"2","gv":"1"},"p04":{"gl":"0","gv":"2"},"p05":{"gl":"2","gv":"0"},"p06":{"gl":"0","gv":"1"},"p07":{"gl":"3","gv":"2"},"p08":{"gl":"2","gv":"0"},"p09":{"gl":"3","gv":"1"},"p10":{"gl":"2","gv":"0"},"p11":{"gl":"2","gv":"0"},"p12":{"gl":"3","gv":"1"},"p13":{"gl":"2","gv":"0"},"p14":{"gl":"3","gv":"1"},"p15":{"gl":"3","gv":"1"},"p16":{"gl":"2","gv":"0"}},"finalistas":{"f1":"Argentina","f2":"Francia","f3":"Alemania","f4":"Estados Unidos"}},{"nombre":"Brany Mercado Hurtado","nick":"Brany","fecha":"28/6/2026, 9:57:48 a. m.","partidos":{"p01":{"gl":"2","gv":"1"},"p02":{"gl":"3","gv":"1"},"p03":{"gl":"0","gv":"2"},"p04":{"gl":"3","gv":"0"},"p05":{"gl":"2","gv":"0"},"p06":{"gl":"0","gv":"3"},"p07":{"gl":"2","gv":"2"},"p08":{"gl":"1","gv":"2"},"p09":{"gl":"1","gv":"0"},"p10":{"gl":"0","gv":"0"},"p11":{"gl":"1","gv":"2"},"p12":{"gl":"2","gv":"0"},"p13":{"gl":"1","gv":"1"},"p14":{"gl":"4","gv":"1"},"p15":{"gl":"2","gv":"0"},"p16":{"gl":"2","gv":"0"}},"finalistas":{"f1":"Argentina","f2":"Alemania","f3":"Brasil","f4":"Cabo Verde"}},{"nombre":"Pablo Cachaga Herrera","nick":"PabloStylo","fecha":"28/6/2026, 1:57:54 p. m.","partidos":{"p01":{"gl":"1","gv":"2"},"p02":{"gl":"3","gv":"1"},"p03":{"gl":"2","gv":"1"},"p04":{"gl":"2","gv":"1"},"p05":{"gl":"2","gv":"0"},"p06":{"gl":"1","gv":"2"},"p07":{"gl":"1","gv":"1"},"p08":{"gl":"3","gv":"1"},"p09":{"gl":"2","gv":"1"},"p10":{"gl":"1","gv":"1"},"p11":{"gl":"2","gv":"1"},"p12":{"gl":"2","gv":"0"},"p13":{"gl":"1","gv":"1"},"p14":{"gl":"3","gv":"0"},"p15":{"gl":"2","gv":"1"},"p16":{"gl":"1","gv":"1"}},"finalistas":{"f1":"Francia","f2":"Argentina","f3":"España","f4":"Inglaterra"}},{"nombre":"Luis Antonio Kosovic Kaune","nick":"Tonchy","fecha":"28/6/2026, 3:14:27 p. m.","partidos":{"p01":{"gl":"1","gv":"2"},"p02":{"gl":"3","gv":"0"},"p03":{"gl":"3","gv":"1"},"p04":{"gl":"2","gv":"1"},"p05":{"gl":"3","gv":"1"},"p06":{"gl":"1","gv":"2"},"p07":{"gl":"1","gv":"1"},"p08":{"gl":"2","gv":"0"},"p09":{"gl":"3","gv":"0"},"p10":{"gl":"1","gv":"1"},"p11":{"gl":"1","gv":"0"},"p12":{"gl":"3","gv":"0"},"p13":{"gl":"1","gv":"0"},"p14":{"gl":"3","gv":"0"},"p15":{"gl":"2","gv":"1"},"p16":{"gl":"1","gv":"1"}},"finalistas":{"f1":"Francia","f2":"Inglaterra","f3":"Argentina","f4":"España"}},{"nombre":"Sdenka Maruska","nick":"Claros Gomez","fecha":"28/6/2026, 1:57:00 p. m.","partidos":{"p01":{"gl":"1","gv":"2"},"p02":{"gl":"2","gv":"0"},"p03":{"gl":"1","gv":"1"},"p04":{"gl":"2","gv":"0"},"p05":{"gl":"3","gv":"1"},"p06":{"gl":"1","gv":"2"},"p07":{"gl":"1","gv":"0"},"p08":{"gl":"3","gv":"1"},"p09":{"gl":"1","gv":"1"},"p10":{"gl":"2","gv":"1"},"p11":{"gl":"2","gv":"1"},"p12":{"gl":"2","gv":"0"},"p13":{"gl":"2","gv":"1"},"p14":{"gl":"3","gv":"0"},"p15":{"gl":"2","gv":"1"},"p16":{"gl":"1","gv":"1"}},"finalistas":{"f1":"Argentina","f2":"Francia","f3":"España","f4":"Brasil"}},{"nombre":"Paola Jimena Quino Ramirez","nick":"Pao","fecha":"28/6/2026, 2:08:29 p. m.","partidos":{"p01":{"gl":"1","gv":"2"},"p02":{"gl":"3","gv":"1"},"p03":{"gl":"0","gv":"1"},"p04":{"gl":"3","gv":"1"},"p05":{"gl":"2","gv":"1"},"p06":{"gl":"1","gv":"1"},"p07":{"gl":"2","gv":"1"},"p08":{"gl":"3","gv":"0"},"p09":{"gl":"1","gv":"0"},"p10":{"gl":"1","gv":"1"},"p11":{"gl":"2","gv":"0"},"p12":{"gl":"2","gv":"1"},"p13":{"gl":"1","gv":"0"},"p14":{"gl":"2","gv":"1"},"p15":{"gl":"2","gv":"1"},"p16":{"gl":"3","gv":"1"}},"finalistas":{"f1":"Portugal","f2":"Argentina","f3":"Brasil","f4":"España"}},{"nombre":"Angel Gutierrez Gutierrez","nick":"Angel","fecha":"28/6/2026, 2:52:36 p. m.","partidos":{"p01":{"gl":"1","gv":"2"},"p02":{"gl":"3","gv":"0"},"p03":{"gl":"2","gv":"1"},"p04":{"gl":"0","gv":"0"},"p05":{"gl":"3","gv":"0"},"p06":{"gl":"1","gv":"2"},"p07":{"gl":"1","gv":"1"},"p08":{"gl":"2","gv":"0"},"p09":{"gl":"2","gv":"0"},"p10":{"gl":"3","gv":"1"},"p11":{"gl":"2","gv":"1"},"p12":{"gl":"2","gv":"0"},"p13":{"gl":"2","gv":"1"},"p14":{"gl":"0","gv":"0"},"p15":{"gl":"2","gv":"0"},"p16":{"gl":"0","gv":"2"}},"finalistas":{"f1":"Países Bajos","f2":"Inglaterra","f3":"Portugal","f4":"Suiza"}},{"nombre":"GABRIELA VEIZAGA","nick":"GABY GABY","fecha":"28/6/2026, 3:31:36 p. m.","partidos":{"p01":{"gl":"1","gv":"2"},"p02":{"gl":"2","gv":"0"},"p03":{"gl":"2","gv":"2"},"p04":{"gl":"2","gv":"2"},"p05":{"gl":"3","gv":"1"},"p06":{"gl":"1","gv":"2"},"p07":{"gl":"2","gv":"2"},"p08":{"gl":"2","gv":"1"},"p09":{"gl":"3","gv":"1"},"p10":{"gl":"3","gv":"2"},"p11":{"gl":"3","gv":"2"},"p12":{"gl":"2","gv":"1"},"p13":{"gl":"3","gv":"2"},"p14":{"gl":"2","gv":"1"},"p15":{"gl":"2","gv":"1"},"p16":{"gl":"1","gv":"2"}},"finalistas":{"f1":"Portugal","f2":"México","f3":"Francia","f4":"Argentina"}},
+{"nombre":"Huáscar Mantilla Gutiérrez","nick":"racsauh","fecha":"28/6/2026, 2:40:34 p. m.","partidos":{"p01":{"gl":"2","gv":"1"},"p02":{"gl":"3","gv":"0"},"p03":{"gl":"1","gv":"0"},"p04":{"gl":"2","gv":"1"},"p05":{"gl":"2","gv":"0"},"p06":{"gl":"1","gv":"2"},"p07":{"gl":"2","gv":"1"},"p08":{"gl":"3","gv":"0"},"p09":{"gl":"2","gv":"0"},"p10":{"gl":"2","gv":"1"},"p11":{"gl":"2","gv":"1"},"p12":{"gl":"3","gv":"0"},"p13":{"gl":"2","gv":"0"},"p14":{"gl":"4","gv":"0"},"p15":{"gl":"2","gv":"1"},"p16":{"gl":"1","gv":"1"}},"finalistas":{"f1":"España","f2":"Argentina","f3":"Alemania","f4":"Portugal"}}];
+
+// ══ ESTADO: resultados reales (guardados en localStorage) ══════
+let resultados = JSON.parse(localStorage.getItem('cengob_res_2026') || '{}');
+// resultados = { p01:{gl,gv,status}, ..., f1:'equipo', f2:'equipo', ... }
+
+// ══ HELPERS ═══════════════════════════════════════════════════
+function bandera(e){
+  const f={"Argentina":"🇦🇷","Australia":"🇦🇺","Alemania":"🇩🇪","Austria":"🇦🇹","Bélgica":"🇧🇪","Bosnia y Herz.":"🇧🇦","Brasil":"🇧🇷","Cabo Verde":"🇨🇻","Canadá":"🇨🇦","Colombia":"🇨🇴","Costa de Marfil":"🇨🇮","Croacia":"🇭🇷","DR Congo":"🇨🇩","Ecuador":"🇪🇨","Egipto":"🇪🇬","España":"🇪🇸","Estados Unidos":"🇺🇸","Francia":"🇫🇷","Ghana":"🇬🇭","Inglaterra":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","Japón":"🇯🇵","Marruecos":"🇲🇦","México":"🇲🇽","Noruega":"🇳🇴","Países Bajos":"🇳🇱","Paraguay":"🇵🇾","Portugal":"🇵🇹","Senegal":"🇸🇳","Sudáfrica":"🇿🇦","Suecia":"🇸🇪","Suiza":"🇨🇭","Argelia":"🇩🇿","México":"🇲🇽","Suiza":"🇨🇭"};
+  return f[e]||'🏳️';
+}
+
+function calcPuntosPtd(pid, parte){
+  const r = resultados[pid];
+  if(!r || r.gl==='' || r.gl===undefined || r.gl===null) return null; // sin resultado
+  const rgl = parseInt(r.gl), rgv = parseInt(r.gv);
+  const pgl = parseInt(parte.gl), pgv = parseInt(parte.gv);
+  if(isNaN(rgl)||isNaN(rgv)||isNaN(pgl)||isNaN(pgv)) return null;
+  if(pgl===rgl && pgv===rgv) return 3;
+  const res_r = rgl>rgv?'L':rgl<rgv?'V':'E';
+  const res_p = pgl>pgv?'L':pgl<pgv?'V':'E';
+  if(res_r===res_p) return 1;
+  return 0;
+}
+
+function calcPtosFinalistas(participante){
+  let pts=0, detalle={};
+  FIN_PUESTOS.forEach(fp=>{
+    const pronost = participante.finalistas[fp.key];
+    const real = resultados[fp.key];
+    if(!real||!pronost){detalle[fp.key]=null;return;}
+    if(pronost===real){detalle[fp.key]=4;pts+=4;return;}
+    // ¿está en otra posición?
+    const enOtra = FIN_PUESTOS.some(o=>o.key!==fp.key && resultados[o.key]===pronost && resultados[o.key]);
+    if(enOtra){detalle[fp.key]=2;pts+=2;return;}
+    detalle[fp.key]=0;
+  });
+  return {pts,detalle};
+}
+
+function calcPuntosParticipante(p){
+  let pts16=0, exactos=0, ganador=0, fallos=0;
+  PARTIDOS.forEach(pt=>{
+    const pp = calcPuntosPtd(pt.id, p.partidos[pt.id]);
+    if(pp===null) return;
+    pts16+=pp;
+    if(pp===3) exactos++;
+    else if(pp===1) ganador++;
+    else fallos++;
+  });
+  const {pts:ptsFin, detalle:detFin} = calcPtosFinalistas(p);
+  return {pts16, ptsFin, total:pts16+ptsFin, exactos, ganador, fallos, detFin};
+}
+
+function semClass(pts){
+  if(pts===null) return 'sem-pending';
+  if(pts===3) return 'sem-exacto';
+  if(pts===1) return 'sem-ganador';
+  return 'sem-fallo';
+}
+function semLabel(pts){
+  if(pts===null) return '⏳ Pendiente';
+  if(pts===3) return '✅ Exacto +3';
+  if(pts===1) return '⚡ Ganador +1';
+  return '❌ Fallo 0';
+}
+
+function posMedal(i){
+  if(i===0) return '🥇';
+  if(i===1) return '🥈';
+  if(i===2) return '🥉';
+  return `${i+1}.`;
+}
+
+function toast(msg,tipo=''){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.className='toast'+(tipo?' '+tipo:'');
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3200);
+}
+
+function updateLastUpdate(){
+  const ts = localStorage.getItem('cengob_ts_2026');
+  const el = document.getElementById('last-update-lbl');
+  if(ts) el.textContent = '🕐 Actualizado: '+new Date(parseInt(ts)).toLocaleTimeString('es-BO');
+  else el.textContent = 'Sin actualizar aún';
+}
+
+// ══ NAV ═══════════════════════════════════════════════════════
 function showTab(id){
-  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
-  document.getElementById("tab-"+id).classList.add("active");
-  const idx = TAB_IDX[id];
-  if(idx !== undefined) document.querySelectorAll(".tab-btn")[idx].classList.add("active");
-  window.scrollTo({top:0,behavior:"smooth"});
-  if(id==="dieciseis") renderPartidos16();
-  if(id==="finalistas") renderFinalistas();
-  if(id==="revision") renderRevision();
-  if(id==="lista") renderLista();
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  const tabs = ['ranking','fixture','miapuesta','stats','admin'];
+  const idx = tabs.indexOf(id);
+  if(idx>=0) document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='ranking') renderRanking();
+  if(id==='fixture') renderFixture();
+  if(id==='miapuesta') renderMiApuesta();
+  if(id==='stats') renderStats();
+  if(id==='admin') renderAdmin();
 }
 
-// ── REGISTRO ────────────────────────────────────────────────────
-function registrar(){
-  const nombre = document.getElementById("inp-nombre").value.trim();
-  const unidad = document.getElementById("inp-unidad").value.trim();
-  const alerta = document.getElementById("alerta-reg");
-  if(!nombre){
-    alerta.innerHTML='<div class="alert alert-warn">⚠️ Por favor ingresa tu nombre completo.</div>';return;
-  }
-  if(participantes.find(p=>p.nombre.toLowerCase()===nombre.toLowerCase())){
-    alerta.innerHTML=`<div class="alert alert-warn">⚠️ <b>${nombre}</b> ya registró su apuesta. Ve a "Participantes" para verla.</div>`;return;
-  }
-  alerta.innerHTML="";
-  usuario = {nombre, unidad};
-  pronPartidos = {};
-  pronFinalistas = {f1:"",f2:"",f3:"",f4:""};
-  PARTIDOS_16.forEach(p=>{ pronPartidos[p.id]={gl:"",gv:""}; });
-  showTab("dieciseis");
+// ══ RANKING ═══════════════════════════════════════════════════
+function renderRanking(){
+  const scored = PARTICIPANTES.map(p=>({...p,...calcPuntosParticipante(p)}));
+  scored.sort((a,b)=>b.total-a.total||b.exactos-a.exactos);
+  const jugados = PARTIDOS.filter(p=>{const r=resultados[p.id];return r&&r.gl!==''&&r.gl!==undefined&&r.gl!==null;}).length;
+  const maxPts = 64;
+
+  // Stats strip
+  document.getElementById('ranking-stats').innerHTML=`
+    <div class="stat-card"><div class="stat-num">${jugados}</div><div class="stat-lbl">Partidos jugados</div></div>
+    <div class="stat-card"><div class="stat-num">${16-jugados}</div><div class="stat-lbl">Por jugar</div></div>
+    <div class="stat-card"><div class="stat-num">${scored[0]?.total??0}</div><div class="stat-lbl">Líder actual</div></div>
+    <div class="stat-card"><div class="stat-num">${PARTICIPANTES.length}</div><div class="stat-lbl">Participantes</div></div>
+  `;
+
+  // Tabla ranking
+  document.getElementById('ranking-body').innerHTML = scored.map((p,i)=>`
+    <tr>
+      <td><span class="pos-medal">${posMedal(i)}</span></td>
+      <td>
+        <span class="nick-cell">${p.nick}</span>
+        <span class="nombre-sub">${p.nombre}</span>
+      </td>
+      <td>
+        <span class="pts-total">${p.total}</span>
+        <span class="pts-sub">/${maxPts}</span>
+        <div class="bar-wrap"><div class="bar-fill" style="width:${Math.round(p.total/maxPts*100)}%"></div></div>
+      </td>
+      <td><span class="pts-badge pts-16">${p.pts16}</span></td>
+      <td><span class="pts-badge pts-fin">${p.ptsFin}</span></td>
+      <td style="color:#155724;font-weight:700">${p.exactos}</td>
+      <td style="color:#856404;font-weight:700">${p.ganador}</td>
+      <td style="color:#922B21;font-weight:700">${p.fallos}</td>
+    </tr>`).join('');
+
+  // Tabla finalistas
+  document.getElementById('fin-body').innerHTML = scored.map(p=>{
+    const cells = FIN_PUESTOS.map(fp=>{
+      const equipo = p.finalistas[fp.key];
+      const real = resultados[fp.key];
+      let cls='', pts='';
+      if(real){
+        if(equipo===real){cls='style="background:#d4edda"';pts='<span style="color:#155724;font-weight:700"> +4</span>';}
+        else{
+          const enOtra=FIN_PUESTOS.some(o=>o.key!==fp.key&&resultados[o.key]===equipo&&resultados[o.key]);
+          if(enOtra){cls='style="background:#fff3cd"';pts='<span style="color:#856404;font-weight:700"> +2</span>';}
+          else{cls='style="background:#fdecea"';pts='<span style="color:#922B21;font-weight:700"> 0</span>';}
+        }
+      }
+      return `<td ${cls}>${bandera(equipo)} ${equipo}${pts}</td>`;
+    }).join('');
+    return `<tr><td><span class="nick-cell">${p.nick}</span><span class="nombre-sub">${p.nombre}</span></td>${cells}<td><span class="pts-badge pts-fin">${p.ptsFin}</span></td></tr>`;
+  }).join('');
 }
 
-// ── PARTIDOS 16AVOS ─────────────────────────────────────────────
-function renderPartidos16(){
-  const grid = document.getElementById("partidos-16-grid");
-  grid.innerHTML = PARTIDOS_16.map(p=>`
-    <div class="partido-card">
-      <div class="partido-head" style="background:${p.color}">
-        <span>⚽ Partido ${p.num} &middot; ${p.fecha}</span>
-        <span class="partido-num">#${String(p.num).padStart(2,"0")}</span>
+// ══ FIXTURE ═══════════════════════════════════════════════════
+function renderFixture(){
+  const grid = document.getElementById('fixture-grid');
+  grid.innerHTML = PARTIDOS.map(p=>{
+    const r = resultados[p.id];
+    const hasRes = r && r.gl!==''&&r.gl!==undefined&&r.gl!==null;
+    const statusTxt = hasRes ? 'Finalizado' : (r&&r.status==='live'?'En vivo':'Pendiente');
+    const statusCls = hasRes ? 's-done' : (r&&r.status==='live'?'s-live':'s-pending');
+
+    // Popularidad de pronósticos para este partido
+    const prons = PARTICIPANTES.map(pp=>({gl:parseInt(pp.partidos[p.id]?.gl||0),gv:parseInt(pp.partidos[p.id]?.gv||0)}));
+    const ganaLocal = prons.filter(x=>x.gl>x.gv).length;
+    const empate = prons.filter(x=>x.gl===x.gv).length;
+    const ganaVisita = prons.filter(x=>x.gl<x.gv).length;
+    const total = PARTICIPANTES.length;
+
+    return `<div class="fixture-card">
+      <div class="fix-head" style="background:${p.color}">
+        <span>P${p.num} · ${p.fecha}</span>
+        <span class="fix-status ${statusCls}">${statusTxt}</span>
       </div>
-      <div class="partido-body">
-        <div class="versus-row">
-          <div class="equipo-bloque">
-            <span class="equipo-flag">${bandera(p.local)}</span>
-            <div class="equipo-nombre">${p.local}</div>
+      <div class="fix-body">
+        <div class="fix-versus">
+          <div class="fix-team">
+            <span class="fix-flag">${bandera(p.local)}</span>
+            <div class="fix-name">${p.local}</div>
           </div>
-          <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-            <span class="vs-sep">VS</span>
-            <div class="score-row">
-              <input type="number" class="score-input" id="gl-${p.id}" min="0" max="20"
-                placeholder="?" value="${pronPartidos[p.id]?.gl??""}"
-                oninput="setScore('${p.id}','gl',this.value)">
-              <span class="score-dash">–</span>
-              <input type="number" class="score-input" id="gv-${p.id}" min="0" max="20"
-                placeholder="?" value="${pronPartidos[p.id]?.gv??""}"
-                oninput="setScore('${p.id}','gv',this.value)">
-            </div>
+          <div class="fix-score-center">
+            ${hasRes
+              ? `<span class="fix-score">${r.gl} – ${r.gv}</span>`
+              : `<span class="fix-vs">VS</span><span class="fix-score pending">? – ?</span>`}
           </div>
-          <div class="equipo-bloque">
-            <span class="equipo-flag">${bandera(p.visita)}</span>
-            <div class="equipo-nombre">${p.visita}</div>
+          <div class="fix-team">
+            <span class="fix-flag">${bandera(p.visita)}</span>
+            <div class="fix-name">${p.visita}</div>
           </div>
         </div>
-        <div class="estadio-lbl">📍 ${p.estadio}</div>
+        <div class="fix-meta">📍 ${p.estadio}</div>
+        <div class="fix-popularidad">
+          <div class="fix-pop-title">¿Quién gana según los jugadores?</div>
+          <div class="fix-pop-row">
+            <span class="fix-pop-lbl">${p.local.split(' ')[0]}</span>
+            <div class="fix-pop-bar-wrap"><div class="fix-pop-bar" style="width:${Math.round(ganaLocal/total*100)}%;background:#1E8449"></div></div>
+            <span class="fix-pop-pct">${ganaLocal}</span>
+          </div>
+          <div class="fix-pop-row">
+            <span class="fix-pop-lbl">Empate</span>
+            <div class="fix-pop-bar-wrap"><div class="fix-pop-bar" style="width:${Math.round(empate/total*100)}%;background:#856404"></div></div>
+            <span class="fix-pop-pct">${empate}</span>
+          </div>
+          <div class="fix-pop-row">
+            <span class="fix-pop-lbl">${p.visita.split(' ')[0]}</span>
+            <div class="fix-pop-bar-wrap"><div class="fix-pop-bar" style="width:${Math.round(ganaVisita/total*100)}%;background:#922B21"></div></div>
+            <span class="fix-pop-pct">${ganaVisita}</span>
+          </div>
+        </div>
       </div>
-    </div>`).join("");
-  // Restaurar clases filled
-  PARTIDOS_16.forEach(p=>{
-    const gl = document.getElementById("gl-"+p.id);
-    const gv = document.getElementById("gv-"+p.id);
-    const d = pronPartidos[p.id];
-    if(gl && d?.gl!=="") gl.classList.add("filled");
-    if(gv && d?.gv!=="") gv.classList.add("filled");
+    </div>`;
+  }).join('');
+}
+
+// ══ MI APUESTA ════════════════════════════════════════════════
+function initMiApuesta(){
+  const sel = document.getElementById('sel-jugador');
+  sel.innerHTML = '<option value="">-- Selecciona tu nombre --</option>' +
+    PARTICIPANTES.map((p,i)=>`<option value="${i}">${p.nick} (${p.nombre})</option>`).join('');
+}
+
+function renderMiApuesta(){
+  const idx = parseInt(document.getElementById('sel-jugador').value);
+  const cont = document.getElementById('mi-apuesta-content');
+  if(isNaN(idx)||idx<0){cont.innerHTML='';return;}
+  const p = PARTICIPANTES[idx];
+  const stats = calcPuntosParticipante(p);
+  const jugados = PARTIDOS.filter(pt=>{const r=resultados[pt.id];return r&&r.gl!==''&&r.gl!==undefined&&r.gl!==null;}).length;
+  const maxDisponible = jugados*3 + 16;
+
+  cont.innerHTML = `
+  <div class="card">
+    <div class="card-title">🎭 ${p.nick} <span style="font-size:.8rem;font-weight:400;color:var(--texto2)">${p.nombre}</span></div>
+    <div class="resumen-pts">
+      <div class="res-box" style="background:#d4edda;border-color:#a3d9b1">
+        <div class="res-num" style="color:#155724">${stats.total}</div>
+        <div class="res-lbl" style="color:#155724">Puntos totales</div>
+      </div>
+      <div class="res-box" style="background:var(--azul2);border-color:#bee3f8">
+        <div class="res-num" style="color:var(--azul)">${stats.pts16}</div>
+        <div class="res-lbl" style="color:var(--azul)">Pts 16avos</div>
+      </div>
+      <div class="res-box" style="background:var(--oro2);border-color:#f0d48a">
+        <div class="res-num" style="color:#3d2200">${stats.ptsFin}</div>
+        <div class="res-lbl" style="color:#3d2200">Pts Finalistas</div>
+      </div>
+      <div class="res-box" style="background:#f0faf3;border-color:var(--verde2)">
+        <div class="res-num" style="color:var(--verde)">${stats.exactos}</div>
+        <div class="res-lbl" style="color:var(--verde)">✅ Exactos</div>
+      </div>
+      <div class="res-box" style="background:#fff3cd;border-color:#ffd97e">
+        <div class="res-num" style="color:#856404">${stats.ganador}</div>
+        <div class="res-lbl" style="color:#856404">⚡ Ganadores</div>
+      </div>
+      <div class="res-box" style="background:var(--rojo2);border-color:#f5c6c2">
+        <div class="res-num" style="color:var(--rojo)">${stats.fallos}</div>
+        <div class="res-lbl" style="color:var(--rojo)">❌ Fallos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⚽ Pronósticos partido a partido</div>
+    <div class="mi-apuesta-grid">
+      ${PARTIDOS.map(pt=>{
+        const pron = p.partidos[pt.id];
+        const res = resultados[pt.id];
+        const hasRes = res&&res.gl!==''&&res.gl!==undefined&&res.gl!==null;
+        const pts = calcPuntosPtd(pt.id, pron);
+        const cls = semClass(pts);
+        return `<div class="ma-card ${cls}">
+          <div class="ma-head" style="background:${pt.color}">
+            <span>P${pt.num} · ${pt.fecha}</span>
+            <span>${semLabel(pts)}</span>
+          </div>
+          <div class="ma-body">
+            <div class="ma-match">${bandera(pt.local)} ${pt.local} vs ${pt.visita} ${bandera(pt.visita)}</div>
+            <div class="ma-scores">
+              <div class="ma-score-block">
+                <div class="ma-score-label">Tu pronóstico</div>
+                <strong>${pron?.gl??'?'} – ${pron?.gv??'?'}</strong>
+              </div>
+              ${hasRes?`<div style="color:var(--gris3);font-size:1.1rem">→</div>
+              <div class="ma-score-block">
+                <div class="ma-score-label">Resultado real</div>
+                <strong style="color:var(--verde2)">${res.gl} – ${res.gv}</strong>
+              </div>`:`<div style="color:var(--texto2);font-size:.78rem">⏳ Sin resultado</div>`}
+            </div>
+          </div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🏆 Finalistas pronosticados</div>
+    <div class="fin-grid">
+      ${FIN_PUESTOS.map(fp=>{
+        const equipo = p.finalistas[fp.key];
+        const real = resultados[fp.key];
+        let cls='fin-pend', ptsTxt='⏳ Pendiente';
+        if(real){
+          if(equipo===real){cls='fin-ok';ptsTxt='+4 pts ✅';}
+          else{
+            const enOtra=FIN_PUESTOS.some(o=>o.key!==fp.key&&resultados[o.key]===equipo&&resultados[o.key]);
+            if(enOtra){cls='fin-parcial';ptsTxt='+2 pts ⚡';}
+            else{cls='fin-mal';ptsTxt='0 pts ❌';}
+          }
+        }
+        return `<div class="fin-card ${cls}">
+          <span class="fin-ico">${fp.ico}</span>
+          <div class="fin-pos">${fp.lbl}</div>
+          <div class="fin-equipo">${bandera(equipo)} ${equipo}</div>
+          ${real?`<div style="font-size:.72rem;color:var(--texto2);margin-bottom:2px">Real: ${bandera(real)} ${real}</div>`:''}
+          <div class="fin-pts">${ptsTxt}</div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>`;
+}
+
+// ══ ESTADÍSTICAS ══════════════════════════════════════════════
+function renderStats(){
+  // Campeón más popular
+  const campMap={}, subMap={}, terMap={}, cuarMap={};
+  PARTICIPANTES.forEach(p=>{
+    campMap[p.finalistas.f1]=(campMap[p.finalistas.f1]||0)+1;
+    subMap[p.finalistas.f2]=(subMap[p.finalistas.f2]||0)+1;
+    terMap[p.finalistas.f3]=(terMap[p.finalistas.f3]||0)+1;
+    cuarMap[p.finalistas.f4]=(cuarMap[p.finalistas.f4]||0)+1;
   });
-  actualizarProg16();
+
+  // Partidos más difíciles (mayor dispersión de pronósticos)
+  const dispersion = PARTIDOS.map(pt=>{
+    const scores={};
+    PARTICIPANTES.forEach(p=>{
+      const k=`${p.partidos[pt.id].gl}-${p.partidos[pt.id].gv}`;
+      scores[k]=(scores[k]||0)+1;
+    });
+    return {partido:pt, distintos:Object.keys(scores).length, scores};
+  }).sort((a,b)=>b.distintos-a.distintos);
+
+  const barChart=(map,max)=>Object.entries(map).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([k,v])=>`
+    <div class="est-row">
+      <span class="est-flag">${bandera(k)}</span>
+      <span class="est-nombre">${k}</span>
+      <div class="est-bar-w"><div class="est-bar" style="width:${Math.round(v/max*100)}%"></div></div>
+      <span class="est-cnt">${v}</span>
+    </div>`).join('');
+
+  const total=PARTICIPANTES.length;
+  document.getElementById('stats-content').innerHTML=`
+    <div class="est-card">
+      <div class="est-title">🥇 Pronóstico de Campeón</div>
+      ${barChart(campMap,total)}
+    </div>
+    <div class="est-card">
+      <div class="est-title">🥈 Pronóstico de Subcampeón</div>
+      ${barChart(subMap,total)}
+    </div>
+    <div class="est-card">
+      <div class="est-title">🥉 Pronóstico de 3er lugar</div>
+      ${barChart(terMap,total)}
+    </div>
+    <div class="est-card">
+      <div class="est-title">🏅 Pronóstico de 4to lugar</div>
+      ${barChart(cuarMap,total)}
+    </div>
+    <div class="est-card" style="grid-column:1/-1">
+      <div class="est-title">🎲 Partidos con más variedad de pronósticos</div>
+      ${dispersion.slice(0,5).map(d=>`
+        <div class="est-row">
+          <span class="est-flag">⚽</span>
+          <span class="est-nombre">P${d.partido.num} ${d.partido.local} vs ${d.partido.visita}</span>
+          <div class="est-bar-w"><div class="est-bar" style="width:${Math.round(d.distintos/11*100)}%"></div></div>
+          <span class="est-cnt">${d.distintos} distintos</span>
+        </div>`).join('')}
+    </div>`;
 }
 
-function setScore(pid, campo, val){
-  if(!pronPartidos[pid]) pronPartidos[pid]={gl:"",gv:""};
-  const v = val===""?"":Math.max(0,parseInt(val)||0);
-  pronPartidos[pid][campo] = v===""?"":String(v);
-  const el = document.getElementById((campo==="gl"?"gl-":"gv-")+pid);
-  if(el){
-    if(v!=="") el.value=v;
-    el.classList.toggle("filled", v!=="");
-  }
-  actualizarProg16();
-}
+// ══ ADMIN ══════════════════════════════════════════════════════
+function renderAdmin(){
+  const opts = EQUIPOS.map(e=>`<option value="${e}">${e}</option>`).join('');
 
-function actualizarProg16(){
-  const ok = PARTIDOS_16.filter(p=>{
-    const d=pronPartidos[p.id];
-    return d && d.gl!=="" && d.gv!=="";
-  }).length;
-  const pct = Math.round(ok/16*100);
-  document.getElementById("prog-16").style.width=pct+"%";
-  document.getElementById("prog-16-lbl").textContent=`${ok} de 16 partidos completados`;
-}
+  document.getElementById('admin-partidos').innerHTML = PARTIDOS.map(p=>{
+    const r = resultados[p.id];
+    const gl = (r&&r.gl!==undefined&&r.gl!==null&&r.gl!=='')?r.gl:'';
+    const gv = (r&&r.gv!==undefined&&r.gv!==null&&r.gv!=='')?r.gv:'';
+    const done = gl!==''&&gv!=='';
+    return `<div class="adm-card">
+      <div class="adm-head" style="background:${p.color}">
+        <span>P${p.num} · ${p.local} vs ${p.visita}</span>
+        <span class="adm-status ${done?'adm-done':'adm-pend'}" id="adm-status-${p.id}">${done?'✅ Ingresado':'⏳ Pendiente'}</span>
+      </div>
+      <div class="adm-body">
+        <div class="adm-match">${bandera(p.local)} ${p.local} &nbsp;vs&nbsp; ${p.visita} ${bandera(p.visita)}</div>
+        <div class="adm-inputs">
+          <input type="number" class="adm-input ${gl!==''?'has-val':''}" id="adm-gl-${p.id}" min="0" max="20"
+            placeholder="?" value="${gl}" oninput="setAdminScore('${p.id}')">
+          <span class="adm-dash">–</span>
+          <input type="number" class="adm-input ${gv!==''?'has-val':''}" id="adm-gv-${p.id}" min="0" max="20"
+            placeholder="?" value="${gv}" oninput="setAdminScore('${p.id}')">
+          <span style="font-size:.78rem;color:var(--texto2);margin-left:4px">${p.fecha}</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
 
-function irFinalistas(){
-  const faltantes = PARTIDOS_16.filter(p=>{
-    const d=pronPartidos[p.id];
-    return !d||d.gl===""||d.gv==="";
-  });
-  if(faltantes.length){
-    toast("Faltan "+faltantes.length+" partido(s): "+faltantes.slice(0,3).map(p=>"P"+p.num).join(", ")+(faltantes.length>3?"...":""),"red");
-    return;
-  }
-  showTab("finalistas");
-}
-
-// ── FINALISTAS ──────────────────────────────────────────────────
-function renderFinalistas(){
-  const opts = EQUIPOS_32.map(e=>`<option value="${e}">${e}</option>`).join("");
-  document.getElementById("finalistas-grid").innerHTML = FIN_PUESTOS.map(f=>`
-    <div class="finalista-card ${f.cls}">
-      <span class="finalista-pos">${f.ico}</span>
-      <div class="finalista-lbl">${f.lbl}</div>
-      <select id="sel-${f.key}" onchange="setFinalista('${f.key}',this.value)">
+  document.getElementById('admin-finalistas').innerHTML = FIN_PUESTOS.map(fp=>{
+    const val = resultados[fp.key]||'';
+    return `<div class="fin-adm-card">
+      <span class="fin-adm-ico">${fp.ico}</span>
+      <div class="fin-adm-lbl">${fp.lbl}</div>
+      <select class="fin-adm-sel ${val?'has-val':''}" id="adm-${fp.key}" onchange="setAdminFin('${fp.key}',this.value)">
         <option value="">-- elige equipo --</option>${opts}
       </select>
-    </div>`).join("");
-  // Restaurar valores
-  FIN_PUESTOS.forEach(f=>{
-    if(pronFinalistas[f.key]){
-      const s=document.getElementById("sel-"+f.key);
-      if(s){s.value=pronFinalistas[f.key];s.classList.add("filled");}
+    </div>`;
+  }).join('');
+
+  // Restaurar valores de finalistas
+  FIN_PUESTOS.forEach(fp=>{
+    const s=document.getElementById('adm-'+fp.key);
+    if(s&&resultados[fp.key]) s.value=resultados[fp.key];
+  });
+}
+
+function setAdminScore(pid){
+  const gl = document.getElementById('adm-gl-'+pid)?.value;
+  const gv = document.getElementById('adm-gv-'+pid)?.value;
+  if(!resultados[pid]) resultados[pid]={};
+  resultados[pid].gl = gl===''?'':Math.max(0,parseInt(gl)||0);
+  resultados[pid].gv = gv===''?'':Math.max(0,parseInt(gv)||0);
+  const done = gl!==''&&gv!=='';
+  const st = document.getElementById('adm-status-'+pid);
+  if(st) st.textContent = done?'✅ Ingresado':'⏳ Pendiente';
+  if(st) st.className = 'adm-status '+(done?'adm-done':'adm-pend');
+  const elGL = document.getElementById('adm-gl-'+pid);
+  const elGV = document.getElementById('adm-gv-'+pid);
+  if(elGL) elGL.classList.toggle('has-val', gl!=='');
+  if(elGV) elGV.classList.toggle('has-val', gv!=='');
+}
+
+function setAdminFin(key,val){
+  resultados[key]=val;
+  const s=document.getElementById('adm-'+key);
+  if(s) s.classList.toggle('has-val',!!val);
+}
+
+function guardarResultados(){
+  localStorage.setItem('cengob_res_2026', JSON.stringify(resultados));
+  localStorage.setItem('cengob_ts_2026', Date.now().toString());
+  updateLastUpdate();
+  document.getElementById('admin-alert').innerHTML='<div class="alert alert-ok">✅ Resultados guardados. La tabla de puntos se actualizó automáticamente.</div>';
+  toast('Resultados guardados','green');
+  setTimeout(()=>document.getElementById('admin-alert').innerHTML='',4000);
+}
+
+function limpiarResultados(){
+  if(!confirm('¿Limpiar TODOS los resultados ingresados?')) return;
+  resultados={};
+  localStorage.removeItem('cengob_res_2026');
+  localStorage.removeItem('cengob_ts_2026');
+  updateLastUpdate();
+  renderAdmin();
+  toast('Resultados limpiados');
+}
+
+
+// ══ FETCH ESPN FIXTURE (Admin) ════════════════════════════════
+async function fetchFixtureESPN(){
+  const btn = document.getElementById('btn-fetch-admin');
+  const logWrap = document.getElementById('espn-log');
+  const logContent = document.getElementById('espn-log-content');
+  const lastFetch = document.getElementById('espn-last-fetch');
+
+  btn.disabled=true;
+  btn.innerHTML='<span class="spinner"></span> Consultando ESPN...';
+  logWrap.style.display='none';
+  logContent.innerHTML='';
+
+  try {
+    const url = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
+    const resp = await fetch(url);
+    if(!resp.ok) throw new Error('ESPN no responde ('+resp.status+')');
+    const data = await resp.json();
+
+    const espnEvents = {};
+    (data.events||[]).forEach(ev=>{
+      (ev.competitions||[]).forEach(comp=>{
+        const teams = comp.competitors||[];
+        if(teams.length!==2) return;
+        const home = teams.find(t=>t.homeAway==='home');
+        const away = teams.find(t=>t.homeAway==='away');
+        if(!home||!away) return;
+        const hName = ESPN_MAP[home.team?.displayName]||home.team?.displayName||'';
+        const aName = ESPN_MAP[away.team?.displayName]||away.team?.displayName||'';
+        const entry = {
+          hName, aName,
+          hScore: home.score, aScore: away.score,
+          completed: comp.status?.type?.completed||false,
+          inProgress: comp.status?.type?.state==='in',
+          statusDetail: comp.status?.type?.description||'Sin estado'
+        };
+        espnEvents[hName+'|'+aName]=entry;
+        espnEvents[aName+'|'+hName]={...entry, hName:aName, aName:hName, hScore:away.score, aScore:home.score};
+      });
+    });
+
+    let actualizados=0, enVivo=0, pendientes=0;
+    const logItems=[];
+
+    PARTIDOS.forEach(p=>{
+      const key = p.local+'|'+p.visita;
+      const ev = espnEvents[key];
+      if(!ev){
+        pendientes++;
+        logItems.push({num:p.num, local:p.local, visita:p.visita, tipo:'pending', msg:'Sin datos ESPN aun', gl:'', gv:''});
+        return;
+      }
+      if(ev.completed||ev.inProgress){
+        const gl = parseInt(ev.hName===p.local?ev.hScore:ev.aScore)||0;
+        const gv = parseInt(ev.hName===p.local?ev.aScore:ev.hScore)||0;
+        if(!resultados[p.id]) resultados[p.id]={};
+        resultados[p.id].gl=gl; resultados[p.id].gv=gv;
+        resultados[p.id].status=ev.inProgress?'live':'done';
+        if(ev.inProgress) enVivo++; else actualizados++;
+        logItems.push({num:p.num, local:p.local, visita:p.visita,
+          tipo:ev.inProgress?'live':'done',
+          msg:ev.inProgress?'En vivo':'Finalizado', gl, gv});
+      } else {
+        pendientes++;
+        logItems.push({num:p.num, local:p.local, visita:p.visita,
+          tipo:'pending', msg:ev.statusDetail, gl:'', gv:''});
+      }
+    });
+
+    localStorage.setItem('cengob_res_2026', JSON.stringify(resultados));
+    localStorage.setItem('cengob_ts_2026', Date.now().toString());
+    updateLastUpdate();
+
+    const total = actualizados+enVivo;
+    lastFetch.textContent = 'Ultima consulta: '+new Date().toLocaleTimeString('es-BO')+' - '+total+' partidos con resultado';
+
+    logContent.innerHTML = logItems.map(item=>{
+      const bg = item.tipo==='done'?'#d4edda':item.tipo==='live'?'#fff3cd':'#f8f9fa';
+      const bc = item.tipo==='done'?'#a3d9b1':item.tipo==='live'?'#ffd97e':'#dde1e4';
+      const ico = item.tipo==='done'?'OK':item.tipo==='live'?'EN VIVO':'Pendiente';
+      const scoreHtml = (item.gl!==''&&item.gv!=='')
+        ? '<span style="font-size:1.05rem;font-weight:800;color:#1E8449">'+item.gl+' - '+item.gv+'</span>'
+        : '<span style="color:#aaa">? - ?</span>';
+      return '<div style="background:'+bg+';border:1px solid '+bc+';border-radius:8px;padding:.6rem .85rem;font-size:.78rem">'
+        +'<div style="font-weight:700;margin-bottom:3px">P'+item.num+' '+bandera(item.local)+' '+item.local+' vs '+item.visita+' '+bandera(item.visita)+'</div>'
+        +'<div style="display:flex;justify-content:space-between;align-items:center">'
+        +'<span style="color:#555">['+ico+'] '+item.msg+'</span>'+scoreHtml+'</div></div>';
+    }).join('');
+
+    logWrap.style.display='block';
+    renderAdmin();
+    renderFixture();
+    renderRanking();
+
+    const resumen = actualizados+' finalizados, '+enVivo+' en vivo, '+pendientes+' pendientes';
+    document.getElementById('admin-alert').innerHTML='<div class="alert '+(total>0?'alert-ok':'alert-warn')+'">'+(total>0?'Actualizado: ':'Sin resultados nuevos. ')+resumen+'</div>';
+    toast(total>0?total+' partidos actualizados desde ESPN':'Sin resultados aun en ESPN', total>0?'green':'');
+    setTimeout(()=>{const a=document.getElementById('admin-alert');if(a)a.innerHTML='';},5000);
+
+  } catch(err){
+    logWrap.style.display='block';
+    logContent.innerHTML='<div style="grid-column:1/-1"><div class="alert alert-rojo">Error ESPN: '+err.message+'. Ingresa los resultados manualmente.</div></div>';
+    toast('Error ESPN: '+err.message,'red');
+  } finally {
+    btn.disabled=false;
+    btn.innerHTML='&#128260; Actualizar Fixture desde ESPN';
+  }
+}
+
+// ══ FETCH ESPN ════════════════════════════════════════════════
+// Mapa de nombres ESPN → nombres locales
+const ESPN_MAP = {
+  'South Africa':'Sudáfrica','Canada':'Canadá','Germany':'Alemania','Paraguay':'Paraguay',
+  'Netherlands':'Países Bajos','Morocco':'Marruecos','Brazil':'Brasil','Japan':'Japón',
+  'France':'Francia','Sweden':'Suecia','Ivory Coast':'Costa de Marfil','Cote d\'Ivoire':'Costa de Marfil',
+  'Norway':'Noruega','Mexico':'México','Ecuador':'Ecuador','England':'Inglaterra',
+  'DR Congo':'DR Congo','Congo, DR':'DR Congo','Democratic Republic of Congo':'DR Congo',
+  'United States':'Estados Unidos','USA':'Estados Unidos','Bosnia and Herzegovina':'Bosnia y Herz.',
+  'Belgium':'Bélgica','Senegal':'Senegal','Portugal':'Portugal','Croatia':'Croacia',
+  'Spain':'España','Austria':'Austria','Switzerland':'Suiza','Algeria':'Argelia',
+  'Argentina':'Argentina','Cape Verde':'Cabo Verde','Colombia':'Colombia','Ghana':'Ghana',
+  'Australia':'Australia','Egypt':'Egipto'
+};
+
+async function fetchResultados(fromAdmin=false){
+  const btnId = fromAdmin ? 'btn-fetch-admin' : 'btn-fetch-fixture';
+  const btn = document.getElementById(btnId);
+  const statusEl = document.getElementById('fetch-status');
+  if(btn){btn.disabled=true;btn.innerHTML='<span class="spinner"></span> Consultando ESPN...';}
+  if(statusEl) statusEl.textContent='Buscando resultados...';
+
+  try {
+    // ESPN API pública para el Mundial 2026 (FIFA World Cup)
+    const url = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
+    const resp = await fetch(url);
+    if(!resp.ok) throw new Error('ESPN no responde: '+resp.status);
+    const data = await resp.json();
+
+    let actualizados = 0;
+    const events = data.events || [];
+
+    events.forEach(ev=>{
+      const comps = ev.competitions || [];
+      comps.forEach(comp=>{
+        const teams = comp.competitors || [];
+        if(teams.length!==2) return;
+
+        const homeTeam = teams.find(t=>t.homeAway==='home');
+        const awayTeam = teams.find(t=>t.homeAway==='away');
+        if(!homeTeam||!awayTeam) return;
+
+        const homeName = ESPN_MAP[homeTeam.team?.displayName]||homeTeam.team?.displayName||'';
+        const awayName = ESPN_MAP[awayTeam.team?.displayName]||awayTeam.team?.displayName||'';
+        const status = comp.status?.type?.completed;
+        const inProgress = comp.status?.type?.state==='in';
+
+        // Buscar partido coincidente
+        const partido = PARTIDOS.find(p=>
+          (p.local===homeName && p.visita===awayName) ||
+          (p.local===awayName && p.visita===homeName)
+        );
+        if(!partido) return;
+
+        if(status || inProgress){
+          let glHome = parseInt(homeTeam.score)||0;
+          let glAway = parseInt(awayTeam.score)||0;
+          // Ajustar si el mapeo invertido
+          if(partido.local!==homeName){[glHome,glAway]=[glAway,glHome];}
+          if(!resultados[partido.id]) resultados[partido.id]={};
+          resultados[partido.id].gl = glHome;
+          resultados[partido.id].gv = glAway;
+          resultados[partido.id].status = inProgress?'live':'done';
+          actualizados++;
+        }
+      });
+    });
+
+    localStorage.setItem('cengob_res_2026', JSON.stringify(resultados));
+    localStorage.setItem('cengob_ts_2026', Date.now().toString());
+    updateLastUpdate();
+
+    const msg = actualizados>0
+      ? `✅ ${actualizados} partido(s) actualizados desde ESPN`
+      : '⚠️ No se encontraron resultados nuevos. Los partidos puede que aún no hayan comenzado.';
+
+    if(statusEl) statusEl.textContent = msg;
+    if(fromAdmin){
+      document.getElementById('admin-alert').innerHTML=`<div class="alert ${actualizados>0?'alert-ok':'alert-warn'}">${msg}</div>`;
+      renderAdmin();
+    } else {
+      renderFixture();
     }
-  });
-}
+    renderRanking();
+    toast(actualizados>0?`${actualizados} partidos actualizados`:'Sin resultados nuevos aún', actualizados>0?'green':'');
 
-function setFinalista(key, val){
-  // Verificar que el mismo equipo no esté en otra posición
-  const yaUsado = FIN_PUESTOS.some(f=>f.key!==key && pronFinalistas[f.key]===val && val!=="");
-  if(yaUsado){
-    document.getElementById("sel-"+key).value=pronFinalistas[key]||"";
-    toast("Ese equipo ya está asignado en otra posición","red");return;
+  } catch(err){
+    const errMsg = '❌ Error al conectar con ESPN: '+err.message;
+    if(statusEl) statusEl.textContent = errMsg;
+    if(fromAdmin) document.getElementById('admin-alert').innerHTML=`<div class="alert alert-rojo">${errMsg}. Ingresa los resultados manualmente.</div>`;
+    toast('Error ESPN: '+err.message,'red');
+  } finally {
+    if(btn){btn.disabled=false;btn.innerHTML=fromAdmin?'🔄 Importar resultados desde ESPN':'🔄 Actualizar resultados desde ESPN';}
   }
-  pronFinalistas[key]=val;
-  const s=document.getElementById("sel-"+key);
-  if(s) s.classList.toggle("filled",!!val);
 }
 
-function irRevision(){
-  const fin=FIN_PUESTOS.filter(f=>!pronFinalistas[f.key]);
-  if(fin.length){
-    toast("Elige los 4 finalistas (faltan "+fin.length+")","red");return;
-  }
-  showTab("revision");
-}
-
-// ── REVISIÓN ────────────────────────────────────────────────────
-function renderRevision(){
-  document.getElementById("rev-nombre").textContent=
-    "Participante: "+usuario.nombre+(usuario.unidad?" 🎭 «"+usuario.unidad+"»":"");
-
-  document.getElementById("rev-partidos16").innerHTML=PARTIDOS_16.map(p=>{
-    const d=pronPartidos[p.id];
-    const gl=d?.gl??"?"; const gv=d?.gv??"?";
-    const ok=(gl!==""&&gv!=="");
-    return `<div class="rev-partido">
-      <div class="rev-num">Partido ${p.num} · ${p.fecha}</div>
-      <div class="rev-match">${p.local} vs ${p.visita}</div>
-      <div class="rev-score">${ok?gl+" – "+gv:'<span style="color:#aaa">Sin ingresar</span>'}</div>
-    </div>`;
-  }).join("");
-
-  const posIco={"f1":"🥇","f2":"🥈","f3":"🥉","f4":"🏅"};
-  const posLbl={"f1":"Campeón","f2":"Subcampeón","f3":"3° lugar","f4":"4° lugar"};
-  document.getElementById("rev-finalistas").innerHTML=
-    FIN_PUESTOS.map(f=>`<span class="fin-chip">${posIco[f.key]} ${posLbl[f.key]}: <b>${pronFinalistas[f.key]||"—"}</b></span>`).join("");
-
-  document.getElementById("alerta-rev").innerHTML="";
-}
-
-function confirmarApuesta(){
-  const entrada = {
-    nombre: usuario.nombre,
-    unidad: usuario.unidad,
-    fecha: new Date().toLocaleString("es-BO"),
-    partidos: {},
-    finalistas: {...pronFinalistas}
-  };
-  PARTIDOS_16.forEach(p=>{
-    entrada.partidos[p.id]={
-      gl: pronPartidos[p.id]?.gl??"",
-      gv: pronPartidos[p.id]?.gv??""
-    };
-  });
-  participantes.push(entrada);
-  localStorage.setItem("polla_elim_2026_v1", JSON.stringify(participantes));
-  toast("¡Apuesta guardada! "+usuario.nombre,"green");
-  usuario={nombre:"",unidad:""};
-  pronPartidos={};
-  pronFinalistas={f1:"",f2:"",f3:"",f4:""};
-  document.getElementById("inp-nombre").value="";
-  document.getElementById("inp-unidad").value="";
-  showTab("lista");
-}
-
-// ── LISTA ────────────────────────────────────────────────────────
-function renderLista(){
-  const completos=participantes.filter(p=>{
-    const partOk=PARTIDOS_16.every(pt=>p.partidos?.[pt.id]?.gl!==""&&p.partidos?.[pt.id]?.gv!=="");
-    const finOk=p.finalistas&&FIN_PUESTOS.every(f=>p.finalistas[f.key]);
-    return partOk&&finOk;
-  }).length;
-
-  document.getElementById("stats-strip").innerHTML=`
-    <div class="stat-card"><div class="stat-num">${participantes.length}</div><div class="stat-lbl">Participantes</div></div>
-    <div class="stat-card"><div class="stat-num">${completos}</div><div class="stat-lbl">Completos</div></div>
-    <div class="stat-card"><div class="stat-num">${participantes.length-completos}</div><div class="stat-lbl">Incompletos</div></div>
-    <div class="stat-card"><div class="stat-num">${Math.round(completos/Math.max(participantes.length,1)*100)}%</div><div class="stat-lbl">Participación</div></div>`;
-
-  const wrap=document.getElementById("part-list-wrap");
-  if(participantes.length===0){
-    wrap.innerHTML='<div style="text-align:center;padding:2rem;color:var(--texto2);font-size:.9rem">Ningún participante registrado aún.</div>';return;
-  }
-  wrap.innerHTML=`<div class="part-list">${participantes.map((p,i)=>{
-    const init=p.nombre.split(" ").slice(0,2).map(w=>w[0]||"").join("").toUpperCase();
-    const partOk=PARTIDOS_16.every(pt=>p.partidos?.[pt.id]?.gl!==""&&p.partidos?.[pt.id]?.gv!=="");
-    const finOk=p.finalistas&&FIN_PUESTOS.every(f=>p.finalistas[f.key]);
-    const ok=partOk&&finOk;
-    return `<div class="part-item">
-      <div class="avatar">${init}</div>
-      <div class="part-info">
-        <div class="part-name">${p.nombre}</div>
-        <div class="part-meta">${p.unidad?"🎭 "+p.unidad:"Sin apodo"} · ${p.fecha}</div>
-      </div>
-      <span class="status-badge ${ok?"s-ok":"s-pend"}">${ok?"Completo":"Incompleto"}</span>
-      <button class="btn-del" onclick="eliminar(${i})" title="Eliminar">🗑️</button>
-    </div>`;
-  }).join("")}</div>`;
-}
-
-function eliminar(idx){
-  if(!confirm("¿Eliminar la apuesta de "+participantes[idx].nombre+"?"))return;
-  participantes.splice(idx,1);
-  localStorage.setItem("polla_elim_2026_v1",JSON.stringify(participantes));
-  renderLista();
-  toast("Participante eliminado","");
-}
-
-// ── TOAST ────────────────────────────────────────────────────────
-function toast(msg,tipo){
-  const t=document.getElementById("toast");
-  t.textContent=msg;t.className="toast"+(tipo?" "+tipo:"");
-  t.classList.add("show");
-  setTimeout(()=>t.classList.remove("show"),3200);
-}
-
-// ── BANDERAS ─────────────────────────────────────────────────────
-function bandera(equipo){
-  const f={
-    "Argentina":"🇦🇷","Australia":"🇦🇺","Alemania":"🇩🇪","Austria":"🇦🇹","Bélgica":"🇧🇪",
-    "Bosnia y Herz.":"🇧🇦","Brasil":"🇧🇷","Cabo Verde":"🇨🇻","Canadá":"🇨🇦","Colombia":"🇨🇴",
-    "Costa de Marfil":"🇨🇮","Croacia":"🇭🇷","DR Congo":"🇨🇩","Ecuador":"🇪🇨","Egipto":"🇪🇬",
-    "España":"🇪🇸","Estados Unidos":"🇺🇸","Francia":"🇫🇷","Ghana":"🇬🇭","Inglaterra":"󠁧󠁢󠁥󠁮󠁧󠁿🏴",
-    "Japón":"🇯🇵","Marruecos":"🇲🇦","México":"🇲🇽","Noruega":"🇳🇴","Países Bajos":"🇳🇱",
-    "Paraguay":"🇵🇾","Portugal":"🇵🇹","Senegal":"🇸🇳","Sudáfrica":"🇿🇦","Suecia":"🇸🇪",
-    "Suiza":"🇨🇭","Argelia":"🇩🇿"
-  };
-  return f[equipo]||"🏳️";
-}
-
-// ── EXCEL ────────────────────────────────────────────────────────
-function descargarExcel(){
-  const dlEl=document.getElementById("alerta-dl");
-  if(participantes.length===0){
-    dlEl.innerHTML='<div class="alert alert-warn">⚠️ No hay participantes registrados.</div>';return;
-  }
-  dlEl.innerHTML="";
-  const wb=XLSX.utils.book_new();
-
-  // ── HOJA 1: Pronósticos 16avos ──────────────────────────────
-  const h1=["#","Nombre","Apodo/Nickname","Fecha"];
-  PARTIDOS_16.forEach(p=>{h1.push(`P${p.num} – ${p.local}`);h1.push(`P${p.num} – ${p.visita}`);});
-  const r1=participantes.map((p,i)=>{
-    const row=[i+1,p.nombre,p.unidad||"",p.fecha];
-    PARTIDOS_16.forEach(pt=>{
-      row.push(p.partidos?.[pt.id]?.gl??"");
-      row.push(p.partidos?.[pt.id]?.gv??"");
-    });
-    return row;
-  });
-  const ws1=XLSX.utils.aoa_to_sheet([h1,...r1]);
-  ws1["!cols"]=[{wch:4},{wch:28},{wch:22},{wch:20},...PARTIDOS_16.flatMap(()=>[{wch:10},{wch:10}])];
-  XLSX.utils.book_append_sheet(wb,ws1,"Pronósticos 16avos");
-
-  // ── HOJA 2: Pronósticos Finalistas ───────────────────────────
-  const h2=["#","Nombre","Apodo/Nickname","Fecha","🥇 Campeón","🥈 Subcampeón","🥉 3er lugar","🏅 4to lugar"];
-  const r2=participantes.map((p,i)=>[
-    i+1,p.nombre,p.unidad||"",p.fecha,
-    p.finalistas?.f1||"",p.finalistas?.f2||"",p.finalistas?.f3||"",p.finalistas?.f4||""
-  ]);
-  const ws2=XLSX.utils.aoa_to_sheet([h2,...r2]);
-  ws2["!cols"]=[{wch:4},{wch:28},{wch:22},{wch:20},{wch:20},{wch:20},{wch:18},{wch:18}];
-  XLSX.utils.book_append_sheet(wb,ws2,"Finalistas Pronosticados");
-
-  // ── HOJA 3: Resultados Reales 16avos (para llenar) ──────────
-  const h3=["Partido","Fecha","Local","Visitante","Goles Local REAL","Goles Visitante REAL","Estadio"];
-  const r3=PARTIDOS_16.map(p=>[`Partido ${p.num}`,p.fecha,p.local,p.visita,"","",p.estadio]);
-  const ws3=XLSX.utils.aoa_to_sheet([h3,...r3]);
-  ws3["!cols"]=[{wch:12},{wch:14},{wch:20},{wch:20},{wch:20},{wch:22},{wch:30}];
-  XLSX.utils.book_append_sheet(wb,ws3,"Resultados Reales 16avos");
-
-  // ── HOJA 4: Finalistas Reales (para llenar) ─────────────────
-  const h4=["Posición","Equipo Real"];
-  const r4=[["🥇 Campeón",""],["🥈 Subcampeón",""],["🥉 3er lugar",""],["🏅 4to lugar",""]];
-  const ws4=XLSX.utils.aoa_to_sheet([h4,...r4]);
-  ws4["!cols"]=[{wch:16},{wch:24}];
-  XLSX.utils.book_append_sheet(wb,ws4,"Finalistas Reales");
-
-  // ── HOJA 5: Tabla de Puntos con fórmulas ────────────────────
-  const h5=["#","Nombre","Apodo/Nickname","Pts TOTAL","Pts 16avos","Pts Finalistas",
-    "Exactos (×3)","Ganador/Empate (×1)","Campeón OK","Subcampeón OK","3er lugar OK","4to lugar OK"];
-
-  const r5=participantes.map((p,pi)=>{
-    const fila = pi+2; // fila en hoja Pronósticos (1=header)
-
-    // Puntos por partidos: para cada partido comparar pronóstico con resultado real
-    let fPts16="", fExactos="", fGanador="";
-    PARTIDOS_16.forEach((pt,li)=>{
-      const colGL = XLSX.utils.encode_col(4 + li*2);  // Goles Local pronosticado
-      const colGV = XLSX.utils.encode_col(5 + li*2);  // Goles Visitante pronosticado
-      const filaRes = li+2; // fila en Resultados Reales
-
-      const pGL = `'Pronósticos 16avos'!${colGL}${fila}`;
-      const pGV = `'Pronósticos 16avos'!${colGV}${fila}`;
-      const rGL = `'Resultados Reales 16avos'!E${filaRes}`;
-      const rGV = `'Resultados Reales 16avos'!F${filaRes}`;
-
-      // 3 pts si marcador exacto
-      // 1 pt si acertó ganador o empate pero no marcador exacto
-      const sep = li>0?"+":"";
-      const esExacto = `AND(${pGL}<>"",${rGL}<>"",${pGL}=${rGL},${pGV}=${rGV})`;
-      const esGanadorLocal = `AND(${pGL}>${pGV},${rGL}>${rGV})`;
-      const esGanadorVisita = `AND(${pGV}>${pGL},${rGV}>${rGL})`;
-      const esEmpate = `AND(${pGL}=${pGV},${rGL}=${rGV})`;
-      const aciertoGanador = `AND(${pGL}<>"",${rGL}<>"",NOT(${esExacto}),OR(${esGanadorLocal},${esGanadorVisita},${esEmpate}))`;
-
-      fPts16 += `${sep}IF(${esExacto},3,IF(${aciertoGanador},1,0))`;
-      fExactos += `${sep}IF(${esExacto},1,0)`;
-      fGanador += `${sep}IF(${aciertoGanador},1,0)`;
-    });
-
-    // Puntos por finalistas
-    // f1=Campeón (col E en pronósticos), f2=Sub (F), f3=3er (G), f4=4to (H)
-    // Resultado real en Finalistas Reales: B2=Campeón, B3=Sub, B4=3er, B5=4to
-    const pf=["E","F","G","H"];
-    const rf=["B2","B3","B4","B5"];
-    const posNames=["Campeón","Subcampeón","3er lugar","4to lugar"];
-
-    let fFinPts="";
-    let fFinCells=[];
-    pf.forEach((col,j)=>{
-      const pRef=`'Finalistas Pronosticados'!${col}${fila}`;
-      const rRef=`'Finalistas Reales'!${rf[j]}`;
-      // 4 pts exacto, 2 pts equipo en otra posición
-      const otrosR=rf.filter((_,k)=>k!==j).map(r=>`'Finalistas Reales'!${r}`);
-      const estaEnOtra=otrosR.map(r=>`EXACT(${pRef},${r})`).join(",");
-      const f=`IF(AND(${pRef}<>"",EXACT(${pRef},${rRef})),4,IF(AND(${pRef}<>"",OR(${estaEnOtra})),2,0))`;
-      fFinPts+=(j>0?"+":"")+`(${f})`;
-      fFinCells.push({f:`IF(AND('Finalistas Pronosticados'!${col}${fila}<>"",EXACT('Finalistas Pronosticados'!${col}${fila},'Finalistas Reales'!${rf[j]})),1,IF(AND('Finalistas Pronosticados'!${col}${fila}<>"",OR(${estaEnOtra})),0.5,0))`});
-    });
-
-    const rowNum=pi+2;
-    return [
-      pi+1, p.nombre, p.unidad||"",
-      {f:`E${rowNum}+F${rowNum}`},
-      {f:fPts16},
-      {f:fFinPts},
-      {f:fExactos},
-      {f:fGanador},
-      ...fFinCells
-    ];
-  });
-
-  const ws5=XLSX.utils.aoa_to_sheet([h5,...r5]);
-  ws5["!cols"]=[{wch:4},{wch:28},{wch:22},{wch:12},{wch:13},{wch:15},{wch:14},{wch:18},{wch:14},{wch:15},{wch:14},{wch:14}];
-  XLSX.utils.book_append_sheet(wb,ws5,"Tabla de Puntos");
-
-  const fecha=new Date().toISOString().slice(0,10);
-  XLSX.writeFile(wb,`Polla_Eliminatoria_CENGOB_2026_${fecha}.xlsx`);
-  dlEl.innerHTML=`<div class="alert alert-ok">✓ Excel descargado con <b>${participantes.length} participante${participantes.length===1?"":"s"}</b>. Ingresa los resultados reales en las hojas correspondientes cuando terminen los partidos.</div>`;
-}
-
-// ── INIT ─────────────────────────────────────────────────────────
-renderLista();
+// ══ INIT ══════════════════════════════════════════════════════
+initMiApuesta();
+renderRanking();
+updateLastUpdate();
 </script>
 </body>
 </html>
