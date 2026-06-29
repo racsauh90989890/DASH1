@@ -883,7 +883,7 @@ async function fetchFixtureESPN(){
   logContent.innerHTML='';
 
   try {
-    const url = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
+    const url = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=200&dates=20260628-20260703';
     const resp = await fetch(url);
     if(!resp.ok) throw new Error('ESPN no responde ('+resp.status+')');
     const data = await resp.json();
@@ -987,6 +987,18 @@ const ESPN_MAP = {
   'Norway':'Noruega','Mexico':'México','Ecuador':'Ecuador','England':'Inglaterra',
   'DR Congo':'DR Congo','Congo, DR':'DR Congo','Democratic Republic of Congo':'DR Congo',
   'United States':'Estados Unidos','USA':'Estados Unidos','Bosnia and Herzegovina':'Bosnia y Herz.',
+  'Bosnia-Herzegovina':'Bosnia y Herz.',
+  'Bosnia-Herz':'Bosnia y Herz.',
+  'Turkiye':'Türkiye',
+  'Turkey':'Türkiye',
+  'Ivory Coast':'Costa de Marfil',
+  'Cote d\'Ivoire':'Costa de Marfil',
+  'DR Congo':'DR Congo',
+  'Congo DR':'DR Congo',
+  'Cape Verde':'Cabo Verde',
+  'Netherlands':'Países Bajos',
+  'England':'Inglaterra',
+  'United States':'Estados Unidos',
   'Belgium':'Bélgica','Senegal':'Senegal','Portugal':'Portugal','Croatia':'Croacia',
   'Spain':'España','Austria':'Austria','Switzerland':'Suiza','Algeria':'Argelia',
   'Argentina':'Argentina','Cape Verde':'Cabo Verde','Colombia':'Colombia','Ghana':'Ghana',
@@ -1002,7 +1014,7 @@ async function fetchResultados(fromAdmin=false){
 
   try {
     // ESPN API pública para el Mundial 2026 (FIFA World Cup)
-    const url = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
+    const url = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=200&dates=20260628-20260703';
     const resp = await fetch(url);
     if(!resp.ok) throw new Error('ESPN no responde: '+resp.status);
     const data = await resp.json();
