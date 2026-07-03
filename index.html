@@ -888,6 +888,20 @@ async function fetchFixtureESPN(){
     if(!resp.ok) throw new Error('ESPN no responde ('+resp.status+')');
     const data = await resp.json();
 
+    // Función para calcular goles a 90 min usando el array details de ESPN
+    // clock.value en segundos: 5400 = 90 min exactos
+    // Incluimos goles en tiempo de descuento del 2do tiempo (clock hasta ~5400+)
+    // pero excluimos tiempo extra (período > 2) y penales (shootout)
+    function golesA90(details, teamId){
+      return (details||[]).filter(d=>
+        d.scoringPlay &&           // es gol
+        !d.shootout &&             // no es penal de tanda
+        d.team?.id === teamId &&   // es del equipo correcto
+        (d.period||2) <= 2 &&      // solo tiempo reglamentario (períodos 1 y 2)
+        (d.clock?.value||0) <= 5940 // <= 99 min en segundos (cubre descuentos largos)
+      ).length;
+    }
+
     const espnEvents = {};
     (data.events||[]).forEach(ev=>{
       (ev.competitions||[]).forEach(comp=>{
@@ -898,15 +912,42 @@ async function fetchFixtureESPN(){
         if(!home||!away) return;
         const hName = ESPN_MAP[home.team?.displayName]||home.team?.displayName||'';
         const aName = ESPN_MAP[away.team?.displayName]||away.team?.displayName||'';
+        const details = comp.details||[];
+        const inProgress = comp.status?.type?.state==='in';
+        const completed = comp.status?.type?.completed||false;
+        const period = comp.status?.period||2;
+
+        // Si el partido terminó en tiempo reglamentario o está en vivo en 90 min:
+        // usamos goles de details filtrados a 90 min.
+        // Si está en tiempo extra o penales en vivo: mostramos el score parcial 90min.
+        let hScore90, aScore90, notaExtra='';
+
+        if(completed || inProgress){
+          hScore90 = golesA90(details, home.team?.id);
+          aScore90 = golesA90(details, away.team?.id);
+
+          // Detectar si hubo tiempo extra o penales
+          const hayTE = (details||[]).some(d=>d.scoringPlay && (d.period||2)>2 && !d.shootout);
+          const hayPenales = (details||[]).some(d=>d.shootout && d.scoringPlay);
+          if(hayTE) notaExtra = ' (con TE)';
+          if(hayPenales) notaExtra = ' (con penales)';
+        }
+
         const entry = {
           hName, aName,
-          hScore: home.score, aScore: away.score,
-          completed: comp.status?.type?.completed||false,
-          inProgress: comp.status?.type?.state==='in',
+          hScore: hScore90, aScore: aScore90,
+          hScoreFinal: parseInt(home.score)||0,
+          aScoreFinal: parseInt(away.score)||0,
+          notaExtra,
+          completed,
+          inProgress,
+          period,
           statusDetail: comp.status?.type?.description||'Sin estado'
         };
         espnEvents[hName+'|'+aName]=entry;
-        espnEvents[aName+'|'+hName]={...entry, hName:aName, aName:hName, hScore:away.score, aScore:home.score};
+        espnEvents[aName+'|'+hName]={...entry, hName:aName, aName:hName,
+          hScore:aScore90, aScore:hScore90,
+          hScoreFinal:parseInt(away.score)||0, aScoreFinal:parseInt(home.score)||0};
       });
     });
 
@@ -928,9 +969,12 @@ async function fetchFixtureESPN(){
         resultados[p.id].gl=gl; resultados[p.id].gv=gv;
         resultados[p.id].status=ev.inProgress?'live':'done';
         if(ev.inProgress) enVivo++; else actualizados++;
+        const msg90 = ev.inProgress
+          ? 'En vivo (min reglamentarios)'
+          : ('Finalizado'+ev.notaExtra+' · 90min: '+gl+'-'+gv+(ev.notaExtra?' · Final: '+ev.hScoreFinal+'-'+ev.aScoreFinal:''));
         logItems.push({num:p.num, local:p.local, visita:p.visita,
           tipo:ev.inProgress?'live':'done',
-          msg:ev.inProgress?'En vivo':'Finalizado', gl, gv});
+          msg:msg90, gl, gv, notaExtra:ev.notaExtra||''});
       } else {
         pendientes++;
         logItems.push({num:p.num, local:p.local, visita:p.visita,
@@ -951,11 +995,14 @@ async function fetchFixtureESPN(){
       const ico = item.tipo==='done'?'OK':item.tipo==='live'?'EN VIVO':'Pendiente';
       const scoreHtml = (item.gl!==''&&item.gv!=='')
         ? '<span style="font-size:1.05rem;font-weight:800;color:#1E8449">'+item.gl+' - '+item.gv+'</span>'
+          +(item.notaExtra?'<span style="font-size:.68rem;background:#fff3cd;color:#856404;border-radius:8px;padding:1px 6px;margin-left:4px;font-weight:700">⏱️ '+item.notaExtra.trim()+'</span>':'')
         : '<span style="color:#aaa">? - ?</span>';
       return '<div style="background:'+bg+';border:1px solid '+bc+';border-radius:8px;padding:.6rem .85rem;font-size:.78rem">'
         +'<div style="font-weight:700;margin-bottom:3px">P'+item.num+' '+bandera(item.local)+' '+item.local+' vs '+item.visita+' '+bandera(item.visita)+'</div>'
-        +'<div style="display:flex;justify-content:space-between;align-items:center">'
-        +'<span style="color:#555">['+ico+'] '+item.msg+'</span>'+scoreHtml+'</div></div>';
+        +'<div style="display:flex;justify-content:space-between;align-items:center;gap:.5rem">'
+        +'<span style="color:#555;font-size:.72rem">['+ico+'] '+item.msg+'</span>'+scoreHtml+'</div>'
+        +(item.notaExtra?'<div style="font-size:.68rem;color:#856404;margin-top:2px">⚠️ Marcador guardado = solo 90 min reglamentarios</div>':'')
+        +'</div>';
     }).join('');
 
     logWrap.style.display='block';
@@ -1045,10 +1092,25 @@ async function fetchResultados(fromAdmin=false){
         if(!partido) return;
 
         if(status || inProgress){
-          let glHome = parseInt(homeTeam.score)||0;
-          let glAway = parseInt(awayTeam.score)||0;
-          // Ajustar si el mapeo invertido
+          // ── Solo goles dentro de los 90 minutos reglamentarios ──
+          // period <= 2 y clock.value <= 5940 seg (~99 min con descuento)
+          // Se excluyen shootout (penales de tanda) y tiempo extra (period > 2)
+          const details = comp.details||[];
+          const golesLocal90 = details.filter(d=>
+            d.scoringPlay && !d.shootout &&
+            d.team?.id===homeTeam.team?.id &&
+            (d.period||2)<=2 && (d.clock?.value||0)<=5940
+          ).length;
+          const golesVisita90 = details.filter(d=>
+            d.scoringPlay && !d.shootout &&
+            d.team?.id===awayTeam.team?.id &&
+            (d.period||2)<=2 && (d.clock?.value||0)<=5940
+          ).length;
+
+          let glHome = golesLocal90;
+          let glAway = golesVisita90;
           if(partido.local!==homeName){[glHome,glAway]=[glAway,glHome];}
+
           if(!resultados[partido.id]) resultados[partido.id]={};
           resultados[partido.id].gl = glHome;
           resultados[partido.id].gv = glAway;
