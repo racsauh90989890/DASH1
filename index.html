@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Octavos · Amigos CENGOB 2026</title>
+<title>Dashboard Cuartos · Amigos CENGOB 2026</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -18,7 +18,6 @@
 }
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f2f5;color:var(--texto);min-height:100vh}
 .wrap{max-width:1100px;margin:0 auto;padding:0 1rem 4rem}
-/* Header */
 header{background:var(--verde)}
 .hd-inner{max-width:1100px;margin:0 auto;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;color:#fff}
 .hd-ball{font-size:2.6rem;flex-shrink:0}
@@ -28,23 +27,19 @@ header{background:var(--verde)}
 .hd-badge{background:var(--oro);color:#3d2200;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:20px;white-space:nowrap}
 .hd-upd{font-size:.72rem;opacity:.7;white-space:nowrap}
 .hd-auto{font-size:.7rem;background:rgba(255,255,255,.15);color:#fff;padding:3px 10px;border-radius:12px}
-/* Tabs */
 .tabs{background:#fff;border-bottom:1px solid var(--gris3);position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06)}
 .tabs-inner{max-width:1100px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
 .tabs-inner::-webkit-scrollbar{display:none}
 .tb{padding:.7rem 1rem;font-size:.81rem;font-weight:600;white-space:nowrap;border:none;background:none;cursor:pointer;color:var(--texto2);border-bottom:3px solid transparent;transition:all .18s}
 .tb:hover{color:var(--verde)}
 .tb.active{color:var(--verde);border-bottom-color:var(--oro)}
-/* Pages */
 .page{display:none;animation:fadeUp .22s ease}
 .page.active{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
 @keyframes spin{to{transform:rotate(360deg)}}
-/* Cards */
 .card{background:#fff;border-radius:var(--radio);box-shadow:var(--sombra);padding:1.35rem;margin-top:1.1rem;border:1px solid var(--gris3)}
 .card-title{font-size:.95rem;font-weight:700;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;color:var(--gris)}
-/* Buttons */
 .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.3rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;border:1.5px solid transparent;transition:all .15s}
 .btn:active{transform:scale(.97)}
 .btn-v{background:var(--verde);color:#fff}.btn-v:hover{background:#0d5239}
@@ -52,18 +47,15 @@ header{background:var(--verde)}
 .btn-r{background:var(--rojo2);color:var(--rojo);border-color:#f5c6c2}
 .btn-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.85rem}
 .sp{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:3px}
-/* Stats strip */
 .ss{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:.65rem;margin-top:.85rem}
 .sc{background:var(--gris2);border-radius:8px;padding:.8rem;text-align:center;border:1px solid var(--gris3)}
 .sc-n{font-size:1.45rem;font-weight:700;color:var(--verde)}
 .sc-l{font-size:.7rem;color:var(--texto2);margin-top:2px}
-/* Alerts */
 .al{padding:.7rem .95rem;border-radius:8px;font-size:.83rem;margin:.5rem 0;display:flex;gap:.4rem;align-items:flex-start}
 .al-i{background:var(--azul2);color:var(--azul);border:1px solid #bee3f8}
 .al-o{background:#d4edda;color:#155724;border:1px solid #a3d9b1}
 .al-w{background:#fff3cd;color:#664d03;border:1px solid #ffd97e}
 .al-r{background:var(--rojo2);color:var(--rojo);border:1px solid #f5c6c2}
-/* Ranking */
 .rt{width:100%;border-collapse:collapse}
 .rt th{background:var(--verde);color:#fff;padding:.65rem .8rem;font-size:.76rem;text-align:left;white-space:nowrap}
 .rt td{padding:.65rem .8rem;font-size:.82rem;border-bottom:1px solid var(--gris3);vertical-align:middle}
@@ -76,9 +68,9 @@ header{background:var(--verde)}
 .bdg{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.72rem;font-weight:700}
 .b16{background:#e8f4fd;color:var(--azul)}
 .bo{background:#d4edda;color:#155724}
+.bc{background:var(--oro2);color:#3d2200}
 .bw{background:var(--gris3);border-radius:8px;height:5px;width:90px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:.3rem}
 .bf{height:5px;border-radius:8px;background:linear-gradient(90deg,var(--verde2),var(--oro))}
-/* Fixture */
 .fg{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:.9rem;margin-top:.9rem}
 .fc{border-radius:var(--radio);overflow:hidden;border:1px solid var(--gris3);background:#fff;transition:box-shadow .15s}
 .fc:hover{box-shadow:0 4px 16px rgba(0,0,0,.1)}
@@ -104,7 +96,6 @@ header{background:var(--verde)}
 .pbw{flex:1;background:var(--gris3);border-radius:4px;height:4px;overflow:hidden}
 .pbf{height:4px;border-radius:4px}
 .pc{font-size:.63rem;color:var(--texto2);width:22px;text-align:right}
-/* Mi apuesta */
 .mas{width:100%;max-width:360px;padding:.6rem .8rem;border:1.5px solid var(--gris3);border-radius:8px;font-size:.88rem;background:#fff;color:var(--texto)}
 .mas:focus{outline:none;border-color:var(--verde)}
 .mar{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.55rem;margin:.75rem 0}
@@ -124,7 +115,6 @@ header{background:var(--verde)}
 .sF{background:#fdecea;border-color:#f5c6c2!important}.sF .mah{background:#922B21}
 .sP{background:#f8f9fa;border-color:var(--gris3)!important}.sP .mah{background:#6c757d}
 .sN{background:#f0f0f0;border-color:#ccc!important;opacity:.7}.sN .mah{background:#aaa}
-/* Estadisticas */
 .eg{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.9rem;margin-top:.9rem}
 .ec{border-radius:var(--radio);border:1px solid var(--gris3);padding:.95rem;background:#fff}
 .et{font-size:.76rem;font-weight:700;color:var(--texto2);margin-bottom:.65rem;text-transform:uppercase;letter-spacing:.4px}
@@ -134,7 +124,6 @@ header{background:var(--verde)}
 .ebw{flex:2;background:var(--gris3);border-radius:5px;height:6px;overflow:hidden}
 .ebf{height:6px;border-radius:5px;background:var(--verde2)}
 .ecnt{font-size:.75rem;font-weight:700;color:var(--texto2);min-width:24px;text-align:right}
-/* Admin */
 .ag{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:.8rem;margin-top:.75rem}
 .ac{border-radius:var(--radio);border:1px solid var(--gris3);overflow:hidden;background:#fff}
 .ah{padding:.45rem .85rem;color:#fff;font-size:.72rem;font-weight:700;display:flex;justify-content:space-between;align-items:center}
@@ -150,7 +139,6 @@ header{background:var(--verde)}
 .aok{background:#d4edda;color:#155724}.apnd{background:#fff3cd;color:#856404}
 .elog{border-radius:8px;margin-top:.75rem;display:none}
 .elogg{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.45rem}
-/* Detalle 16avos */
 .det-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:.75rem}
 .det-tbl{border-collapse:collapse;min-width:950px;width:100%;font-size:.74rem}
 .det-tbl th{background:var(--verde);color:#fff;padding:.45rem .5rem;font-size:.68rem;text-align:center;white-space:nowrap;border:1px solid #0d5239}
@@ -167,13 +155,11 @@ header{background:var(--verde)}
 .cF{background:#C0392B!important;color:#fff!important;font-weight:700}
 .cN{background:#e0e0e0!important;color:#aaa!important;font-style:italic}
 .cR{background:var(--oro)!important;color:#3d2200!important;font-weight:800}
-/* Toast */
 .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--gris);color:#fff;padding:.7rem 1.2rem;border-radius:10px;font-size:.85rem;font-weight:600;z-index:999;transform:translateY(80px);opacity:0;transition:all .3s;pointer-events:none;max-width:300px}
 .toast.show{transform:translateY(0);opacity:1}
 .toast.green{background:var(--verde2)}.toast.red{background:var(--rojo)}
-/* Prog combo */
 .pcb{display:flex;height:6px;border-radius:6px;overflow:hidden;width:100px;margin-top:3px}
-.pc1{background:var(--azul)}.pc2{background:var(--verde2)}.pc3{background:var(--gris3);flex:1}
+.pc1{background:var(--azul)}.pc2{background:var(--verde2)}.pc3{background:var(--oro)}.pc4{background:var(--gris3);flex:1}
 @media(max-width:600px){
   .hd-text h1{font-size:1rem}
   .rt{font-size:.74rem}.rt th,.rt td{padding:.45rem .4rem}
@@ -187,13 +173,13 @@ header{background:var(--verde)}
   <div class="hd-inner">
     <div class="hd-ball">&#9917;</div>
     <div class="hd-text">
-      <h1>Dashboard Octavos de Final &middot; Copa Mundial 2026</h1>
-      <p>Amigos CENGOB &nbsp;&middot;&nbsp; Puntos acumulados 16avos + Octavos</p>
+      <h1>Dashboard Cuartos de Final &middot; Copa Mundial 2026</h1>
+      <p>Amigos CENGOB &nbsp;&middot;&nbsp; Puntos acumulados 16avos + Octavos + Cuartos</p>
     </div>
     <div class="hd-right">
       <span class="hd-auto" id="auto-badge">&#9654; Auto 3 min</span>
       <span class="hd-upd" id="upd-lbl">Sin actualizar</span>
-      <span class="hd-badge">M&aacute;x. 88 pts</span>
+      <span class="hd-badge">M&aacute;x. 84 pts</span>
     </div>
   </div>
 </header>
@@ -202,7 +188,7 @@ header{background:var(--verde)}
     <button class="tb active" onclick="showTab('ranking')">&#127942; Tabla de Puntos</button>
     <button class="tb" onclick="showTab('fixture')">&#9917; Fixture</button>
     <button class="tb" onclick="showTab('miapuesta')">&#128269; Mi Apuesta</button>
-    <button class="tb" onclick="showTab('detalle16')">&#128203; Detalle 16avos</button>
+    <button class="tb" onclick="showTab('detalleoct')">&#128203; Detalle Octavos</button>
     <button class="tb" onclick="showTab('stats')">&#128202; Estad&iacute;sticas</button>
     <button class="tb" onclick="showTab('admin')">&#9881;&#65039; Admin</button>
   </div>
@@ -212,13 +198,13 @@ header{background:var(--verde)}
 <!-- RANKING -->
 <div id="tab-ranking" class="page active">
   <div class="card">
-    <div class="card-title">&#127942; Tabla de Puntos Acumulada &mdash; 16avos + Octavos</div>
+    <div class="card-title">&#127942; Tabla de Puntos Acumulada &mdash; 16avos + Octavos + Cuartos</div>
     <div class="ss" id="rank-stats"></div>
   </div>
   <div class="card" style="padding:0;overflow:hidden">
     <table class="rt"><thead><tr>
       <th>#</th><th>Jugador</th><th>Total</th>
-      <th>16avos</th><th>Octavos</th>
+      <th>16avos</th><th>Octavos</th><th>Cuartos</th>
       <th>&#9989; Exactos</th><th>&#9889; Ganador</th><th>&#10060; Fallos</th><th>Progreso</th>
     </tr></thead><tbody id="rank-body"></tbody></table>
   </div>
@@ -227,7 +213,7 @@ header{background:var(--verde)}
 <!-- FIXTURE -->
 <div id="tab-fixture" class="page">
   <div class="card">
-    <div class="card-title">&#9917; Fixture &mdash; Octavos de Final</div>
+    <div class="card-title">&#9917; Fixture &mdash; Cuartos de Final</div>
     <div class="btn-row">
       <button class="btn btn-v" id="btn-fix" onclick="fetchESPN(false)">&#128260; Actualizar desde ESPN</button>
       <span id="fix-status" style="font-size:.78rem;color:var(--texto2);align-self:center"></span>
@@ -247,12 +233,12 @@ header{background:var(--verde)}
   <div id="ma-content"></div>
 </div>
 
-<!-- DETALLE 16AVOS -->
-<div id="tab-detalle16" class="page">
+<!-- DETALLE OCTAVOS -->
+<div id="tab-detalleoct" class="page">
   <div class="card">
-    <div class="card-title">&#128203; Detalle Completo &mdash; Pron&oacute;sticos 16avos de Final</div>
+    <div class="card-title">&#128203; Detalle Completo &mdash; Pron&oacute;sticos Octavos de Final (cerrado)</div>
     <div class="al al-i" style="margin-bottom:.75rem">
-      Tabla comparativa de todos los pron&oacute;sticos vs resultados reales a 90 min.
+      Tabla comparativa de todos los pron&oacute;sticos vs resultados reales a 90 min. Etapa cerrada y verificada.
       <span style="display:inline-block;background:#1E8449;color:#fff;padding:1px 7px;border-radius:4px;font-size:.75rem;font-weight:700;margin:0 3px">Exacto +3</span>
       <span style="display:inline-block;background:#F9CA24;color:#3d2200;padding:1px 7px;border-radius:4px;font-size:.75rem;font-weight:700;margin:0 3px">Ganador +1</span>
       <span style="display:inline-block;background:#C0392B;color:#fff;padding:1px 7px;border-radius:4px;font-size:.75rem;font-weight:700;margin:0 3px">Fallo 0</span>
@@ -260,7 +246,7 @@ header{background:var(--verde)}
     <div class="det-wrap"><table class="det-tbl" id="det-tbl"></table></div>
   </div>
   <div class="card">
-    <div class="card-title">&#127381; Resumen de puntos 16avos por jugador</div>
+    <div class="card-title">&#127381; Resumen de puntos Octavos por jugador</div>
     <div id="det-resumen"></div>
   </div>
 </div>
@@ -276,8 +262,8 @@ header{background:var(--verde)}
 <!-- ADMIN -->
 <div id="tab-admin" class="page">
   <div class="card">
-    <div class="card-title">&#9881;&#65039; Panel Admin &mdash; Resultados Reales Octavos</div>
-    <div class="al al-i">Los puntos de <b>16avos est&aacute;n fijos</b> y verificados. Solo se actualizan resultados de octavos. Auto-refresh cada 3 minutos.</div>
+    <div class="card-title">&#9881;&#65039; Panel Admin &mdash; Resultados Reales Cuartos</div>
+    <div class="al al-i">Los puntos de <b>16avos y Octavos est&aacute;n fijos</b> y verificados. Solo se actualizan resultados de Cuartos. Auto-refresh cada 3 minutos.</div>
     <div class="btn-row">
       <button class="btn btn-v" id="btn-adm" onclick="fetchESPN(true)">&#128260; Importar desde ESPN</button>
       <button class="btn btn-o" onclick="guardar()">&#128190; Guardar cambios</button>
@@ -290,7 +276,7 @@ header{background:var(--verde)}
     </div>
   </div>
   <div class="card">
-    <div class="card-title">&#9917; Resultados Octavos (90 min reglamentarios)</div>
+    <div class="card-title">&#9917; Resultados Cuartos (90 min reglamentarios)</div>
     <div class="ag" id="adm-partidos"></div>
   </div>
 </div>
@@ -301,63 +287,62 @@ header{background:var(--verde)}
 // =============================================================
 // DATOS
 // =============================================================
+
+// ---- OCTAVOS: etapa cerrada (resultados reales verificados 4-7 jul) ----
 var POCT = [
-  {id:"o01",n:1,loc:"Canad\u00e1",vis:"Marruecos",  fecha:"S\u00e1b 4/jul",hora:"14:00 ET",stad:"NRG Stadium \u00b7 Houston",              col:"#922B21"},
-  {id:"o02",n:2,loc:"Paraguay",   vis:"Francia",     fecha:"S\u00e1b 4/jul",hora:"18:00 ET",stad:"Lincoln Financial Field \u00b7 Filadelfia",col:"#1A3A5C"},
-  {id:"o03",n:3,loc:"Brasil",     vis:"Noruega",     fecha:"Dom 5/jul",hora:"17:00 ET",stad:"AT&T Stadium \u00b7 Dallas",               col:"#1E8449"},
-  {id:"o04",n:4,loc:"M\u00e9xico",vis:"Inglaterra",  fecha:"Dom 5/jul",hora:"21:00 ET",stad:"Estadio Azteca \u00b7 Ciudad de M\u00e9xico",col:"#006847"},
-  {id:"o05",n:5,loc:"Portugal",   vis:"Espa\u00f1a", fecha:"Lun 6/jul",hora:"16:00 ET",stad:"SoFi Stadium \u00b7 Los \u00c1ngeles",     col:"#C0392B"},
-  {id:"o06",n:6,loc:"Estados Unidos",vis:"B\u00e9lgica",fecha:"Lun 6/jul",hora:"21:00 ET",stad:"Lumen Field \u00b7 Seattle",            col:"#1A3A6C"},
-  {id:"o07",n:7,loc:"Argentina",  vis:"Egipto",      fecha:"Mar 7/jul",hora:"13:00 ET",stad:"Mercedes-Benz Stadium \u00b7 Atlanta",     col:"#1A5276"},
-  {id:"o08",n:8,loc:"Suiza",      vis:"Colombia",    fecha:"Mar 7/jul",hora:"17:00 ET",stad:"BC Place \u00b7 Vancouver",               col:"#CB4335"}
+  {id:"o01",n:1,loc:"Canadá",vis:"Marruecos",  fecha:"Sáb 4/jul",col:"#922B21",rgl:0,rgv:3},
+  {id:"o02",n:2,loc:"Paraguay",   vis:"Francia",     fecha:"Sáb 4/jul",col:"#1A3A5C",rgl:0,rgv:1},
+  {id:"o03",n:3,loc:"Brasil",     vis:"Noruega",     fecha:"Dom 5/jul",col:"#1E8449",rgl:1,rgv:2},
+  {id:"o04",n:4,loc:"México",vis:"Inglaterra",  fecha:"Dom 5/jul",col:"#006847",rgl:2,rgv:3},
+  {id:"o05",n:5,loc:"Portugal",   vis:"España", fecha:"Lun 6/jul",col:"#C0392B",rgl:0,rgv:1},
+  {id:"o06",n:6,loc:"Estados Unidos",vis:"Bélgica",fecha:"Lun 6/jul",col:"#1A3A6C",rgl:1,rgv:4},
+  {id:"o07",n:7,loc:"Argentina",  vis:"Egipto",      fecha:"Mar 7/jul",col:"#1A5276",rgl:3,rgv:2},
+  {id:"o08",n:8,loc:"Suiza",      vis:"Colombia",    fecha:"Mar 7/jul",col:"#CB4335",rgl:0,rgv:0,nota:"Suiza avanza 4-3 en penales"}
 ];
 
-var P16 = [
-  {id:"p01",n:1, loc:"Sud\u00e1frica",    vis:"Canad\u00e1",      fecha:"28/jun",col:"#1A5276",rgl:0,rgv:1},
-  {id:"p02",n:2, loc:"Alemania",          vis:"Paraguay",          fecha:"29/jun",col:"#2E4057",rgl:1,rgv:1},
-  {id:"p03",n:3, loc:"Pa\u00edses Bajos", vis:"Marruecos",         fecha:"29/jun",col:"#C0392B",rgl:1,rgv:1},
-  {id:"p04",n:4, loc:"Brasil",            vis:"Jap\u00f3n",        fecha:"29/jun",col:"#1E8449",rgl:2,rgv:1},
-  {id:"p05",n:5, loc:"Francia",           vis:"Suecia",            fecha:"30/jun",col:"#1A3A5C",rgl:3,rgv:0},
-  {id:"p06",n:6, loc:"C. de Marfil",      vis:"Noruega",           fecha:"30/jun",col:"#6C3483",rgl:1,rgv:2},
-  {id:"p07",n:7, loc:"M\u00e9xico",       vis:"Ecuador",           fecha:"30/jun",col:"#006847",rgl:2,rgv:0},
-  {id:"p08",n:8, loc:"Inglaterra",        vis:"DR Congo",          fecha:"1/jul", col:"#922B21",rgl:2,rgv:1},
-  {id:"p09",n:9, loc:"Estados Unidos",    vis:"Bosnia",            fecha:"1/jul", col:"#1A3A6C",rgl:2,rgv:0},
-  {id:"p10",n:10,loc:"B\u00e9lgica",      vis:"Senegal",           fecha:"1/jul", col:"#C0392B",rgl:2,rgv:2},
-  {id:"p11",n:11,loc:"Portugal",          vis:"Croacia",           fecha:"2/jul", col:"#922B21",rgl:2,rgv:1},
-  {id:"p12",n:12,loc:"Espa\u00f1a",       vis:"Austria",           fecha:"2/jul", col:"#C0392B",rgl:3,rgv:0},
-  {id:"p13",n:13,loc:"Suiza",             vis:"Argelia",           fecha:"2/jul", col:"#CB4335",rgl:2,rgv:0},
-  {id:"p14",n:14,loc:"Argentina",         vis:"Cabo Verde",        fecha:"3/jul", col:"#1A5276",rgl:2,rgv:1},
-  {id:"p15",n:15,loc:"Colombia",          vis:"Ghana",             fecha:"3/jul", col:"#F39C12",rgl:1,rgv:0},
-  {id:"p16",n:16,loc:"Australia",         vis:"Egipto",            fecha:"3/jul", col:"#239B56",rgl:1,rgv:1}
-];
-
+// Puntos fijos 16avos (ya verificados)
 var PTS16 = {Tonchy:21,Jose:21,Gaby:17,Paoquino:14,Julio:21,Brany:8,Pablo:20,Sdenka:21,racsauh:26,Jorge:13,a66:17,Gustavo:14};
 
-// Pronósticos 16avos — índice por nick (sin tildes para evitar problemas de encoding)
-var PR16 = {
-  Tonchy:  {p01:[1,2],p02:[3,0],p03:[3,1],p04:[2,1],p05:[3,1],p06:[1,2],p07:[1,1],p08:[2,0],p09:[3,0],p10:[1,1],p11:[1,0],p12:[3,0],p13:[1,0],p14:[3,0],p15:[2,1],p16:[1,1]},
-  Jose:    {p01:[0,2],p02:[2,0],p03:[1,1],p04:[2,1],p05:[3,0],p06:[2,2],p07:[2,1],p08:[3,1],p09:[2,0],p10:[2,0],p11:[1,2],p12:[2,0],p13:[2,0],p14:[3,0],p15:[2,0],p16:[1,2]},
-  Gaby:    {p01:[1,2],p02:[2,0],p03:[2,2],p04:[2,2],p05:[3,1],p06:[1,2],p07:[2,2],p08:[2,1],p09:[3,1],p10:[3,2],p11:[3,2],p12:[2,1],p13:[3,2],p14:[2,1],p15:[2,1],p16:[1,2]},
-  Paoquino:{p01:[1,2],p02:[3,1],p03:[0,1],p04:[3,1],p05:[2,1],p06:[1,1],p07:[2,1],p08:[3,0],p09:[1,0],p10:[1,1],p11:[2,0],p12:[2,1],p13:[1,0],p14:[2,1],p15:[2,1],p16:[3,1]},
-  Julio:   {p01:[1,2],p02:[2,0],p03:[2,2],p04:[3,2],p05:[3,0],p06:[1,2],p07:[2,2],p08:[3,0],p09:[2,0],p10:[2,1],p11:[1,1],p12:[3,0],p13:[1,1],p14:[3,0],p15:[2,1],p16:[1,1]},
-  Brany:   {p01:[2,1],p02:[3,1],p03:[0,2],p04:[3,0],p05:[2,0],p06:[0,3],p07:[2,2],p08:[1,2],p09:[1,0],p10:[0,0],p11:[1,2],p12:[2,0],p13:[1,1],p14:[4,1],p15:[2,0],p16:[2,0]},
-  Pablo:   {p01:[1,2],p02:[3,1],p03:[2,1],p04:[2,1],p05:[2,0],p06:[1,2],p07:[1,1],p08:[3,1],p09:[2,1],p10:[1,1],p11:[2,1],p12:[2,0],p13:[1,1],p14:[3,0],p15:[2,1],p16:[1,1]},
-  Sdenka:  {p01:[1,2],p02:[2,0],p03:[1,1],p04:[2,0],p05:[3,1],p06:[1,2],p07:[1,0],p08:[3,1],p09:[1,1],p10:[2,1],p11:[2,1],p12:[2,0],p13:[2,1],p14:[3,0],p15:[2,1],p16:[1,1]},
-  racsauh: {p01:[2,1],p02:[3,0],p03:[1,0],p04:[2,1],p05:[2,0],p06:[1,2],p07:[2,1],p08:[3,0],p09:[2,0],p10:[2,1],p11:[2,1],p12:[3,0],p13:[2,0],p14:[4,0],p15:[2,1],p16:[1,1]},
-  Jorge:   {p01:[1,2],p02:[0,2],p03:[2,1],p04:[0,2],p05:[2,0],p06:[0,1],p07:[3,2],p08:[2,0],p09:[3,1],p10:[2,0],p11:[2,0],p12:[3,1],p13:[2,0],p14:[3,1],p15:[3,1],p16:[2,0]},
-  a66:     {p01:[1,2],p02:[3,0],p03:[2,1],p04:[0,0],p05:[3,0],p06:[1,2],p07:[1,1],p08:[2,0],p09:[2,0],p10:[3,1],p11:[2,1],p12:[2,0],p13:[2,1],p14:[0,0],p15:[2,0],p16:[0,2]},
-  Gustavo: {p01:[1,3],p02:[2,0],p03:[2,2],p04:[3,1],p05:[3,1],p06:[1,3],p07:[1,0],p08:[2,0],p09:[3,0],p10:[2,2],p11:[2,2],p12:[3,1],p13:[2,1],p14:[1,0],p15:[2,2],p16:[1,2]}
+// Puntos fijos Octavos (ya verificados con resultados reales, incluye actualización retroactiva de Jorge en O1/O2)
+var PTSOCT = {Tonchy:6,Jose:5,Gaby:3,Paoquino:3,Julio:1,Brany:3,Pablo:2,Sdenka:4,racsauh:6,Jorge:7,a66:5,Gustavo:2};
+var OCTDET = {
+  Tonchy:{E:1,G:3,F:4,N:0}, Jose:{E:0,G:5,F:3,N:0}, Gaby:{E:0,G:3,F:5,N:0},
+  Paoquino:{E:0,G:3,F:3,N:2}, Julio:{E:0,G:1,F:5,N:2}, Brany:{E:0,G:3,F:3,N:2},
+  Pablo:{E:0,G:2,F:4,N:2}, Sdenka:{E:0,G:4,F:4,N:0}, racsauh:{E:0,G:6,F:2,N:0},
+  Jorge:{E:2,G:1,F:5,N:0}, a66:{E:0,G:5,F:3,N:0}, Gustavo:{E:0,G:2,F:4,N:2}
 };
+// Pronósticos Octavos por nick (null = no apostó). Jorge actualizado con O1/O2 reales.
+var PROCT = {
+  Tonchy:  {o01:[0,3],o02:[0,3],o03:[3,1],o04:[1,1],o05:[1,3],o06:[1,1],o07:[2,1],o08:[1,2]},
+  Jose:    {o01:[1,2],o02:[0,2],o03:[2,2],o04:[0,2],o05:[0,2],o06:[1,1],o07:[2,0],o08:[0,2]},
+  Gaby:    {o01:[0,1],o02:[1,2],o03:[2,2],o04:[2,1],o05:[1,1],o06:[2,1],o07:[2,1],o08:[2,3]},
+  Paoquino:{o01:null, o02:null, o03:[2,2],o04:[0,3],o05:[2,1],o06:[0,2],o07:[3,0],o08:[1,2]},
+  Julio:   {o01:null, o02:null, o03:[2,1],o04:[2,2],o05:[1,1],o06:[2,2],o07:[3,1],o08:[1,2]},
+  Brany:   {o01:null, o02:null, o03:[0,4],o04:[2,1],o05:[1,2],o06:[4,3],o07:[3,0],o08:[1,2]},
+  Pablo:   {o01:null, o02:null, o03:[2,1],o04:[1,1],o05:[1,2],o06:[1,1],o07:[2,0],o08:[0,1]},
+  Sdenka:  {o01:[1,2],o02:[1,3],o03:[2,0],o04:[1,2],o05:[1,1],o06:[2,0],o07:[3,0],o08:[0,1]},
+  racsauh: {o01:[1,2],o02:[0,2],o03:[2,1],o04:[1,2],o05:[1,2],o06:[2,1],o07:[2,0],o08:[1,1]},
+  Jorge:   {o01:[0,3],o02:[2,1],o03:[1,2],o04:[2,1],o05:[1,1],o06:[2,1],o07:[3,1],o08:[0,2]},
+  a66:     {o01:[0,1],o02:[0,3],o03:[1,1],o04:[1,2],o05:[2,1],o06:[2,1],o07:[2,1],o08:[1,1]},
+  Gustavo: {o01:null, o02:null, o03:[2,1],o04:[2,2],o05:[2,2],o06:[2,1],o07:[2,0],o08:[1,1]}
+};
+
+// ---- CUARTOS: etapa activa ----
+var PCUA = [
+  {id:"q01",n:1,loc:"Francia",  vis:"Marruecos", fecha:"Jue 9/jul", hora:"16:00 ET",stad:"Gillette Stadium · Boston (Foxborough)",col:"#1A3A5C"},
+  {id:"q02",n:2,loc:"España",vis:"Bélgica",  fecha:"Vie 10/jul",hora:"15:00 ET",stad:"SoFi Stadium · Los Ángeles",col:"#C0392B"},
+  {id:"q03",n:3,loc:"Noruega",  vis:"Inglaterra",fecha:"Sáb 11/jul",hora:"17:00 ET",stad:"Hard Rock Stadium · Miami",col:"#922B21"},
+  {id:"q04",n:4,loc:"Argentina",vis:"Suiza",     fecha:"Sáb 11/jul",hora:"21:00 ET",stad:"Arrowhead Stadium · Kansas City",col:"#1A5276"}
+];
 
 // Nicks display (con tildes) mapeados al key sin tildes
 var NICK_DISPLAY = {
-  Tonchy:"Tonchy", Jose:"Jos\u00e9", Gaby:"Gaby", Paoquino:"Paoquino",
+  Tonchy:"Tonchy", Jose:"José", Gaby:"Gaby", Paoquino:"Paoquino",
   Julio:"Julio", Brany:"Brany", Pablo:"Pablo", Sdenka:"Sdenka",
   racsauh:"racsauh", Jorge:"Jorge", a66:"a66", Gustavo:"Gustavo"
 };
-
 var NICK_NOMBRE = {
-  Tonchy:"Luis Antonio Kosovic Kaune", Jose:"Jos\u00e9 Antonio Gonzales Lopez",
+  Tonchy:"Luis Antonio Kosovic Kaune", Jose:"José Antonio Gonzales Lopez",
   Gaby:"Gabriela Veizaga", Paoquino:"Paola Quino Ramirez",
   Julio:"Julio Linares", Brany:"BRANY Mercado Hurtado",
   Pablo:"Pablo Cachaga Herrera", Sdenka:"Sdenka Claros Gomez",
@@ -365,49 +350,48 @@ var NICK_NOMBRE = {
   a66:"Angel Gutierrez Gutierrez", Gustavo:"Gustavo Bonifaz"
 };
 
-// Pronósticos octavos
+// Pronósticos Cuartos (los 12 jugadores enviaron)
 var PARTS = [
-  {nick:"Tonchy",  pOct:{o01:[0,3],o02:[0,3],o03:[3,1],o04:[1,1],o05:[1,3],o06:[1,1],o07:[2,1],o08:[1,2]}},
-  {nick:"Jose",    pOct:{o01:[1,2],o02:[0,2],o03:[2,2],o04:[0,2],o05:[0,2],o06:[1,1],o07:[2,0],o08:[0,2]}},
-  {nick:"Gaby",    pOct:{o01:[0,1],o02:[1,2],o03:[2,2],o04:[2,1],o05:[1,1],o06:[2,1],o07:[2,1],o08:[2,3]}},
-  {nick:"Paoquino",pOct:{o01:[0,0],o02:[0,0],o03:[2,2],o04:[0,3],o05:[2,1],o06:[0,2],o07:[3,0],o08:[1,2]}},
-  {nick:"Julio",   pOct:{o01:[0,0],o02:[0,0],o03:[2,1],o04:[2,2],o05:[1,1],o06:[2,2],o07:[3,1],o08:[1,2]}},
-  {nick:"Brany",   pOct:{o01:[0,0],o02:[0,0],o03:[0,4],o04:[2,1],o05:[1,2],o06:[4,3],o07:[3,0],o08:[1,2]}},
-  {nick:"Pablo",   pOct:{o01:[0,0],o02:[0,0],o03:[2,1],o04:[1,1],o05:[1,2],o06:[1,1],o07:[2,0],o08:[0,1]}},
-  {nick:"Sdenka",  pOct:{o01:[1,2],o02:[1,3],o03:[2,0],o04:[1,2],o05:[1,1],o06:[2,0],o07:[3,0],o08:[0,1]}},
-  {nick:"racsauh", pOct:{o01:[1,2],o02:[0,2],o03:[2,1],o04:[1,2],o05:[1,2],o06:[2,1],o07:[2,0],o08:[1,1]}},
-  {nick:"Jorge",   pOct:{o01:[0,0],o02:[0,0],o03:[1,2],o04:[2,1],o05:[1,1],o06:[2,1],o07:[3,1],o08:[0,2]}},
-  {nick:"a66",     pOct:{o01:[0,1],o02:[0,3],o03:[1,1],o04:[1,2],o05:[2,1],o06:[2,1],o07:[2,1],o08:[1,1]}},
-  {nick:"Gustavo", pOct:{o01:[0,0],o02:[0,0],o03:[2,1],o04:[2,2],o05:[2,2],o06:[2,1],o07:[2,0],o08:[1,1]}}
+  {nick:"Tonchy",  pCua:{q01:[2,4],q02:[3,1],q03:[2,2],q04:[2,0]}},
+  {nick:"Jose",    pCua:{q01:[3,1],q02:[2,0],q03:[1,2],q04:[1,1]}},
+  {nick:"Gaby",    pCua:{q01:[1,1],q02:[1,1],q03:[2,2],q04:[2,1]}},
+  {nick:"Paoquino",pCua:{q01:[3,1],q02:[2,1],q03:[2,0],q04:[1,0]}},
+  {nick:"Julio",   pCua:{q01:[2,2],q02:[3,1],q03:[1,2],q04:[3,1]}},
+  {nick:"Brany",   pCua:{q01:[0,2],q02:[2,0],q03:[3,0],q04:[2,0]}},
+  {nick:"Pablo",   pCua:{q01:[2,1],q02:[1,0],q03:[2,1],q04:[3,0]}},
+  {nick:"Sdenka",  pCua:{q01:[3,2],q02:[3,1],q03:[2,2],q04:[3,1]}},
+  {nick:"racsauh", pCua:{q01:[2,0],q02:[2,1],q03:[1,2],q04:[1,1]}},
+  {nick:"Jorge",   pCua:{q01:[2,0],q02:[1,1],q03:[3,2],q04:[3,1]}},
+  {nick:"a66",     pCua:{q01:[0,0],q02:[0,1],q03:[1,2],q04:[0,0]}},
+  {nick:"Gustavo", pCua:{q01:[2,0],q02:[2,1],q03:[2,2],q04:[2,0]}}
 ];
-
-// Paoquino, Julio, Brany, Pablo, Jorge, Gustavo no apostaron O1/O2
-// Los que tienen [0,0] en o01/o02 = no apostó
-var NO_APOSTO = ["Paoquino","Julio","Brany","Pablo","Jorge","Gustavo"];
+var NO_APOSTO = []; // todos apostaron en Cuartos
 
 var ESPN_MAP = {
-  "Canada":"Canad\u00e1","Morocco":"Marruecos","Paraguay":"Paraguay","France":"Francia",
-  "Brazil":"Brasil","Norway":"Noruega","Mexico":"M\u00e9xico","England":"Inglaterra",
-  "Portugal":"Portugal","Spain":"Espa\u00f1a","United States":"Estados Unidos",
-  "USA":"Estados Unidos","Belgium":"B\u00e9lgica","Argentina":"Argentina",
+  "Canada":"Canadá","Morocco":"Marruecos","Paraguay":"Paraguay","France":"Francia",
+  "Brazil":"Brasil","Norway":"Noruega","Mexico":"México","England":"Inglaterra",
+  "Portugal":"Portugal","Spain":"España","United States":"Estados Unidos",
+  "USA":"Estados Unidos","Belgium":"Bélgica","Argentina":"Argentina",
   "Egypt":"Egipto","Switzerland":"Suiza","Colombia":"Colombia"
 };
 
 var BAN = {
-  "Canad\u00e1":"\uD83C\uDDE8\uD83C\uDDE6","Marruecos":"\uD83C\uDDF2\uD83C\uDDE6",
-  "Paraguay":"\uD83C\uDDF5\uD83C\uDDFE","Francia":"\uD83C\uDDEB\uD83C\uDDF7",
-  "Brasil":"\uD83C\uDDE7\uD83C\uDDF7","Noruega":"\uD83C\uDDF3\uD83C\uDDF4",
-  "M\u00e9xico":"\uD83C\uDDF2\uD83C\uDDFD","Inglaterra":"\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67\uDB40\uDC7F",
-  "Portugal":"\uD83C\uDDF5\uD83C\uDDF9","Espa\u00f1a":"\uD83C\uDDEA\uD83C\uDDF8",
-  "Estados Unidos":"\uD83C\uDDFA\uD83C\uDDF8","B\u00e9lgica":"\uD83C\uDDE7\uD83C\uDDEA",
-  "Argentina":"\uD83C\uDDE6\uD83C\uDDF7","Egipto":"\uD83C\uDDEA\uD83C\uDDEC",
-  "Suiza":"\uD83C\uDDE8\uD83C\uDDED","Colombia":"\uD83C\uDDE8\uD83C\uDDF4"
+  "Canadá":"🇨🇦","Marruecos":"🇲🇦",
+  "Paraguay":"🇵🇾","Francia":"🇫🇷",
+  "Brasil":"🇧🇷","Noruega":"🇳🇴",
+  "México":"🇲🇽","Inglaterra":"🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+  "Portugal":"🇵🇹","España":"🇪🇸",
+  "Estados Unidos":"🇺🇸","Bélgica":"🇧🇪",
+  "Argentina":"🇦🇷","Egipto":"🇪🇬",
+  "Suiza":"🇨🇭","Colombia":"🇨🇴"
 };
 
-function ban(e){return BAN[e]||"\uD83C\uDFF3\uFE0F";}
+function ban(e){return BAN[e]||"🏳️";}
 
-// Resultados octavos en localStorage
-var resOct = JSON.parse(localStorage.getItem("cengob_oct_res_2026")||"{}");
+// Resultados Cuartos en localStorage (única etapa editable)
+var resCua = JSON.parse(localStorage.getItem("cengob_cua_res_2026")||"{}");
+
+var MAXPTS = 84; // 48 (16avos) + 24 (octavos) + 12 (cuartos)
 
 // =============================================================
 // HELPERS
@@ -422,20 +406,17 @@ function scoreP(pgl,pgv,rgl,rgv){
 }
 
 function noAposto(nick, pid){
-  if(NO_APOSTO.indexOf(nick)<0) return false;
-  if(pid!=="o01"&&pid!=="o02") return false;
-  return true;
+  return NO_APOSTO.indexOf(nick)>=0;
 }
 
-function calcOct(nick){
+function calcCua(nick){
   var part = PARTS.find(function(p){return p.nick===nick;});
   if(!part) return {pts:0,E:0,G:0,F:0,N:0};
   var pts=0,E=0,G=0,F=0,N=0;
-  POCT.forEach(function(pt){
-    if(noAposto(nick,pt.id)){N++;return;}
-    var r=resOct[pt.id];
+  PCUA.forEach(function(pt){
+    var r=resCua[pt.id];
     if(!r||r.gl===""||r.gl===undefined) return;
-    var pron=part.pOct[pt.id];
+    var pron=part.pCua[pt.id];
     var s=scoreP(pron[0],pron[1],r.gl,r.gv);
     if(!s) return;
     pts+=s.pts;
@@ -454,15 +435,15 @@ function toast(msg,tipo){
 }
 
 function updLastUpd(){
-  var ts=localStorage.getItem("cengob_oct_ts_2026");
+  var ts=localStorage.getItem("cengob_cua_ts_2026");
   var el=document.getElementById("upd-lbl");
-  el.textContent=ts?"\uD83D\uDD50 "+new Date(+ts).toLocaleTimeString("es-BO"):"Sin actualizar";
+  el.textContent=ts?"🕐 "+new Date(+ts).toLocaleTimeString("es-BO"):"Sin actualizar";
 }
 
 // =============================================================
 // NAV
 // =============================================================
-var TABS=["ranking","fixture","miapuesta","detalle16","stats","admin"];
+var TABS=["ranking","fixture","miapuesta","detalleoct","stats","admin"];
 function showTab(id){
   document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active");});
   document.querySelectorAll(".tb").forEach(function(b){b.classList.remove("active");});
@@ -470,7 +451,7 @@ function showTab(id){
   var i=TABS.indexOf(id);
   if(i>=0) document.querySelectorAll(".tb")[i].classList.add("active");
   window.scrollTo({top:0,behavior:"smooth"});
-  var map={ranking:renderRanking,fixture:renderFixture,detalle16:renderDetalle16,stats:renderStats,admin:renderAdmin};
+  var map={ranking:renderRanking,fixture:renderFixture,detalleoct:renderDetalleOct,stats:renderStats,admin:renderAdmin};
   if(map[id]) map[id]();
 }
 
@@ -479,35 +460,36 @@ function showTab(id){
 // =============================================================
 function renderRanking(){
   var NICKS=["Tonchy","Jose","Gaby","Paoquino","Julio","Brany","Pablo","Sdenka","racsauh","Jorge","a66","Gustavo"];
-  var MAX=88;
   var data=NICKS.map(function(nick){
-    var oct=calcOct(nick);
+    var cua=calcCua(nick);
     var p16=PTS16[nick]||0;
-    return {nick:nick,p16:p16,pOct:oct.pts,total:p16+oct.pts,E:oct.E,G:oct.G,F:oct.F,N:oct.N};
-  }).sort(function(a,b){return b.total-a.total||b.p16-a.p16;});
+    var poct=PTSOCT[nick]||0;
+    return {nick:nick,p16:p16,poct:poct,pCua:cua.pts,total:p16+poct+cua.pts,E:cua.E,G:cua.G,F:cua.F,N:cua.N};
+  }).sort(function(a,b){return b.total-a.total||(b.p16+b.poct)-(a.p16+a.poct);});
 
-  var jugados=POCT.filter(function(pt){var r=resOct[pt.id];return r&&r.gl!==undefined&&r.gl!=="";}).length;
+  var jugados=PCUA.filter(function(pt){var r=resCua[pt.id];return r&&r.gl!==undefined&&r.gl!=="";}).length;
 
   document.getElementById("rank-stats").innerHTML=
-    sc(jugados,"Oct. jugados")+sc(8-jugados,"Por jugar")+
-    sc(data[0].total,"L\u00edder total")+sc(12,"Participantes")+sc(MAX,"M\u00e1x. pts");
+    sc(jugados,"Cuartos jugados")+sc(4-jugados,"Por jugar")+
+    sc(data[0].total,"Líder total")+sc(12,"Participantes")+sc(MAXPTS,"Máx. pts");
 
   document.getElementById("rank-body").innerHTML=data.map(function(p,i){
-    var pct=Math.round(p.total/MAX*100);
-    var pct16=Math.round(p.p16/MAX*100);
-    var pctO=Math.round(p.pOct/MAX*100);
+    var pct=Math.round(p.total/MAXPTS*100);
+    var pct16=Math.round(p.p16/MAXPTS*100);
+    var pctO=Math.round(p.poct/MAXPTS*100);
+    var pctC=Math.round(p.pCua/MAXPTS*100);
     return "<tr><td>"+medal(i)+"</td><td>"+
-      "<span class='nick'>\uD83C\uDFAD "+NICK_DISPLAY[p.nick]+"</span>"+
+      "<span class='nick'>🎭 "+NICK_DISPLAY[p.nick]+"</span>"+
       "<span class='nsub'>"+NICK_NOMBRE[p.nick]+"</span></td><td>"+
-      "<span class='ptt'>"+p.total+"</span><span class='nsub'>/"+MAX+"</span>"+
+      "<span class='ptt'>"+p.total+"</span><span class='nsub'>/"+MAXPTS+"</span>"+
       "<div class='pcb' style='margin-top:3px'>"+
         "<div class='pc1' style='width:"+pct16+"%'></div>"+
         "<div class='pc2' style='width:"+pctO+"%'></div>"+
-        "<div class='pc3'></div></div></td>"+
+        "<div class='pc3' style='width:"+pctC+"%'></div>"+
+        "<div class='pc4'></div></div></td>"+
       "<td><span class='bdg b16'>"+p.p16+" pts</span></td>"+
-      "<td><span class='bdg bo'>"+p.pOct+" pts</span>"+
-        (p.N>0?"<span style='font-size:.68rem;color:#aaa;font-style:italic'> ("+p.N+" sin ap.)</span>":"")+
-      "</td>"+
+      "<td><span class='bdg bo'>"+p.poct+" pts</span></td>"+
+      "<td><span class='bdg bc'>"+p.pCua+" pts</span></td>"+
       "<td style='color:#155724;font-weight:700'>"+p.E+"</td>"+
       "<td style='color:#856404;font-weight:700'>"+p.G+"</td>"+
       "<td style='color:#922B21;font-weight:700'>"+p.F+"</td>"+
@@ -521,18 +503,18 @@ function sc(n,l){return "<div class='sc'><div class='sc-n'>"+n+"</div><div class
 // FIXTURE
 // =============================================================
 function renderFixture(){
-  document.getElementById("fixture-grid").innerHTML=POCT.map(function(p){
-    var r=resOct[p.id];
+  document.getElementById("fixture-grid").innerHTML=PCUA.map(function(p){
+    var r=resCua[p.id];
     var hasR=r&&r.gl!==undefined&&r.gl!=="";
     var live=r&&r.status==="live";
-    var stxt=hasR?(live?"\uD83D\uDD34 En vivo":"Finalizado"):"Pendiente";
+    var stxt=hasR?(live?"🔴 En vivo":"Finalizado"):"Pendiente";
     var scls=hasR?(live?"sp-l":"sp-d"):"sp-p";
-    var prL=PARTS.filter(function(pp){var d=pp.pOct[p.id];return d&&!noAposto(pp.nick,p.id)&&d[0]>d[1];}).length;
-    var prE=PARTS.filter(function(pp){var d=pp.pOct[p.id];return d&&!noAposto(pp.nick,p.id)&&d[0]===d[1];}).length;
-    var prV=PARTS.filter(function(pp){var d=pp.pOct[p.id];return d&&!noAposto(pp.nick,p.id)&&d[0]<d[1];}).length;
+    var prL=PARTS.filter(function(pp){var d=pp.pCua[p.id];return d&&d[0]>d[1];}).length;
+    var prE=PARTS.filter(function(pp){var d=pp.pCua[p.id];return d&&d[0]===d[1];}).length;
+    var prV=PARTS.filter(function(pp){var d=pp.pCua[p.id];return d&&d[0]<d[1];}).length;
     var tot=prL+prE+prV||1;
     return "<div class='fc'><div class='fh' style='background:"+p.col+"'>"+
-      "<span>O"+p.n+" &middot; "+p.fecha+" &middot; "+p.hora+"</span>"+
+      "<span>C"+p.n+" &middot; "+p.fecha+" &middot; "+p.hora+"</span>"+
       "<span class='fs "+scls+"'>"+stxt+"</span></div>"+
       "<div class='fb'><div class='fvs'>"+
         "<div class='ft'><span class='ff'>"+ban(p.loc)+"</span><div class='fn'>"+p.loc+"</div></div>"+
@@ -543,7 +525,7 @@ function renderFixture(){
         "<div class='ft'><span class='ff'>"+ban(p.vis)+"</span><div class='fn'>"+p.vis+"</div></div>"+
       "</div>"+
       "<div class='fm'>&#128205; "+p.stad+"</div>"+
-      "<div class='fpop'><div class='pt'>Pron\u00f3sticos del grupo:</div>"+
+      "<div class='fpop'><div class='pt'>Pronósticos del grupo:</div>"+
         popRow(p.loc.split(" ")[0],prL,tot,"#1E8449")+
         popRow("Empate",prE,tot,"#856404")+
         popRow(p.vis.split(" ")[0],prV,tot,"#922B21")+
@@ -552,7 +534,7 @@ function renderFixture(){
 }
 function popRow(lbl,cnt,tot,col){
   return "<div class='pr'><span class='pl'>"+lbl+"</span>"+
-    "<div class='pbw'><div class='pbf' style='width:"+Math.round(cnt/tot*100)+"%%;background:"+col+"'></div></div>"+
+    "<div class='pbw'><div class='pbf' style='width:"+Math.round(cnt/tot*100)+"%;background:"+col+"'></div></div>"+
     "<span class='pc'>"+cnt+"</span></div>";
 }
 
@@ -563,7 +545,7 @@ function initMiApuesta(){
   var sel=document.getElementById("sel-jug");
   sel.innerHTML="<option value=''>-- Selecciona tu nombre --</option>"+
     PARTS.map(function(p,i){
-      return "<option value='"+i+"'>\uD83C\uDFAD "+NICK_DISPLAY[p.nick]+" ("+NICK_NOMBRE[p.nick]+")</option>";
+      return "<option value='"+i+"'>🎭 "+NICK_DISPLAY[p.nick]+" ("+NICK_NOMBRE[p.nick]+")</option>";
     }).join("");
 }
 
@@ -573,47 +555,47 @@ function renderMiApuesta(){
   if(isNaN(idx)||document.getElementById("sel-jug").value===""){cont.innerHTML="";return;}
   var p=PARTS[idx];
   var nick=p.nick;
-  var oct=calcOct(nick);
+  var cua=calcCua(nick);
   var p16=PTS16[nick]||0;
-  var total=p16+oct.pts;
+  var poct=PTSOCT[nick]||0;
+  var total=p16+poct+cua.pts;
 
   function semC(s){return s==="E"?"sE":s==="G"?"sG":s==="F"?"sF":s===null?"sN":"sP";}
-  function semL(s){return s==="E"?"\u2705 Exacto +3":s==="G"?"\u26A1 Ganador +1":s==="F"?"\u274C Fallo 0":s===null?"\u26D4 No apost\u00f3":"\u23F3 Pendiente";}
+  function semL(s){return s==="E"?"✅ Exacto +3":s==="G"?"⚡ Ganador +1":s==="F"?"❌ Fallo 0":s===null?"⛔ No apostó":"⏳ Pendiente";}
 
-  var cards=POCT.map(function(pt){
-    var noAp=noAposto(nick,pt.id);
-    var pron=noAp?null:p.pOct[pt.id];
-    var r=resOct[pt.id];
+  var cards=PCUA.map(function(pt){
+    var pron=p.pCua[pt.id];
+    var r=resCua[pt.id];
     var hasR=r&&r.gl!==undefined&&r.gl!=="";
     var s=null;
-    if(!noAp&&hasR) s=(scoreP(pron[0],pron[1],r.gl,r.gv)||{}).r||"F";
-    else if(!noAp&&!hasR) s="P";
+    if(hasR) s=(scoreP(pron[0],pron[1],r.gl,r.gv)||{}).r||"F";
+    else s="P";
     return "<div class='mac "+semC(s)+"'>"+
       "<div class='mah' style='background:"+pt.col+"'>"+
-        "<span>O"+pt.n+" &middot; "+pt.fecha+"</span>"+
-        "<span>"+semL(noAp?null:s)+"</span>"+
+        "<span>C"+pt.n+" &middot; "+pt.fecha+"</span>"+
+        "<span>"+semL(s)+"</span>"+
       "</div>"+
       "<div class='mbd'>"+
         "<div class='mmatch'>"+ban(pt.loc)+" "+pt.loc+" vs "+pt.vis+" "+ban(pt.vis)+"</div>"+
         "<div class='msc'>"+
-          "<div class='msb'><div class='msl'>Tu pron\u00f3stico</div>"+
-            "<strong>"+(noAp?"&mdash; no apost\u00f3 &mdash;":pron[0]+" &ndash; "+pron[1])+"</strong></div>"+
+          "<div class='msb'><div class='msl'>Tu pronóstico</div>"+
+            "<strong>"+pron[0]+" &ndash; "+pron[1]+"</strong></div>"+
           (hasR?"<div style='color:var(--gris3);font-size:1rem'>&rarr;</div><div class='msb'><div class='msl'>Resultado real (90 min)</div><strong style='color:var(--verde2)'>"+r.gl+" &ndash; "+r.gv+"</strong></div>":
-                "<div style='color:var(--texto2);font-size:.75rem'>\u23F3 Sin resultado</div>")+
+                "<div style='color:var(--texto2);font-size:.75rem'>⏳ Sin resultado</div>")+
         "</div></div></div>";
   }).join("");
 
   cont.innerHTML=
-    "<div class='card'><div class='card-title'>\uD83C\uDFAD "+NICK_DISPLAY[nick]+
+    "<div class='card'><div class='card-title'>🎭 "+NICK_DISPLAY[nick]+
       " <span style='font-size:.8rem;font-weight:400;color:var(--texto2)'>"+NICK_NOMBRE[nick]+"</span></div>"+
     "<div class='mar'>"+
       mbox(total,"Pts Acumulados","#d4edda","#a3d9b1","#155724")+
       mbox(p16,"Pts 16avos","var(--azul2)","#bee3f8","var(--azul)")+
-      mbox(oct.pts,"Pts Octavos","#d4edda","#a3d9b1","var(--verde)")+
-      mbox(oct.E,"\u2705 Exactos Oct","#fff3cd","#ffd97e","#856404")+
-      mbox(oct.N,"\u26D4 Sin apuesta","var(--rojo2)","#f5c6c2","var(--rojo)")+
+      mbox(poct,"Pts Octavos","#d4edda","#a3d9b1","var(--verde)")+
+      mbox(cua.pts,"Pts Cuartos","var(--oro2)","#e8d5a8","#3d2200")+
+      mbox(cua.E,"✅ Exactos Cua","#fff3cd","#ffd97e","#856404")+
     "</div></div>"+
-    "<div class='card'><div class='card-title'>\uD83C\uDFAF Pron\u00f3sticos Octavos &mdash; partido a partido</div>"+
+    "<div class='card'><div class='card-title'>🎯 Pronósticos Cuartos &mdash; partido a partido</div>"+
     "<div class='mag'>"+cards+"</div></div>";
 }
 function mbox(n,l,bg,bc,tc){
@@ -623,53 +605,49 @@ function mbox(n,l,bg,bc,tc){
 }
 
 // =============================================================
-// DETALLE 16AVOS — tabla heatmap completa
+// DETALLE OCTAVOS — tabla heatmap completa (etapa cerrada)
 // =============================================================
-function renderDetalle16(){
-  var ORDER=["racsauh","Jose","Julio","Tonchy","Sdenka","Pablo","a66","Gaby","Gustavo","Paoquino","Jorge","Brany"];
-  var DASH_DET={
-    racsauh:{E:7,G:5,F:4}, Jose:{E:5,G:6,F:5}, Julio:{E:5,G:6,F:5},
-    Tonchy:{E:4,G:9,F:3},  Sdenka:{E:4,G:9,F:3}, Pablo:{E:4,G:8,F:4},
-    a66:{E:4,G:5,F:7},     Gaby:{E:3,G:8,F:5}, Gustavo:{E:1,G:11,F:4},
-    Paoquino:{E:1,G:11,F:4}, Jorge:{E:1,G:10,F:5}, Brany:{E:0,G:8,F:8}
-  };
+function renderDetalleOct(){
+  var ORDER=["Jorge","Tonchy","racsauh","Jose","a66","Sdenka","Gaby","Paoquino","Brany","Pablo","Gustavo","Julio"];
 
-  function cellScore(pgl,pgv,rgl,rgv){
-    var pi=+pgl,pj=+pgv;
+  function cellScore(pron,rgl,rgv){
+    if(pron===null) return "N";
+    var pi=+pron[0],pj=+pron[1];
     if(pi===rgl&&pj===rgv) return "E";
     var rr=rgl>rgv?"L":rgl<rgv?"V":"D";
     var pr=pi>pj?"L":pi<pj?"V":"D";
     return rr===pr?"G":"F";
   }
 
-  // CABECERA
   var th="<thead><tr><th class='th-jug'>Jugador</th>";
-  P16.forEach(function(p){
+  POCT.forEach(function(p){
     th+="<th style='background:"+p.col+";min-width:64px'>"+
-      "<div>P"+p.n+"</div>"+
+      "<div>O"+p.n+"</div>"+
       "<div style='font-size:.6rem;opacity:.85;font-weight:400'>"+p.loc.split(" ")[0]+"</div>"+
       "<div style='font-size:.58rem;opacity:.7'>vs "+p.vis.split(" ")[0]+"</div>"+
       "<div style='font-size:.6rem;opacity:.75'>"+p.fecha+"</div></th>";
   });
-  th+="<th style='background:var(--oro);color:#3d2200;min-width:52px'>Pts<br>16avos</th></tr></thead>";
+  th+="<th style='background:var(--oro);color:#3d2200;min-width:52px'>Pts<br>Octavos</th></tr></thead>";
 
-  // FILA RESULTADO REAL
-  var trReal="<tr class='tr-real'><td class='td-jug' style='font-weight:700;font-size:.74rem'>\u26BD Resultado Real</td>";
-  P16.forEach(function(p){
-    trReal+="<td class='cR'>"+p.rgl+"&ndash;"+p.rgv+"</td>";
+  var trReal="<tr class='tr-real'><td class='td-jug' style='font-weight:700;font-size:.74rem'>⚽ Resultado Real</td>";
+  POCT.forEach(function(p){
+    trReal+="<td class='cR' title='"+(p.nota||"")+"'>"+p.rgl+"&ndash;"+p.rgv+"</td>";
   });
   trReal+="<td style='background:var(--oro);color:#3d2200;font-weight:700'>&mdash;</td></tr>";
 
-  // FILAS JUGADORES
   var rows=ORDER.map(function(nick){
-    var pr16=PR16[nick];
-    var pts=PTS16[nick]||0;
-    var row="<tr><td class='td-jug' style='font-weight:700;color:var(--verde)'>\uD83C\uDFAD "+NICK_DISPLAY[nick]+"</td>";
-    P16.forEach(function(p){
-      var pron=pr16[p.id];
-      var s=cellScore(pron[0],pron[1],p.rgl,p.rgv);
-      var ptsTxt=s==="E"?"+3":s==="G"?"+1":"0";
-      row+="<td class='c"+s+"' title='"+pron[0]+"-"+pron[1]+" | "+ptsTxt+"'>"+pron[0]+"-"+pron[1]+"</td>";
+    var pr=PROCT[nick];
+    var pts=PTSOCT[nick]||0;
+    var row="<tr><td class='td-jug' style='font-weight:700;color:var(--verde)'>🎭 "+NICK_DISPLAY[nick]+"</td>";
+    POCT.forEach(function(p){
+      var pron=pr[p.id];
+      var s=cellScore(pron,p.rgl,p.rgv);
+      if(s==="N"){
+        row+="<td class='cN'>&mdash;</td>";
+      } else {
+        var ptsTxt=s==="E"?"+3":s==="G"?"+1":"0";
+        row+="<td class='c"+s+"' title='"+pron[0]+"-"+pron[1]+" | "+ptsTxt+"'>"+pron[0]+"-"+pron[1]+"</td>";
+      }
     });
     row+="<td style='background:var(--oro2);color:#3d2200;font-weight:800;font-size:.85rem'>"+pts+"</td></tr>";
     return row;
@@ -677,33 +655,34 @@ function renderDetalle16(){
 
   document.getElementById("det-tbl").innerHTML=th+"<tbody>"+trReal+rows+"</tbody>";
 
-  // RESUMEN TABLA INFERIOR
-  var sorted=ORDER.map(function(nick){return {nick:nick,pts:PTS16[nick]||0,d:DASH_DET[nick]};})
+  var sorted=ORDER.map(function(nick){return {nick:nick,pts:PTSOCT[nick]||0,d:OCTDET[nick]};})
     .sort(function(a,b){return b.pts-a.pts;});
 
   var tbl="<table style='width:100%;border-collapse:collapse;font-size:.82rem'>"+
     "<thead><tr style='background:var(--verde);color:#fff'>"+
     "<th style='padding:.5rem .75rem;text-align:left'>#</th>"+
     "<th style='padding:.5rem .75rem;text-align:left'>Jugador</th>"+
-    "<th style='padding:.5rem .75rem;text-align:center'>\u2705 Exactos</th>"+
-    "<th style='padding:.5rem .75rem;text-align:center'>\u26A1 Ganador</th>"+
-    "<th style='padding:.5rem .75rem;text-align:center'>\u274C Fallos</th>"+
-    "<th style='padding:.5rem .75rem;text-align:center'>Pts 16avos</th>"+
-    "<th style='padding:.5rem .75rem;text-align:left;min-width:130px'>Progreso /48</th>"+
+    "<th style='padding:.5rem .75rem;text-align:center'>✅ Exactos</th>"+
+    "<th style='padding:.5rem .75rem;text-align:center'>⚡ Ganador</th>"+
+    "<th style='padding:.5rem .75rem;text-align:center'>❌ Fallos</th>"+
+    "<th style='padding:.5rem .75rem;text-align:center'>⛔ Sin ap.</th>"+
+    "<th style='padding:.5rem .75rem;text-align:center'>Pts Octavos</th>"+
+    "<th style='padding:.5rem .75rem;text-align:left;min-width:130px'>Progreso /24</th>"+
     "</tr></thead><tbody>";
 
   sorted.forEach(function(item,i){
-    var pct=Math.round(item.pts/48*100);
+    var pct=Math.round(item.pts/24*100);
     var bg=i%2===0?"#fff":"#f9fafb";
     tbl+="<tr style='background:"+bg+"'>"+
       "<td style='padding:.45rem .75rem;font-weight:700'>"+(i+1)+"</td>"+
-      "<td style='padding:.45rem .75rem'><span style='font-weight:700;color:var(--verde)'>\uD83C\uDFAD "+NICK_DISPLAY[item.nick]+"</span></td>"+
+      "<td style='padding:.45rem .75rem'><span style='font-weight:700;color:var(--verde)'>🎭 "+NICK_DISPLAY[item.nick]+"</span></td>"+
       "<td style='padding:.45rem .75rem;text-align:center;color:#155724;font-weight:700'>"+item.d.E+"</td>"+
       "<td style='padding:.45rem .75rem;text-align:center;color:#856404;font-weight:700'>"+item.d.G+"</td>"+
       "<td style='padding:.45rem .75rem;text-align:center;color:#922B21;font-weight:700'>"+item.d.F+"</td>"+
+      "<td style='padding:.45rem .75rem;text-align:center;color:#aaa;font-style:italic'>"+item.d.N+"</td>"+
       "<td style='padding:.45rem .75rem;text-align:center'>"+
         "<span style='font-size:1rem;font-weight:800;color:var(--verde)'>"+item.pts+"</span>"+
-        "<span style='font-size:.72rem;color:var(--texto2)'>/48</span></td>"+
+        "<span style='font-size:.72rem;color:var(--texto2)'>/24</span></td>"+
       "<td style='padding:.45rem .75rem'>"+
         "<div style='display:flex;align-items:center;gap:.4rem'>"+
           "<div style='flex:1;max-width:100px;background:var(--gris3);border-radius:6px;height:7px;overflow:hidden'>"+
@@ -724,35 +703,36 @@ function renderStats(){
       "<div class='ebw'><div class='ebf' style='width:"+Math.round(cnt/max*100)+"%'></div></div>"+
       "<span class='ecnt'>"+cnt+"</span></div>";
   }
-  var rank16=Object.entries(PTS16).sort(function(a,b){return b[1]-a[1];});
   var NICKS=["Tonchy","Jose","Gaby","Paoquino","Julio","Brany","Pablo","Sdenka","racsauh","Jorge","a66","Gustavo"];
+  var base16oct=NICKS.map(function(nick){return [nick,(PTS16[nick]||0)+(PTSOCT[nick]||0)];})
+    .sort(function(a,b){return b[1]-a[1];});
   var totales=NICKS.map(function(nick){
-    return {nick:nick,total:(PTS16[nick]||0)+calcOct(nick).pts};
+    return {nick:nick,total:(PTS16[nick]||0)+(PTSOCT[nick]||0)+calcCua(nick).pts};
   }).sort(function(a,b){return b.total-a.total;});
-  var jugados=POCT.filter(function(pt){var r=resOct[pt.id];return r&&r.gl!==undefined&&r.gl!=="";}).length;
+  var jugados=PCUA.filter(function(pt){var r=resCua[pt.id];return r&&r.gl!==undefined&&r.gl!=="";}).length;
   var brecha=totales[0].total-totales[totales.length-1].total;
-  var popGanador=POCT.map(function(pt){
-    var pL=PARTS.filter(function(p){var d=p.pOct[pt.id];return d&&!noAposto(p.nick,pt.id)&&d[0]>d[1];}).length;
-    var pV=PARTS.filter(function(p){var d=p.pOct[pt.id];return d&&!noAposto(p.nick,pt.id)&&d[0]<d[1];}).length;
-    var pE=PARTS.filter(function(p){var d=p.pOct[pt.id];return d&&!noAposto(p.nick,pt.id)&&d[0]===d[1];}).length;
+  var popGanador=PCUA.map(function(pt){
+    var pL=PARTS.filter(function(p){var d=p.pCua[pt.id];return d&&d[0]>d[1];}).length;
+    var pV=PARTS.filter(function(p){var d=p.pCua[pt.id];return d&&d[0]<d[1];}).length;
+    var pE=PARTS.filter(function(p){var d=p.pCua[pt.id];return d&&d[0]===d[1];}).length;
     var fav=pL>=pV&&pL>=pE?pt.loc:pV>pL&&pV>=pE?pt.vis:"Empate";
-    return {match:"O"+pt.n+": "+pt.loc+" vs "+pt.vis,fav:fav,cnt:Math.max(pL,pV,pE),tot:pL+pV+pE||1};
+    return {match:"C"+pt.n+": "+pt.loc+" vs "+pt.vis,fav:fav,cnt:Math.max(pL,pV,pE),tot:pL+pV+pE||1};
   });
   document.getElementById("stats-content").innerHTML=
-    "<div class='ec'><div class='et'>\uD83C\uDFC6 Puntos 16avos (base fija)</div>"+
-      rank16.map(function(e){return barRow("\uD83C\uDFAD",NICK_DISPLAY[e[0]],e[1],rank16[0][1]);}).join("")+
+    "<div class='ec'><div class='et'>🏆 Puntos 16avos+Octavos (base fija)</div>"+
+      base16oct.map(function(e){return barRow("🎭",NICK_DISPLAY[e[0]],e[1],base16oct[0][1]);}).join("")+
     "</div>"+
-    "<div class='ec'><div class='et'>\u26BD Favorito por partido (octavos)</div>"+
+    "<div class='ec'><div class='et'>⚽ Favorito por partido (Cuartos)</div>"+
       popGanador.map(function(d){return barRow(ban(d.fav),d.match,d.cnt,d.tot);}).join("")+
     "</div>"+
-    "<div class='ec'><div class='et'>\uD83D\uDCCA Ranking acumulado</div>"+
-      totales.map(function(t,i){return barRow(medal(i),NICK_DISPLAY[t.nick],t.total,88);}).join("")+
+    "<div class='ec'><div class='et'>📊 Ranking acumulado</div>"+
+      totales.map(function(t,i){return barRow(medal(i),NICK_DISPLAY[t.nick],t.total,MAXPTS);}).join("")+
     "</div>"+
-    "<div class='ec'><div class='et'>\uD83C\uDFAF Datos del torneo</div>"+
-      barRow("\uD83D\uDCCC","Participantes",12,12)+
-      barRow("\u26BD","Oct. jugados",jugados,8)+
-      barRow("\uD83D\uDCCF","Brecha l\u00edder-\u00FAltimo",brecha,brecha)+
-      barRow("\uD83C\uDFC5","L\u00edder: "+NICK_DISPLAY[totales[0].nick],totales[0].total,88)+
+    "<div class='ec'><div class='et'>🎯 Datos del torneo</div>"+
+      barRow("📌","Participantes",12,12)+
+      barRow("⚽","Cuartos jugados",jugados,4)+
+      barRow("📏","Brecha líder-último",brecha,brecha)+
+      barRow("🏅","Líder: "+NICK_DISPLAY[totales[0].nick],totales[0].total,MAXPTS)+
     "</div>";
 }
 
@@ -760,15 +740,15 @@ function renderStats(){
 // ADMIN
 // =============================================================
 function renderAdmin(){
-  document.getElementById("adm-partidos").innerHTML=POCT.map(function(p){
-    var r=resOct[p.id]||{};
+  document.getElementById("adm-partidos").innerHTML=PCUA.map(function(p){
+    var r=resCua[p.id]||{};
     var gl=r.gl!==undefined&&r.gl!==""?r.gl:"";
     var gv=r.gv!==undefined&&r.gv!==""?r.gv:"";
     var done=gl!==""&&gv!=="";
     return "<div class='ac'>"+
       "<div class='ah' style='background:"+p.col+"'>"+
-        "<span>O"+p.n+" &middot; "+p.loc+" vs "+p.vis+"</span>"+
-        "<span class='ast "+(done?"aok":"apnd")+"' id='ast-"+p.id+"'>"+(done?"\u2705 Ingresado":"\u23F3 Pendiente")+"</span>"+
+        "<span>C"+p.n+" &middot; "+p.loc+" vs "+p.vis+"</span>"+
+        "<span class='ast "+(done?"aok":"apnd")+"' id='ast-"+p.id+"'>"+(done?"✅ Ingresado":"⏳ Pendiente")+"</span>"+
       "</div>"+
       "<div class='abdy'>"+
         "<div class='am'>"+ban(p.loc)+" "+p.loc+" &nbsp;vs&nbsp; "+p.vis+" "+ban(p.vis)+"</div>"+
@@ -784,31 +764,31 @@ function renderAdmin(){
 function setAdm(pid){
   var gl=document.getElementById("agl-"+pid).value;
   var gv=document.getElementById("agv-"+pid).value;
-  if(!resOct[pid]) resOct[pid]={};
-  resOct[pid].gl=gl===""?"":Math.max(0,+gl||0);
-  resOct[pid].gv=gv===""?"":Math.max(0,+gv||0);
+  if(!resCua[pid]) resCua[pid]={};
+  resCua[pid].gl=gl===""?"":Math.max(0,+gl||0);
+  resCua[pid].gv=gv===""?"":Math.max(0,+gv||0);
   var done=gl!==""&&gv!=="";
   var st=document.getElementById("ast-"+pid);
-  if(st){st.textContent=done?"\u2705 Ingresado":"\u23F3 Pendiente";st.className="ast "+(done?"aok":"apnd");}
+  if(st){st.textContent=done?"✅ Ingresado":"⏳ Pendiente";st.className="ast "+(done?"aok":"apnd");}
   document.getElementById("agl-"+pid).classList.toggle("has",gl!=="");
   document.getElementById("agv-"+pid).classList.toggle("has",gv!=="");
 }
 
 function guardar(){
-  localStorage.setItem("cengob_oct_res_2026",JSON.stringify(resOct));
-  localStorage.setItem("cengob_oct_ts_2026",Date.now().toString());
+  localStorage.setItem("cengob_cua_res_2026",JSON.stringify(resCua));
+  localStorage.setItem("cengob_cua_ts_2026",Date.now().toString());
   updLastUpd();
-  document.getElementById("adm-alert").innerHTML="<div class='al al-o'>\u2705 Guardado. Tabla de puntos actualizada.</div>";
+  document.getElementById("adm-alert").innerHTML="<div class='al al-o'>✅ Guardado. Tabla de puntos actualizada.</div>";
   renderRanking();
   toast("Resultados guardados","green");
   setTimeout(function(){var a=document.getElementById("adm-alert");if(a)a.innerHTML="";},4000);
 }
 
 function limpiar(){
-  if(!confirm("Limpiar todos los resultados de octavos?")) return;
-  resOct={};
-  localStorage.removeItem("cengob_oct_res_2026");
-  localStorage.removeItem("cengob_oct_ts_2026");
+  if(!confirm("Limpiar todos los resultados de Cuartos?")) return;
+  resCua={};
+  localStorage.removeItem("cengob_cua_res_2026");
+  localStorage.removeItem("cengob_cua_ts_2026");
   updLastUpd(); renderAdmin(); renderRanking();
   toast("Resultados limpiados");
 }
@@ -831,7 +811,7 @@ function fetchESPN(fromAdmin){
     }).length;
   }
 
-  fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=200&dates=20260704-20260707")
+  fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=200&dates=20260709-20260711")
   .then(function(r){if(!r.ok) throw new Error("ESPN no responde ("+r.status+")"); return r.json();})
   .then(function(data){
     var ev={};
@@ -864,33 +844,33 @@ function fetchESPN(fromAdmin){
 
     var act=0,viv=0,pend=0;
     var logItems=[];
-    POCT.forEach(function(p){
+    PCUA.forEach(function(p){
       var key=p.loc+"|"+p.vis;
       var e=ev[key];
       if(!e){pend++;logItems.push({n:p.n,loc:p.loc,vis:p.vis,tipo:"pend",msg:"Sin datos ESPN",gl:"",gv:"",col:p.col});return;}
       if(e.done||e.live){
         var gl=e.hN===p.loc?e.hS:e.aS;
         var gv=e.hN===p.loc?e.aS:e.hS;
-        if(!resOct[p.id]) resOct[p.id]={};
-        resOct[p.id].gl=gl; resOct[p.id].gv=gv;
-        resOct[p.id].status=e.live?"live":"done";
-        resOct[p.id].nota=e.nota;
+        if(!resCua[p.id]) resCua[p.id]={};
+        resCua[p.id].gl=gl; resCua[p.id].gv=gv;
+        resCua[p.id].status=e.live?"live":"done";
+        resCua[p.id].nota=e.nota;
         if(e.live) viv++; else act++;
         logItems.push({n:p.n,loc:p.loc,vis:p.vis,tipo:e.live?"live":"done",
-          msg:e.live?"\uD83D\uDD34 En vivo":"Finalizado"+(e.nota?" \u00b7 "+e.nota:""),gl:gl,gv:gv,col:p.col});
+          msg:e.live?"🔴 En vivo":"Finalizado"+(e.nota?" · "+e.nota:""),gl:gl,gv:gv,col:p.col});
       } else {
         pend++;
         logItems.push({n:p.n,loc:p.loc,vis:p.vis,tipo:"pend",msg:e.detail,gl:"",gv:"",col:p.col});
       }
     });
 
-    localStorage.setItem("cengob_oct_res_2026",JSON.stringify(resOct));
-    localStorage.setItem("cengob_oct_ts_2026",Date.now().toString());
+    localStorage.setItem("cengob_cua_res_2026",JSON.stringify(resCua));
+    localStorage.setItem("cengob_cua_ts_2026",Date.now().toString());
     updLastUpd();
 
     var total=act+viv;
     var res=act+" final, "+viv+" en vivo, "+pend+" pendiente";
-    if(fixSt) fixSt.textContent="Actualizado: "+new Date().toLocaleTimeString("es-BO")+" \u00b7 "+res;
+    if(fixSt) fixSt.textContent="Actualizado: "+new Date().toLocaleTimeString("es-BO")+" · "+res;
 
     if(fromAdmin){
       elogC.innerHTML=logItems.map(function(item){
@@ -901,21 +881,21 @@ function fetchESPN(fromAdmin){
           (item.nota?"<span style='font-size:.63rem;background:#fff3cd;color:#856404;padding:1px 6px;border-radius:8px;margin-left:4px'>"+item.nota+"</span>":""):
           "<span style='color:#aaa'>?&ndash;?</span>";
         return "<div style='background:"+bg+";border:1px solid "+bc+";border-radius:8px;padding:.55rem .8rem;font-size:.76rem'>"+
-          "<div style='font-weight:700;margin-bottom:2px'>O"+item.n+" "+ban(item.loc)+" "+item.loc+" vs "+item.vis+" "+ban(item.vis)+"</div>"+
+          "<div style='font-weight:700;margin-bottom:2px'>C"+item.n+" "+ban(item.loc)+" "+item.loc+" vs "+item.vis+" "+ban(item.vis)+"</div>"+
           "<div style='display:flex;justify-content:space-between;align-items:center'>"+
             "<span style='color:#555;font-size:.7rem'>"+item.msg+"</span>"+scoreH+"</div></div>";
       }).join("");
       elog.style.display="block";
       document.getElementById("adm-alert").innerHTML=
-        "<div class='al "+(total>0?"al-o":"al-w")+"'>"+(total>0?"\u2705":"\u26A0\uFE0F")+" ESPN: "+res+". Solo goles a 90 min reglamentarios.</div>";
+        "<div class='al "+(total>0?"al-o":"al-w")+"'>"+(total>0?"✅":"⚠️")+" ESPN: "+res+". Solo goles a 90 min reglamentarios.</div>";
       renderAdmin();
     }
     renderFixture(); renderRanking();
     if(document.getElementById("tab-miapuesta").classList.contains("active")) renderMiApuesta();
-    toast(total>0?total+" partidos actualizados":"Sin resultados a\u00FAn",total>0?"green":"");
+    toast(total>0?total+" partidos actualizados":"Sin resultados aún",total>0?"green":"");
   })
   .catch(function(err){
-    var msg="\u274C Error ESPN: "+err.message;
+    var msg="❌ Error ESPN: "+err.message;
     if(fixSt) fixSt.textContent=msg;
     if(fromAdmin){
       elog.style.display="block";
