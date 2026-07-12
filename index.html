@@ -193,6 +193,7 @@ header{background:var(--verde)}
     <button class="tb" onclick="showTab('detalle16')">&#128220; Detalle 16avos</button>
     <button class="tb" onclick="showTab('detalleoct')">&#128203; Detalle Octavos</button>
     <button class="tb" onclick="showTab('stats')">&#128202; Estad&iacute;sticas</button>
+    <button class="tb" onclick="showTab('reglas')">&#9878;&#65039; Reglas</button>
     <button class="tb" onclick="showTab('admin')">&#9881;&#65039; Admin</button>
   </div>
 </div>
@@ -247,7 +248,7 @@ header{background:var(--verde)}
       <span style="display:inline-block;background:#C0392B;color:#fff;padding:1px 7px;border-radius:4px;font-size:.75rem;font-weight:700;margin:0 3px">Fallo 0</span>
     </div>
     <div class="al al-w" style="margin-bottom:.75rem">
-      &#9878;&#65039; <span><b>Correcci&oacute;n de transparencia (11/jul):</b> el partido <b>Argentina vs Cabo Verde</b> estaba registrado 2&ndash;1, marcador que incluy&oacute; un gol del tiempo extra (L. Mart&iacute;nez 92'). Seg&uacute;n el reglamento de la polla solo cuentan los 90 minutos reglamentarios: el resultado v&aacute;lido es <b>1&ndash;1</b> (Messi 29', Duarte 59'). Impacto: &minus;3 pts a Gaby y Paoquino (su 2&ndash;1 exacto pasa a fallo), +1 pt a a66 (su 0&ndash;0 acierta el empate) y &minus;1 pt a los 9 restantes que pronosticaron victoria argentina. Los goles en adici&oacute;n (45'+X y 90'+X) s&iacute; cuentan por ser parte reglamentaria; el alargue (91'&ndash;120') y los penales no. Verificado con reportes oficiales FIFA/ESPN gol por gol.</span>
+      &#9878;&#65039; <span><b>Correcci&oacute;n de transparencia (11/jul) &mdash; regla de 90 minutos:</b> el partido <b>Argentina vs Cabo Verde</b> estaba registrado 2&ndash;1, marcador que inclu&iacute;a un gol del tiempo extra (L. Mart&iacute;nez 92'). El resultado v&aacute;lido a 90 min es <b>1&ndash;1</b> (Messi 29', Duarte 59'). Los goles en adici&oacute;n (45'+X y 90'+X) s&iacute; cuentan por ser parte reglamentaria; el alargue (91'&ndash;120') y los penales no. Verificado gol por gol con reportes oficiales FIFA/ESPN. Los 12 Excel de esta etapa fueron entregados a tiempo (28/jun): todos los pron&oacute;sticos puntúan.</span>
     </div>
     <div class="det-wrap"><table class="det-tbl" id="det16-tbl"></table></div>
   </div>
@@ -267,6 +268,9 @@ header{background:var(--verde)}
       <span style="display:inline-block;background:#F9CA24;color:#3d2200;padding:1px 7px;border-radius:4px;font-size:.75rem;font-weight:700;margin:0 3px">Ganador +1</span>
       <span style="display:inline-block;background:#C0392B;color:#fff;padding:1px 7px;border-radius:4px;font-size:.75rem;font-weight:700;margin:0 3px">Fallo 0</span>
     </div>
+    <div class="al al-w" style="margin-bottom:.75rem">
+      &#9878;&#65039; <span><b>Regla de entrega previa &mdash; apuestas anuladas en O1 y O2:</b> el Excel de octavos deb&iacute;a entregarse antes del inicio de los partidos. Seis participantes lo entregaron cuando O1 (Canad&aacute;&ndash;Marruecos) y O2 (Paraguay&ndash;Francia), jugados el s&aacute;b 4/jul, ya hab&iacute;an comenzado: Jorge (4/jul 17:33) &middot; Pablo (17:53) &middot; Julio (18:00) &middot; Brany (18:09) &middot; Paoquino (19:37) &middot; Gustavo (5/jul 09:07). Sus apuestas de esos dos partidos <b>no se consideran ni suman puntos</b> (celdas &laquo;&mdash;&raquo;); sus pron&oacute;sticos de O3 a O8 s&iacute; cuentan con normalidad. Los Excel de 16avos fueron entregados a tiempo por los 12 participantes.</span>
+    </div>
     <div class="det-wrap"><table class="det-tbl" id="det-tbl"></table></div>
   </div>
   <div class="card">
@@ -280,6 +284,55 @@ header{background:var(--verde)}
   <div class="card">
     <div class="card-title">&#128202; Estad&iacute;sticas de la Polla</div>
     <div class="eg" id="stats-content"></div>
+  </div>
+</div>
+
+<!-- REGLAS -->
+<div id="tab-reglas" class="page">
+  <div class="card">
+    <div class="card-title">&#9878;&#65039; Reglamento de Puntuaci&oacute;n &mdash; Polla Amigos CENGOB 2026</div>
+
+    <div class="al al-i" style="margin-bottom:1rem">
+      <b>1. Puntos por partido.</b> Cada pron&oacute;stico se compara con el resultado real y otorga:
+      <span style="display:inline-block;background:#1E8449;color:#fff;padding:1px 8px;border-radius:4px;font-weight:700;margin:0 3px">+3 Marcador exacto</span>
+      <span style="display:inline-block;background:#F9CA24;color:#3d2200;padding:1px 8px;border-radius:4px;font-weight:700;margin:0 3px">+1 Acierta ganador o empate</span>
+      <span style="display:inline-block;background:#C0392B;color:#fff;padding:1px 8px;border-radius:4px;font-weight:700;margin:0 3px">0 Fallo</span>
+    </div>
+
+    <div class="al al-w" style="margin-bottom:1rem">
+      <b>2. Regla de los 90 minutos (la m&aacute;s importante).</b> Solo cuenta el marcador de los <b>90 minutos reglamentarios</b>, incluyendo el tiempo de adici&oacute;n de cada tiempo (45'+X y 90'+X, que son parte reglamentaria del partido). <b>NO cuentan</b> los goles del tiempo extra (91'&ndash;120') ni la definici&oacute;n por penales. Ejemplos reales de esta Copa:
+      <ul style="margin:.4rem 0 0 1.2rem;padding:0">
+        <li><b>Noruega 1&ndash;1 Inglaterra (cuartos):</b> Inglaterra gan&oacute; en el alargue, pero para la polla el resultado v&aacute;lido es el empate 1&ndash;1. Quien pronostic&oacute; empate (ej. 2&ndash;2) gana +1.</li>
+        <li><b>Argentina 1&ndash;1 Cabo Verde (16avos):</b> Argentina gan&oacute; 3&ndash;2 en el alargue; el resultado v&aacute;lido es 1&ndash;1 (Messi 29', Duarte 59').</li>
+        <li><b>B&eacute;lgica 2&ndash;2 Senegal (16avos):</b> los goles belgas del 86' y 89' S&Iacute; cuentan (reglamentarios); el penal del 120'+5 NO.</li>
+        <li><b>Brasil 2&ndash;1 Jap&oacute;n (16avos):</b> el gol de Martinelli al 90'+6 S&Iacute; cuenta, porque la adici&oacute;n es parte de los 90 reglamentarios.</li>
+      </ul>
+    </div>
+
+    <div class="al al-w" style="margin-bottom:1rem">
+      <b>3. Entrega previa obligatoria.</b> El Excel de pron&oacute;sticos de cada etapa debe entregarse al administrador <b>antes del inicio de los partidos</b>. Las apuestas de partidos que ya hab&iacute;an comenzado al momento de la entrega quedan anuladas: no se incluyen y no suman puntos; los partidos posteriores a la entrega s&iacute; cuentan con normalidad. Aplicaci&oacute;n en octavos: Jorge, Pablo, Julio, Brany, Paoquino y Gustavo entregaron su Excel el 4&ndash;5/jul, con O1 (Canad&aacute;&ndash;Marruecos) y O2 (Paraguay&ndash;Francia) ya disputados, por lo que esos dos partidos quedaron anulados para ellos y O3&ndash;O8 puntúan normalmente. En 16avos los 12 Excel se entregaron a tiempo (28/jun).
+    </div>
+
+    <div class="al al-i" style="margin-bottom:1rem">
+      <b>4. Ejemplos de puntaje.</b> Si el resultado real a 90' es <b>1&ndash;1</b>:
+      pron&oacute;stico 1&ndash;1 &rarr; <b>+3</b> (exacto) &middot;
+      pron&oacute;stico 2&ndash;2 &rarr; <b>+1</b> (acert&oacute; el empate) &middot;
+      pron&oacute;stico 2&ndash;1 &rarr; <b>0</b> (pronostic&oacute; ganador y fue empate).
+      Si el real es <b>2&ndash;0</b>: 2&ndash;0 &rarr; +3 &middot; 3&ndash;1 &rarr; +1 (acert&oacute; ganador local) &middot; 1&ndash;1 o 0&ndash;2 &rarr; 0.
+    </div>
+
+    <div class="al al-i" style="margin-bottom:1rem">
+      <b>5. Etapas y puntaje m&aacute;ximo del acumulado:</b>
+      16avos: 16 partidos &times; 3 = <b>48 pts</b> &middot;
+      Octavos: 8 partidos &times; 3 = <b>24 pts</b> &middot;
+      Cuartos: 4 partidos &times; 3 = <b>12 pts</b> &middot;
+      <b>M&aacute;ximo acumulado del dashboard: 84 pts.</b>
+      Los premios por Finalistas y podio (Campe&oacute;n, Subcampe&oacute;n, 3&deg; y 4&deg; lugar, hoja del Excel de registro) se liquidan al cierre del torneo y no forman parte de este acumulado.
+    </div>
+
+    <div class="al al-i" style="margin-bottom:0">
+      <b>6. Fuente y transparencia.</b> Los resultados se obtienen del feed de ESPN filtrando gol por gol seg&uacute;n el minuto de anotaci&oacute;n, y se auditan contra los reportes oficiales de la FIFA. Los pron&oacute;sticos de cada etapa provienen de los Excel enviados por cada jugador antes del inicio de la etapa y pueden verificarse en las pesta&ntilde;as <b>Detalle 16avos</b> y <b>Detalle Octavos</b>. Cualquier correcci&oacute;n de datos se anuncia en la pesta&ntilde;a correspondiente con su impacto por jugador.
+    </div>
   </div>
 </div>
 
@@ -324,16 +377,17 @@ var POCT = [
   {id:"o08",n:8,loc:"Suiza",      vis:"Colombia",    fecha:"Mar 7/jul",col:"#CB4335",rgl:0,rgv:0,nota:"Suiza avanza 4-3 en penales"}
 ];
 
-// Puntos fijos 16avos (auditados 11/jul con regla 90 min: Argentina-Cabo Verde corregido de 2-1 a 1-1)
+// Puntos fijos 16avos (auditados 11/jul con regla 90 min: Argentina-Cabo Verde corregido a 1-1).
+// Los 12 Excel de 16avos fueron entregados a tiempo (28/jun): todos puntuan normalmente.
 var PTS16 = {Tonchy:20,Jose:20,Gaby:14,Paoquino:11,Julio:20,Brany:7,Pablo:19,Sdenka:20,racsauh:25,Jorge:12,a66:18,Gustavo:13};
 
 // Puntos fijos Octavos (ya verificados con resultados reales, incluye actualización retroactiva de Jorge en O1/O2)
-var PTSOCT = {Tonchy:6,Jose:5,Gaby:3,Paoquino:3,Julio:1,Brany:3,Pablo:2,Sdenka:4,racsauh:6,Jorge:7,a66:5,Gustavo:2};
+var PTSOCT = {Tonchy:6,Jose:5,Gaby:3,Paoquino:3,Julio:1,Brany:3,Pablo:2,Sdenka:4,racsauh:6,Jorge:4,a66:5,Gustavo:2};
 var OCTDET = {
   Tonchy:{E:1,G:3,F:4,N:0}, Jose:{E:0,G:5,F:3,N:0}, Gaby:{E:0,G:3,F:5,N:0},
   Paoquino:{E:0,G:3,F:3,N:2}, Julio:{E:0,G:1,F:5,N:2}, Brany:{E:0,G:3,F:3,N:2},
   Pablo:{E:0,G:2,F:4,N:2}, Sdenka:{E:0,G:4,F:4,N:0}, racsauh:{E:0,G:6,F:2,N:0},
-  Jorge:{E:2,G:1,F:5,N:0}, a66:{E:0,G:5,F:3,N:0}, Gustavo:{E:0,G:2,F:4,N:2}
+  Jorge:{E:1,G:1,F:4,N:2}, a66:{E:0,G:5,F:3,N:0}, Gustavo:{E:0,G:2,F:4,N:2}
 };
 // Pronósticos Octavos por nick (null = no apostó). Jorge actualizado con O1/O2 reales.
 var PROCT = {
@@ -346,7 +400,7 @@ var PROCT = {
   Pablo:   {o01:null, o02:null, o03:[2,1],o04:[1,1],o05:[1,2],o06:[1,1],o07:[2,0],o08:[0,1]},
   Sdenka:  {o01:[1,2],o02:[1,3],o03:[2,0],o04:[1,2],o05:[1,1],o06:[2,0],o07:[3,0],o08:[0,1]},
   racsauh: {o01:[1,2],o02:[0,2],o03:[2,1],o04:[1,2],o05:[1,2],o06:[2,1],o07:[2,0],o08:[1,1]},
-  Jorge:   {o01:[0,3],o02:[2,1],o03:[1,2],o04:[2,1],o05:[1,1],o06:[2,1],o07:[3,1],o08:[0,2]},
+  Jorge:   {o01:null,o02:null,o03:[1,2],o04:[2,1],o05:[1,1],o06:[2,1],o07:[3,1],o08:[0,2]},
   a66:     {o01:[0,1],o02:[0,3],o03:[1,1],o04:[1,2],o05:[2,1],o06:[2,1],o07:[2,1],o08:[1,1]},
   Gustavo: {o01:null, o02:null, o03:[2,1],o04:[2,2],o05:[2,2],o06:[2,1],o07:[2,0],o08:[1,1]}
 };
@@ -525,7 +579,7 @@ function updLastUpd(){
 // =============================================================
 // NAV
 // =============================================================
-var TABS=["ranking","fixture","miapuesta","detalle16","detalleoct","stats","admin"];
+var TABS=["ranking","fixture","miapuesta","detalle16","detalleoct","stats","reglas","admin"];
 function showTab(id){
   document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active");});
   document.querySelectorAll(".tb").forEach(function(b){b.classList.remove("active");});
