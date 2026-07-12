@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -188,6 +190,7 @@ header{background:var(--verde)}
     <button class="tb active" onclick="showTab('ranking')">&#127942; Tabla de Puntos</button>
     <button class="tb" onclick="showTab('fixture')">&#9917; Fixture</button>
     <button class="tb" onclick="showTab('miapuesta')">&#128269; Mi Apuesta</button>
+    <button class="tb" onclick="showTab('detalle16')">&#128220; Detalle 16avos</button>
     <button class="tb" onclick="showTab('detalleoct')">&#128203; Detalle Octavos</button>
     <button class="tb" onclick="showTab('stats')">&#128202; Estad&iacute;sticas</button>
     <button class="tb" onclick="showTab('admin')">&#9881;&#65039; Admin</button>
@@ -231,6 +234,27 @@ header{background:var(--verde)}
     </select>
   </div>
   <div id="ma-content"></div>
+</div>
+
+<!-- DETALLE 16AVOS -->
+<div id="tab-detalle16" class="page">
+  <div class="card">
+    <div class="card-title">&#128220; Detalle Completo &mdash; Pron&oacute;sticos 16avos de Final (cerrado y auditado)</div>
+    <div class="al al-i" style="margin-bottom:.5rem">
+      Tabla comparativa de los 12 pron&oacute;sticos (Excel enviados el 28/jun) vs resultados reales a 90 min. Etapa cerrada y auditada.
+      <span style="display:inline-block;background:#1E8449;color:#fff;padding:1px 7px;border-radius:4px;font-size:.75rem;font-weight:700;margin:0 3px">Exacto +3</span>
+      <span style="display:inline-block;background:#F9CA24;color:#3d2200;padding:1px 7px;border-radius:4px;font-size:.75rem;font-weight:700;margin:0 3px">Ganador +1</span>
+      <span style="display:inline-block;background:#C0392B;color:#fff;padding:1px 7px;border-radius:4px;font-size:.75rem;font-weight:700;margin:0 3px">Fallo 0</span>
+    </div>
+    <div class="al al-w" style="margin-bottom:.75rem">
+      &#9878;&#65039; <span><b>Correcci&oacute;n de transparencia (11/jul):</b> el partido <b>Argentina vs Cabo Verde</b> estaba registrado 2&ndash;1, marcador que incluy&oacute; un gol del tiempo extra (L. Mart&iacute;nez 92'). Seg&uacute;n el reglamento de la polla solo cuentan los 90 minutos reglamentarios: el resultado v&aacute;lido es <b>1&ndash;1</b> (Messi 29', Duarte 59'). Impacto: &minus;3 pts a Gaby y Paoquino (su 2&ndash;1 exacto pasa a fallo), +1 pt a a66 (su 0&ndash;0 acierta el empate) y &minus;1 pt a los 9 restantes que pronosticaron victoria argentina. Los goles en adici&oacute;n (45'+X y 90'+X) s&iacute; cuentan por ser parte reglamentaria; el alargue (91'&ndash;120') y los penales no. Verificado con reportes oficiales FIFA/ESPN gol por gol.</span>
+    </div>
+    <div class="det-wrap"><table class="det-tbl" id="det16-tbl"></table></div>
+  </div>
+  <div class="card">
+    <div class="card-title">&#127381; Resumen de puntos 16avos por jugador</div>
+    <div id="det16-resumen"></div>
+  </div>
 </div>
 
 <!-- DETALLE OCTAVOS -->
@@ -300,8 +324,8 @@ var POCT = [
   {id:"o08",n:8,loc:"Suiza",      vis:"Colombia",    fecha:"Mar 7/jul",col:"#CB4335",rgl:0,rgv:0,nota:"Suiza avanza 4-3 en penales"}
 ];
 
-// Puntos fijos 16avos (ya verificados)
-var PTS16 = {Tonchy:21,Jose:21,Gaby:17,Paoquino:14,Julio:21,Brany:8,Pablo:20,Sdenka:21,racsauh:26,Jorge:13,a66:17,Gustavo:14};
+// Puntos fijos 16avos (auditados 11/jul con regla 90 min: Argentina-Cabo Verde corregido de 2-1 a 1-1)
+var PTS16 = {Tonchy:20,Jose:20,Gaby:14,Paoquino:11,Julio:20,Brany:7,Pablo:19,Sdenka:20,racsauh:25,Jorge:12,a66:18,Gustavo:13};
 
 // Puntos fijos Octavos (ya verificados con resultados reales, incluye actualización retroactiva de Jorge en O1/O2)
 var PTSOCT = {Tonchy:6,Jose:5,Gaby:3,Paoquino:3,Julio:1,Brany:3,Pablo:2,Sdenka:4,racsauh:6,Jorge:7,a66:5,Gustavo:2};
@@ -325,6 +349,56 @@ var PROCT = {
   Jorge:   {o01:[0,3],o02:[2,1],o03:[1,2],o04:[2,1],o05:[1,1],o06:[2,1],o07:[3,1],o08:[0,2]},
   a66:     {o01:[0,1],o02:[0,3],o03:[1,1],o04:[1,2],o05:[2,1],o06:[2,1],o07:[2,1],o08:[1,1]},
   Gustavo: {o01:null, o02:null, o03:[2,1],o04:[2,2],o05:[2,2],o06:[2,1],o07:[2,0],o08:[1,1]}
+};
+
+// ---- 16AVOS: etapa cerrada (resultados reales a 90 min, auditados 11/jul) ----
+var P16 = [
+  {id:"p01",n:1,loc:"Sudáfrica",vis:"Canadá",fecha:"Dom 28/jun",col:"#1A5276",rgl:0,rgv:1},
+  {id:"p02",n:2,loc:"Alemania",vis:"Paraguay",fecha:"Lun 29/jun",col:"#2C3E50",rgl:1,rgv:1,nota:"Paraguay avanza 4-3 en penales"},
+  {id:"p03",n:3,loc:"Países Bajos",vis:"Marruecos",fecha:"Lun 29/jun",col:"#B9560F",rgl:1,rgv:1,nota:"Marruecos avanza 3-2 en penales"},
+  {id:"p04",n:4,loc:"Brasil",vis:"Japón",fecha:"Lun 29/jun",col:"#1E8449",rgl:2,rgv:1},
+  {id:"p05",n:5,loc:"Francia",vis:"Suecia",fecha:"Mar 30/jun",col:"#1A3A5C",rgl:3,rgv:0},
+  {id:"p06",n:6,loc:"Costa de Marfil",vis:"Noruega",fecha:"Mar 30/jun",col:"#B9770E",rgl:1,rgv:2},
+  {id:"p07",n:7,loc:"México",vis:"Ecuador",fecha:"Mar 30/jun",col:"#006847",rgl:2,rgv:0},
+  {id:"p08",n:8,loc:"Inglaterra",vis:"RD Congo",fecha:"Mié 1/jul",col:"#922B21",rgl:2,rgv:1},
+  {id:"p09",n:9,loc:"Estados Unidos",vis:"Bosnia y Herz.",fecha:"Mié 1/jul",col:"#1A3A6C",rgl:2,rgv:0},
+  {id:"p10",n:10,loc:"Bélgica",vis:"Senegal",fecha:"Mié 1/jul",col:"#7B241C",rgl:2,rgv:2,nota:"Bélgica avanza 3-2 en TE"},
+  {id:"p11",n:11,loc:"Portugal",vis:"Croacia",fecha:"Jue 2/jul",col:"#C0392B",rgl:2,rgv:1},
+  {id:"p12",n:12,loc:"España",vis:"Austria",fecha:"Jue 2/jul",col:"#A93226",rgl:3,rgv:0},
+  {id:"p13",n:13,loc:"Suiza",vis:"Argelia",fecha:"Jue 2/jul",col:"#CB4335",rgl:2,rgv:0},
+  {id:"p14",n:14,loc:"Argentina",vis:"Cabo Verde",fecha:"Vie 3/jul",col:"#1A5276",rgl:1,rgv:1,nota:"Argentina avanza 3-2 en TE · corregido de 2-1"},
+  {id:"p15",n:15,loc:"Colombia",vis:"Ghana",fecha:"Vie 3/jul",col:"#B7950B",rgl:1,rgv:0},
+  {id:"p16",n:16,loc:"Australia",vis:"Egipto",fecha:"Vie 3/jul",col:"#145A32",rgl:1,rgv:1,nota:"Egipto avanza 4-2 en penales"}
+];
+
+// Pronósticos 16avos por nick (fuente: Excel enviados por cada jugador, 28/jun)
+var PR16 = {
+  Tonchy:   {p01:[1,2],p02:[3,0],p03:[3,1],p04:[2,1],p05:[3,1],p06:[1,2],p07:[1,1],p08:[2,0],p09:[3,0],p10:[1,1],p11:[1,0],p12:[3,0],p13:[1,0],p14:[3,0],p15:[2,1],p16:[1,1]},
+  Jose:     {p01:[0,2],p02:[2,0],p03:[1,1],p04:[2,1],p05:[3,0],p06:[2,2],p07:[2,1],p08:[3,1],p09:[2,0],p10:[2,0],p11:[1,2],p12:[2,0],p13:[2,0],p14:[3,0],p15:[2,0],p16:[1,2]},
+  Gaby:     {p01:[1,2],p02:[2,0],p03:[2,2],p04:[2,2],p05:[3,1],p06:[1,2],p07:[2,2],p08:[2,1],p09:[3,1],p10:[3,2],p11:[3,2],p12:[2,1],p13:[3,2],p14:[2,1],p15:[2,1],p16:[1,2]},
+  Paoquino: {p01:[1,2],p02:[3,1],p03:[0,1],p04:[3,1],p05:[2,1],p06:[1,1],p07:[2,1],p08:[3,0],p09:[1,0],p10:[1,1],p11:[2,0],p12:[2,1],p13:[1,0],p14:[2,1],p15:[2,1],p16:[3,1]},
+  Julio:    {p01:[1,2],p02:[2,0],p03:[2,2],p04:[3,2],p05:[3,0],p06:[1,2],p07:[2,2],p08:[3,0],p09:[2,0],p10:[2,1],p11:[1,1],p12:[3,0],p13:[1,1],p14:[3,0],p15:[2,1],p16:[1,1]},
+  Brany:    {p01:[2,1],p02:[3,1],p03:[0,2],p04:[3,0],p05:[2,0],p06:[0,3],p07:[2,2],p08:[1,2],p09:[1,0],p10:[0,0],p11:[1,2],p12:[2,0],p13:[1,1],p14:[4,1],p15:[2,0],p16:[2,0]},
+  Pablo:    {p01:[1,2],p02:[3,1],p03:[2,1],p04:[2,1],p05:[2,0],p06:[1,2],p07:[1,1],p08:[3,1],p09:[2,1],p10:[1,1],p11:[2,1],p12:[2,0],p13:[1,1],p14:[3,0],p15:[2,1],p16:[1,1]},
+  Sdenka:   {p01:[1,2],p02:[2,0],p03:[1,1],p04:[2,0],p05:[3,1],p06:[1,2],p07:[1,0],p08:[3,1],p09:[1,1],p10:[2,1],p11:[2,1],p12:[2,0],p13:[2,1],p14:[3,0],p15:[2,1],p16:[1,1]},
+  racsauh:  {p01:[2,1],p02:[3,0],p03:[1,0],p04:[2,1],p05:[2,0],p06:[1,2],p07:[2,1],p08:[3,0],p09:[2,0],p10:[2,1],p11:[2,1],p12:[3,0],p13:[2,0],p14:[4,0],p15:[2,1],p16:[1,1]},
+  Jorge:    {p01:[1,2],p02:[0,2],p03:[2,1],p04:[0,2],p05:[2,0],p06:[0,1],p07:[3,2],p08:[2,0],p09:[3,1],p10:[2,0],p11:[2,0],p12:[3,1],p13:[2,0],p14:[3,1],p15:[3,1],p16:[2,0]},
+  a66:      {p01:[1,2],p02:[3,0],p03:[2,1],p04:[0,0],p05:[3,0],p06:[1,2],p07:[1,1],p08:[2,0],p09:[2,0],p10:[3,1],p11:[2,1],p12:[2,0],p13:[2,1],p14:[0,0],p15:[2,0],p16:[0,2]},
+  Gustavo:  {p01:[1,3],p02:[2,0],p03:[2,2],p04:[3,1],p05:[3,1],p06:[1,3],p07:[1,0],p08:[2,0],p09:[3,0],p10:[2,2],p11:[2,2],p12:[3,1],p13:[2,1],p14:[1,0],p15:[2,2],p16:[1,2]}
+};
+var DET16 = {
+  Tonchy:{E:4,G:8,F:4,N:0},
+  Jose:{E:5,G:5,F:6,N:0},
+  Gaby:{E:2,G:8,F:6,N:0},
+  Paoquino:{E:0,G:11,F:5,N:0},
+  Julio:{E:5,G:5,F:6,N:0},
+  Brany:{E:0,G:7,F:9,N:0},
+  Pablo:{E:4,G:7,F:5,N:0},
+  Sdenka:{E:4,G:8,F:4,N:0},
+  racsauh:{E:7,G:4,F:5,N:0},
+  Jorge:{E:1,G:9,F:6,N:0},
+  a66:{E:4,G:6,F:6,N:0},
+  Gustavo:{E:1,G:10,F:5,N:0}
 };
 
 // ---- CUARTOS: etapa activa ----
@@ -383,7 +457,15 @@ var BAN = {
   "Portugal":"🇵🇹","España":"🇪🇸",
   "Estados Unidos":"🇺🇸","Bélgica":"🇧🇪",
   "Argentina":"🇦🇷","Egipto":"🇪🇬",
-  "Suiza":"🇨🇭","Colombia":"🇨🇴"
+  "Suiza":"🇨🇭","Colombia":"🇨🇴",
+  "Sudáfrica":"🇿🇦","Alemania":"🇩🇪",
+  "Países Bajos":"🇳🇱","Japón":"🇯🇵",
+  "Suecia":"🇸🇪","Ecuador":"🇪🇨",
+  "RD Congo":"🇨🇩","Bosnia y Herz.":"🇧🇦",
+  "Senegal":"🇸🇳","Croacia":"🇭🇷",
+  "Austria":"🇦🇹","Argelia":"🇩🇿",
+  "Cabo Verde":"🇨🇻","Ghana":"🇬🇭",
+  "Australia":"🇦🇺"
 };
 
 function ban(e){return BAN[e]||"🏳️";}
@@ -443,7 +525,7 @@ function updLastUpd(){
 // =============================================================
 // NAV
 // =============================================================
-var TABS=["ranking","fixture","miapuesta","detalleoct","stats","admin"];
+var TABS=["ranking","fixture","miapuesta","detalle16","detalleoct","stats","admin"];
 function showTab(id){
   document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active");});
   document.querySelectorAll(".tb").forEach(function(b){b.classList.remove("active");});
@@ -451,7 +533,7 @@ function showTab(id){
   var i=TABS.indexOf(id);
   if(i>=0) document.querySelectorAll(".tb")[i].classList.add("active");
   window.scrollTo({top:0,behavior:"smooth"});
-  var map={ranking:renderRanking,fixture:renderFixture,detalleoct:renderDetalleOct,stats:renderStats,admin:renderAdmin};
+  var map={ranking:renderRanking,fixture:renderFixture,detalle16:renderDetalle16,detalleoct:renderDetalleOct,stats:renderStats,admin:renderAdmin};
   if(map[id]) map[id]();
 }
 
@@ -602,6 +684,94 @@ function mbox(n,l,bg,bc,tc){
   return "<div class='mab' style='background:"+bg+";border-color:"+bc+"'>"+
     "<div class='man' style='color:"+tc+"'>"+n+"</div>"+
     "<div class='mal' style='color:"+tc+"'>"+l+"</div></div>";
+}
+
+// =============================================================
+// DETALLE 16AVOS — tabla heatmap completa (etapa cerrada y auditada)
+// =============================================================
+function renderDetalle16(){
+  var ORDER=["racsauh","Tonchy","Jose","Julio","Sdenka","Pablo","a66","Gaby","Gustavo","Jorge","Paoquino","Brany"];
+
+  function cellScore16(pron,rgl,rgv){
+    if(pron===null||pron===undefined) return "N";
+    var pi=+pron[0],pj=+pron[1];
+    if(pi===rgl&&pj===rgv) return "E";
+    var rr=rgl>rgv?"L":rgl<rgv?"V":"D";
+    var pr=pi>pj?"L":pi<pj?"V":"D";
+    return rr===pr?"G":"F";
+  }
+
+  var th="<thead><tr><th class='th-jug'>Jugador</th>";
+  P16.forEach(function(p){
+    th+="<th style='background:"+p.col+";min-width:60px'>"+
+      "<div>P"+p.n+"</div>"+
+      "<div style='font-size:.6rem;opacity:.85;font-weight:400'>"+p.loc.split(" ")[0]+"</div>"+
+      "<div style='font-size:.58rem;opacity:.7'>vs "+p.vis.split(" ")[0]+"</div>"+
+      "<div style='font-size:.6rem;opacity:.75'>"+p.fecha+"</div></th>";
+  });
+  th+="<th style='background:var(--oro);color:#3d2200;min-width:52px'>Pts<br>16avos</th></tr></thead>";
+
+  var trReal="<tr class='tr-real'><td class='td-jug' style='font-weight:700;font-size:.74rem'>&#9917; Resultado Real (90')</td>";
+  P16.forEach(function(p){
+    trReal+="<td class='cR' title='"+(p.nota||"")+"'>"+p.rgl+"&ndash;"+p.rgv+(p.nota?"<span style='display:block;font-size:.5rem;font-weight:400'>&#9432;</span>":"")+"</td>";
+  });
+  trReal+="<td style='background:var(--oro);color:#3d2200;font-weight:700'>&mdash;</td></tr>";
+
+  var rows=ORDER.map(function(nick){
+    var pr=PR16[nick];
+    var pts=PTS16[nick]||0;
+    var row="<tr><td class='td-jug' style='font-weight:700;color:var(--verde)'>&#127917; "+NICK_DISPLAY[nick]+"</td>";
+    P16.forEach(function(p){
+      var pron=pr[p.id];
+      var s=cellScore16(pron,p.rgl,p.rgv);
+      if(s==="N"){
+        row+="<td class='cN'>&mdash;</td>";
+      } else {
+        var ptsTxt=s==="E"?"+3":s==="G"?"+1":"0";
+        row+="<td class='c"+s+"' title='"+pron[0]+"-"+pron[1]+" | "+ptsTxt+"'>"+pron[0]+"-"+pron[1]+"</td>";
+      }
+    });
+    row+="<td style='background:var(--oro2);color:#3d2200;font-weight:800;font-size:.85rem'>"+pts+"</td></tr>";
+    return row;
+  }).join("");
+
+  document.getElementById("det16-tbl").innerHTML=th+"<tbody>"+trReal+rows+"</tbody>";
+
+  var sorted=ORDER.map(function(nick){return {nick:nick,pts:PTS16[nick]||0,d:DET16[nick]};})
+    .sort(function(a,b){return b.pts-a.pts;});
+
+  var tbl="<table style='width:100%;border-collapse:collapse;font-size:.82rem'>"+
+    "<thead><tr style='background:var(--verde);color:#fff'>"+
+    "<th style='padding:.5rem .75rem;text-align:left'>#</th>"+
+    "<th style='padding:.5rem .75rem;text-align:left'>Jugador</th>"+
+    "<th style='padding:.5rem .75rem;text-align:center'>&#9989; Exactos</th>"+
+    "<th style='padding:.5rem .75rem;text-align:center'>&#9889; Ganador</th>"+
+    "<th style='padding:.5rem .75rem;text-align:center'>&#10060; Fallos</th>"+
+    "<th style='padding:.5rem .75rem;text-align:center'>Pts 16avos</th>"+
+    "<th style='padding:.5rem .75rem;text-align:left;min-width:130px'>Progreso /48</th>"+
+    "</tr></thead><tbody>";
+
+  sorted.forEach(function(item,i){
+    var pct=Math.round(item.pts/48*100);
+    var bg=i%2===0?"#fff":"#f9fafb";
+    tbl+="<tr style='background:"+bg+"'>"+
+      "<td style='padding:.45rem .75rem;font-weight:700'>"+(i+1)+"</td>"+
+      "<td style='padding:.45rem .75rem'><span style='font-weight:700;color:var(--verde)'>&#127917; "+NICK_DISPLAY[item.nick]+"</span></td>"+
+      "<td style='padding:.45rem .75rem;text-align:center;color:#155724;font-weight:700'>"+item.d.E+"</td>"+
+      "<td style='padding:.45rem .75rem;text-align:center;color:#856404;font-weight:700'>"+item.d.G+"</td>"+
+      "<td style='padding:.45rem .75rem;text-align:center;color:#922B21;font-weight:700'>"+item.d.F+"</td>"+
+      "<td style='padding:.45rem .75rem;text-align:center'>"+
+        "<span style='font-size:1rem;font-weight:800;color:var(--verde)'>"+item.pts+"</span>"+
+        "<span style='font-size:.72rem;color:var(--texto2)'>/48</span></td>"+
+      "<td style='padding:.45rem .75rem'>"+
+        "<div style='display:flex;align-items:center;gap:.4rem'>"+
+          "<div style='flex:1;max-width:100px;background:var(--gris3);border-radius:6px;height:7px;overflow:hidden'>"+
+            "<div style='width:"+pct+"%;height:7px;border-radius:6px;background:linear-gradient(90deg,var(--verde2),var(--oro))'></div></div>"+
+          "<span style='font-size:.7rem;color:var(--texto2)'>"+pct+"%</span></div></td>"+
+      "</tr>";
+  });
+  tbl+="</tbody></table>";
+  document.getElementById("det16-resumen").innerHTML=tbl;
 }
 
 // =============================================================
@@ -805,13 +975,35 @@ function fetchESPN(fromAdmin){
   if(btn){btn.disabled=true;btn.innerHTML="<span class='sp'></span> Consultando ESPN...";}
   if(fromAdmin){elog.style.display="none";elogC.innerHTML="";}
 
+  // Determina si un gol ocurrió dentro de los 90 min reglamentarios.
+  // ESPN reporta clock.displayValue como "23'", "45'+2'", "90'+5'" (reglamentario)
+  // o "95'", "105'+1'", "120'+2'" (tiempo extra). El minuto base <= 90 incluye
+  // la adición de ambos tiempos reglamentarios y excluye todo el alargue.
+  function esGol90(d){
+    if(!d.scoringPlay||d.shootout) return false;
+    var dv=(d.clock&&d.clock.displayValue)||"";
+    var m=dv.match(/^(\d+)/);
+    if(m) return parseInt(m[1],10)<=90;
+    // Fallback conservador si no hay displayValue: 5400 s = 90:00 exactos
+    return ((d.clock&&d.clock.value)||0)<=5400;
+  }
+
   function goles90(details,teamId){
     return (details||[]).filter(function(d){
-      return d.scoringPlay&&!d.shootout&&d.team&&d.team.id===teamId&&(d.period||2)<=2&&(d.clock&&d.clock.value||0)<=5940;
+      return esGol90(d)&&d.team&&String(d.team.id)===String(teamId);
     }).length;
   }
 
-  fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=200&dates=20260709-20260711")
+  // Gol anotado en tiempo extra (no penales): minuto base > 90
+  function esGolTE(d){
+    if(!d.scoringPlay||d.shootout) return false;
+    var dv=(d.clock&&d.clock.displayValue)||"";
+    var m=dv.match(/^(\d+)/);
+    if(m) return parseInt(m[1],10)>90;
+    return ((d.clock&&d.clock.value)||0)>5400;
+  }
+
+  fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=200&dates=20260709-20260712")
   .then(function(r){if(!r.ok) throw new Error("ESPN no responde ("+r.status+")"); return r.json();})
   .then(function(data){
     var ev={};
@@ -830,7 +1022,7 @@ function fetchESPN(fromAdmin){
         var hS=null,aS=null,nota="";
         if(done||live){
           hS=goles90(dets,home.team.id); aS=goles90(dets,away.team.id);
-          var hayTE=dets.some(function(d){return d.scoringPlay&&(d.period||2)>2&&!d.shootout;});
+          var hayTE=dets.some(esGolTE);
           var hayP=dets.some(function(d){return d.shootout&&d.scoringPlay;});
           if(hayTE) nota="con TE";
           if(hayP) nota="con penales";
