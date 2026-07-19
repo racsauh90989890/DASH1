@@ -408,7 +408,7 @@ header{background:var(--verde)}
       <span style="display:inline-block;background:#C0392B;color:#fff;padding:1px 7px;border-radius:4px;font-size:.75rem;font-weight:700;margin:0 3px">Fallo 0</span>
     </div>
     <div class="al al-w" style="margin-bottom:.75rem">
-      &#9878;&#65039; <span><b>Entrega de la etapa Final &mdash; 2 apuestas anuladas:</b> <b>Brany</b> y <b>Gustavo</b> no enviaron su Excel de pron&oacute;sticos para esta etapa, por lo que no suman puntos en la Final ni en el 3er Puesto (celdas &laquo;&mdash;&raquo;). Los otros 10 participantes s&iacute; entregaron y puntúan con normalidad.</span>
+      &#9878;&#65039; <span><b>Entrega de la etapa Final &mdash; 2 apuestas anuladas:</b> <b>Brany</b> no envi&oacute; su Excel de pron&oacute;sticos para esta etapa, por lo que no suma puntos en la Final ni en el 3er Puesto (celdas &laquo;&mdash;&raquo;). Los otros 11 participantes s&iacute; entregaron y puntúan con normalidad.</span>
     </div>
     <div class="al al-o" style="margin-bottom:.75rem">
       &#9989; <span><b>Regla de 90 minutos aplicada:</b> el <b>3er Puesto</b> (Francia 4&ndash;6 Inglaterra) termin&oacute; en los 90' reglamentarios &mdash; los goles de Demb&eacute;l&eacute; (90'+6) y Bellingham (90'+8) cuentan por ser adici&oacute;n reglamentaria. La <b>Gran Final</b> se registrar&aacute; con el marcador a 90 min; si se define en alargue o penales, esos goles no contar&aacute;n.</span>
@@ -471,7 +471,7 @@ header{background:var(--verde)}
       Semifinales: 2 partidos &times; 3 = <b>6 pts</b> &middot;
       Final + 3er Puesto: 2 partidos &times; 3 = <b>6 pts</b> &middot;
       <b>M&aacute;ximo acumulado del dashboard: 96 pts.</b>
-      La etapa Final (Gran Final y partido por el 3&deg;/4&deg; lugar) se puntúa con la misma regla de marcador exacto/ganador que el resto del torneo y ahora <b>s&iacute; forma parte del acumulado</b>. En esta etapa <b>Brany</b> y <b>Gustavo</b> no enviaron pron&oacute;stico, por lo que no puntúan en la Final ni en el 3er Puesto.
+      La etapa Final (Gran Final y partido por el 3&deg;/4&deg; lugar) se puntúa con la misma regla de marcador exacto/ganador que el resto del torneo y ahora <b>s&iacute; forma parte del acumulado</b>. En esta etapa <b>Brany</b> no envi&oacute; pron&oacute;stico, por lo que no puntúa en la Final ni en el 3er Puesto.
     </div>
 
     <div class="al al-i" style="margin-bottom:0">
@@ -711,9 +711,10 @@ var PFINP = {
   Sdenka:  {f01:[2,1],f02:[1,2]},
   racsauh: {f01:[2,1],f02:[2,0]},
   Jorge:   {f01:[1,3],f02:[1,3]},
-  a66:     {f01:[2,0],f02:[2,0]}
+  a66:     {f01:[2,0],f02:[2,0]},
+  Gustavo: {f01:[4,6],f02:[2,2]}
 };
-var NO_APOSTO_FIN = ["Brany","Gustavo"]; // no enviaron Excel de la etapa Final
+var NO_APOSTO_FIN = ["Brany"]; // Brany no envió Excel de la etapa Final
 
 // Resultados CUARTOS: etapa CERRADA y verificada (ESPN/FIFA, 90 min reglamentarios).
 // Q03 Noruega-Inglaterra: 1-1 a 90' (Ing. avanzó en alargue). Q04 Argentina-Suiza:
